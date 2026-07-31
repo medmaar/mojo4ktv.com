@@ -483,53 +483,112 @@ footer h4{font-size:.875rem;font-weight:600}
         </div>
       </div>
     </div>
-    <!-- Platform logos marquee -->
-    <div class="logos-wrap" style="margin-top:1.5rem">
-      <div class="logos-track">
-        <img src="/assets/img/devices/apple.svg" alt="iOS &amp; Apple TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy"/>
-        <img src="/assets/img/devices/android.svg" alt="Android" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy"/>
-        <img src="/assets/img/devices/androidtv.svg" alt="Android TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy"/>
-        <img src="/assets/img/devices/samsung.svg" alt="Samsung TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy"/>
-        <img src="/assets/img/devices/lg.svg" alt="LG Smart TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy"/>
-        <img src="/assets/img/devices/roku.svg" alt="Roku" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy"/>
-        <!-- duplicated for infinite scroll -->
-        <img src="/assets/img/devices/apple.svg" alt="iOS &amp; Apple TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy" aria-hidden="true"/>
-        <img src="/assets/img/devices/android.svg" alt="Android" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy" aria-hidden="true"/>
-        <img src="/assets/img/devices/androidtv.svg" alt="Android TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy" aria-hidden="true"/>
-        <img src="/assets/img/devices/samsung.svg" alt="Samsung TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy" aria-hidden="true"/>
-        <img src="/assets/img/devices/lg.svg" alt="LG Smart TV" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy" aria-hidden="true"/>
-        <img src="/assets/img/devices/roku.svg" alt="Roku" width="90" height="36" class="platform-logo" style="height:1.5rem;width:auto;flex-shrink:0;margin-right:2.5rem" loading="lazy" aria-hidden="true"/>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- CHANNEL SLIDESHOW -->
-<section style="background:#060f1e;padding:0;border-bottom:1px solid rgba(255,255,255,.07)">
+<section style="background:#0a1020;padding:0;border-bottom:1px solid rgba(255,255,255,.07)">
   <style>
-    .ch-strip-wrap{overflow:hidden;padding:14px 0;mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%)}
-    .ch-strip-track{display:flex;align-items:center;gap:10px;width:max-content;animation:ch-scroll 38s linear infinite}
-    .ch-strip-track.reverse{animation-direction:reverse;animation-duration:44s}
-    @keyframes ch-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .ch-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:9px 18px;font-size:.8rem;font-weight:700;color:rgba(232,224,255,.8);white-space:nowrap;flex-shrink:0}
-    .ch-pill.sport{border-color:rgba(231,79,81,.3);color:rgba(255,180,180,.95)}
-    .ch-pill.news{border-color:rgba(59,130,246,.3);color:rgba(147,197,253,.95)}
-    .ch-pill.movie{border-color:rgba(139,92,246,.3);color:rgba(196,181,253,.95)}
-    .ch-pill.ppv{background:rgba(231,79,81,.12);border-color:rgba(231,79,81,.45);color:#FF7E80;font-weight:800}
+    .ch-wrap{overflow:hidden;padding:12px 0;mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%)}
+    .ch-track{display:flex;align-items:center;gap:10px;width:max-content;animation:ch-rtl 36s linear infinite}
+    .ch-track.ltr{animation:ch-ltr 42s linear infinite}
+    @keyframes ch-rtl{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes ch-ltr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+    .ch-card{flex-shrink:0;background:#0e1628;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px 22px;min-width:140px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;white-space:nowrap}
   </style>
-  <div style="text-align:center;padding:2rem 1rem 1rem">
-    <span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.3)">50,000+ Live Channels &bull; Sports &bull; Movies &bull; News &bull; Kids &bull; Entertainment</span>
+  <div style="text-align:center;padding:1.75rem 1rem .75rem">
+    <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.28)">50,000+ Live Channels &bull; Sports &bull; Entertainment &bull; News &bull; Movies</span>
   </div>
-  <div class="ch-strip-wrap">
-    <div class="ch-strip-track">
-      <span class="ch-pill ppv">💥 PPV Events</span><span class="ch-pill sport">🏒 NHL Hockey</span><span class="ch-pill sport">🏀 NBA Basketball</span><span class="ch-pill sport">🏈 NFL Football</span><span class="ch-pill sport">⚾ MLB Baseball</span><span class="ch-pill sport">⚽ MLS Soccer</span><span class="ch-pill sport">🥊 UFC &amp; Boxing</span><span class="ch-pill sport">🏎️ Formula 1</span><span class="ch-pill sport">🎾 Tennis</span><span class="ch-pill">ESPN</span><span class="ch-pill">TSN</span><span class="ch-pill">Sportsnet</span><span class="ch-pill">NBC Sports</span><span class="ch-pill">NFL Network</span><span class="ch-pill">NBA TV</span><span class="ch-pill">beIN Sports</span><span class="ch-pill">Fox Sports</span><span class="ch-pill">DAZN</span><span class="ch-pill">Sky Sports</span><span class="ch-pill sport">🏈 CFL</span>
-      <span class="ch-pill ppv">💥 PPV Events</span><span class="ch-pill sport">🏒 NHL Hockey</span><span class="ch-pill sport">🏀 NBA Basketball</span><span class="ch-pill sport">🏈 NFL Football</span><span class="ch-pill sport">⚾ MLB Baseball</span><span class="ch-pill sport">⚽ MLS Soccer</span><span class="ch-pill sport">🥊 UFC &amp; Boxing</span><span class="ch-pill sport">🏎️ Formula 1</span><span class="ch-pill sport">🎾 Tennis</span><span class="ch-pill">ESPN</span><span class="ch-pill">TSN</span><span class="ch-pill">Sportsnet</span><span class="ch-pill">NBC Sports</span><span class="ch-pill">NFL Network</span><span class="ch-pill">NBA TV</span><span class="ch-pill">beIN Sports</span><span class="ch-pill">Fox Sports</span><span class="ch-pill">DAZN</span><span class="ch-pill">Sky Sports</span><span class="ch-pill sport">🏈 CFL</span>
+
+  <!-- Row 1: Sports networks -->
+  <div class="ch-wrap">
+    <div class="ch-track">
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">🏒 NHL</div>
+      <div class="ch-card" style="color:#1D428A;border-color:rgba(29,66,138,.35)">🏀 NBA</div>
+      <div class="ch-card" style="color:#D50A0A;border-color:rgba(213,10,10,.3)">🏈 NFL</div>
+      <div class="ch-card" style="color:#BA0C2F;border-color:rgba(186,12,47,.3)">⚾ MLB</div>
+      <div class="ch-card" style="color:#E42020;border-color:rgba(228,32,32,.3)">⚽ MLS</div>
+      <div class="ch-card" style="color:#D8001F;border-color:rgba(216,0,31,.3)">🥊 UFC</div>
+      <div class="ch-card" style="color:#E8002D;border-color:rgba(232,0,45,.3)">🏎️ Formula 1</div>
+      <div class="ch-card" style="color:#4D9900;border-color:rgba(77,153,0,.3)">🎾 Tennis</div>
+      <div class="ch-card" style="color:#FFC800;border-color:rgba(255,200,0,.3)">💥 PPV Events</div>
+      <div class="ch-card" style="color:#FF0000;border-color:rgba(255,0,0,.3)">ESPN</div>
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">TSN</div>
+      <div class="ch-card" style="color:#E31837;border-color:rgba(227,24,55,.3)">Sportsnet</div>
+      <div class="ch-card" style="color:#3C8DBC;border-color:rgba(60,141,188,.3)">NBC Sports</div>
+      <div class="ch-card" style="color:#013369;border-color:rgba(1,51,105,.6);color:#4A7FBF">NFL Network</div>
+      <div class="ch-card" style="color:#1D428A;border-color:rgba(29,66,138,.35)">NBA TV</div>
+      <div class="ch-card" style="color:#E8B800;border-color:rgba(232,184,0,.3)">beIN Sports</div>
+      <div class="ch-card" style="color:#CF142B;border-color:rgba(207,20,43,.3)">Fox Sports</div>
+      <div class="ch-card" style="color:#F8E71C;border-color:rgba(248,231,28,.3)">DAZN</div>
+      <div class="ch-card" style="color:#0061A8;border-color:rgba(0,97,168,.35)">Sky Sports</div>
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">🏈 CFL</div>
+      <!-- dup -->
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">🏒 NHL</div>
+      <div class="ch-card" style="color:#1D428A;border-color:rgba(29,66,138,.35)">🏀 NBA</div>
+      <div class="ch-card" style="color:#D50A0A;border-color:rgba(213,10,10,.3)">🏈 NFL</div>
+      <div class="ch-card" style="color:#BA0C2F;border-color:rgba(186,12,47,.3)">⚾ MLB</div>
+      <div class="ch-card" style="color:#E42020;border-color:rgba(228,32,32,.3)">⚽ MLS</div>
+      <div class="ch-card" style="color:#D8001F;border-color:rgba(216,0,31,.3)">🥊 UFC</div>
+      <div class="ch-card" style="color:#E8002D;border-color:rgba(232,0,45,.3)">🏎️ Formula 1</div>
+      <div class="ch-card" style="color:#4D9900;border-color:rgba(77,153,0,.3)">🎾 Tennis</div>
+      <div class="ch-card" style="color:#FFC800;border-color:rgba(255,200,0,.3)">💥 PPV Events</div>
+      <div class="ch-card" style="color:#FF0000;border-color:rgba(255,0,0,.3)">ESPN</div>
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">TSN</div>
+      <div class="ch-card" style="color:#E31837;border-color:rgba(227,24,55,.3)">Sportsnet</div>
+      <div class="ch-card" style="color:#3C8DBC;border-color:rgba(60,141,188,.3)">NBC Sports</div>
+      <div class="ch-card" style="color:#4A7FBF;border-color:rgba(1,51,105,.4)">NFL Network</div>
+      <div class="ch-card" style="color:#1D428A;border-color:rgba(29,66,138,.35)">NBA TV</div>
+      <div class="ch-card" style="color:#E8B800;border-color:rgba(232,184,0,.3)">beIN Sports</div>
+      <div class="ch-card" style="color:#CF142B;border-color:rgba(207,20,43,.3)">Fox Sports</div>
+      <div class="ch-card" style="color:#F8E71C;border-color:rgba(248,231,28,.3)">DAZN</div>
+      <div class="ch-card" style="color:#0061A8;border-color:rgba(0,97,168,.35)">Sky Sports</div>
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">🏈 CFL</div>
     </div>
   </div>
-  <div class="ch-strip-wrap" style="padding-bottom:24px">
-    <div class="ch-strip-track reverse">
-      <span class="ch-pill movie">🎬 Netflix</span><span class="ch-pill movie">🎬 Disney+</span><span class="ch-pill movie">🎬 HBO Max</span><span class="ch-pill movie">🎬 Prime Video</span><span class="ch-pill movie">🎬 Apple TV+</span><span class="ch-pill movie">🎬 Paramount+</span><span class="ch-pill news">📺 CBC</span><span class="ch-pill news">📺 CTV</span><span class="ch-pill news">📺 Global TV</span><span class="ch-pill news">📺 CNN</span><span class="ch-pill news">📺 Fox News</span><span class="ch-pill news">📺 BBC World</span><span class="ch-pill">Discovery</span><span class="ch-pill">Nat Geo</span><span class="ch-pill">History Channel</span><span class="ch-pill">Comedy Central</span><span class="ch-pill">Adult Swim</span><span class="ch-pill">Cartoon Network</span><span class="ch-pill">Disney Channel</span>
-      <span class="ch-pill movie">🎬 Netflix</span><span class="ch-pill movie">🎬 Disney+</span><span class="ch-pill movie">🎬 HBO Max</span><span class="ch-pill movie">🎬 Prime Video</span><span class="ch-pill movie">🎬 Apple TV+</span><span class="ch-pill movie">🎬 Paramount+</span><span class="ch-pill news">📺 CBC</span><span class="ch-pill news">📺 CTV</span><span class="ch-pill news">📺 Global TV</span><span class="ch-pill news">📺 CNN</span><span class="ch-pill news">📺 Fox News</span><span class="ch-pill news">📺 BBC World</span><span class="ch-pill">Discovery</span><span class="ch-pill">Nat Geo</span><span class="ch-pill">History Channel</span><span class="ch-pill">Comedy Central</span><span class="ch-pill">Adult Swim</span><span class="ch-pill">Cartoon Network</span><span class="ch-pill">Disney Channel</span>
+
+  <!-- Row 2: Entertainment & News (reverse direction) -->
+  <div class="ch-wrap" style="padding-bottom:22px">
+    <div class="ch-track ltr">
+      <div class="ch-card" style="color:#E50914;border-color:rgba(229,9,20,.3)">Netflix</div>
+      <div class="ch-card" style="color:#0063E5;border-color:rgba(0,99,229,.3)">Disney+</div>
+      <div class="ch-card" style="color:#B700C3;border-color:rgba(183,0,195,.3)">HBO Max</div>
+      <div class="ch-card" style="color:#00A8E0;border-color:rgba(0,168,224,.3)">Prime Video</div>
+      <div class="ch-card" style="color:#f5f5f7;border-color:rgba(255,255,255,.2)">Apple TV+</div>
+      <div class="ch-card" style="color:#0064FF;border-color:rgba(0,100,255,.3)">Paramount+</div>
+      <div class="ch-card" style="color:#E0151F;border-color:rgba(224,21,31,.3)">CBC</div>
+      <div class="ch-card" style="color:#D71920;border-color:rgba(215,25,32,.3)">CTV</div>
+      <div class="ch-card" style="color:#E8B800;border-color:rgba(232,184,0,.3)">Global TV</div>
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">CNN</div>
+      <div class="ch-card" style="color:#003399;border-color:rgba(0,51,153,.4);color:#4477CC">Fox News</div>
+      <div class="ch-card" style="color:#BB1919;border-color:rgba(187,25,25,.3)">BBC World</div>
+      <div class="ch-card" style="color:#005BAA;border-color:rgba(0,91,170,.35)">Discovery</div>
+      <div class="ch-card" style="color:#FFCC00;border-color:rgba(255,204,0,.3)">Nat Geo</div>
+      <div class="ch-card" style="color:#A60F2D;border-color:rgba(166,15,45,.3)">History</div>
+      <div class="ch-card" style="color:#FF6600;border-color:rgba(255,102,0,.3)">Comedy Central</div>
+      <div class="ch-card" style="color:#f5f5f7;border-color:rgba(255,255,255,.2)">Adult Swim</div>
+      <div class="ch-card" style="color:#00CFFF;border-color:rgba(0,207,255,.3)">Cartoon Network</div>
+      <div class="ch-card" style="color:#1F5AA8;border-color:rgba(31,90,168,.35)">Disney Channel</div>
+      <!-- dup -->
+      <div class="ch-card" style="color:#E50914;border-color:rgba(229,9,20,.3)">Netflix</div>
+      <div class="ch-card" style="color:#0063E5;border-color:rgba(0,99,229,.3)">Disney+</div>
+      <div class="ch-card" style="color:#B700C3;border-color:rgba(183,0,195,.3)">HBO Max</div>
+      <div class="ch-card" style="color:#00A8E0;border-color:rgba(0,168,224,.3)">Prime Video</div>
+      <div class="ch-card" style="color:#f5f5f7;border-color:rgba(255,255,255,.2)">Apple TV+</div>
+      <div class="ch-card" style="color:#0064FF;border-color:rgba(0,100,255,.3)">Paramount+</div>
+      <div class="ch-card" style="color:#E0151F;border-color:rgba(224,21,31,.3)">CBC</div>
+      <div class="ch-card" style="color:#D71920;border-color:rgba(215,25,32,.3)">CTV</div>
+      <div class="ch-card" style="color:#E8B800;border-color:rgba(232,184,0,.3)">Global TV</div>
+      <div class="ch-card" style="color:#CC0000;border-color:rgba(204,0,0,.3)">CNN</div>
+      <div class="ch-card" style="color:#4477CC;border-color:rgba(0,51,153,.3)">Fox News</div>
+      <div class="ch-card" style="color:#BB1919;border-color:rgba(187,25,25,.3)">BBC World</div>
+      <div class="ch-card" style="color:#005BAA;border-color:rgba(0,91,170,.35)">Discovery</div>
+      <div class="ch-card" style="color:#FFCC00;border-color:rgba(255,204,0,.3)">Nat Geo</div>
+      <div class="ch-card" style="color:#A60F2D;border-color:rgba(166,15,45,.3)">History</div>
+      <div class="ch-card" style="color:#FF6600;border-color:rgba(255,102,0,.3)">Comedy Central</div>
+      <div class="ch-card" style="color:#f5f5f7;border-color:rgba(255,255,255,.2)">Adult Swim</div>
+      <div class="ch-card" style="color:#00CFFF;border-color:rgba(0,207,255,.3)">Cartoon Network</div>
+      <div class="ch-card" style="color:#1F5AA8;border-color:rgba(31,90,168,.35)">Disney Channel</div>
     </div>
   </div>
 </section>
@@ -1097,27 +1156,9 @@ footer h4{font-size:.875rem;font-weight:600}
       </div>
     </div>
     <div class="footer-bottom">
-      <!-- Payment methods -->
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08)">
-        <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-right:.25rem">Secure Payments:</span>
-        <!-- Mastercard -->
-        <svg width="42" height="28" viewBox="0 0 42 28" fill="none"><rect width="42" height="28" rx="5" fill="#1A1F71" opacity=".08"/><circle cx="16" cy="14" r="9" fill="#EB001B"/><circle cx="26" cy="14" r="9" fill="#F79E1B"/><path d="M21 7.6a9 9 0 010 12.8A9 9 0 0121 7.6z" fill="#FF5F00"/></svg>
-        <!-- Visa -->
-        <svg width="52" height="28" viewBox="0 0 52 28" fill="none"><rect width="52" height="28" rx="5" fill="#F7F7F7" opacity=".1"/><text x="8" y="19" font-family="Arial" font-size="14" font-weight="900" fill="#1A1F71">VISA</text></svg>
-        <!-- Amex -->
-        <svg width="48" height="28" viewBox="0 0 48 28" fill="none"><rect width="48" height="28" rx="5" fill="#2E77BC"/><text x="6" y="19" font-family="Arial" font-size="10" font-weight="700" fill="white">AMEX</text></svg>
-        <!-- PayPal -->
-        <svg width="66" height="28" viewBox="0 0 66 28" fill="none"><rect width="66" height="28" rx="5" fill="#F7F7F7" opacity=".08"/><text x="8" y="19" font-family="Arial" font-size="11" font-weight="700" fill="#003087">Pay</text><text x="27" y="19" font-family="Arial" font-size="11" font-weight="700" fill="#009CDE">Pal</text></svg>
-        <!-- Bitcoin -->
-        <svg width="40" height="28" viewBox="0 0 40 28" fill="none"><rect width="40" height="28" rx="5" fill="rgba(247,147,26,.1)" stroke="rgba(247,147,26,.3)" stroke-width="1"/><text x="11" y="20" font-family="Arial" font-size="14" font-weight="900" fill="#F7931A">₿</text></svg>
-        <!-- USDT -->
-        <svg width="52" height="28" viewBox="0 0 52 28" fill="none"><rect width="52" height="28" rx="5" fill="rgba(38,161,123,.1)" stroke="rgba(38,161,123,.3)" stroke-width="1"/><text x="8" y="19" font-family="Arial" font-size="11" font-weight="700" fill="#26A17B">USDT</text></svg>
-        <!-- Bank Transfer -->
-        <svg width="66" height="28" viewBox="0 0 66 28" fill="none"><rect width="66" height="28" rx="5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)" stroke-width="1"/><text x="6" y="18" font-family="Arial" font-size="9" font-weight="700" fill="rgba(255,255,255,.7)">BANK</text><text x="6" y="25" font-family="Arial" font-size="7" font-weight="600" fill="rgba(255,255,255,.5)">TRANSFER</text></svg>
-        <!-- Google Pay -->
-        <svg width="62" height="28" viewBox="0 0 62 28" fill="none"><rect width="62" height="28" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="8" y="19" font-family="Arial" font-size="10" font-weight="700"><tspan fill="#4285F4">G</tspan><tspan fill="rgba(255,255,255,.75)"> Pay</tspan></text></svg>
-        <!-- Apple Pay -->
-        <svg width="68" height="28" viewBox="0 0 68 28" fill="none"><rect width="68" height="28" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="8" y="19" font-family="Arial" font-size="10" font-weight="700" fill="rgba(255,255,255,.85)"> Pay</text><text x="8" y="19" font-family="Arial" font-size="13" font-weight="700" fill="rgba(255,255,255,.85)"></text></svg>
+      <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08);text-align:center">
+        <p style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3);margin-bottom:.875rem">Secure Payments Accepted</p>
+        <img src="/assets/img/payment-methods.png" alt="Accepted payment methods: Mastercard, Maestro, Visa, Amex, PayPal, Klarna, Bank Transfer, Google Pay, Apple Pay" style="max-width:520px;width:100%;height:auto;opacity:.9;filter:brightness(.95)" loading="lazy"/>
       </div>
       <p>&copy; 2026 Mojo4KTV.com &mdash; All rights reserved.</p>
       <small>Mojo 4K is intended for personal use only. Users are responsible for compliance with local laws.</small>
