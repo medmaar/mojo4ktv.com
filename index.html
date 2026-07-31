@@ -133,12 +133,13 @@ nav.scrolled{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-bac
 .mobile-menu .mobile-cta{margin-top:.75rem;text-align:center;background:#E74F51;border-radius:.75rem;padding:.875rem;font-weight:600}
 
 /* HERO */
-.hero{padding:13rem 0 6rem;position:relative;overflow:hidden}
-@media(min-width:640px){.hero{padding:11rem 0 7rem}}
-@media(min-width:768px){.hero{padding:10rem 0 8rem}}
-.hero-inner{display:flex;flex-direction:column;align-items:center;gap:2rem}
-@media(min-width:768px){.hero-inner{flex-direction:row;gap:2rem;margin:1.5rem 0}}
-.hero-content{flex:1}
+.hero{position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;padding:0}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,21,43,.93) 0%,rgba(8,21,43,.78) 50%,rgba(8,21,43,.2) 100%)}
+.hero-inner{position:relative;z-index:1;width:100%;padding:7rem 0 4rem}
+@media(min-width:768px){.hero-inner{padding:9rem 0 5rem}}
+.hero-content{max-width:640px;flex:none}
 .hero-pill{margin-bottom:1.25rem;display:inline-flex;align-items:center;gap:.625rem;border-radius:9999px;border:1px solid rgba(231,79,81,.5);background:rgba(231,79,81,.12);padding:.5rem 1rem;font-size:.8125rem;font-weight:600;letter-spacing:.025em;box-shadow:0 0 28px rgba(231,79,81,.22)}
 @media(min-width:640px){.hero-pill{font-size:.875rem}}
 h1{font-size:1.75rem;font-weight:700;line-height:1.2;text-wrap:balance}
@@ -456,6 +457,9 @@ footer h4{font-size:.875rem;font-weight:600}
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg">
+    <img src="/assets/img/hero-lebron.jpg" alt="Mojo 4K IPTV — Stream live NBA, NHL, NFL and all sports in 4K" width="1280" height="720" loading="eager" fetchpriority="high"/>
+  </div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
@@ -467,18 +471,15 @@ footer h4{font-size:.875rem;font-weight:600}
           <span>Premium 4K Streaming &nbsp;<span style="color:#FF7E80">·</span>&nbsp; 50,000+ Channels &nbsp;<span style="color:#FF7E80">·</span>&nbsp; HD, FHD &amp; 4K</span>
         </div>
         <h1>Best <span class="text-accent">IPTV Service</span> &ndash; Premium 4K Streaming Subscription</h1>
-        <p class="hero-sub">An <span style="color:rgba(255,255,255,.9);font-weight:500">IPTV subscription</span> built for quality &mdash; 50,000+ live channels plus an unlimited, weekly-updated on-demand library of movies &amp; series in 4K/FHD. The ultimate viewing experience with <strong>Mojo 4K</strong>.</p>
+        <p class="hero-sub">An <span style="color:rgba(255,255,255,.9);font-weight:500">IPTV subscription</span> built for quality &mdash; 50,000+ live channels plus 300,000+ movies &amp; series in 4K/FHD. NHL &middot; NBA &middot; NFL &middot; UFC &middot; PPV all included.</p>
         <div class="hero-cta">
           <a class="btn-primary" href="#pricing">
             Start Now
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1.25rem;width:1.25rem"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <div class="hero-img-wrap" style="position:relative;border-radius:1.25rem;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.65)">
-          <img src="/assets/img/hero-lebron.jpg" alt="Mojo 4K IPTV &mdash; Stream live NBA, NHL, NFL and all sports in 4K" width="1280" height="720" style="position:relative;z-index:10;width:100%;height:auto;display:block" loading="eager" fetchpriority="high"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(8,21,43,.55) 0%,transparent 40%),linear-gradient(to top,rgba(8,21,43,.45) 0%,transparent 35%);z-index:11;pointer-events:none"></div>
+          <a class="btn-ghost" href="/contact.html" style="display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 1.5rem;border-radius:9999px;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-weight:600;text-decoration:none;transition:all .2s;margin-left:.75rem">
+            &#9654; Free Trial
+          </a>
         </div>
       </div>
     </div>
@@ -503,9 +504,37 @@ footer h4{font-size:.875rem;font-weight:600}
   </div>
 </section>
 
-<!-- WHY MOJO 4K -->
-<section class="section">
-  <div class="container">
+<!-- CHANNEL SLIDESHOW -->
+<section style="background:#060f1e;padding:0;border-bottom:1px solid rgba(255,255,255,.07)">
+  <style>
+    .ch-strip-wrap{overflow:hidden;padding:14px 0;mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%)}
+    .ch-strip-track{display:flex;align-items:center;gap:10px;width:max-content;animation:ch-scroll 38s linear infinite}
+    .ch-strip-track.reverse{animation-direction:reverse;animation-duration:44s}
+    @keyframes ch-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .ch-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:9px 18px;font-size:.8rem;font-weight:700;color:rgba(232,224,255,.8);white-space:nowrap;flex-shrink:0}
+    .ch-pill.sport{border-color:rgba(231,79,81,.3);color:rgba(255,180,180,.95)}
+    .ch-pill.news{border-color:rgba(59,130,246,.3);color:rgba(147,197,253,.95)}
+    .ch-pill.movie{border-color:rgba(139,92,246,.3);color:rgba(196,181,253,.95)}
+    .ch-pill.ppv{background:rgba(231,79,81,.12);border-color:rgba(231,79,81,.45);color:#FF7E80;font-weight:800}
+  </style>
+  <div style="text-align:center;padding:2rem 1rem 1rem">
+    <span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.3)">50,000+ Live Channels &bull; Sports &bull; Movies &bull; News &bull; Kids &bull; Entertainment</span>
+  </div>
+  <div class="ch-strip-wrap">
+    <div class="ch-strip-track">
+      <span class="ch-pill ppv">💥 PPV Events</span><span class="ch-pill sport">🏒 NHL Hockey</span><span class="ch-pill sport">🏀 NBA Basketball</span><span class="ch-pill sport">🏈 NFL Football</span><span class="ch-pill sport">⚾ MLB Baseball</span><span class="ch-pill sport">⚽ MLS Soccer</span><span class="ch-pill sport">🥊 UFC &amp; Boxing</span><span class="ch-pill sport">🏎️ Formula 1</span><span class="ch-pill sport">🎾 Tennis</span><span class="ch-pill">ESPN</span><span class="ch-pill">TSN</span><span class="ch-pill">Sportsnet</span><span class="ch-pill">NBC Sports</span><span class="ch-pill">NFL Network</span><span class="ch-pill">NBA TV</span><span class="ch-pill">beIN Sports</span><span class="ch-pill">Fox Sports</span><span class="ch-pill">DAZN</span><span class="ch-pill">Sky Sports</span><span class="ch-pill sport">🏈 CFL</span>
+      <span class="ch-pill ppv">💥 PPV Events</span><span class="ch-pill sport">🏒 NHL Hockey</span><span class="ch-pill sport">🏀 NBA Basketball</span><span class="ch-pill sport">🏈 NFL Football</span><span class="ch-pill sport">⚾ MLB Baseball</span><span class="ch-pill sport">⚽ MLS Soccer</span><span class="ch-pill sport">🥊 UFC &amp; Boxing</span><span class="ch-pill sport">🏎️ Formula 1</span><span class="ch-pill sport">🎾 Tennis</span><span class="ch-pill">ESPN</span><span class="ch-pill">TSN</span><span class="ch-pill">Sportsnet</span><span class="ch-pill">NBC Sports</span><span class="ch-pill">NFL Network</span><span class="ch-pill">NBA TV</span><span class="ch-pill">beIN Sports</span><span class="ch-pill">Fox Sports</span><span class="ch-pill">DAZN</span><span class="ch-pill">Sky Sports</span><span class="ch-pill sport">🏈 CFL</span>
+    </div>
+  </div>
+  <div class="ch-strip-wrap" style="padding-bottom:24px">
+    <div class="ch-strip-track reverse">
+      <span class="ch-pill movie">🎬 Netflix</span><span class="ch-pill movie">🎬 Disney+</span><span class="ch-pill movie">🎬 HBO Max</span><span class="ch-pill movie">🎬 Prime Video</span><span class="ch-pill movie">🎬 Apple TV+</span><span class="ch-pill movie">🎬 Paramount+</span><span class="ch-pill news">📺 CBC</span><span class="ch-pill news">📺 CTV</span><span class="ch-pill news">📺 Global TV</span><span class="ch-pill news">📺 CNN</span><span class="ch-pill news">📺 Fox News</span><span class="ch-pill news">📺 BBC World</span><span class="ch-pill">Discovery</span><span class="ch-pill">Nat Geo</span><span class="ch-pill">History Channel</span><span class="ch-pill">Comedy Central</span><span class="ch-pill">Adult Swim</span><span class="ch-pill">Cartoon Network</span><span class="ch-pill">Disney Channel</span>
+      <span class="ch-pill movie">🎬 Netflix</span><span class="ch-pill movie">🎬 Disney+</span><span class="ch-pill movie">🎬 HBO Max</span><span class="ch-pill movie">🎬 Prime Video</span><span class="ch-pill movie">🎬 Apple TV+</span><span class="ch-pill movie">🎬 Paramount+</span><span class="ch-pill news">📺 CBC</span><span class="ch-pill news">📺 CTV</span><span class="ch-pill news">📺 Global TV</span><span class="ch-pill news">📺 CNN</span><span class="ch-pill news">📺 Fox News</span><span class="ch-pill news">📺 BBC World</span><span class="ch-pill">Discovery</span><span class="ch-pill">Nat Geo</span><span class="ch-pill">History Channel</span><span class="ch-pill">Comedy Central</span><span class="ch-pill">Adult Swim</span><span class="ch-pill">Cartoon Network</span><span class="ch-pill">Disney Channel</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MOJO 4K SECTION -->
     <div class="section-header wide">
       <span class="badge"><span class="badge-dot"></span>Premium IPTV Servers</span>
       <h2>Premium Servers &mdash; <span class="underline-accent">Closer to You</span> Means Smoother, Sharper Streaming</h2>
@@ -1068,7 +1097,29 @@ footer h4{font-size:.875rem;font-weight:600}
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Mojo4KTV.com &mdash; All rights reserved.</p>
+      <!-- Payment methods -->
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08)">
+        <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-right:.25rem">Secure Payments:</span>
+        <!-- Mastercard -->
+        <svg width="42" height="28" viewBox="0 0 42 28" fill="none"><rect width="42" height="28" rx="5" fill="#1A1F71" opacity=".08"/><circle cx="16" cy="14" r="9" fill="#EB001B"/><circle cx="26" cy="14" r="9" fill="#F79E1B"/><path d="M21 7.6a9 9 0 010 12.8A9 9 0 0121 7.6z" fill="#FF5F00"/></svg>
+        <!-- Visa -->
+        <svg width="52" height="28" viewBox="0 0 52 28" fill="none"><rect width="52" height="28" rx="5" fill="#F7F7F7" opacity=".1"/><text x="8" y="19" font-family="Arial" font-size="14" font-weight="900" fill="#1A1F71">VISA</text></svg>
+        <!-- Amex -->
+        <svg width="48" height="28" viewBox="0 0 48 28" fill="none"><rect width="48" height="28" rx="5" fill="#2E77BC"/><text x="6" y="19" font-family="Arial" font-size="10" font-weight="700" fill="white">AMEX</text></svg>
+        <!-- PayPal -->
+        <svg width="66" height="28" viewBox="0 0 66 28" fill="none"><rect width="66" height="28" rx="5" fill="#F7F7F7" opacity=".08"/><text x="8" y="19" font-family="Arial" font-size="11" font-weight="700" fill="#003087">Pay</text><text x="27" y="19" font-family="Arial" font-size="11" font-weight="700" fill="#009CDE">Pal</text></svg>
+        <!-- Bitcoin -->
+        <svg width="40" height="28" viewBox="0 0 40 28" fill="none"><rect width="40" height="28" rx="5" fill="rgba(247,147,26,.1)" stroke="rgba(247,147,26,.3)" stroke-width="1"/><text x="11" y="20" font-family="Arial" font-size="14" font-weight="900" fill="#F7931A">₿</text></svg>
+        <!-- USDT -->
+        <svg width="52" height="28" viewBox="0 0 52 28" fill="none"><rect width="52" height="28" rx="5" fill="rgba(38,161,123,.1)" stroke="rgba(38,161,123,.3)" stroke-width="1"/><text x="8" y="19" font-family="Arial" font-size="11" font-weight="700" fill="#26A17B">USDT</text></svg>
+        <!-- Bank Transfer -->
+        <svg width="66" height="28" viewBox="0 0 66 28" fill="none"><rect width="66" height="28" rx="5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)" stroke-width="1"/><text x="6" y="18" font-family="Arial" font-size="9" font-weight="700" fill="rgba(255,255,255,.7)">BANK</text><text x="6" y="25" font-family="Arial" font-size="7" font-weight="600" fill="rgba(255,255,255,.5)">TRANSFER</text></svg>
+        <!-- Google Pay -->
+        <svg width="62" height="28" viewBox="0 0 62 28" fill="none"><rect width="62" height="28" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="8" y="19" font-family="Arial" font-size="10" font-weight="700"><tspan fill="#4285F4">G</tspan><tspan fill="rgba(255,255,255,.75)"> Pay</tspan></text></svg>
+        <!-- Apple Pay -->
+        <svg width="68" height="28" viewBox="0 0 68 28" fill="none"><rect width="68" height="28" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="8" y="19" font-family="Arial" font-size="10" font-weight="700" fill="rgba(255,255,255,.85)"> Pay</text><text x="8" y="19" font-family="Arial" font-size="13" font-weight="700" fill="rgba(255,255,255,.85)"></text></svg>
+      </div>
+      <p>&copy; 2026 Mojo4KTV.com &mdash; All rights reserved.</p>
       <small>Mojo 4K is intended for personal use only. Users are responsible for compliance with local laws.</small>
     </div>
   </div>
