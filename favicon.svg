@@ -1,11 +1,10 @@
-<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 120 48" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ff6b62"/>
-      <stop offset="1" stop-color="#e0443f"/>
-    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&amp;display=swap');
+      text { font-family: 'Barlow Condensed', Impact, Arial Black, sans-serif; font-weight: 800; font-size: 42px; }
+    </style>
   </defs>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
-  <path d="M12 44V20l9 13 9-13v24" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M36 44V20h4.5c4.7 0 8 3.5 8 8v8c0 4.5-3.3 8-8 8H36z" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="2" y="42" fill="#ffffff">Mojo</text>
+  <text x="72" y="42" fill="#FF6B00">4K</text>
 </svg>
