@@ -19,6 +19,9 @@
 <meta name="twitter:title" content="Best IPTV Service – Mojo 4K IPTV Subscription | Mojo4KTV.com"/>
 <meta name="twitter:description" content="Premium IPTV with 50,000+ channels in 4K Ultra HD. Stream sports, movies &amp; more."/>
 <meta name="twitter:image" content="https://mojo4ktv.com/og-image.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="shortcut icon" href="/favicon.svg"/>
 <link rel="apple-touch-icon" href="/favicon.svg"/>
@@ -107,7 +110,10 @@ nav.scrolled{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-bac
 @media(min-width:640px){.nav-inner{padding:0 1.5rem}}
 @media(min-width:1024px){.nav-inner{padding:0 2rem}}
 .nav-logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
-.nav-logo-text{font-size:1.25rem;font-weight:700}
+.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:1.85rem;font-weight:800;letter-spacing:-.01em;line-height:1;display:flex;align-items:baseline;gap:0}
+.logo-white{color:#fff}
+.logo-orange{color:#FF6B00}
+.logo-tv{font-size:.6rem;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-left:.15em;align-self:flex-start;margin-top:.2em}
 .nav-links{display:none;flex:1;align-items:center;justify-content:center;gap:.25rem}
 @media(min-width:1024px){.nav-links{display:flex}}
 .nav-link{display:inline-flex;align-items:center;padding:.5rem .75rem;border-radius:.5rem;font-size:.985rem;font-weight:500;color:rgba(255,255,255,.9);transition:background .2s;white-space:nowrap}
@@ -417,19 +423,7 @@ footer h4{font-size:.875rem;font-weight:600}
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <!-- Mojo 4K Logo SVG -->
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:2.25rem;width:2.25rem;flex-shrink:0" aria-hidden="true">
-        <defs>
-          <linearGradient id="mojo_grad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#ff6b62"/>
-            <stop offset="1" stop-color="#e0443f"/>
-          </linearGradient>
-        </defs>
-        <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#mojo_grad)"/>
-        <path d="M12 44V20l9 13 9-13v24" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M36 44V20h4.5c4.7 0 8 3.5 8 8v8c0 4.5-3.3 8-8 8H36z" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="nav-logo-text">Mojo <span style="color:#FF7E80">4K</span><span style="font-size:.875rem;font-weight:400;color:rgba(255,255,255,.5)">TV</span></span>
+      <span class="nav-logo-text"><span class="logo-white">Mojo</span><span class="logo-orange">4K</span><span class="logo-tv">TV</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="/" class="nav-link">Home</a></li>
@@ -1043,14 +1037,10 @@ footer h4{font-size:.875rem;font-weight:600}
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" style="display:flex;align-items:center;gap:.625rem">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:2.5rem;width:2.5rem;flex-shrink:0" aria-hidden="true">
-            <defs><linearGradient id="mojo_foot" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff6b62"/><stop offset="1" stop-color="#e0443f"/></linearGradient></defs>
-            <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#mojo_foot)"/>
-            <path d="M12 44V20l9 13 9-13v24" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36 44V20h4.5c4.7 0 8 3.5 8 8v8c0 4.5-3.3 8-8 8H36z" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span style="font-size:1.25rem;font-weight:700;color:#fff">Mojo <span style="color:#FF7E80">4K</span><span style="font-size:.875rem;font-weight:400;color:rgba(255,255,255,.4)">TV</span></span>
+        <a href="/" style="display:inline-flex;align-items:baseline;text-decoration:none">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:2.25rem;font-weight:800;letter-spacing:-.01em;line-height:1;display:flex;align-items:baseline;gap:0">
+            <span style="color:#fff">Mojo</span><span style="color:#FF6B00">4K</span><span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-left:.15em;align-self:flex-start;margin-top:.25em">TV</span>
+          </span>
         </a>
         <p>Premium IPTV subscription powered by high-performance server infrastructure &mdash; delivering the smoothest streaming experience for viewers across North America and worldwide.</p>
         <span class="footer-status"><span class="status-dot" aria-hidden="true"></span>Servers Active</span>
