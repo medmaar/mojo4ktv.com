@@ -136,17 +136,17 @@ nav.scrolled{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-bac
 .hero{position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;padding:0}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,21,43,.93) 0%,rgba(8,21,43,.78) 50%,rgba(8,21,43,.2) 100%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,21,43,.97) 0%,rgba(8,21,43,.95) 28%,rgba(8,21,43,.7) 48%,rgba(8,21,43,.2) 70%,transparent 88%)}
 .hero-inner{position:relative;z-index:1;width:100%;padding:7rem 0 4rem}
 @media(min-width:768px){.hero-inner{padding:9rem 0 5rem}}
-.hero-content{max-width:640px;flex:none}
+.hero-content{max-width:500px;flex:none}
 .hero-pill{margin-bottom:1.25rem;display:inline-flex;align-items:center;gap:.625rem;border-radius:9999px;border:1px solid rgba(231,79,81,.5);background:rgba(231,79,81,.12);padding:.5rem 1rem;font-size:.8125rem;font-weight:600;letter-spacing:.025em;box-shadow:0 0 28px rgba(231,79,81,.22)}
 @media(min-width:640px){.hero-pill{font-size:.875rem}}
 h1{font-size:1.75rem;font-weight:700;line-height:1.2;text-wrap:balance}
 @media(min-width:768px){h1{font-size:2.5rem}}
 @media(min-width:1024px){h1{font-size:3.75rem}}
-.hero-sub{margin-top:1rem;font-size:1.125rem;color:rgba(255,255,255,.75);line-height:1.6}
-@media(min-width:768px){.hero-sub{font-size:1.5rem}}
+.hero-sub{margin-top:.875rem;font-size:.97rem;color:rgba(255,255,255,.75);line-height:1.65}
+@media(min-width:768px){.hero-sub{font-size:1.1rem}}
 .hero-cta{margin:2.5rem 0}
 .hero-img{flex:1;display:flex;align-items:center;justify-content:center}
 .hero-img-wrap{position:relative;width:100%}
@@ -572,6 +572,54 @@ nav.scrolled{box-shadow:0 4px 30px rgba(231,79,81,.12),0 1px 0 rgba(255,255,255,
 img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-radius:2px}
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+</style>
+
+<style id="hero-fix">
+/* ── PURCHASE NOTIFICATION ── */
+.np-toast{position:fixed;bottom:90px;left:20px;z-index:9998;background:#fff;
+  border-radius:14px;padding:14px 40px 14px 16px;min-width:200px;
+  box-shadow:0 8px 32px rgba(0,0,0,.35),0 2px 8px rgba(0,0,0,.15);
+  transform:translateX(-300px);opacity:0;
+  transition:transform .42s cubic-bezier(.22,1,.36,1),opacity .42s ease;
+  pointer-events:auto}
+.np-toast.np-show{transform:translateX(0);opacity:1}
+.np-close{position:absolute;top:8px;right:10px;background:none;border:none;
+  font-size:1.1rem;color:#bbb;cursor:pointer;line-height:1;padding:2px 5px;
+  transition:color .2s;font-family:inherit}
+.np-close:hover{color:#666}
+.np-body{display:flex;align-items:center;gap:11px}
+.np-icon-wrap{width:38px;height:38px;background:#E74F51;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.np-title{font-weight:800;font-size:.875rem;color:#111;line-height:1.2}
+.np-time{font-size:.74rem;color:#999;margin-top:2px}
+@media(max-width:480px){.np-toast{bottom:78px;left:12px;min-width:180px}}
+@media(prefers-reduced-motion:reduce){.np-toast{transition:none !important}}
+/* Hero layout fix — left column, image visible right */
+.hero-content h1{font-size:clamp(26px,3.5vw,52px) !important;line-height:1.1;max-width:490px}
+.hero-inner{display:flex;align-items:center}
+@media(min-width:900px){
+  .hero-inner{padding:8rem 0 4rem}
+  .hero-content{max-width:500px}
+}
+/* ── PURCHASE NOTIFICATION (MapleStreamTV style) ── */
+.np-toast{position:fixed;bottom:90px;left:20px;z-index:9998;background:#fff;
+  border-radius:14px;padding:14px 36px 14px 16px;min-width:200px;
+  box-shadow:0 8px 32px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.15);
+  transform:translateX(-280px);opacity:0;
+  transition:transform .42s cubic-bezier(.22,1,.36,1),opacity .42s ease;
+  pointer-events:auto}
+.np-toast.np-show{transform:translateX(0);opacity:1}
+.np-close{position:absolute;top:8px;right:10px;background:none;border:none;
+  font-size:1rem;color:#bbb;cursor:pointer;line-height:1;padding:2px 4px;
+  transition:color .2s;font-family:inherit}
+.np-close:hover{color:#666}
+.np-body{display:flex;align-items:center;gap:11px}
+.np-icon-wrap{width:36px;height:36px;background:#E74F51;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.np-title{font-weight:800;font-size:.875rem;color:#111;line-height:1.2}
+.np-time{font-size:.74rem;color:#888;margin-top:2px}
+@media(max-width:480px){.np-toast{bottom:76px;left:12px;min-width:180px}}
+@media(prefers-reduced-motion:reduce){.np-toast{transition:none}}
 </style>
 </head>
 <body>
@@ -2164,5 +2212,41 @@ document.querySelectorAll('.marquee-track,.mbr-track,.mss-ticker-track,.mms-ch-t
 })();
 </script>
 
+
+<!-- Purchase notification -->
+<div id="np-toast" class="np-toast" role="status" aria-live="polite">
+  <button class="np-close" id="np-close-btn" aria-label="Close">&#215;</button>
+  <div class="np-body">
+    <div class="np-icon-wrap">&#128722;</div>
+    <div>
+      <div class="np-title">New subscription</div>
+      <div class="np-time" id="np-time">just now</div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var times=["just now", "a moment ago", "1 min ago", "2 min ago", "just now", "3 min ago", "just now", "1 min ago", "just now", "4 min ago", "2 min ago", "just now"];
+  var idx=Math.floor(Math.random()*times.length);
+  var toast=document.getElementById('np-toast');
+  var closeBtn=document.getElementById('np-close-btn');
+  if(!toast)return;
+  var dismissed=false;
+  if(closeBtn)closeBtn.addEventListener('click',function(){
+    dismissed=true;toast.classList.remove('np-show');
+  });
+  function show(){
+    if(dismissed)return;
+    document.getElementById('np-time').textContent=times[idx%times.length];
+    toast.classList.add('np-show');
+    idx++;
+    setTimeout(function(){
+      toast.classList.remove('np-show');
+      if(!dismissed)setTimeout(show,(10+Math.random()*15)*1000);
+    },6000);
+  }
+  setTimeout(show,(4+Math.random()*4)*1000);
+})();
+</script>
 </body>
 </html>
