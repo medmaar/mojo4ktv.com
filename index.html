@@ -447,6 +447,240 @@ footer h4{font-size:.875rem;font-weight:600}
   z-index:-1;filter:blur(18px);opacity:.7;transition:opacity .3s}
 .price-card.featured:hover::before{opacity:1}
 </style>
+
+<style id="mojo-anim">
+/* ══════════════════════════════════════════
+   MOJO 4K — COMPREHENSIVE ANIMATION SYSTEM
+══════════════════════════════════════════ */
+
+/* ─── Keyframes ─── */
+@keyframes hero-glow-breathe{
+  0%,100%{opacity:.55;transform:scale(1) translateY(0)}
+  50%{opacity:.9;transform:scale(1.12) translateY(-18px)}}
+@keyframes orb-drift-a{
+  0%,100%{transform:translate(0,0) scale(1);opacity:.45}
+  33%{transform:translate(30px,-25px) scale(1.08);opacity:.7}
+  66%{transform:translate(-15px,20px) scale(.95);opacity:.55}}
+@keyframes orb-drift-b{
+  0%,100%{transform:translate(0,0) scale(1);opacity:.4}
+  40%{transform:translate(-28px,18px) scale(1.1);opacity:.65}
+  70%{transform:translate(20px,-12px) scale(.9);opacity:.5}}
+@keyframes orb-drift-c{
+  0%,100%{transform:translate(0,0) scale(1);opacity:.35}
+  50%{transform:translate(22px,30px) scale(1.06);opacity:.6}}
+@keyframes particle-rise{
+  0%{transform:translateY(0) translateX(0) scale(1);opacity:0}
+  10%{opacity:.7}80%{opacity:.3}
+  100%{transform:translateY(-120px) translateX(var(--pdx,20px)) scale(.3);opacity:0}}
+@keyframes star-twinkle{
+  0%,100%{opacity:.15;transform:scale(.8)}
+  50%{opacity:.9;transform:scale(1.3)}}
+@keyframes num-rise{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}}
+@keyframes card-enter{
+  from{transform:translateY(40px) scale(.97);opacity:0}
+  to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes shimmer-sweep{
+  0%{background-position:-200% center}
+  100%{background-position:200% center}}
+@keyframes border-glow-spin{
+  0%{filter:hue-rotate(0deg)}
+  100%{filter:hue-rotate(360deg)}}
+@keyframes cta-arrow-bounce{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(5px)}}
+@keyframes ripple-out{
+  0%{transform:scale(0);opacity:.6}
+  100%{transform:scale(4);opacity:0}}
+@keyframes count-flip{
+  0%{transform:rotateX(-90deg);opacity:0}
+  60%{transform:rotateX(8deg);opacity:1}
+  100%{transform:rotateX(0);opacity:1}}
+@keyframes section-slide-up{
+  from{transform:translateY(50px);opacity:0}
+  to{transform:translateY(0);opacity:1}}
+@keyframes feat-card-glow{
+  0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 0 0 rgba(231,79,81,0)}
+  50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 30px rgba(231,79,81,.18)}}
+@keyframes hero-pill-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}}
+@keyframes live-ring{
+  0%{box-shadow:0 0 0 0 rgba(251,191,36,.7)}
+  70%{box-shadow:0 0 0 8px rgba(251,191,36,0)}
+  100%{box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+@keyframes bg-gradient-shift{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}}
+@keyframes price-glow-intense{
+  0%,100%{box-shadow:0 24px 60px -18px rgba(231,79,81,.6),0 0 0 1px rgba(231,79,81,.4)}
+  50%{box-shadow:0 30px 80px -10px rgba(231,79,81,1),0 0 50px rgba(231,79,81,.35),0 0 0 1px rgba(231,79,81,.7)}}
+@keyframes badge-spin-bounce{
+  0%,100%{transform:rotate(-3deg) scale(1)}
+  50%{transform:rotate(3deg) scale(1.1)}}
+@keyframes spotlight-move{
+  0%{background-position:0% 50%;opacity:.4}
+  50%{background-position:100% 50%;opacity:.7}
+  100%{background-position:0% 50%;opacity:.4}}
+
+/* ─── Page BG animated gradient ─── */
+.page-bg{
+  background:radial-gradient(ellipse 80% 60% at 10% 15%,rgba(231,79,81,.15) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 80%,rgba(99,102,241,.12) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%,rgba(59,130,246,.08) 0%,transparent 60%),
+    #0a1a35;
+  background-size:200% 200%;
+  animation:bg-gradient-shift 12s ease-in-out infinite;}
+
+/* ─── Orbs enhanced ─── */
+.page-bg .orb-a{animation:orb-drift-a 9s ease-in-out infinite}
+.page-bg .orb-b{animation:orb-drift-b 11s ease-in-out infinite}
+.page-bg .orb-c{animation:orb-drift-c 8s ease-in-out infinite}
+
+/* ─── Hero pill levitate ─── */
+.hero-pill{animation:hero-pill-float 4s ease-in-out infinite}
+
+/* ─── Live dot enhanced ring ─── */
+.live-dot--gold{animation:live-ring 2s ease-out infinite,dot-ping 2s ease-in-out infinite}
+.badge-dot{animation:live-ring 2s .5s ease-out infinite}
+
+/* ─── Pricing cards ─── */
+.price-card{
+  position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-color .3s}
+.price-card::before{
+  content:'';position:absolute;inset:-1px;border-radius:inherit;
+  background:linear-gradient(135deg,rgba(231,79,81,.0),rgba(231,79,81,.0));
+  z-index:0;transition:background .3s}
+.price-card:not(.featured):hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 24px 60px -12px rgba(231,79,81,.35),0 0 0 1px rgba(231,79,81,.45),0 0 50px rgba(231,79,81,.1)}
+.price-card:not(.featured):hover::before{
+  background:linear-gradient(135deg,rgba(231,79,81,.12),rgba(231,79,81,.03))}
+
+/* Featured card intense glow */
+.price-card.featured{
+  animation:price-glow-intense 3s ease-in-out infinite;
+  position:relative}
+.price-card.featured::after{
+  content:'';position:absolute;inset:-2px;border-radius:inherit;
+  background:linear-gradient(90deg,rgba(231,79,81,.5),rgba(255,180,100,.3),rgba(231,79,81,.5));
+  background-size:200%;
+  animation:shimmer-sweep 3s linear infinite;
+  z-index:-1;filter:blur(6px)}
+
+/* ─── Discount badge bounce ─── */
+.discount-badge-50{animation:badge-spin-bounce 2.2s ease-in-out infinite}
+
+/* ─── Price number shimmer ─── */
+.price-card.featured .price-num{
+  background:linear-gradient(90deg,#fff 0%,#ffeaa7 40%,#fff 60%,#ffeaa7 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;animation:shimmer-sweep 2.5s linear infinite}
+
+/* ─── Feature cards ─── */
+.feat-card{
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;
+  animation:feat-card-glow 4s ease-in-out infinite}
+.feat-card:nth-child(2){animation-delay:.6s}
+.feat-card:nth-child(3){animation-delay:1.2s}
+.feat-card:nth-child(4){animation-delay:1.8s}
+.feat-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),
+    0 20px 50px -12px rgba(231,79,81,.3),
+    0 0 0 1px rgba(231,79,81,.3)}
+.feat-icon{transition:all .3s cubic-bezier(.34,1.56,.64,1)}
+.feat-card:hover .feat-icon{
+  background:#E74F51;color:#fff;
+  transform:scale(1.2) rotate(-5deg);
+  box-shadow:0 8px 20px rgba(231,79,81,.5)}
+
+/* ─── Comparison table row hover ─── */
+.compare-row{transition:background .2s,transform .2s}
+.compare-row:hover{background:rgba(231,79,81,.06);transform:scaleX(1.005)}
+
+/* ─── Stats row ─── */
+.stat-num{
+  background:linear-gradient(135deg,#fff 0%,rgba(255,180,180,.9) 50%,#fff 100%);
+  background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;animation:shimmer-sweep 4s linear infinite}
+.stat{transition:transform .25s}
+.stat:hover{transform:scale(1.06)}
+
+/* ─── CTA buttons shimmer ─── */
+.btn-primary,.price-btn-solid{
+  position:relative;overflow:hidden}
+.btn-primary::after,.price-btn-solid::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  animation:shimmer-sweep 3s linear infinite;
+  pointer-events:none}
+
+/* CTA arrow bounce */
+.btn-primary svg,.price-btn-solid svg{
+  animation:cta-arrow-bounce 1.8s ease-in-out infinite;display:inline-block}
+
+/* ─── Hero section ─── */
+.hero{position:relative;overflow:hidden}
+#hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.7}
+
+/* ─── Scroll reveal classes (set by JS) ─── */
+.reveal-ready{opacity:0;transform:translateY(40px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-visible{opacity:1 !important;transform:none !important}
+.reveal-left{opacity:0;transform:translateX(-40px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-right{opacity:0;transform:translateX(40px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-left.reveal-visible,.reveal-right.reveal-visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ─── Section headers animated underline ─── */
+h2 .underline-accent{
+  position:relative;text-decoration:none}
+h2 .underline-accent::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:3px;
+  background:#E74F51;border-radius:2px;
+  transition:width .8s cubic-bezier(.22,1,.36,1)}
+.reveal-visible h2 .underline-accent::after{width:100%}
+
+/* ─── Device cards ─── */
+.dc-new{
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),
+    box-shadow .25s,border-color .25s}
+.dc-new:hover{
+  transform:translateY(-6px) scale(1.04);
+  box-shadow:0 12px 30px rgba(0,0,0,.2),0 0 0 2px currentColor}
+
+/* ─── Nav scroll glow ─── */
+nav.scrolled{
+  box-shadow:0 4px 30px rgba(231,79,81,.15),0 1px 0 rgba(255,255,255,.1);
+  background:rgba(10,26,53,.97)}
+
+/* ─── Review cards ─── */
+.rv-tp-inner{transition:transform .3s,box-shadow .3s}
+.rv-tp-inner:hover{transform:translateY(-4px);
+  box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 0 1px rgba(0,183,122,.3)}
+.rv-mini-card{transition:transform .25s,box-shadow .25s}
+.rv-mini-card:hover{transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.5),0 0 0 1px rgba(37,211,102,.25)}
+
+/* ─── WhatsApp float enhanced ─── */
+a[href*="/go/wa"][style*="position:fixed"]{
+  animation:wa-pulse 2.4s ease-in-out infinite,hero-pill-float 4s ease-in-out infinite !important}
+
+/* ─── Reduced motion ─── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+
+@keyframes ripple-out{0%{transform:scale(0);opacity:.6}100%{transform:scale(4);opacity:0}}
+</style>
 </head>
 <body>
 <div style="position:relative;min-height:100vh;background:#0a1a35;color:#fff;-webkit-font-smoothing:antialiased">
@@ -1738,7 +1972,7 @@ footer h4{font-size:.875rem;font-weight:600}
         <h4>Company</h4>
         <nav class="footer-links">
           <a href="/contact.html">Contact Us</a>
-          <a href="/go/wa?msg=Hi+Mojo+4K!+I+have+a+question." target="_blank" rel="noopener">WhatsApp Support</a>
+          <a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F" target="_blank" rel="noopener">WhatsApp Support</a>
           <a href="mailto:help@mojo4ktv.com">Email Support</a>
           <a href="/faq.html">FAQ</a>
         </nav>
@@ -1800,7 +2034,7 @@ function setConnections(n){
 
 <!-- WhatsApp float -->
 <style>@keyframes wa-pulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 10px rgba(37,211,102,0)}}</style>
-<a href="/go/wa?msg=Hi+Mojo+4K%21+I+have+a+question+about+the+IPTV+subscription."
+<a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F"
    target="_blank" rel="noopener" aria-label="Chat with Mojo 4K on WhatsApp"
    style="position:fixed;right:22px;bottom:22px;z-index:9999;width:58px;height:58px;
           background:#25D366;border-radius:50%;display:flex;align-items:center;
@@ -1840,6 +2074,245 @@ function setConnections(n){
   document.querySelectorAll('.price-card').forEach(function(el,i){
     el.style.animationDelay=(i*0.1)+'s';
   });
+})();
+</script>
+
+
+<script id="mojo-anim-js">
+(function(){
+'use strict';
+var REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ── 1. PARTICLE SYSTEM IN HERO ── */
+(function(){
+  if(REDUCED)return;
+  var hero=document.querySelector('.hero');
+  if(!hero)return;
+  var canvas=document.createElement('canvas');
+  canvas.id='hero-canvas';
+  canvas.setAttribute('aria-hidden','true');
+  canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none';
+  hero.insertBefore(canvas,hero.firstChild);
+  var ctx=canvas.getContext('2d');
+  var W,H,particles=[];
+  function resize(){W=canvas.width=hero.offsetWidth;H=canvas.height=hero.offsetHeight}
+  resize();
+  window.addEventListener('resize',resize,{passive:true});
+  function Particle(){
+    this.reset=function(){
+      this.x=Math.random()*W;
+      this.y=H+10;
+      this.size=Math.random()*2.5+.5;
+      this.speedY=Math.random()*.8+.3;
+      this.speedX=(Math.random()-.5)*.4;
+      this.life=0;this.maxLife=Math.random()*160+80;
+      this.hue=Math.random()<.3?10:Math.random()<.5?220:280;
+    };
+    this.reset();
+    this.y=Math.random()*H;
+    this.life=Math.random()*this.maxLife;
+  }
+  for(var i=0;i<55;i++)particles.push(new Particle());
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){
+      p.life++;p.x+=p.speedX;p.y-=p.speedY;
+      var prog=p.life/p.maxLife;
+      var alpha=prog<.1?prog*8:prog>.8?(1-prog)*5:.65;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle='hsla('+p.hue+',90%,75%,'+alpha+')';
+      ctx.fill();
+      if(p.life>=p.maxLife)p.reset();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── 2. SCROLL REVEAL WITH STAGGER ── */
+(function(){
+  // Mark elements for reveal
+  var selectors=[
+    '.price-card','section h2','.section-header p',
+    '.feat-card','h3.card-title','.compare-row',
+    '.faq-item','.rv-block','.dc-new',
+    '.section-header','h2','p.hero-sub',
+  ];
+  var all=[];
+  document.querySelectorAll(selectors.join(',')).forEach(function(el,i){
+    if(!el.classList.contains('reveal-ready')){
+      el.classList.add('reveal-ready');
+      all.push(el);
+    }
+  });
+  // Stagger pricing cards
+  document.querySelectorAll('.price-card').forEach(function(el,i){
+    el.style.transitionDelay=(i*0.08)+'s';
+  });
+  // Stagger feat-cards
+  document.querySelectorAll('.feat-card').forEach(function(el,i){
+    el.style.transitionDelay=(i*0.1)+'s';
+  });
+  // Stagger device cards
+  document.querySelectorAll('.dc-new').forEach(function(el,i){
+    el.style.transitionDelay=(i*0.05)+'s';
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('reveal-visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -30px 0px'});
+  all.forEach(function(el){io.observe(el)});
+  // Hero content immediately visible
+  document.querySelectorAll('.hero *').forEach(function(el){
+    el.classList.add('reveal-visible');
+  });
+})();
+
+/* ── 3. COUNTER ANIMATION FOR STATS ── */
+(function(){
+  var stats=document.querySelectorAll('.stat-num');
+  if(!stats.length)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      io.unobserve(e.target);
+      var el=e.target;
+      var text=el.textContent.trim();
+      var num=parseFloat(text.replace(/[^0-9.]/g,''));
+      if(isNaN(num)||num===0)return;
+      var suffix=text.replace(/[0-9.,]/g,'');
+      var start=0; var dur=1400; var startTime=null;
+      function step(ts){
+        if(!startTime)startTime=ts;
+        var prog=Math.min((ts-startTime)/dur,1);
+        var ease=1-Math.pow(1-prog,4);
+        var val=Math.round(start+(num-start)*ease);
+        el.textContent=(num>=1000?val.toLocaleString():val)+suffix;
+        if(prog<1)requestAnimationFrame(step);
+        else el.textContent=text; // restore original
+      }
+      if(!REDUCED)requestAnimationFrame(step);
+    });
+  },{threshold:.8});
+  stats.forEach(function(el){io.observe(el)});
+})();
+
+/* ── 4. PRICING CARD MOUSE SPOTLIGHT ── */
+(function(){
+  if(REDUCED)return;
+  document.querySelectorAll('.price-card').forEach(function(card){
+    card.addEventListener('mousemove',function(e){
+      var rect=card.getBoundingClientRect();
+      var x=((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%';
+      var y=((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%';
+      card.style.setProperty('--mouse-x',x);
+      card.style.setProperty('--mouse-y',y);
+      // Add dynamic spotlight
+      card.style.background=
+        'radial-gradient(circle at '+x+' '+y+', rgba(255,255,255,.07) 0%, transparent 55%), rgba(255,255,255,.04)';
+    },{passive:true});
+    card.addEventListener('mouseleave',function(){
+      card.style.background='';
+    });
+  });
+})();
+
+/* ── 5. BUTTON RIPPLE EFFECT ── */
+(function(){
+  if(REDUCED)return;
+  function addRipple(btn){
+    btn.addEventListener('click',function(e){
+      var r=document.createElement('span');
+      var rect=btn.getBoundingClientRect();
+      var size=Math.max(rect.width,rect.height)*2;
+      r.style.cssText='position:absolute;border-radius:50%;background:rgba(255,255,255,.3);'+
+        'width:'+size+'px;height:'+size+'px;'+
+        'left:'+(e.clientX-rect.left-size/2)+'px;'+
+        'top:'+(e.clientY-rect.top-size/2)+'px;'+
+        'transform:scale(0);pointer-events:none;z-index:10;'+
+        'animation:ripple-out .6s ease-out forwards';
+      btn.style.position='relative';btn.style.overflow='hidden';
+      btn.appendChild(r);
+      setTimeout(function(){r.remove()},700);
+    });
+  }
+  document.querySelectorAll('.btn-primary,.price-btn-solid,.price-btn-outline,a[class*="btn"]')
+    .forEach(addRipple);
+})();
+
+/* ── 6. SCROLL PROGRESS BAR ── */
+(function(){
+  var bar=document.createElement('div');
+  bar.style.cssText='position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;'+
+    'background:linear-gradient(90deg,#E74F51,#ff9a80,#E74F51);'+
+    'background-size:200%;animation:shimmer-sweep 2s linear infinite;'+
+    'transition:width .05s;pointer-events:none;box-shadow:0 0 8px rgba(231,79,81,.6)';
+  document.body.appendChild(bar);
+  window.addEventListener('scroll',function(){
+    var s=document.documentElement;
+    var pct=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100).toFixed(1)+'%';
+    bar.style.width=pct;
+  },{passive:true});
+})();
+
+/* ── 7. SECTION TITLES WORD-BY-WORD REVEAL ── */
+(function(){
+  if(REDUCED)return;
+  document.querySelectorAll('.section-header h2,.section-head h2').forEach(function(h){
+    var io=new IntersectionObserver(function(entries){
+      if(!entries[0].isIntersecting)return;
+      io.unobserve(h);
+      // Already handled by reveal-ready, just ensure underline triggers
+      h.classList.add('reveal-visible');
+    },{threshold:.6});
+    io.observe(h);
+  });
+})();
+
+/* ── 8. FLOATING TICKER PAUSE ON HOVER ── */
+(function(){
+  document.querySelectorAll('.marquee-track,.mbr-track,.mss-ticker-track,.mms-ch-track').forEach(function(t){
+    t.addEventListener('mouseenter',function(){t.style.animationPlayState='paused'});
+    t.addEventListener('mouseleave',function(){t.style.animationPlayState='running'});
+  });
+})();
+
+/* ── 9. NUMBER PRICE FLIP ON CONNECTION CHANGE ── */
+(function(){
+  var orig=window.setConnections;
+  if(typeof orig!=='function')return;
+  window.setConnections=function(n){
+    orig(n);
+    document.querySelectorAll('.price-num').forEach(function(el){
+      el.style.animation='none';
+      el.offsetHeight; // reflow
+      el.style.animation='count-flip .4s cubic-bezier(.34,1.56,.64,1) both';
+    });
+  };
+})();
+
+/* ── 10. FLOATING STAR PARTICLES (background) ── */
+(function(){
+  if(REDUCED)return;
+  var hero=document.querySelector('.hero');
+  if(!hero)return;
+  for(var i=0;i<22;i++){
+    var star=document.createElement('span');
+    var size=Math.random()*3+1;
+    star.style.cssText='position:absolute;border-radius:50%;background:#fff;pointer-events:none;'+
+      'width:'+size+'px;height:'+size+'px;'+
+      'left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;'+
+      'opacity:.1;z-index:0;'+
+      'animation:star-twinkle '+(2+Math.random()*3)+'s '+(Math.random()*3)+'s ease-in-out infinite';
+    hero.appendChild(star);
+  }
+})();
+
 })();
 </script>
 
