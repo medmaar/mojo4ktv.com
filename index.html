@@ -188,29 +188,27 @@ h3.card-title{font-size:1.125rem;font-weight:700;margin-top:1rem}
 /* Pricing */
 #pricing{padding:2rem 0 5rem}
 @media(min-width:768px){#pricing{padding:3rem 0 7rem}}
-.pricing-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:3rem}
+.pricing-grid{display:grid;grid-template-columns:1fr;gap:1.75rem;margin-top:3rem}
 @media(min-width:640px){.pricing-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.pricing-grid{grid-template-columns:repeat(4,1fr)}}
-.price-card{display:flex;flex-direction:column;border-radius:1.25rem;padding:2rem 1.75rem;transition:all .3s;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+@media(min-width:1024px){.pricing-grid{grid-template-columns:repeat(4,1fr);gap:2rem}}
+.price-card{display:flex;flex-direction:column;border-radius:1.5rem;padding:2.25rem 2rem;transition:all .3s;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .price-card:hover{border-color:rgba(231,79,81,.4);background:rgba(255,255,255,.06)}
 .price-card.featured{background:#E74F51;border-color:#E74F51;box-shadow:0 24px 60px -18px rgba(231,79,81,.6)}
-.price-card.featured .price-was{color:rgba(20,5,5,.65)}
-.price-card.featured .price-was s{color:rgba(20,5,5,.45);text-decoration:line-through}
-@media(min-width:1024px){.price-card.featured{margin:-.75rem 0;padding:2.5rem 2rem}}
-.price-card h3{font-size:1.125rem;font-weight:700}
-.price-card.featured h3{color:#1a0505}
-.price-amount{margin-top:.75rem;display:flex;align-items:baseline;gap:.5rem}
+@media(min-width:1024px){.price-card.featured{margin:-.875rem 0;padding:2.75rem 2.25rem}}
+.price-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.25rem}
+.price-card.featured h3{color:#fff}
+.price-amount{margin-top:.875rem;display:flex;align-items:baseline;gap:.625rem}
 .price-from{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.5)}
-.price-card.featured .price-from{color:rgba(20,5,5,.75)}
+.price-card.featured .price-from{color:rgba(255,255,255,.8)}
 .price-num{font-size:2.25rem;font-weight:700;letter-spacing:-.025em}
 .price-period{font-size:.875rem;color:rgba(255,255,255,.5)}
-.price-card.featured .price-period{color:rgba(20,5,5,.75)}
-.price-features{margin-top:1.25rem;display:flex;flex-direction:column;gap:1rem}
+.price-card.featured .price-period{color:rgba(255,255,255,.8)}
+.price-features{margin-top:1.5rem;display:flex;flex-direction:column;gap:1.1rem}
 .price-feat{display:flex;align-items:flex-start;gap:.75rem}
 .price-feat-check{margin-top:.125rem;display:flex;flex-shrink:0;height:1.25rem;width:1.25rem;align-items:center;justify-content:center;border-radius:9999px;background:rgba(231,79,81,.15);color:#FF7E80}
-.price-card.featured .price-feat-check{background:rgba(20,5,5,.18);color:#1a0505}
-.price-feat span{font-size:.875rem;line-height:1.3;color:rgba(255,255,255,.75)}
-.price-card.featured .price-feat span{color:#1a0505}
+.price-card.featured .price-feat-check{background:rgba(255,255,255,.2);color:#fff}
+.price-feat span{font-size:.9rem;line-height:1.35;color:rgba(255,255,255,.75)}
+.price-card.featured .price-feat span{color:rgba(255,255,255,.95)}
 .price-action{margin-top:auto;padding-top:1.75rem}
 .price-badge-row{margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
 .price-dots{display:flex;gap:-.375rem}
@@ -224,14 +222,14 @@ h3.card-title{font-size:1.125rem;font-weight:700;margin-top:1rem}
 .price-card.featured .price-dot-3{background:rgba(255,255,255,.8)}
 .price-card.featured .price-dot-4{background:#fff}
 .price-badge-label{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.025em;color:#FF7E80}
-.price-card.featured .price-badge-label{color:#1a0505}
+.price-card.featured .price-badge-label{color:#fff}
 .price-btn{display:flex;height:3rem;width:100%;align-items:center;justify-content:center;border-radius:.75rem;font-size:.875rem;font-weight:600;transition:all .2s}
 .price-btn-outline{border:1.5px solid #E74F51;color:#FF7E80}
 .price-btn-outline:hover{background:#E74F51;color:#fff}
 .price-btn-solid{background:#fff;color:#E74F51}
 .price-btn-solid:hover{background:rgba(255,255,255,.9)}
 .price-note{margin-top:.75rem;display:flex;align-items:center;justify-content:center;gap:.375rem;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.5)}
-.price-card.featured .price-note{color:rgba(20,5,5,.75)}
+.price-card.featured .price-note{color:rgba(255,255,255,.85)}
 .guarantee-bar{margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:.75rem;border-radius:.75rem;background:rgba(255,255,255,.04);padding:.875rem 1rem;text-align:center;backdrop-filter:blur(8px)}
 @media(min-width:640px){.guarantee-bar{flex-direction:row;gap:.875rem;text-align:left;max-width:36rem;margin-left:auto;margin-right:auto}}
 .guarantee-icon{display:flex;height:2.25rem;width:2.25rem;flex-shrink:0;align-items:center;justify-content:center;border-radius:.5rem;background:rgba(231,79,81,.15);color:#FF7E80;ring:1px solid rgba(231,79,81,.3)}
@@ -409,7 +407,7 @@ footer h4{font-size:.875rem;font-weight:600}
   background:#E74F51;color:#fff;font-size:.78rem;font-weight:800;
   padding:3px 9px;border-radius:6px;margin-left:8px;letter-spacing:.02em;
   animation:badge-pop 2.4s ease-in-out infinite;flex-shrink:0}
-.price-card.featured .discount-badge-50{background:#1a0505;color:#fff}
+.price-card.featured .discount-badge-50{background:rgba(255,255,255,.25);color:#fff}
 
 /* ─── Animations ─── */
 @keyframes badge-pop{0%,100%{transform:scale(1) rotate(-1deg)}50%{transform:scale(1.08) rotate(1deg)}}
@@ -440,7 +438,7 @@ footer h4{font-size:.875rem;font-weight:600}
 .badge-dot{animation:dot-ping 2s ease-in-out infinite}
 .section-header h2,.section-head h2{animation:fade-in-up .6s ease-out both}
 .price-card.featured .price-num{
-  background:linear-gradient(90deg,#1a0505 0%,#3d0a0a 40%,#1a0505 60%,#3d0a0a 100%);
+  background:linear-gradient(90deg,#fff 0%,#ffeaa7 40%,#fff 60%,#ffeaa7 100%);
   background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;animation:shimmer-gold 3s linear infinite}
 /* Glow behind featured card */
@@ -513,13 +511,13 @@ footer h4{font-size:.875rem;font-weight:600}
 
 /* Featured price number shimmer */
 .price-card.featured .price-num{
-  background:linear-gradient(90deg,#1a0505 0%,#3d0a0a 40%,#1a0505 60%,#3d0a0a 100%);
+  background:linear-gradient(90deg,#fff 0%,#ffeaa7 40%,#fff 60%,#ffeaa7 100%);
   background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;animation:shimmer-sweep 2.5s linear infinite}
 .price-card.featured .price-from,.price-card.featured .price-period,
 .price-card.featured .price-was,.price-card.featured .price-feat span,
-.price-card.featured h3{color:#1a0505 !important}
-.price-card.featured .price-was s{color:rgba(20,5,5,.45) !important}
+.price-card.featured h3{color:#fff !important}
+.price-card.featured .price-was s{color:rgba(255,255,255,.6) !important}
 
 /* ─── Discount badge ─── */
 .discount-badge-50{animation:badge-spin-bounce 2.2s ease-in-out infinite}
@@ -1345,7 +1343,7 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 
 <!-- PRICING -->
 <section id="pricing" style="padding:2rem 0 5rem">
-  <div class="container">
+  <div class="container" style="max-width:1380px">
     <div class="section-header">
       <span class="badge"><span class="badge-dot"></span>Plans &amp; Pricing</span>
       <h2>Simple, Transparent <span class="underline-accent">Pricing</span></h2>
@@ -1394,10 +1392,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
         <h3>12 Months</h3>
         <div class="price-was">was <s id="op12m">$98</s></div>
         <div class="price-amount" style="align-items:center"><span class="price-from">from</span><span class="price-num" id="p12m">$49</span><span class="price-period">one-time</span><span class="discount-badge-50">-50%</span></div>
-                <div style="margin:.875rem 0;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:.625rem;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;white-space:nowrap;overflow:hidden">
-          <span style="font-size:1rem;flex-shrink:0">&#11088;</span>
-          <span style="font-weight:700;font-size:.82rem;color:#fcd34d;flex-shrink:0">IBO Player Pro &mdash; Free</span>
-          <span style="font-size:.75rem;color:rgba(251,191,36,.6);overflow:hidden;text-overflow:ellipsis">Premium IPTV app worth $12 &middot; included</span>
+                <div style="margin:1rem 0;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);border-radius:.75rem;padding:.75rem 1rem;display:flex;align-items:center;gap:.625rem">
+          <span style="font-size:1.1rem">&#11088;</span>
+          <div>
+            <div style="font-weight:700;font-size:.875rem;color:#fcd34d">IBO Player Pro &mdash; Included Free</div>
+            <div style="font-size:.75rem;color:rgba(251,191,36,.7);margin-top:.125rem">Premium IPTV player app worth $12 &mdash; yours at no extra cost</div>
+          </div>
         </div>
 <ul class="price-features">
           <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
