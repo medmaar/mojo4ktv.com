@@ -797,6 +797,28 @@ footer h4{font-size:.875rem;font-weight:600}
 
 
 
+<a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F"
+   target="_blank" rel="noopener" aria-label="Chat with Mojo 4K on WhatsApp"
+   style="position:fixed;right:22px;bottom:22px;z-index:9999;width:58px;height:58px;
+          background:#25D366;border-radius:50%;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.4);
+          animation:wa-pulse 2.6s ease-in-out infinite;text-decoration:none;
+          transition:transform .2s"
+   onmouseover="this.style.transform='scale(1.08)'"
+   onmouseout="this.style.transform=''">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
+    <path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 004.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 01-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 012.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/>
+  </svg>
+</a>
+<style>
+/* ─── Footer bottom centering ─── */
+.footer-bottom{text-align:center !important;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.footer-bottom img{display:block !important;margin:0 auto !important;max-width:520px;width:100%}
+.footer-bottom p,.footer-bottom small,.footer-bottom span{text-align:center !important}
+</style>
+
+
+
 <script>
 function toggleMenu(){var m=document.getElementById('mobileMenu');m.classList.toggle('open')}
 function toggleFaq(btn){var item=btn.closest('.faq-item');item.classList.toggle('open')}
@@ -950,5 +972,76 @@ function opSubmit(e) {
 })();
 </script>
 
+<script>
+var DIAL_CODES = {
+  "Afghanistan": "+93", "Albania": "+355", "Algeria": "+213", "Andorra": "+376",
+  "Angola": "+244", "Antigua and Barbuda": "+1-268", "Argentina": "+54", "Armenia": "+374",
+  "Australia": "+61", "Austria": "+43", "Azerbaijan": "+994", "Bahamas": "+1-242",
+  "Bahrain": "+973", "Bangladesh": "+880", "Barbados": "+1-246", "Belarus": "+375",
+  "Belgium": "+32", "Belize": "+501", "Benin": "+229", "Bhutan": "+975",
+  "Bolivia": "+591", "Bosnia and Herzegovina": "+387", "Botswana": "+267", "Brazil": "+55",
+  "Brunei": "+673", "Bulgaria": "+359", "Burkina Faso": "+226", "Burundi": "+257",
+  "Cambodia": "+855", "Cameroon": "+237", "Canada": "+1", "Cape Verde": "+238",
+  "Central African Republic": "+236", "Chad": "+235", "Chile": "+56", "China": "+86",
+  "Colombia": "+57", "Comoros": "+269", "Congo": "+242", "Costa Rica": "+506",
+  "Croatia": "+385", "Cuba": "+53", "Cyprus": "+357", "Czech Republic": "+420",
+  "Denmark": "+45", "Djibouti": "+253", "Dominica": "+1-767", "Dominican Republic": "+1-809",
+  "Ecuador": "+593", "Egypt": "+20", "El Salvador": "+503", "Equatorial Guinea": "+240",
+  "Eritrea": "+291", "Estonia": "+372", "Ethiopia": "+251", "Fiji": "+679",
+  "Finland": "+358", "France": "+33", "Gabon": "+241", "Gambia": "+220",
+  "Georgia": "+995", "Germany": "+49", "Ghana": "+233", "Greece": "+30",
+  "Grenada": "+1-473", "Guatemala": "+502", "Guinea": "+224", "Guinea-Bissau": "+245",
+  "Guyana": "+592", "Haiti": "+509", "Honduras": "+504", "Hungary": "+36",
+  "Iceland": "+354", "India": "+91", "Indonesia": "+62", "Iran": "+98",
+  "Iraq": "+964", "Ireland": "+353", "Israel": "+972", "Italy": "+39",
+  "Jamaica": "+1-876", "Japan": "+81", "Jordan": "+962", "Kazakhstan": "+7",
+  "Kenya": "+254", "Kiribati": "+686", "Kuwait": "+965", "Kyrgyzstan": "+996",
+  "Laos": "+856", "Latvia": "+371", "Lebanon": "+961", "Lesotho": "+266",
+  "Liberia": "+231", "Libya": "+218", "Liechtenstein": "+423", "Lithuania": "+370",
+  "Luxembourg": "+352", "Madagascar": "+261", "Malawi": "+265", "Malaysia": "+60",
+  "Maldives": "+960", "Mali": "+223", "Malta": "+356", "Marshall Islands": "+692",
+  "Mauritania": "+222", "Mauritius": "+230", "Mexico": "+52", "Micronesia": "+691",
+  "Moldova": "+373", "Monaco": "+377", "Mongolia": "+976", "Montenegro": "+382",
+  "Morocco": "+212", "Mozambique": "+258", "Myanmar": "+95", "Namibia": "+264",
+  "Nauru": "+674", "Nepal": "+977", "Netherlands": "+31", "New Zealand": "+64",
+  "Nicaragua": "+505", "Niger": "+227", "Nigeria": "+234", "North Korea": "+850",
+  "North Macedonia": "+389", "Norway": "+47", "Oman": "+968", "Pakistan": "+92",
+  "Palau": "+680", "Panama": "+507", "Papua New Guinea": "+675", "Paraguay": "+595",
+  "Peru": "+51", "Philippines": "+63", "Poland": "+48", "Portugal": "+351",
+  "Qatar": "+974", "Romania": "+40", "Russia": "+7", "Rwanda": "+250",
+  "Saint Kitts and Nevis": "+1-869", "Saint Lucia": "+1-758", "Saint Vincent": "+1-784",
+  "Samoa": "+685", "San Marino": "+378", "Saudi Arabia": "+966", "Senegal": "+221",
+  "Serbia": "+381", "Seychelles": "+248", "Sierra Leone": "+232", "Singapore": "+65",
+  "Slovakia": "+421", "Slovenia": "+386", "Solomon Islands": "+677", "Somalia": "+252",
+  "South Africa": "+27", "South Korea": "+82", "South Sudan": "+211", "Spain": "+34",
+  "Sri Lanka": "+94", "Sudan": "+249", "Suriname": "+597", "Sweden": "+46",
+  "Switzerland": "+41", "Syria": "+963", "Taiwan": "+886", "Tajikistan": "+992",
+  "Tanzania": "+255", "Thailand": "+66", "Timor-Leste": "+670", "Togo": "+228",
+  "Tonga": "+676", "Trinidad and Tobago": "+1-868", "Tunisia": "+216", "Turkey": "+90",
+  "Turkmenistan": "+993", "Tuvalu": "+688", "Uganda": "+256", "Ukraine": "+380",
+  "United Arab Emirates": "+971", "United Kingdom": "+44", "United States": "+1",
+  "Uruguay": "+598", "Uzbekistan": "+998", "Vanuatu": "+678", "Venezuela": "+58",
+  "Vietnam": "+84", "Yemen": "+967", "Zambia": "+260", "Zimbabwe": "+263",
+  "Algeria": "+213", "Other": ""
+};
+function onCountryChange() {
+  var sel = document.getElementById('pp-country');
+  var waEl = document.getElementById('pp-wa');
+  if (!sel || !waEl) return;
+  var code = DIAL_CODES[sel.value] || '';
+  if (code) {
+    var current = waEl.value.trim();
+    // Replace existing dial code or set fresh
+    if (!current || Object.values(DIAL_CODES).some(function(c){return c && current === c;})) {
+      waEl.value = code + ' ';
+    }
+    waEl.placeholder = code + ' 555 000 0000';
+  } else {
+    waEl.placeholder = '+1 555 000 0000';
+  }
+}
+// Set initial dial code for Canada
+document.addEventListener("DOMContentLoaded",function(){onCountryChange();});
+</script>
 </body>
 </html>

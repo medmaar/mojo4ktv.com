@@ -632,7 +632,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
     <div class="pp-hero-inner">
       <div class="pp-badge"><span class="pp-badge-dot"></span>🔥 Save 50% Today</div>
       <h1>Mojo 4K <em>6 Months Plan</em></h1>
-      <p class="pp-hero-sub">Six months of the world's best IPTV — every channel, every sport, every movie at 4K.</p>
+      <p class="pp-hero-sub">It&#39;s simple — fill in your <strong style="color:rgba(255,255,255,.85)">first name</strong>, <strong style="color:rgba(255,255,255,.85)">WhatsApp number</strong> and <strong style="color:rgba(255,255,255,.85)">email</strong> below and we&#39;ll send your login credentials in <strong style="color:rgba(255,255,255,.85)">under 1 minute.</strong></p>
     </div>
   </div>
   <div class="pp-wrap">
@@ -647,7 +647,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
         <div class="pp-sum-row"><div class="pp-sum-val">$105</div><div class="pp-sum-disc">-50%</div></div>
       </div>
     </div>
-      <p class="pp-instruction">Enter your details — credentials sent <strong>within minutes</strong> via WhatsApp or email.</p>
+      <p class="pp-instruction">Just fill in your details below — we&#39;ll send your logins in <strong>under 1 minute</strong> via WhatsApp or email.</p>
       <form id="pp-form" onsubmit="ppSubmit(event)" novalidate>
         <div class="pp-grid">
           <div class="pp-field"><label class="pp-label" for="pp-name">Full Name</label>
@@ -657,17 +657,197 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
         </div>
         <div class="pp-grid">
           <div class="pp-field"><label class="pp-label" for="pp-country">Country</label>
-            <select class="pp-select" id="pp-country"><option value="">Select country</option>
-            <option selected>Canada</option><option>United States</option><option>United Kingdom</option>
-            <option>Australia</option><option>France</option><option>Germany</option>
-            <option>Netherlands</option><option>Belgium</option><option>Ireland</option>
-            <option>Sweden</option><option>Norway</option><option>Italy</option><option>Spain</option>
-            <option>New Zealand</option><option>South Africa</option><option>United Arab Emirates</option>
-            <option>Saudi Arabia</option><option>Morocco</option><option>Algeria</option>
-            <option>Brazil</option><option>Mexico</option><option>Argentina</option>
-            <option>Portugal</option><option>Switzerland</option><option>Poland</option>
-            <option>Turkey</option><option>India</option><option>Pakistan</option>
-            <option>Nigeria</option><option>Egypt</option><option>Other</option></select></div>
+            <select class="pp-select" id="pp-country" onchange="onCountryChange()">
+            <option value="">Select country</option>
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Antigua and Barbuda</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaijan</option>
+            <option>Bahamas</option>
+            <option>Bahrain</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Belarus</option>
+            <option>Belgium</option>
+            <option>Belize</option>
+            <option>Benin</option>
+            <option>Bhutan</option>
+            <option>Bolivia</option>
+            <option>Bosnia and Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brazil</option>
+            <option>Brunei</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Burundi</option>
+            <option>Cambodia</option>
+            <option>Cameroon</option>
+            <option selected>Canada</option>
+            <option>Cape Verde</option>
+            <option>Central African Republic</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Colombia</option>
+            <option>Comoros</option>
+            <option>Congo</option>
+            <option>Costa Rica</option>
+            <option>Croatia</option>
+            <option>Cuba</option>
+            <option>Cyprus</option>
+            <option>Czech Republic</option>
+            <option>Denmark</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Dominican Republic</option>
+            <option>Ecuador</option>
+            <option>Egypt</option>
+            <option>El Salvador</option>
+            <option>Equatorial Guinea</option>
+            <option>Eritrea</option>
+            <option>Estonia</option>
+            <option>Ethiopia</option>
+            <option>Fiji</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Gabon</option>
+            <option>Gambia</option>
+            <option>Georgia</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Greece</option>
+            <option>Grenada</option>
+            <option>Guatemala</option>
+            <option>Guinea</option>
+            <option>Guinea-Bissau</option>
+            <option>Guyana</option>
+            <option>Haiti</option>
+            <option>Honduras</option>
+            <option>Hungary</option>
+            <option>Iceland</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Iran</option>
+            <option>Iraq</option>
+            <option>Ireland</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Jamaica</option>
+            <option>Japan</option>
+            <option>Jordan</option>
+            <option>Kazakhstan</option>
+            <option>Kenya</option>
+            <option>Kuwait</option>
+            <option>Kyrgyzstan</option>
+            <option>Laos</option>
+            <option>Latvia</option>
+            <option>Lebanon</option>
+            <option>Lesotho</option>
+            <option>Liberia</option>
+            <option>Libya</option>
+            <option>Liechtenstein</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Madagascar</option>
+            <option>Malawi</option>
+            <option>Malaysia</option>
+            <option>Maldives</option>
+            <option>Mali</option>
+            <option>Malta</option>
+            <option>Marshall Islands</option>
+            <option>Mauritania</option>
+            <option>Mauritius</option>
+            <option>Mexico</option>
+            <option>Micronesia</option>
+            <option>Moldova</option>
+            <option>Monaco</option>
+            <option>Mongolia</option>
+            <option>Montenegro</option>
+            <option>Morocco</option>
+            <option>Mozambique</option>
+            <option>Myanmar</option>
+            <option>Namibia</option>
+            <option>Nepal</option>
+            <option>Netherlands</option>
+            <option>New Zealand</option>
+            <option>Nicaragua</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>North Korea</option>
+            <option>North Macedonia</option>
+            <option>Norway</option>
+            <option>Oman</option>
+            <option>Pakistan</option>
+            <option>Palau</option>
+            <option>Panama</option>
+            <option>Papua New Guinea</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Qatar</option>
+            <option>Romania</option>
+            <option>Russia</option>
+            <option>Rwanda</option>
+            <option>Saint Kitts and Nevis</option>
+            <option>Saint Lucia</option>
+            <option>Saint Vincent</option>
+            <option>Samoa</option>
+            <option>San Marino</option>
+            <option>Saudi Arabia</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Seychelles</option>
+            <option>Sierra Leone</option>
+            <option>Singapore</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Solomon Islands</option>
+            <option>Somalia</option>
+            <option>South Africa</option>
+            <option>South Korea</option>
+            <option>South Sudan</option>
+            <option>Spain</option>
+            <option>Sri Lanka</option>
+            <option>Sudan</option>
+            <option>Suriname</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Syria</option>
+            <option>Taiwan</option>
+            <option>Tajikistan</option>
+            <option>Tanzania</option>
+            <option>Thailand</option>
+            <option>Timor-Leste</option>
+            <option>Togo</option>
+            <option>Tonga</option>
+            <option>Trinidad and Tobago</option>
+            <option>Tunisia</option>
+            <option>Turkey</option>
+            <option>Turkmenistan</option>
+            <option>Uganda</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Uruguay</option>
+            <option>Uzbekistan</option>
+            <option>Vanuatu</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>Yemen</option>
+            <option>Zambia</option>
+            <option>Zimbabwe</option>
+            <option>Other</option>
+          </select></div>
           <div class="pp-field"><label class="pp-label" for="pp-wa">WhatsApp (optional)</label>
             <input class="pp-input" id="pp-wa" type="tel" placeholder="+1 555 000 0000" autocomplete="tel"></div>
         </div>
@@ -684,7 +864,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
           <option>Other</option></select></div>
         <div class="pp-field"><label class="pp-label" for="pp-notes">Notes (optional)</label>
           <textarea class="pp-textarea" id="pp-notes" placeholder="Questions or special requests?"></textarea></div>
-        <button class="pp-submit" id="pp-btn" type="submit">Subscribe — $105 →</button>
+        <button class="pp-submit" id="pp-btn" type="submit">Submit</button>
         <div class="pp-err" id="pp-err"></div>
         <p class="pp-note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="height:.8rem;width:.8rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -783,8 +963,30 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
     </div>
   </div>
 </footer>
+
 <!-- WhatsApp float -->
 <style>@keyframes wa-pulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 10px rgba(37,211,102,0)}}</style>
+<a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F"
+   target="_blank" rel="noopener" aria-label="Chat with Mojo 4K on WhatsApp"
+   style="position:fixed;right:22px;bottom:22px;z-index:9999;width:58px;height:58px;
+          background:#25D366;border-radius:50%;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.4);
+          animation:wa-pulse 2.6s ease-in-out infinite;text-decoration:none;
+          transition:transform .2s"
+   onmouseover="this.style.transform='scale(1.08)'"
+   onmouseout="this.style.transform=''">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
+    <path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 004.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 01-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 012.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/>
+  </svg>
+</a>
+<style>
+/* ─── Footer bottom centering ─── */
+.footer-bottom{text-align:center !important;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.footer-bottom img{display:block !important;margin:0 auto !important;max-width:520px;width:100%}
+.footer-bottom p,.footer-bottom small,.footer-bottom span{text-align:center !important}
+</style>
+
+
 <a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F"
    target="_blank" rel="noopener" aria-label="Chat with Mojo 4K on WhatsApp"
    style="position:fixed;right:22px;bottom:22px;z-index:9999;width:58px;height:58px;
@@ -881,7 +1083,7 @@ function ppSubmit(e){e.preventDefault();
       suc=document.getElementById('pp-suc'),area=document.getElementById('pp-form-area');
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
-  function showErr(m){err.style.display='block';err.textContent=m;btn.disabled=false;btn.textContent='Subscribe — $105 →';}
+  function showErr(m){err.style.display='block';err.textContent=m;btn.disabled=false;btn.textContent='Submit';}
   if(!name){showErr('Please enter your full name.');return;}
   if(!email||!email.includes('@')){showErr('Please enter a valid email address.');return;}
   btn.disabled=true;btn.textContent='Processing…';err.style.display='none';
@@ -947,5 +1149,76 @@ function ppSubmit(e){e.preventDefault();
 })();
 </script>
 
+<script>
+var DIAL_CODES = {
+  "Afghanistan": "+93", "Albania": "+355", "Algeria": "+213", "Andorra": "+376",
+  "Angola": "+244", "Antigua and Barbuda": "+1-268", "Argentina": "+54", "Armenia": "+374",
+  "Australia": "+61", "Austria": "+43", "Azerbaijan": "+994", "Bahamas": "+1-242",
+  "Bahrain": "+973", "Bangladesh": "+880", "Barbados": "+1-246", "Belarus": "+375",
+  "Belgium": "+32", "Belize": "+501", "Benin": "+229", "Bhutan": "+975",
+  "Bolivia": "+591", "Bosnia and Herzegovina": "+387", "Botswana": "+267", "Brazil": "+55",
+  "Brunei": "+673", "Bulgaria": "+359", "Burkina Faso": "+226", "Burundi": "+257",
+  "Cambodia": "+855", "Cameroon": "+237", "Canada": "+1", "Cape Verde": "+238",
+  "Central African Republic": "+236", "Chad": "+235", "Chile": "+56", "China": "+86",
+  "Colombia": "+57", "Comoros": "+269", "Congo": "+242", "Costa Rica": "+506",
+  "Croatia": "+385", "Cuba": "+53", "Cyprus": "+357", "Czech Republic": "+420",
+  "Denmark": "+45", "Djibouti": "+253", "Dominica": "+1-767", "Dominican Republic": "+1-809",
+  "Ecuador": "+593", "Egypt": "+20", "El Salvador": "+503", "Equatorial Guinea": "+240",
+  "Eritrea": "+291", "Estonia": "+372", "Ethiopia": "+251", "Fiji": "+679",
+  "Finland": "+358", "France": "+33", "Gabon": "+241", "Gambia": "+220",
+  "Georgia": "+995", "Germany": "+49", "Ghana": "+233", "Greece": "+30",
+  "Grenada": "+1-473", "Guatemala": "+502", "Guinea": "+224", "Guinea-Bissau": "+245",
+  "Guyana": "+592", "Haiti": "+509", "Honduras": "+504", "Hungary": "+36",
+  "Iceland": "+354", "India": "+91", "Indonesia": "+62", "Iran": "+98",
+  "Iraq": "+964", "Ireland": "+353", "Israel": "+972", "Italy": "+39",
+  "Jamaica": "+1-876", "Japan": "+81", "Jordan": "+962", "Kazakhstan": "+7",
+  "Kenya": "+254", "Kiribati": "+686", "Kuwait": "+965", "Kyrgyzstan": "+996",
+  "Laos": "+856", "Latvia": "+371", "Lebanon": "+961", "Lesotho": "+266",
+  "Liberia": "+231", "Libya": "+218", "Liechtenstein": "+423", "Lithuania": "+370",
+  "Luxembourg": "+352", "Madagascar": "+261", "Malawi": "+265", "Malaysia": "+60",
+  "Maldives": "+960", "Mali": "+223", "Malta": "+356", "Marshall Islands": "+692",
+  "Mauritania": "+222", "Mauritius": "+230", "Mexico": "+52", "Micronesia": "+691",
+  "Moldova": "+373", "Monaco": "+377", "Mongolia": "+976", "Montenegro": "+382",
+  "Morocco": "+212", "Mozambique": "+258", "Myanmar": "+95", "Namibia": "+264",
+  "Nauru": "+674", "Nepal": "+977", "Netherlands": "+31", "New Zealand": "+64",
+  "Nicaragua": "+505", "Niger": "+227", "Nigeria": "+234", "North Korea": "+850",
+  "North Macedonia": "+389", "Norway": "+47", "Oman": "+968", "Pakistan": "+92",
+  "Palau": "+680", "Panama": "+507", "Papua New Guinea": "+675", "Paraguay": "+595",
+  "Peru": "+51", "Philippines": "+63", "Poland": "+48", "Portugal": "+351",
+  "Qatar": "+974", "Romania": "+40", "Russia": "+7", "Rwanda": "+250",
+  "Saint Kitts and Nevis": "+1-869", "Saint Lucia": "+1-758", "Saint Vincent": "+1-784",
+  "Samoa": "+685", "San Marino": "+378", "Saudi Arabia": "+966", "Senegal": "+221",
+  "Serbia": "+381", "Seychelles": "+248", "Sierra Leone": "+232", "Singapore": "+65",
+  "Slovakia": "+421", "Slovenia": "+386", "Solomon Islands": "+677", "Somalia": "+252",
+  "South Africa": "+27", "South Korea": "+82", "South Sudan": "+211", "Spain": "+34",
+  "Sri Lanka": "+94", "Sudan": "+249", "Suriname": "+597", "Sweden": "+46",
+  "Switzerland": "+41", "Syria": "+963", "Taiwan": "+886", "Tajikistan": "+992",
+  "Tanzania": "+255", "Thailand": "+66", "Timor-Leste": "+670", "Togo": "+228",
+  "Tonga": "+676", "Trinidad and Tobago": "+1-868", "Tunisia": "+216", "Turkey": "+90",
+  "Turkmenistan": "+993", "Tuvalu": "+688", "Uganda": "+256", "Ukraine": "+380",
+  "United Arab Emirates": "+971", "United Kingdom": "+44", "United States": "+1",
+  "Uruguay": "+598", "Uzbekistan": "+998", "Vanuatu": "+678", "Venezuela": "+58",
+  "Vietnam": "+84", "Yemen": "+967", "Zambia": "+260", "Zimbabwe": "+263",
+  "Algeria": "+213", "Other": ""
+};
+function onCountryChange() {
+  var sel = document.getElementById('pp-country');
+  var waEl = document.getElementById('pp-wa');
+  if (!sel || !waEl) return;
+  var code = DIAL_CODES[sel.value] || '';
+  if (code) {
+    var current = waEl.value.trim();
+    // Replace existing dial code or set fresh
+    if (!current || Object.values(DIAL_CODES).some(function(c){return c && current === c;})) {
+      waEl.value = code + ' ';
+    }
+    waEl.placeholder = code + ' 555 000 0000';
+  } else {
+    waEl.placeholder = '+1 555 000 0000';
+  }
+}
+// Set initial dial code for Canada
+document.addEventListener("DOMContentLoaded",function(){onCountryChange();});
+</script>
 </body>
 </html>
