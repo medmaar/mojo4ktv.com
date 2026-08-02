@@ -1617,7 +1617,6 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
   </div>
 </section>
 
-</main>
 
 <!-- DEVICES -->
 <section class="section" style="text-align:center">
@@ -1651,6 +1650,8 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- WHY MOJO 4K -->
 <section class="section">
@@ -2090,28 +2091,7 @@ function setConnections(n){
 .footer-bottom p,.footer-bottom small,.footer-bottom span{text-align:center !important}
 </style>
 
-<script>
-// Scroll reveal
-(function(){
-  var els=document.querySelectorAll('.price-card,.section-header,.cards-grid .card,.comparison-row,.step-card,.faq-item,h2');
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.style.animation='fade-in-up .6s ease-out both';
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){
-    el.style.opacity='0';
-    io.observe(el);
-  });
-  // Stagger pricing cards
-  document.querySelectorAll('.price-card').forEach(function(el,i){
-    el.style.animationDelay=(i*0.1)+'s';
-  });
-})();
-</script>
+<!-- duplicate scroll-reveal removed -->
 
 
 <script id="mojo-anim-js">
