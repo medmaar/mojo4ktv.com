@@ -575,28 +575,38 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 </style>
 
 <style id="hero-fix">
-/* ── HERO — smaller text, hard left ── */
-.hero-content h1{
-  font-size:clamp(20px,2.6vw,38px) !important;
-  line-height:1.15;
-  max-width:440px;
-  text-align:left !important
-}
+/* ── HERO — left-aligned on desktop ── */
+.hero-inner{display:flex;align-items:center;justify-content:flex-start}
 .hero-content{
-  max-width:460px !important;
-  text-align:left !important
+  max-width:560px;
+  text-align:left
 }
-.hero-inner{display:flex;align-items:center}
+.hero-content h1{
+  font-size:clamp(28px,4vw,52px);
+  line-height:1.12;
+  text-align:left
+}
 .hero-sub{
-  font-size:.875rem !important;
-  line-height:1.65;
-  max-width:440px;
-  text-align:left !important
+  font-size:.95rem;
+  line-height:1.7;
+  text-align:left
 }
-.hero-pill{text-align:left}
-.hero-cta{justify-content:flex-start !important;text-align:left}
+.hero-pill{
+  display:inline-flex;
+  text-align:left;
+  max-width:100%;
+  white-space:normal
+}
+.hero-cta{
+  justify-content:flex-start;
+  text-align:left
+}
+@media(max-width:767px){
+  .hero-content{text-align:left}
+  .hero-content h1{font-size:clamp(26px,6vw,36px)}
+}
 @media(min-width:900px){
-  .hero-inner{padding:7rem 0 4rem}
+  .hero-inner{padding:8rem 0 5rem}
 }
 
 /* ── MAPLE-STYLE NOTIFICATION ── */
@@ -693,10 +703,15 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <svg viewBox="0 0 20 20" style="height:.875rem;width:auto;flex-shrink:0" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M10 2L13.09 8.26L20 9.27L15 14.14L16.18 21.02L10 17.77L3.82 21.02L5 14.14L0 9.27L6.91 8.26L10 2Z" fill="#fbbf24"/>
           </svg>
-          <span>Premium 4K Streaming &nbsp;<span style="color:#FF7E80">·</span>&nbsp; 50,000+ Channels &nbsp;<span style="color:#FF7E80">·</span>&nbsp; HD, FHD &amp; 4K</span>
+          <span>Premium 4K Streaming</span>
         </div>
         <h1>Best <span class="text-accent">IPTV Service</span> &ndash; Premium 4K Streaming Subscription</h1>
-        <p class="hero-sub">An <span style="color:rgba(255,255,255,.9);font-weight:500">IPTV subscription</span> built for quality &mdash; 50,000+ live channels plus 300,000+ movies &amp; series in 4K/FHD. NHL &middot; NBA &middot; NFL &middot; UFC &middot; PPV all included.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;margin-bottom:-.25rem">
+          <span style="display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:9999px;padding:.35rem .85rem;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.85)">📺 50,000+ Live Channels</span>
+          <span style="display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:9999px;padding:.35rem .85rem;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.85)">🎬 300,000+ Movies &amp; Series</span>
+          <span style="display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:9999px;padding:.35rem .85rem;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.85)">⚡ HD · FHD · 4K</span>
+        </div>
+        <p class="hero-sub" style="margin-top:1.25rem">An <span style="color:rgba(255,255,255,.9);font-weight:500">IPTV subscription</span> built for quality &mdash; premium 4K servers, zero buffering. NHL &middot; NBA &middot; NFL &middot; UFC &middot; PPV all included.</p>
         <div class="hero-cta">
           <a class="btn-primary" href="#pricing">
             Start Now
@@ -881,123 +896,6 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
     </div>
   </div>
 </section>
-
-<!-- WHY MOJO 4K -->
-<section class="section">
-  <div class="container">
-    <div class="section-header wide">
-      <span class="badge"><span class="badge-dot"></span>Premium IPTV Servers</span>
-      <h2>Premium Servers &mdash; <span class="underline-accent">Closer to You</span> Means Smoother, Sharper Streaming</h2>
-      <div style="margin-top:1.5rem;max-width:56rem;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;gap:1rem;font-size:1rem;line-height:1.6;color:rgba(255,255,255,.6)">
-        <p>The biggest factor in streaming quality is <strong style="color:rgba(255,255,255,.9)">how close the server is to you</strong>. The shorter the distance your data travels, the lower the latency &mdash; so channels open instantly and never buffer at peak time.</p>
-        <p>That&rsquo;s how we built <strong style="color:rgba(255,255,255,.9)">Mojo 4K</strong>. Our system automatically routes you to the <strong style="color:rgba(255,255,255,.9)">nearest premium server</strong>, so every <strong style="color:rgba(255,255,255,.9)">IPTV subscription</strong> streams in crisp HD and 4K &mdash; not from an overloaded server thousands of miles away.</p>
-      </div>
-    </div>
-    <h3 style="text-align:center;font-size:1.5rem;font-weight:700;margin-bottom:0">Why Mojo 4K is a Trusted <span class="text-accent">IPTV Service</span></h3>
-    <div class="cards-grid">
-      <div class="card feat-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25l7.5 3v6c0 4.5-3.6 8.25-7.5 9.75C8.1 19.5 4.5 15.75 4.5 11.25v-6l7.5-3zM9.75 12l1.5 1.5 3-3.75"/></svg>
-        </div>
-        <h3 class="card-title">Stable IPTV Servers</h3>
-        <p>Premium server infrastructure keeps your connection solid for low latency, fewer drop-outs and buffer-free viewing &mdash; even at 8pm peak time.</p>
-      </div>
-      <div class="card feat-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h12A2.25 2.25 0 0120.25 6v9A2.25 2.25 0 0118 17.25H6A2.25 2.25 0 013.75 15V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 20.25h7.5"/></svg>
-        </div>
-        <h3 class="card-title">50,000+ Channels</h3>
-        <p>A massive library of live sports, entertainment, news, kids and international channels &mdash; switch between them with near-instant channel loading.</p>
-      </div>
-      <div class="card feat-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
-        </div>
-        <h3 class="card-title">HD &amp; 4K Streaming</h3>
-        <p>Crisp 4K, Full HD and HD streams with enough bandwidth headroom to avoid compression, pixelation or quality dips.</p>
-      </div>
-      <div class="card feat-card">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a.75.75 0 01-.75.75H3.75A.75.75 0 013 12V5.25"/></svg>
-        </div>
-        <h3 class="card-title">Works on All Devices</h3>
-        <p>Firestick, Smart TV, Android, iPhone, iPad, Windows and Mac &mdash; one IPTV subscription across every screen you own.</p>
-      </div>
-    </div>
-    <div class="highlight-box">
-      <div class="highlight-inner">
-        <div class="highlight-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <p class="highlight-text">Switching to Mojo 4K isn&rsquo;t just changing your provider &mdash; it&rsquo;s upgrading your entire streaming experience. <strong style="color:#fcd34d">Ranked #1 globally</strong>, Mojo 4K outperforms every competitor on server stability, picture quality and support. No matter where you are or what device you use, Mojo 4K delivers the <strong style="color:#fcd34d">world&rsquo;s best IPTV experience</strong> &mdash; consistent, crystal-clear and buffer-free, every single time.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS COUNTER (below Why Mojo 4K) -->
-<section style="padding:3rem 0;background:rgba(0,0,0,.3)">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center">
-      <div>
-        <div id="stat-channels" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
-      </div>
-      <div>
-        <div id="stat-movies" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
-      </div>
-      <div>
-        <div id="stat-clients" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var targets=[
-    {el:document.getElementById('stat-channels'),end:50000,suffix:'+'   ,label:'50,000+'},
-    {el:document.getElementById('stat-movies')  ,end:300000,suffix:'+' ,label:'300,000+'},
-    {el:document.getElementById('stat-clients') ,end:1500000,suffix:'+'  ,label:'1.5M+'}
-  ];
-  var started=false;
-  function fmt(n,t){
-    if(t.end>=1000000) return (n/1000000).toFixed(n<1500000?1:1)+'M'+t.suffix;
-    if(t.end>=100000)  return Math.round(n/1000)*1000 < t.end ? (n/1000).toFixed(0)+'K+' : (t.end/1000).toFixed(0)+'K+';
-    return Math.round(n).toLocaleString()+t.suffix;
-  }
-  function run(){
-    if(started) return; started=true;
-    var dur=2000, step=16, start=Date.now();
-    var iv=setInterval(function(){
-      var p=Math.min((Date.now()-start)/dur,1);
-      var ease=1-Math.pow(1-p,3);
-      targets.forEach(function(t){
-        var v=ease*t.end;
-        if(t.end>=1000000){
-          t.el.textContent=(v>=1500000?'1.5':'')+(v<1500000?(v/1000000).toFixed(1):'')+'M+';
-        } else if(t.end>=100000){
-          t.el.textContent=Math.round(v/1000)+'K+';
-        } else {
-          t.el.textContent=Math.round(v).toLocaleString()+t.suffix;
-        }
-      });
-      if(p>=1){
-        clearInterval(iv);
-        targets[0].el.textContent='50,000+';
-        targets[1].el.textContent='300,000+';
-        targets[2].el.textContent='1.5M+';
-      }
-    },step);
-  }
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)run();});
-  },{threshold:.3});
-  targets.forEach(function(t){obs.observe(t.el);});
-})();
-</script>
-
 
 <!-- REVIEWS -->
 <section id="mojo-reviews" style="background:#140c20;padding:80px 16px 70px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
@@ -1561,9 +1459,9 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
         <h3>12 Months</h3>
         <div class="price-was">Original price: <s id="op12m">$98</s></div>
         <div class="price-amount" style="align-items:center"><span class="price-num" id="p12m">$49</span><span class="discount-badge-50">-50%</span></div>
-                <div style="margin:1rem 0;background:rgba(0,0,0,.55);border:1px solid rgba(251,191,36,.5);border-radius:.75rem;padding:.75rem 1rem;display:flex;align-items:center;gap:.625rem">
+                <div style="margin:1rem 0;background:#fbbf24;border:1px solid #d97706;border-radius:.75rem;padding:.75rem 1rem;display:flex;align-items:center;gap:.625rem">
           <span style="font-size:1.1rem">&#11088;</span>
-          <span style="font-weight:700;font-size:.875rem;color:#fbbf24">IBO Player Subscription for Free</span>
+          <span style="font-weight:800;font-size:.875rem;color:#1a0800">IBO Player Subscription for Free</span>
         </div>
 <ul class="price-features">
           <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
@@ -1692,6 +1590,123 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
   </div>
 </section>
 
+<!-- WHY MOJO 4K -->
+<section class="section">
+  <div class="container">
+    <div class="section-header wide">
+      <span class="badge"><span class="badge-dot"></span>Premium IPTV Servers</span>
+      <h2>Premium Servers &mdash; <span class="underline-accent">Closer to You</span> Means Smoother, Sharper Streaming</h2>
+      <div style="margin-top:1.5rem;max-width:56rem;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;gap:1rem;font-size:1rem;line-height:1.6;color:rgba(255,255,255,.6)">
+        <p>The biggest factor in streaming quality is <strong style="color:rgba(255,255,255,.9)">how close the server is to you</strong>. The shorter the distance your data travels, the lower the latency &mdash; so channels open instantly and never buffer at peak time.</p>
+        <p>That&rsquo;s how we built <strong style="color:rgba(255,255,255,.9)">Mojo 4K</strong>. Our system automatically routes you to the <strong style="color:rgba(255,255,255,.9)">nearest premium server</strong>, so every <strong style="color:rgba(255,255,255,.9)">IPTV subscription</strong> streams in crisp HD and 4K &mdash; not from an overloaded server thousands of miles away.</p>
+      </div>
+    </div>
+    <h3 style="text-align:center;font-size:1.5rem;font-weight:700;margin-bottom:0">Why Mojo 4K is a Trusted <span class="text-accent">IPTV Service</span></h3>
+    <div class="cards-grid">
+      <div class="card feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25l7.5 3v6c0 4.5-3.6 8.25-7.5 9.75C8.1 19.5 4.5 15.75 4.5 11.25v-6l7.5-3zM9.75 12l1.5 1.5 3-3.75"/></svg>
+        </div>
+        <h3 class="card-title">Stable IPTV Servers</h3>
+        <p>Premium server infrastructure keeps your connection solid for low latency, fewer drop-outs and buffer-free viewing &mdash; even at 8pm peak time.</p>
+      </div>
+      <div class="card feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h12A2.25 2.25 0 0120.25 6v9A2.25 2.25 0 0118 17.25H6A2.25 2.25 0 013.75 15V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 20.25h7.5"/></svg>
+        </div>
+        <h3 class="card-title">50,000+ Channels</h3>
+        <p>A massive library of live sports, entertainment, news, kids and international channels &mdash; switch between them with near-instant channel loading.</p>
+      </div>
+      <div class="card feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+        </div>
+        <h3 class="card-title">HD &amp; 4K Streaming</h3>
+        <p>Crisp 4K, Full HD and HD streams with enough bandwidth headroom to avoid compression, pixelation or quality dips.</p>
+      </div>
+      <div class="card feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a.75.75 0 01-.75.75H3.75A.75.75 0 013 12V5.25"/></svg>
+        </div>
+        <h3 class="card-title">Works on All Devices</h3>
+        <p>Firestick, Smart TV, Android, iPhone, iPad, Windows and Mac &mdash; one IPTV subscription across every screen you own.</p>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <div class="highlight-inner">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.5rem;width:1.5rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="highlight-text">Switching to Mojo 4K isn&rsquo;t just changing your provider &mdash; it&rsquo;s upgrading your entire streaming experience. <strong style="color:#fcd34d">Ranked #1 globally</strong>, Mojo 4K outperforms every competitor on server stability, picture quality and support. No matter where you are or what device you use, Mojo 4K delivers the <strong style="color:#fcd34d">world&rsquo;s best IPTV experience</strong> &mdash; consistent, crystal-clear and buffer-free, every single time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS COUNTER (below Why Mojo 4K) -->
+<section style="padding:3rem 0;background:rgba(0,0,0,.3)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center">
+      <div>
+        <div id="stat-channels" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
+      </div>
+      <div>
+        <div id="stat-movies" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
+      </div>
+      <div>
+        <div id="stat-clients" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var targets=[
+    {el:document.getElementById('stat-channels'),end:50000,suffix:'+'   ,label:'50,000+'},
+    {el:document.getElementById('stat-movies')  ,end:300000,suffix:'+' ,label:'300,000+'},
+    {el:document.getElementById('stat-clients') ,end:1500000,suffix:'+'  ,label:'1.5M+'}
+  ];
+  var started=false;
+  function fmt(n,t){
+    if(t.end>=1000000) return (n/1000000).toFixed(n<1500000?1:1)+'M'+t.suffix;
+    if(t.end>=100000)  return Math.round(n/1000)*1000 < t.end ? (n/1000).toFixed(0)+'K+' : (t.end/1000).toFixed(0)+'K+';
+    return Math.round(n).toLocaleString()+t.suffix;
+  }
+  function run(){
+    if(started) return; started=true;
+    var dur=2000, step=16, start=Date.now();
+    var iv=setInterval(function(){
+      var p=Math.min((Date.now()-start)/dur,1);
+      var ease=1-Math.pow(1-p,3);
+      targets.forEach(function(t){
+        var v=ease*t.end;
+        if(t.end>=1000000){
+          t.el.textContent=(v>=1500000?'1.5':'')+(v<1500000?(v/1000000).toFixed(1):'')+'M+';
+        } else if(t.end>=100000){
+          t.el.textContent=Math.round(v/1000)+'K+';
+        } else {
+          t.el.textContent=Math.round(v).toLocaleString()+t.suffix;
+        }
+      });
+      if(p>=1){
+        clearInterval(iv);
+        targets[0].el.textContent='50,000+';
+        targets[1].el.textContent='300,000+';
+        targets[2].el.textContent='1.5M+';
+      }
+    },step);
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)run();});
+  },{threshold:.3});
+  targets.forEach(function(t){obs.observe(t.el);});
+})();
+</script>
+
+
 <!-- CHANNELS -->
 <section class="section" style="overflow:hidden">
   <div style="pointer-events:none;position:absolute;inset-x:0;top:-2.5rem;height:35rem" class="signal-bg" aria-hidden="true"></div>
@@ -1819,16 +1834,45 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 
 <!-- HOW IT WORKS -->
 <section class="section">
-  <div class="container">
+  <div class="container" style="max-width:900px">
     <div class="section-header">
-      <span class="badge"><span class="badge-dot"></span>Get Started in Minutes</span>
-      <h2>How to Start Your <span class="underline-accent">IPTV Subscription</span></h2>
+      <span class="badge"><span class="badge-dot"></span>Up &amp; Running in Minutes</span>
+      <h2>Start Watching in <span class="underline-accent">4 Simple Steps</span></h2>
     </div>
-    <div class="steps-grid">
-      <div class="step-card"><span class="step-num">1</span><h3>Choose Your Plan</h3><p>Pick the IPTV subscription plan that suits you. Longer plans offer better value &mdash; and every plan includes everything.</p></div>
-      <div class="step-card"><span class="step-num">2</span><h3>Fill Out the Form</h3><p>Complete a quick checkout form with your details &mdash; takes less than a minute.</p></div>
-      <div class="step-card"><span class="step-num">3</span><h3>Get Your Payment Link</h3><p>Receive a unique, secure payment link by email to complete your order safely.</p></div>
-      <div class="step-card"><span class="step-num">4</span><h3>Pay &amp; Start Watching</h3><p>Once paid, your subscription details arrive by email just a few minutes later. Ready to stream!</p></div>
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:2rem">
+
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem">
+        <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff">1</div>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem">Choose Your Plan</h3>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">Pick a plan that fits you — 1 month to 12 months, all with the same premium access to every channel and feature.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem">
+        <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff">2</div>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem">Receive Your Login in Under 1 Minute</h3>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">After payment your credentials arrive instantly via WhatsApp or email — username, password, and server link, ready to use.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem">
+        <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff">3</div>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem">Connect Your Device</h3>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">Enter your logins into any IPTV app on your TV, phone, or Firestick. Our support team walks you through setup on WhatsApp if needed.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:linear-gradient(135deg,rgba(231,79,81,.12),rgba(231,79,81,.05));border:1px solid rgba(231,79,81,.3);border-radius:1rem;padding:1.5rem">
+        <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.35rem">🎉</div>
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:#FF7E80">Enjoy 50,000+ Live Channels &amp; 300,000+ Movies &amp; Series</h3>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">Stream NHL, NBA, NFL, UFC, Premier League and everything else — live and on-demand — in crisp HD and 4K, no buffering.</p>
+        </div>
+      </div>
+
     </div>
     <div style="margin-top:2.5rem;display:flex;justify-content:center">
       <a class="btn-primary" href="#pricing">Choose Your Plan
@@ -1936,15 +1980,15 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
     <div class="cta-card">
       <div class="cta-glow" aria-hidden="true"></div>
       <div class="cta-inner">
-        <span class="cta-pill"><span class="live-dot" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;animation:live-glow 1.6s ease-in-out infinite" aria-hidden="true"></span>Ready when you are</span>
-        <h2>Ready to Start Your <span class="text-accent">IPTV Subscription?</span></h2>
-        <p>Join thousands of viewers on the best IPTV subscription &mdash; 50,000+ live channels, unlimited movies &amp; shows and rock-solid premium servers, all backed by a 14-day money-back guarantee. Pick your plan and you&rsquo;re watching today.</p>
+        <span class="cta-pill"><span class="live-dot" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;animation:live-glow 1.6s ease-in-out infinite" aria-hidden="true"></span>No credit card required</span>
+        <h2>Try Mojo 4K <span class="text-accent">Free — No Card Needed</span></h2>
+        <p>Get instant access to 50,000+ live channels, full HD sports, and on-demand movies &amp; series — completely free for 2 hours on your own device. No credit card, no commitment. If you love it, subscribe and keep watching.</p>
         <div class="cta-btns">
-          <a class="btn-primary" style="width:100%;max-width:18rem" href="#pricing">Choose Your Plan
+          <a class="btn-primary" style="width:100%;max-width:18rem" href="/trial.html">Start Your Free Trial
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
-        <p class="cta-fine">No contract &middot; Cancel anytime &middot; Instant activation</p>
+        <p class="cta-fine">No credit card &middot; 2-hour free trial &middot; Instant access</p>
       </div>
     </div>
   </div>
