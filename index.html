@@ -897,6 +897,70 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
   </div>
 </section>
 
+<!-- STATS COUNTER (below Why Mojo 4K) -->
+<section style="padding:3rem 0;background:rgba(0,0,0,.3)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center">
+      <div>
+        <div id="stat-channels" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
+      </div>
+      <div>
+        <div id="stat-movies" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
+      </div>
+      <div>
+        <div id="stat-clients" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var targets=[
+    {el:document.getElementById('stat-channels'),end:50000,suffix:'+'   ,label:'50,000+'},
+    {el:document.getElementById('stat-movies')  ,end:300000,suffix:'+' ,label:'300,000+'},
+    {el:document.getElementById('stat-clients') ,end:1500000,suffix:'+'  ,label:'1.5M+'}
+  ];
+  var started=false;
+  function fmt(n,t){
+    if(t.end>=1000000) return (n/1000000).toFixed(n<1500000?1:1)+'M'+t.suffix;
+    if(t.end>=100000)  return Math.round(n/1000)*1000 < t.end ? (n/1000).toFixed(0)+'K+' : (t.end/1000).toFixed(0)+'K+';
+    return Math.round(n).toLocaleString()+t.suffix;
+  }
+  function run(){
+    if(started) return; started=true;
+    var dur=2000, step=16, start=Date.now();
+    var iv=setInterval(function(){
+      var p=Math.min((Date.now()-start)/dur,1);
+      var ease=1-Math.pow(1-p,3);
+      targets.forEach(function(t){
+        var v=ease*t.end;
+        if(t.end>=1000000){
+          t.el.textContent=(v>=1500000?'1.5':'')+(v<1500000?(v/1000000).toFixed(1):'')+'M+';
+        } else if(t.end>=100000){
+          t.el.textContent=Math.round(v/1000)+'K+';
+        } else {
+          t.el.textContent=Math.round(v).toLocaleString()+t.suffix;
+        }
+      });
+      if(p>=1){
+        clearInterval(iv);
+        targets[0].el.textContent='50,000+';
+        targets[1].el.textContent='300,000+';
+        targets[2].el.textContent='1.5M+';
+      }
+    },step);
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)run();});
+  },{threshold:.3});
+  targets.forEach(function(t){obs.observe(t.el);});
+})();
+</script>
+
+
 <!-- REVIEWS -->
 <section id="mojo-reviews" style="background:#140c20;padding:80px 16px 70px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
 <style>
@@ -1557,6 +1621,29 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
   </div>
 </section>
 
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="cta-inner">
+        <span class="cta-pill"><span class="live-dot" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;animation:live-glow 1.6s ease-in-out infinite" aria-hidden="true"></span>⚡ Free 24-Hour Trial — No Card</span>
+        <h2>🔥 Watch FREE for <span class="text-accent">24 Hours — Zero Risk</span></h2>
+        <p style="font-size:1.05rem">Get <strong style="color:#fff">full unrestricted access</strong> for 24 hours — 50,000+ live channels, every sport, every PPV, 300,000+ movies &amp; series in stunning 4K. No credit card. No strings. Just press play and <strong style="color:#FF7E80">see why thousands switched to Mojo 4K.</strong></p>
+        <div class="cta-btns">
+          <a class="btn-primary" style="width:100%;max-width:18rem" href="/trial.html">🎬 Claim Your Free 24-Hour Trial
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <p class="cta-fine">No credit card &middot; 24-hour free trial &middot; Instant access</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <!-- DEVICES -->
 <section class="section" style="text-align:center">
   <div class="container">
@@ -1642,70 +1729,6 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
     </div>
   </div>
 </section>
-
-<!-- STATS COUNTER (below Why Mojo 4K) -->
-<section style="padding:3rem 0;background:rgba(0,0,0,.3)">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center">
-      <div>
-        <div id="stat-channels" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
-      </div>
-      <div>
-        <div id="stat-movies" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
-      </div>
-      <div>
-        <div id="stat-clients" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var targets=[
-    {el:document.getElementById('stat-channels'),end:50000,suffix:'+'   ,label:'50,000+'},
-    {el:document.getElementById('stat-movies')  ,end:300000,suffix:'+' ,label:'300,000+'},
-    {el:document.getElementById('stat-clients') ,end:1500000,suffix:'+'  ,label:'1.5M+'}
-  ];
-  var started=false;
-  function fmt(n,t){
-    if(t.end>=1000000) return (n/1000000).toFixed(n<1500000?1:1)+'M'+t.suffix;
-    if(t.end>=100000)  return Math.round(n/1000)*1000 < t.end ? (n/1000).toFixed(0)+'K+' : (t.end/1000).toFixed(0)+'K+';
-    return Math.round(n).toLocaleString()+t.suffix;
-  }
-  function run(){
-    if(started) return; started=true;
-    var dur=2000, step=16, start=Date.now();
-    var iv=setInterval(function(){
-      var p=Math.min((Date.now()-start)/dur,1);
-      var ease=1-Math.pow(1-p,3);
-      targets.forEach(function(t){
-        var v=ease*t.end;
-        if(t.end>=1000000){
-          t.el.textContent=(v>=1500000?'1.5':'')+(v<1500000?(v/1000000).toFixed(1):'')+'M+';
-        } else if(t.end>=100000){
-          t.el.textContent=Math.round(v/1000)+'K+';
-        } else {
-          t.el.textContent=Math.round(v).toLocaleString()+t.suffix;
-        }
-      });
-      if(p>=1){
-        clearInterval(iv);
-        targets[0].el.textContent='50,000+';
-        targets[1].el.textContent='300,000+';
-        targets[2].el.textContent='1.5M+';
-      }
-    },step);
-  }
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)run();});
-  },{threshold:.3});
-  targets.forEach(function(t){obs.observe(t.el);});
-})();
-</script>
-
 
 <!-- CHANNELS -->
 <section class="section" style="overflow:hidden">
@@ -1974,27 +1997,6 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-glow" aria-hidden="true"></div>
-      <div class="cta-inner">
-        <span class="cta-pill"><span class="live-dot" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;animation:live-glow 1.6s ease-in-out infinite" aria-hidden="true"></span>No credit card required</span>
-        <h2>Try Mojo 4K <span class="text-accent">Free — No Card Needed</span></h2>
-        <p>Get instant access to 50,000+ live channels, full HD sports, and on-demand movies &amp; series — completely free for 2 hours on your own device. No credit card, no commitment. If you love it, subscribe and keep watching.</p>
-        <div class="cta-btns">
-          <a class="btn-primary" style="width:100%;max-width:18rem" href="/trial.html">Start Your Free Trial
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-        <p class="cta-fine">No credit card &middot; 2-hour free trial &middot; Instant access</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
 
 <!-- FOOTER -->
 <footer>
@@ -2353,5 +2355,60 @@ document.querySelectorAll('.marquee-track,.mbr-track,.mss-ticker-track,.mms-ch-t
   setTimeout(show,(3+Math.random()*5)*1000);
 })();
 </script>
+
+<!-- SALES BANNER -->
+<div id="np-banner" style="position:fixed;left:18px;bottom:18px;z-index:9998;max-width:266px;display:flex;align-items:center;gap:11px;padding:11px 30px 11px 11px;border-radius:12px;background:#ffffff;border:1px solid rgba(0,0,0,.06);box-shadow:0 16px 34px -12px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.08);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;pointer-events:auto" aria-live="polite" aria-atomic="true">
+  <button onclick="npClose()" aria-label="Close" style="position:absolute;top:6px;right:8px;background:none;border:none;color:#B8B8B8;font-size:.95rem;cursor:pointer;padding:3px 4px;line-height:1;font-family:inherit">&times;</button>
+  <div style="flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#FFE9A8 0%,#DFAD05 100%);box-shadow:0 0 0 2px rgba(223,173,5,.15)">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+      <path d="M6 7h12l-1 12.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 7z" stroke="#1A1400" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="#1A1400" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9.5 12.5l1.8 1.8L14.8 11" stroke="#1A1400" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div>
+    <div id="np-title" style="font-weight:700;font-size:12.5px;line-height:1.35;color:#1A1A1A">New purchase</div>
+    <div id="np-time" style="font-size:10.5px;color:#8A8A8A;margin-top:2px;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:#2ECC71;display:inline-block;flex-shrink:0"></span><span id="np-time-text">just now</span></div>
+  </div>
+</div>
+<script>
+(function(){
+  var NAMES=['Liam','Noah','Ethan','Jacob','Mason','Logan','Jack','Lucas','Owen','William','Emma','Olivia','Ava','Sophia','Charlotte','Mia','Amelia','Emily','Chloe','Ella'];
+  var CITIES=['Toronto','Montreal','Vancouver','Calgary','Edmonton','Ottawa','Winnipeg','Quebec City','Hamilton','Kitchener','London','Victoria','Halifax','Oshawa','Windsor','Saskatoon','Regina','Barrie','Kelowna','Sherbrooke'];
+  var PLANS=['1-Month Plan','3-Month Plan','3-Month Plan','6-Month Plan','6-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan'];
+  var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago'];
+  var SK='mojo4k_banner_dismissed';
+  var el=document.getElementById('np-banner');
+  var lastName=null;
+  var stopped=false;
+  var timers=[];
+  function pick(a){return a[Math.floor(Math.random()*a.length)];}
+  function setT(fn,ms){var id=setTimeout(fn,ms);timers.push(id);return id;}
+  function npClose(){
+    stopped=true;timers.forEach(clearTimeout);
+    el.style.transform='translateY(140%)';el.style.opacity='0';
+    try{sessionStorage.setItem(SK,'1');}catch(e){}
+  }
+  window.npClose=npClose;
+  function show(){
+    var n=pick(NAMES);while(n===lastName)n=pick(NAMES);lastName=n;
+    document.getElementById('np-title').textContent=n+' from '+pick(CITIES)+' just purchased a '+pick(PLANS);
+    document.getElementById('np-time-text').textContent=pick(TIMES);
+    el.style.transform='translateY(0)';el.style.opacity='1';
+  }
+  function cycle(){
+    if(stopped)return;
+    show();
+    setT(function(){
+      if(stopped)return;
+      el.style.transform='translateY(140%)';el.style.opacity='0';
+      setT(cycle,3000);
+    },5000);
+  }
+  try{if(sessionStorage.getItem(SK)==='1')return;}catch(e){}
+  setT(cycle,2000+Math.floor(Math.random()*2000));
+})();
+</script>
+
 </body>
 </html>
