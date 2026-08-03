@@ -922,13 +922,30 @@ function opSubmit(e) {
     (wa ? '💬 WhatsApp: ' + encodeURIComponent(wa) + '%0A' : '') +
     (notes ? '📝 Notes: ' + encodeURIComponent(notes) : '');
 
-  setTimeout(function() {
-    area.style.display = 'none';
-    suc.style.display = 'block';
-    var ec = document.getElementById('op-email-confirm');
-    if(ec) ec.textContent = email;
-    window.open('https://wa.me/17828026280?text=' + waMsg, '_blank', 'noopener,noreferrer');
-  }, 1000);
+  var templateParams = {
+    from_name: name || '(not provided)',
+    from_email: email || '(not provided)',
+    phone: wa || '(not provided)',
+    country: country || '(not provided)',
+    device: device || '(not provided)',
+    plan: planName,
+    message: notes || '(no notes)',
+    name: name || '(not provided)',
+    site_name: 'mojo4ktv.com',
+    time: new Date().toLocaleString()
+  };
+  emailjs.send('service_u0y9azb','template_4mqukzm', templateParams)
+    .then(function(){
+      area.style.display = 'none';
+      suc.style.display = 'block';
+      var ec = document.getElementById('op-email-confirm') || document.getElementById('pp-email-confirm');
+      if(ec) ec.textContent = email || 'your contact';
+    }, function(error){
+      btn.disabled = false;
+      btn.textContent = 'Subscribe →';
+      if(err){ err.style.display='block'; err.textContent='Something went wrong. Please try again or contact us on WhatsApp.'; }
+      console.error('EmailJS error:', error);
+    });
 }
 </script>
 

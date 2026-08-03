@@ -1093,33 +1093,32 @@ function ppSubmit(e){e.preventDefault();
       suc=document.getElementById('pp-suc'),area=document.getElementById('pp-form-area');
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
-  btn.disabled=true;btn.textContent='Processing…';err.style.display='none';
-  // Determine plan from page title
+  btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';
   var planEl=document.querySelector('.pp-sum h3,.pp-sum-label h3');
-  var planName=planEl?planEl.textContent.trim():(document.title.replace('Mojo 4K IPTV — ','').replace(' | Mojo 4K',''));
+  var planName=planEl?planEl.textContent.trim():(document.title||'Mojo 4K Plan');
   var templateParams={
-    from_name:name||'Anonymous',
+    from_name:name||'(not provided)',
     from_email:email||'(not provided)',
     phone:wa||'(not provided)',
     country:country||'(not provided)',
     device:device||'(not provided)',
     plan:planName,
     message:notes||'(no notes)',
-    name:name||'Anonymous',
+    name:name||'(not provided)',
     site_name:'mojo4ktv.com',
     time:new Date().toLocaleString()
   };
   emailjs.send('service_u0y9azb','template_4mqukzm',templateParams)
-    .then(function(){},function(){});
-  // Show success + open WhatsApp regardless
-  setTimeout(function(){
-    area.style.display='none';
-    var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
-    suc.style.display='block';
-    var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your contact';
-    var waMsg='\ud83d\udce6 NEW ORDER\n\n\ud83d\udccb Plan: '+planName+'\n\ud83d\udc64 Name: '+(name||'N/A')+'\n\ud83d\udce7 Email: '+(email||'N/A')+'\n\ud83c\udf0d Country: '+(country||'N/A')+'\n\ud83d\udcf1 Device: '+(device||'N/A')+(wa?'\n\ud83d\udcac WhatsApp: '+wa:'')+(notes?'\n\ud83d\udcdd Notes: '+notes:'');
-    window.open('https://wa.me/17828026280?text='+encodeURIComponent(waMsg),'_blank','noopener,noreferrer');
-  },800);
+    .then(function(){
+      if(area)area.style.display='none';
+      var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
+      if(suc)suc.style.display='block';
+      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your contact';
+    },function(error){
+      btn.disabled=false;btn.textContent='Submit';
+      if(err){err.style.display='block';err.textContent='Something went wrong. Please try again or contact us on WhatsApp.';}
+      console.error('EmailJS error:',error);
+    });
 }
 </script>
 </div>
