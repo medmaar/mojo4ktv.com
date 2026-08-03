@@ -586,8 +586,6 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
 @keyframes sa-blink{0%,100%{opacity:1}50%{opacity:.3}}
 @media(max-width:480px){.sa-toast{bottom:78px;left:12px;max-width:260px}}
 @media(prefers-reduced-motion:reduce){.sa-toast{transition:none}}</style>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init("wVTX5iZON_Z94mQd9");</script>
 </head>
 <body>
 <div style="position:relative;min-height:100vh;background:#0a1a35;color:#fff;-webkit-font-smoothing:antialiased">
@@ -885,7 +883,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
     <div class="pp-success" id="pp-suc">
       <div class="pp-check"><svg class="pp-check-svg" viewBox="0 0 52 52"><polyline points="14,27 22,36 38,17"/></svg></div>
       <div class="pp-suc-title">Trial Request Sent!</div>
-      <p class="pp-suc-sub">We'll send your free trial credentials to <strong id="pp-email-confirm"></strong> within a few minutes.</p>
+      <p class="pp-suc-sub">Your credentials have been sent to <strong id="pp-email-confirm"></strong>. Check your <strong>inbox now</strong> — also check spam.</p>
       <a class="pp-suc-link" href="/#pricing">📋 View Paid Plans</a>
     </div>
     <div class="pp-secondary" id="pp-secondary">
@@ -1072,37 +1070,27 @@ function setConnections(n){
 }
 </script>
 <script>
-function ppSubmit(e){e.preventDefault();
+async function ppSubmit(e){e.preventDefault();
   var btn=document.getElementById('pp-btn'),err=document.getElementById('pp-err'),
       suc=document.getElementById('pp-suc'),area=document.getElementById('pp-form-area');
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
   btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';
-  var planEl=document.querySelector('.pp-sum h3,.pp-sum-label h3');
-  var planName=planEl?planEl.textContent.trim():(document.title||'Mojo 4K Plan');
-  var templateParams={
-    from_name:name||'(not provided)',
-    from_email:email||'(not provided)',
-    phone:wa||'(not provided)',
-    country:country||'(not provided)',
-    device:device||'(not provided)',
-    plan:planName,
-    message:notes||'(no notes)',
-    name:name||'(not provided)',
-    site_name:'mojo4ktv.com',
-    time:new Date().toLocaleString()
-  };
-  emailjs.send('service_u0y9azb','template_4mqukzm',templateParams)
-    .then(function(){
+  if(!name.trim()||!email.trim()){btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Please enter your name and email.';}return;}
+  try{
+    var r=await fetch('https://iptv-trial-mojo4ktv.medmaar.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,whatsapp:wa,device:device,notes:notes})});
+    var d=await r.json();
+    if(r.ok&&d.success){
       if(area)area.style.display='none';
       var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
       if(suc)suc.style.display='block';
-      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your contact';
-    },function(error){
-      btn.disabled=false;btn.textContent='Submit';
-      if(err){err.style.display='block';err.textContent='Something went wrong. Please try again or contact us on WhatsApp.';}
-      console.error('EmailJS error:',error);
-    });
+      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your email';
+    }else{btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Submission failed. Please try again or contact us on WhatsApp.';}}
+  }catch(ex){
+    btn.disabled=false;btn.textContent='Submit';
+    if(err){err.style.display='block';err.textContent='Network error. Please try again or contact us: help@mojo4ktv.com';}
+    console.error(ex);
+  }
 }
 </script>
 </div>
