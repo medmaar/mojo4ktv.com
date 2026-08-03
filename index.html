@@ -99,9 +99,20 @@ ul{list-style:none}
 header{position:fixed;top:0;left:0;right:0;z-index:50}
 
 /* Banner */
-.banner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem 1rem;background:#000;padding:.75rem 1rem;text-align:center}
-.banner-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem .5rem;font-size:.875rem;line-height:1.4}
-.banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80}
+.banner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.5rem .75rem;background:#000;padding:.75rem 1rem;text-align:center;min-height:auto}
+.banner-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.35rem;font-size:.875rem;line-height:1.4;white-space:nowrap;overflow:hidden}
+.banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80;flex-shrink:0}
+.banner-text-long{display:inline}
+.banner-text-short{display:none}
+@media(max-width:639px){
+  .banner{padding:.5rem .75rem;gap:.35rem}
+  .banner-inner{font-size:.72rem;gap:.25rem}
+  .banner-badge{display:none}
+  .banner-text-long{display:none}
+  .banner-text-short{display:inline;white-space:nowrap}
+  #btn-banner{padding:.35rem .75rem;font-size:.75rem !important}
+  .stat-label-text{font-size:.7rem !important;line-height:1.2}
+}
 
 /* Nav */
 nav{background:transparent;transition:background .3s,backdrop-filter .3s,box-shadow .3s}
@@ -396,8 +407,6 @@ footer h4{font-size:.875rem;font-weight:600}
 /* Responsive overrides */
 @media(max-width:639px){
   .hero{padding:12rem 0 5rem}
-  .banner{padding:.625rem .75rem}
-  .banner-inner{font-size:.8rem}
 }
 
 /* ─── Discount badge & original price ─── */
@@ -623,7 +632,8 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 <div class="banner">
   <div class="banner-inner">
     <span class="banner-badge"><span class="live-dot" aria-hidden="true" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;margin-right:.125rem"></span>Limited Time</span>
-    <span style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> &mdash; from only <span style="font-weight:700;color:#FF7E80">$49</span> &mdash; <span style="color:#FF7E80">IBO Player Subscription for Free!</span></span>
+    <span class="banner-text-long" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> &mdash; from only <span style="font-weight:700;color:#FF7E80">$49</span> &mdash; <span style="color:#FF7E80">IBO Player Subscription for Free!</span></span>
+    <span class="banner-text-short" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Mo.</strong> &mdash; <span style="font-weight:700;color:#FF7E80">$49</span> + <span style="color:#FF7E80">Free IBO Player</span></span>
   </div>
   <div style="display:flex;gap:.5rem">
     <a href="/12-months-1-device.html" id="btn-banner" style="display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;border-radius:9999px;background:#E74F51;padding:.5rem 1rem;font-size:.875rem;font-weight:600;white-space:nowrap;color:#fff;transition:background .2s" onmouseover="this.style.background='#D23E40'" onmouseout="this.style.background='#E74F51'">Claim Offer</a>
@@ -875,18 +885,18 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 <!-- STATS COUNTER (below Why Mojo 4K) -->
 <section style="padding:3rem 0;background:rgba(0,0,0,.3)">
   <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center">
       <div>
-        <div id="stat-channels" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
+        <div id="stat-channels" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
       </div>
       <div>
-        <div id="stat-movies" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
+        <div id="stat-movies" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
       </div>
       <div>
-        <div id="stat-clients" style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
+        <div id="stat-clients" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
       </div>
     </div>
   </div>
@@ -945,6 +955,7 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 .rv-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#fd0322;font-weight:700;margin-bottom:10px;}
 .rv-title{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:900;color:#fff;margin-bottom:12px;}
 .rv-title span{color:#fd0322;}
+@media(max-width:600px){.rv-title{font-size:clamp(1rem,5.5vw,1.7rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}}
 .rv-subtitle{color:rgba(232,224,255,.55);font-size:.9rem;}
 .rv-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:52px;}
 .rv-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:14px 24px;text-align:center;min-width:100px;}
@@ -1018,140 +1029,140 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Finally found a provider that delivers exactly what it promises</p>
           <p class="rv-card-body">I&#39;ve been through enough IPTV services to know the difference between a good one and a lucky streak. When I switched to Mojo 4k, the onboarding was completely different &mdash; clear setup instructions and WhatsApp support within minutes. The stream quality during my first live game was noticeably sharper with zero lag. That was four months ago. Consistency has held through playoff games, late-night VOD sessions, and busy weekends. What I appreciate most is that support feels like a real team &mdash; when I asked about optimizing 4K output they gave specific advice rather than a generic FAQ link. Mojo 4k has completely restored my confidence in IPTV as a real cable alternative.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Jason M. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1FA;&#x1F1F8;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Jason M. <img src="https://flagcdn.com/us.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="US flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Gave it three months before reviewing &mdash; no hesitation in recommending</p>
           <p class="rv-card-body">I only leave reviews after at least three months, because too many providers look great in week one and collapse soon after. Mojo 4k passed that test with room to spare. Ligue 1 matches, Champions League nights, and Formula 1 weekends have all streamed flawlessly &mdash; sharp picture, synced audio, no mid-game dropouts. I had two support interactions: once during setup when I was unsure about the best app, and once to check channel availability. Both times they responded in minutes and stayed online until everything was confirmed. I have recommended Mojo 4k to four friends and all have had the same experience.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; David L. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EB;&#x1F1F7;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; David L. <img src="https://flagcdn.com/fr.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="FR flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Left two providers in one year &mdash; Mojo 4k is a completely different standard</p>
           <p class="rv-card-body">After nearly a year with a well-known IPTV provider, I tried Mojo 4k on a forum recommendation. Activation was same-day with detailed multi-device setup instructions. What struck me immediately was channel switching speed &mdash; on my old provider it took 5&ndash;10 seconds and often triggered buffering. On MOJO4K channels load in under two seconds, consistently. I watch a lot of Premier League and Championship football and have never once experienced a dropout during a game, including the biggest weekends of the season. The whole experience feels professional and well managed.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Robert T. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EC;&#x1F1E7;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Robert T. <img src="https://flagcdn.com/gb.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="GB flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Exceptional streaming quality paired with support that actually delivers</p>
           <p class="rv-card-body">I&#39;ve tested a number of IPTV services since cutting cable, and Mojo 4k stands apart from everything else. German channels are excellent &mdash; news, sports, entertainment &mdash; consistently HD with no compression artifacts. My previous provider had a large channel list on paper but a significant portion buffered constantly. MOJO 4K delivers on every channel I watch without exception. What also impressed me was the support team&#39;s technical knowledge. I asked a detailed question about network optimization and got a genuinely useful answer covering router settings, buffer size, and app configuration. That kind of expertise is something you&#39;d expect from a professional service.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Hans M. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E9;&#x1F1EA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Hans M. <img src="https://flagcdn.com/de.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="DE flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Three massive live events without a single dropout &mdash; that settles it</p>
           <p class="rv-card-body">I am a serious sports viewer &mdash; NFL, NBA, boxing, and European football. My previous two providers both failed at critical moments. Over the past few months I deliberately tested Mojo 4k TV during a heavyweight boxing card, an NFL divisional game, and a major Champions League match. It handled all three without a single interruption. Picture quality stayed sharp, audio stayed synced, and I never had to refresh the stream. Support was online during each event and proactively messaged beforehand asking if I needed anything adjusted. I have never seen that from an IPTV provider before.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Derek C. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1FA;&#x1F1F8;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Derek C. <img src="https://flagcdn.com/us.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="US flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Transparent before you pay and just as reliable long after</p>
           <p class="rv-card-body">Before subscribing I spent a week asking detailed questions through their support channel about channels, peak hours, and technical issues. Every question was answered clearly. When one channel category I asked about wasn&#39;t fully available in my region, they told me upfront rather than making a promise they couldn&#39;t keep &mdash; that honesty made me trust Mojo 4k TV before I even paid. Since subscribing, that same transparency has continued. No deflection, no blaming my device. I have never genuinely considered looking elsewhere.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Patrick O. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EE;&#x1F1EA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Patrick O. <img src="https://flagcdn.com/ie.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="IE flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Years of trying providers before finding one that holds up long-term</p>
           <p class="rv-card-body">I&#39;ve been trying different IPTV services for four years, and the story was almost always the same &mdash; strong start, degraded performance within a month or two, support that became less responsive over time. I had genuinely started to believe consistent IPTV quality simply wasn&#39;t possible. Mojo 4k changed that. I&#39;ve been using it for over five months and the experience has been consistently excellent throughout. Belgian and European channels work flawlessly, sports streams are stable during peak hours, and at one point when I had a configuration issue after updating my app, support guided me through the fix in real time over WhatsApp with screenshots.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Thomas M. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E7;&#x1F1EA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Thomas M. <img src="https://flagcdn.com/be.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="BE flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Solved every problem I had finding quality IPTV for sports from Australia</p>
           <p class="rv-card-body">Finding a reliable IPTV service in Australia that delivers stable streams for European sports is genuinely difficult. Mojo 4k solved both problems. The sports coverage is extensive and the streams stay stable during my late night sessions which coincide with peak hours in Europe and North America. I&#39;ve had zero instances of buffering during a live match in the entire time I&#39;ve been subscribed. Support understood exactly what I was asking and gave clear advice about app configuration &mdash; more than I can say for previous providers whose support teams clearly followed scripts.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Chris W. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E6;&#x1F1FA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Chris W. <img src="https://flagcdn.com/au.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="AU flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">On a completely different level to every other provider I&#39;ve tried</p>
           <p class="rv-card-body">With my previous two providers, the initial experience was fine but within six weeks both had degraded noticeably. With Mojo 4k I am now past the six-week mark and the experience hasn&#39;t changed at all from day one. Bundesliga coverage is sharp and stable, I run the service on a Smart TV and a Firestick simultaneously and both perform without interference. When I asked about 4K settings for my specific TV model, they gave me precise guidance that made a visible difference to picture quality. They also notify me proactively if maintenance is planned rather than letting me discover downtime by accident.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Frank S. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E9;&#x1F1EA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Frank S. <img src="https://flagcdn.com/de.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="DE flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Priced fairly and delivers consistently &mdash; no second thoughts</p>
           <p class="rv-card-body">I was initially hesitant about the pricing compared to cheaper alternatives, but within two weeks it was obvious that Mojo 4k is worth every euro. What helped me make the switch was the trial period, which let me verify quality before committing. Support was attentive during the trial and told me which device setup would give the best experience. After subscribing, that same attentiveness continued. Mojo 4k TV is the first IPTV service where I feel the price reflects the actual value delivered.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Pierre L. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EB;&#x1F1F7;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Pierre L. <img src="https://flagcdn.com/fr.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="FR flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Put it through serious stress testing &mdash; it never missed a beat</p>
           <p class="rv-card-body">I work in IT, so when I switched to Mojo 4k I decided to test it properly before committing. I ran it during peak load times across multiple device types, checked stream quality in 4K and HD, and stressed multi-connection by running three streams simultaneously. Every test came back positive. Support also proved itself: I asked fairly technical questions about server infrastructure and got informed answers that matched what I was seeing. The service has remained at the same standard ever since.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; William H. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EC;&#x1F1E7;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; William H. <img src="https://flagcdn.com/gb.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="GB flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Support team that solves problems rather than passing the blame</p>
           <p class="rv-card-body">I&#39;ve had bad experiences with IPTV support in the past &mdash; copy-pasted FAQ answers, days between responses, agents who blame your internet rather than acknowledging a server problem. Mojo 4k TV is completely different. The first time I contacted them I had a playlist compatibility question and the agent gave me exactly the format I needed within minutes. The second time, weeks later, I had a brief issue with one channel category loading slowly. Support responded in under ten minutes, identified the issue on their side, and resolved it within the hour. That kind of responsive, accountable support combined with a genuinely stable service has made MOJO4K my permanent IPTV provider.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; René B. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E8;&#x1F1E6;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; René B. <img src="https://flagcdn.com/ca.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="CA flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Daily use for months on end and the quality has never dipped</p>
           <p class="rv-card-body">I use IPTV every single day for news, sports, and evening TV &mdash; any reliability issues show up very quickly. With Mojo 4k I&#39;ve been a daily user for over four months and haven&#39;t had a single day where the service failed to deliver. Live sports are smooth and consistently high quality, news channels load without delay, and the VOD library is large enough that I always find something worth watching. Mojo 4k TV clearly operates like a real business with real standards rather than a rushed side project.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Alex J. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1FA;&#x1F1F8;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Alex J. <img src="https://flagcdn.com/us.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="US flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Runs flawlessly across every device I threw at it</p>
           <p class="rv-card-body">I run Mojo 4k across four devices: a Smart TV, a laptop, a tablet, and an older Android phone. Compatibility was smooth from the start. Support helped me optimize app settings for the older Android device specifically and the improvement was noticeable. Dutch channels and European sports are both well represented and quality is crisp in 4K on the Smart TV. For anyone running IPTV across multiple devices looking for a service that handles all of them reliably, Mojo 4k TV is genuinely worth considering.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Jan W. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1F3;&#x1F1F1;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Jan W. <img src="https://flagcdn.com/nl.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="NL flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Six months in and I haven&#39;t once thought about going back to cable</p>
           <p class="rv-card-body">I cut cable last year and tried three IPTV services before landing on Mojo 4k. The channel selection covers everything I watched on cable and then some &mdash; Premier League, Champions League, motorsport, and a solid VOD library. Quality is consistently HD or better and I&#39;ve never experienced buffering during a live match. The setup conversation during my first week felt more professional than any interaction I&#39;d had with either previous provider. Six months in, I genuinely do not miss cable.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Sam C. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EC;&#x1F1E7;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Sam C. <img src="https://flagcdn.com/gb.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="GB flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">The trial converted me immediately &mdash; the subscription has stayed rock solid</p>
           <p class="rv-card-body">My experience with Mojo 4k began with a trial I had limited expectations for. Within two days I had already decided to subscribe. Stream quality was immediately better than what I&#39;d been paying for elsewhere, and when I had a setup question during the trial, support responded just as quickly as they would to a paying customer. The service has been rock solid for French and European sports. Ligue 1 and Champions League nights have been flawless without exception. What sets MOJO4K apart is the combination of performance and communication.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Bruno D. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EB;&#x1F1F7;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Bruno D. <img src="https://flagcdn.com/fr.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="FR flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">The consistent, buffer-free experience I spent months searching for</p>
           <p class="rv-card-body">After cycling through four IPTV providers in eighteen months, I was starting to think stability was a myth in this space. Mojo 4k addressed all three concerns at once. Quality has stayed high since day one, peak hours have never caused issues, and support is genuinely available and helpful. I use it mainly for hockey, football, and weekend VOD across two devices and all three work without complaint. I have since renewed twice and have no intention of changing. When a service just works every day, that is worth staying with.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Steve L. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E8;&#x1F1E6;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Steve L. <img src="https://flagcdn.com/ca.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="CA flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Wish I had found this years ago instead of wasting time on lesser providers</p>
           <p class="rv-card-body">I&#39;ve been using IPTV services on and off for years and had never found one I&#39;d describe as genuinely reliable long-term. Mojo 4k changed that. Italian and European sports coverage is excellent &mdash; Serie A, Champions League, Formula 1. Streams are consistently sharp with no audio sync issues or compression artifacts even during fast-paced sport. Support helped me resolve a minor EPG issue during my first week with genuine technical knowledge. Since then I&#39;ve had no reason to contact them because the service has simply worked. What I appreciate most is the alignment between what they promised and what I got.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Marco F. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EE;&#x1F1F9;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Marco F. <img src="https://flagcdn.com/it.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="IT flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Stopped comparing alternatives the moment I started using Mojo 4k</p>
           <p class="rv-card-body">I spent a long time searching for an IPTV service that could reliably handle European football coverage from Australia without the stream degrading halfway through. Mojo 4k has been the exception &mdash; in several months of use I&#39;ve not once had a stream degrade or drop during a live match regardless of the hour. Picture quality is consistently sharp, audio is synced, and channel switching is noticeably faster than any previous service. Support was excellent during setup. I&#39;ve since recommended Mojo 4k to two Australian friends and both report the same experience.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Michael S. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E6;&#x1F1FA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Michael S. <img src="https://flagcdn.com/au.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="AU flag" loading="lazy"></p>
         </div></div>
 
         <div class="rv-tp-card"><div class="rv-tp-inner">
           <div class="rv-stars"><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div><div class="rv-star-tp">&#9733;</div></div>
           <p class="rv-card-title">Consistent quality, honest communication, and support you can rely on</p>
           <p class="rv-card-body">I subscribed to Mojo 4k after considerable research, approaching it with the skepticism the IPTV category deserves. In this case the positive reviews I found were accurate. Swedish and Nordic channels work without issues alongside Champions League and Premier League which I follow closely. Quality is sharp and consistent across devices. The only time I needed help was during initial EPG configuration and they walked me through it with patience and accuracy. Mojo 4k TV operates at a standard that makes other services I&#39;ve tried look amateur by comparison.</p>
-          <p class="rv-card-author" style="color:#00b67a;">&#8212; Lars H. <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1F8;&#x1F1EA;</span></p>
+          <p class="rv-card-author" style="color:#00b67a;">&#8212; Lars H. <img src="https://flagcdn.com/se.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="SE flag" loading="lazy"></p>
         </div></div>
 
       </div></div>
@@ -1172,12 +1183,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Checking in to confirm everything is still performing perfectly. Caught the full match last night without a single issue. Really appreciate the setup support.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Bradley Thompson <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1FA;&#x1F1F8;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Bradley Thompson <img src="https://flagcdn.com/us.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="US flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">All good here. Picture quality is sharp and streams are rock solid. Genuinely better than anything I used before. Thanks for the quick response.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Julien Martin <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EB;&#x1F1F7;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Julien Martin <img src="https://flagcdn.com/fr.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="FR flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1185,12 +1196,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Ran a proper test at peak time last evening &mdash; not a moment of buffering. Massive step up from what I had before.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Daniel Woods <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EC;&#x1F1E7;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Daniel Woods <img src="https://flagcdn.com/gb.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="GB flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">All set up and running great. Thanks for being patient and thorough with the walkthrough. Looking very impressive so far.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Michael Weber <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E9;&#x1F1EA;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Michael Weber <img src="https://flagcdn.com/de.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="DE flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1198,12 +1209,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Confirmed working perfectly on my end. Both live TV and on-demand are flawless. Really pleased I made the change.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Sean Murphy <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EE;&#x1F1EA;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Sean Murphy <img src="https://flagcdn.com/ie.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="IE flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Just letting you know the earlier issue is completely sorted. The response time was genuinely impressive &mdash; thank you.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Luca Martin <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E7;&#x1F1EA;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Luca Martin <img src="https://flagcdn.com/be.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="BE flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1211,12 +1222,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Watched the full game last night. Zero issues throughout. Easily the most reliable IPTV I&#39;ve ever used.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Scott Allen <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E6;&#x1F1FA;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Scott Allen <img src="https://flagcdn.com/au.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="AU flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Running perfectly across the board. The setup guidance was exactly what I needed. This is the service I&#39;d been searching for.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Charles Bouchard <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E8;&#x1F1E6;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Charles Bouchard <img src="https://flagcdn.com/ca.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="CA flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1224,12 +1235,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Still all working great. Channels open fast and the quality is consistently sharp. Genuinely nothing to complain about.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Justin Parker <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1FA;&#x1F1F8;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Justin Parker <img src="https://flagcdn.com/us.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="US flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Good to report &mdash; watched the entire match without a single interruption. Very solid service.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Harry Evans <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EC;&#x1F1E7;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Harry Evans <img src="https://flagcdn.com/gb.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="GB flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1237,12 +1248,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">All sorted and working perfectly. Fastest support response I&#39;ve had from any IPTV provider &mdash; and I&#39;ve used a few.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Florent Girard <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EB;&#x1F1F7;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Florent Girard <img src="https://flagcdn.com/fr.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="FR flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Everything running as expected. Activation was quick and setup was straightforward. Thanks for the help.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Martin Gagnon <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1E8;&#x1F1E6;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Martin Gagnon <img src="https://flagcdn.com/ca.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="CA flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1250,12 +1261,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Serie A and Champions League both streaming perfectly. Really glad I made the switch when I did.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Alessandro Rossi <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EE;&#x1F1F9;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Alessandro Rossi <img src="https://flagcdn.com/it.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="IT flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Still going strong with no issues this week. What stands out most is that you actually respond when I reach out. That&#39;s genuinely rare.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Ciaran Moore <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1EE;&#x1F1EA;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Ciaran Moore <img src="https://flagcdn.com/ie.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="IE flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1263,12 +1274,12 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Tested properly during a major game &mdash; zero drops from start to finish. Huge upgrade from what I was using.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Per Johansson <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1F8;&#x1F1EA;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Per Johansson <img src="https://flagcdn.com/se.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="SE flag" loading="lazy"></p>
           </div>
           <div class="rv-mini-card">
             <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
             <p class="rv-mini-body">Everything is running well. Quality is solid and the setup was simpler than I expected. Happy with the whole experience.</p>
-            <p class="rv-mini-author" style="color:#25D366;">&#8212; Nathan Harris <span style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;vertical-align:middle;margin-left:4px;line-height:1">&#x1F1FA;&#x1F1F8;</span></p>
+            <p class="rv-mini-author" style="color:#25D366;">&#8212; Nathan Harris <img src="https://flagcdn.com/us.svg" width="20" height="14" style="vertical-align:middle;margin-left:5px;border-radius:2px;" alt="US flag" loading="lazy"></p>
           </div>
         </div></div>
 
@@ -1838,37 +1849,37 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
       <span class="badge"><span class="badge-dot"></span>Up &amp; Running in Minutes</span>
       <h2>Start Watching in <span class="underline-accent">4 Simple Steps</span></h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:2rem">
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:2rem;position:relative;z-index:2">
 
-      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem">
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:1rem;padding:1.5rem;position:relative;z-index:2">
         <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff">1</div>
         <div>
-          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem">Choose Your Plan</h3>
-          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">Pick a plan that fits you — 1 month to 12 months, all with the same premium access to every channel and feature.</p>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:#fff">Choose Your Plan</h3>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.6;margin:0">Pick a plan that fits you — 1 month to 12 months, all with the same premium access to every channel and feature.</p>
         </div>
       </div>
 
-      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem">
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:1rem;padding:1.5rem;position:relative;z-index:2">
         <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff">2</div>
         <div>
-          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem">Receive Your Login in Under 1 Minute</h3>
-          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">After payment your credentials arrive instantly via WhatsApp or email — username, password, and server link, ready to use.</p>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:#fff">Receive Your Login in Under 1 Minute</h3>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.6;margin:0">After payment your credentials arrive instantly via WhatsApp or email — username, password, and server link, ready to use.</p>
         </div>
       </div>
 
-      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem">
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:1rem;padding:1.5rem;position:relative;z-index:2">
         <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff">3</div>
         <div>
-          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem">Connect Your Device</h3>
-          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">Enter your logins into any IPTV app on your TV, phone, or Firestick. Our support team walks you through setup on WhatsApp if needed.</p>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:#fff">Connect Your Device</h3>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.6;margin:0">Enter your logins into any IPTV app on your TV, phone, or Firestick. Our support team walks you through setup on WhatsApp if needed.</p>
         </div>
       </div>
 
-      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:linear-gradient(135deg,rgba(231,79,81,.12),rgba(231,79,81,.05));border:1px solid rgba(231,79,81,.3);border-radius:1rem;padding:1.5rem">
+      <div style="display:flex;align-items:flex-start;gap:1.25rem;background:linear-gradient(135deg,rgba(231,79,81,.2),rgba(231,79,81,.08));border:1px solid rgba(231,79,81,.45);border-radius:1rem;padding:1.5rem;position:relative;z-index:2">
         <div style="flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.35rem">🎉</div>
         <div>
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:#FF7E80">Enjoy 50,000+ Live Channels &amp; 300,000+ Movies &amp; Series</h3>
-          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6;margin:0">Stream NHL, NBA, NFL, UFC, Premier League and everything else — live and on-demand — in crisp HD and 4K, no buffering.</p>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.6;margin:0">Stream NHL, NBA, NFL, UFC, Premier League and everything else — live and on-demand — in crisp HD and 4K, no buffering.</p>
         </div>
       </div>
 
@@ -2255,24 +2266,7 @@ document.querySelectorAll('.marquee-track,.mbr-track,.mss-ticker-track,.mms-ch-t
   }
 })();
 
-/* ── 10. TWEMOJI FLAG RENDERING — replaces emoji text with actual images ── */
-(function(){
-  var script=document.createElement('script');
-  script.src='https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js';
-  script.crossOrigin='anonymous';
-  script.onload=function(){
-    if(typeof twemoji==='undefined')return;
-    var reviewSection=document.getElementById('mojo-reviews');
-    if(reviewSection){
-      twemoji.parse(reviewSection,{
-        folder:'svg',ext:'.svg',
-        base:'https://cdn.jsdelivr.net/npm/twemoji@14.0.2/assets/',
-        className:'twemoji-flag'
-      });
-    }
-  };
-  document.head.appendChild(script);
-})();
+/* ── 10. FLAG RENDERING — handled with inline flagcdn.com img tags ── */
 
 })();
 </script>
