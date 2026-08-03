@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Setup Guide — How It Works | Mojo 4K IPTV</title>
+<meta name="description" content="Get started with Mojo 4K IPTV in 3 easy steps. Setup instructions for iOS, Android, Smart TV, FireStick, Windows, Mac, MAG and more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a1a35;color:#fff;font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Banner */
+.banner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.5rem .75rem;background:#000;padding:.75rem 1rem;text-align:center}
+.banner-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.35rem;font-size:.875rem;line-height:1.4;white-space:nowrap;overflow:hidden}
+.banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80;flex-shrink:0}
+.live-dot{display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;margin-right:.125rem}
+.banner-text-long{display:inline}
+.banner-text-short{display:none}
+@media(max-width:639px){
+  .banner{padding:.5rem .75rem;gap:.35rem}
+  .banner-inner{font-size:.72rem;gap:.25rem}
+  .banner-badge{display:none}
+  .banner-text-long{display:none}
+  .banner-text-short{display:inline;white-space:nowrap}
+  #btn-banner{padding:.35rem .75rem;font-size:.75rem !important}
+}
+
+/* Nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50}
+nav{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-inner{max-width:88rem;margin:0 auto;padding:0 1rem;display:flex;height:4rem;align-items:center;gap:1.5rem}
+@media(min-width:640px){.nav-inner{padding:0 1.5rem}}
+@media(min-width:1024px){.nav-inner{padding:0 2rem}}
+.nav-logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+.nav-links{display:none;flex:1;align-items:center;justify-content:center;gap:.25rem}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-link{display:inline-flex;align-items:center;padding:.5rem .75rem;border-radius:.5rem;font-size:.985rem;font-weight:500;color:rgba(255,255,255,.9);transition:background .2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,.1)}
+.nav-cta{display:none;align-items:center;gap:.5rem;flex-shrink:0}
+@media(min-width:1024px){.nav-cta{display:flex}}
+.btn-nav{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:#E74F51;padding:.5rem 1.25rem;font-size:.875rem;font-weight:600;color:#fff;transition:background .2s}
+.btn-nav:hover{background:#c8383a}
+.menu-btn{display:flex;flex-direction:column;gap:.3rem;background:none;border:none;cursor:pointer;padding:.5rem;margin-left:auto}
+.menu-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(min-width:1024px){.menu-btn{display:none}}
+.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(8,21,43,.98);backdrop-filter:blur(14px);padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:.75rem 1rem;border-radius:.5rem;font-weight:500;color:rgba(255,255,255,.85)}
+.mobile-menu a:hover{background:rgba(255,255,255,.08)}
+
+/* Page layout */
+.sg-page{padding-top:120px}
+.container{max-width:900px;margin:0 auto;padding:0 1.25rem}
+
+/* Hero */
+.sg-hero{padding:3rem 0 2.5rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.sg-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#E74F51;font-weight:700;margin-bottom:.75rem}
+.sg-hero h1{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+.sg-hero h1 em{font-style:normal;color:#E74F51}
+.sg-hero p{color:rgba(255,255,255,.6);font-size:1rem;max-width:560px;margin:0 auto}
+
+/* 3 Steps */
+.steps-section{padding:3rem 0 2rem}
+.steps-section h2{font-size:1.5rem;font-weight:800;margin-bottom:2rem;text-align:center}
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:640px){.steps-row{grid-template-columns:1fr}}
+.step-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1.5rem;text-align:center}
+.step-num{width:3rem;height:3rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;color:#fff;margin:0 auto 1rem}
+.step-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:#fff}
+.step-card p{font-size:.875rem;color:rgba(255,255,255,.6);line-height:1.65}
+
+/* Player section */
+.player-section{padding:2rem 0}
+.player-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:2rem}
+.player-card h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:1rem}
+.player-card p,.player-card li{color:rgba(255,255,255,.72);line-height:1.7;font-size:.95rem}
+.player-card ul{padding-left:1.25rem;margin:.75rem 0}
+.player-card li{margin-bottom:.3rem}
+.player-card strong{color:rgba(255,255,255,.9)}
+.player-card em{color:rgba(255,255,255,.55)}
+.rec-box{background:rgba(231,79,81,.1);border:1px solid rgba(231,79,81,.25);border-radius:.75rem;padding:1rem 1.25rem;margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,.8)}
+.rec-box strong{color:#FF7E80}
+
+/* Accordion */
+.accord-section{padding:1rem 0 4rem}
+.accord-section h2{font-size:1.4rem;font-weight:800;margin-bottom:1.5rem}
+.accord-item{border:1px solid rgba(255,255,255,.1);border-radius:.75rem;margin-bottom:.75rem;overflow:hidden;background:rgba(255,255,255,.03)}
+.accord-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;text-align:left;transition:background .2s;font-family:inherit}
+.accord-btn:hover{background:rgba(255,255,255,.06)}
+.accord-arrow{transition:transform .3s;font-size:1rem;color:rgba(255,255,255,.4)}
+.accord-item.open .accord-arrow{transform:rotate(180deg)}
+.accord-body{display:none;padding:1rem 1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+.accord-item.open .accord-body{display:block}
+.accord-body p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75;margin-bottom:.75rem}
+.accord-body a{color:#FF7E80;text-decoration:underline;word-break:break-all}
+.accord-body strong{color:#fff}
+.accord-body img{max-width:100%;border-radius:.5rem;margin:.5rem 0;border:1px solid rgba(255,255,255,.1)}
+.accord-body pre{background:rgba(0,0,0,.3);border-radius:.5rem;padding:.75rem;font-size:.8rem;overflow-x:auto;color:rgba(255,255,255,.7);margin:.5rem 0}
+.accord-body ol,.accord-body ul{padding-left:1.25rem;color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75}
+.accord-body li{margin-bottom:.4rem}
+
+/* CTA bottom */
+.sg-cta{background:rgba(231,79,81,.1);border:1px solid rgba(231,79,81,.2);border-radius:1rem;padding:2rem;text-align:center;margin:0 0 4rem}
+.sg-cta h3{font-size:1.2rem;font-weight:800;margin-bottom:.5rem}
+.sg-cta p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:1.25rem}
+.btn-red{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:#E74F51;padding:.75rem 1.75rem;font-size:.95rem;font-weight:600;color:#fff;transition:background .2s}
+.btn-red:hover{background:#c8383a}
+
+/* Footer */
+footer{background:rgba(8,18,38,.9);border-top:1px solid rgba(255,255,255,.1);padding:2rem 0;text-align:center}
+footer p{color:rgba(255,255,255,.35);font-size:.8rem}
+footer a{color:rgba(255,255,255,.55);margin:0 .5rem}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-inner">
+    <span class="banner-badge"><span class="live-dot" aria-hidden="true"></span>Limited Time</span>
+    <span class="banner-text-long" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> &mdash; from only <span style="font-weight:700;color:#FF7E80">$49</span> &mdash; <span style="color:#FF7E80">IBO Player Subscription for Free!</span></span>
+    <span class="banner-text-short" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> - <span style="font-weight:700;color:#FF7E80">$49</span> + <span style="color:#FF7E80">Free IBO Player</span></span>
+  </div>
+  <div style="display:flex;gap:.5rem">
+    <a href="/12-months-1-device.html" id="btn-banner" style="display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;border-radius:9999px;background:#E74F51;padding:.5rem 1rem;font-size:.875rem;font-weight:600;white-space:nowrap;color:#fff;transition:background .2s" onmouseover="this.style.background='#D23E40'" onmouseout="this.style.background='#E74F51'">Claim Offer</a>
+  </div>
+</div>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/img/logo.png" alt="Mojo 4K" height="36" style="height:2rem;width:auto;display:block" loading="eager"/>
+    </a>
+    <ul class="nav-links" style="list-style:none;display:flex;align-items:center;gap:.25rem;flex:1;justify-content:center">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/#pricing" class="nav-link">Plans</a></li>
+      <li><a href="/setup-guide.html" class="nav-link active">Setup Guide</a></li>
+      <li><a href="/contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="/12-months-1-device.html" class="btn-nav">Subscribe Now ›</a>
+    </div>
+    <button class="menu-btn" onclick="document.getElementById('mob-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mob-nav" class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/#pricing">Plans</a>
+    <a href="/setup-guide.html">Setup Guide</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/12-months-1-device.html" style="background:#E74F51;text-align:center;margin-top:.5rem;border-radius:.75rem">Subscribe Now</a>
+  </div>
+</nav>
+</header>
+
+<main class="sg-page">
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="sg-hero">
+      <p class="sg-kicker">Up &amp; Running in Minutes</p>
+      <h1>How It <em>Works</em></h1>
+      <p>Everything you need to start watching in 3 simple steps — no technical skills required.</p>
+    </div>
+
+    <!-- 3 Steps -->
+    <div class="steps-section">
+      <h2>3 Easy Steps to Get Started with Mojo 4K</h2>
+      <div class="steps-row">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Place Your Order</h3>
+          <p>Pick the perfect plan for you — 1, 6 or 12 months — and get started right away.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Receive Your Login</h3>
+          <p>Check your inbox or WhatsApp for login details and use them in your IPTV player app.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Start Watching</h3>
+          <p>Connect Mojo 4K to your TV, computer or phone and enjoy unlimited channels instantly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Choose Your Player -->
+    <div class="player-section">
+      <div class="player-card">
+        <h3>Choose Your Player</h3>
+        <p><strong>Already have an IPTV app?</strong><br>
+        Just send us the name of the app you use (for example: <em>TiviMate, IBO Player, IPTV Smarters, SmartOne, DuplexPlay…</em>).<br>
+        We'll send you the correct login details for that app — no extra setup needed.</p>
+
+        <p style="margin-top:1rem"><strong>Don't have an app yet?</strong><br>
+        You can install one of these popular IPTV players:</p>
+        <ul>
+          <li>IBO Player</li>
+          <li>TiviMate</li>
+          <li>SmartOne</li>
+          <li>DuplexPlay</li>
+          <li>Net IPTV</li>
+          <li>OTT Navigator <em>(and many more)</em></li>
+        </ul>
+
+        <div class="rec-box">
+          💡 <strong>Recommended: Smarters Player (Free)</strong><br>
+          It's easy to use, free, and works on almost every device. Follow the steps below to install it on your device.
+        </div>
+      </div>
+    </div>
+
+    <!-- Device Accordion -->
+    <div class="accord-section">
+      <h2>Step-by-Step Setup by Device</h2>
+
+      <!-- iOS -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>📱 Apple / iOS</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> Download IPTV Smarters app from the App Store:<br>
+          <a href="https://apps.apple.com/in/app/smarters-player-lite/id1628995509" target="_blank" rel="noopener">Smarters Player Lite on App Store</a><br>
+          Or search the App Store for: <strong>Smarters Player Lite</strong></p>
+
+          <p><strong>Step 2:</strong> Open the app once downloaded and select <strong>Login With Xtream Codes API</strong>.</p>
+          <img src="https://iptvmapletv.com/wp-content/uploads/2024/12/login-1024x473-1.webp" alt="Login screen" loading="lazy"/>
+
+          <p><strong>Step 3:</strong> Enter the login details we provided after your subscription. Then click <strong>"ADD USER"</strong> to proceed.</p>
+          <p><strong>Step 4:</strong> Wait a few seconds for the channels to load.</p>
+          <p><strong>Step 5:</strong> Click the <strong>"Live TV"</strong> icon to start watching.</p>
+          <img src="https://iptvmapletv.com/wp-content/uploads/2024/12/Dashboard-1024x473-1.webp" alt="Dashboard" loading="lazy"/>
+
+          <p><strong>Step 6:</strong> Select the channel group you want to watch.</p>
+          <p><strong>Step 7:</strong> Click on the channel name, then double-tap the small screen to go full screen.</p>
+          <p><strong>Step 8:</strong> No need to add any EPG URL — just click <strong>"Install EPG"</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Android -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>🤖 Android</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> Download IPTV Smarters:<br>
+          <a href="https://www.iptvsmarters.com/smarters.apk" target="_blank" rel="noopener">https://www.iptvsmarters.com/smarters.apk</a></p>
+
+          <p><strong>Step 2:</strong> Open the app and select <strong>Login With Xtream Codes API</strong>.</p>
+          <img src="https://iptvmapletv.com/wp-content/uploads/2024/12/login-1024x473-1.webp" alt="Login screen" loading="lazy"/>
+
+          <p><strong>Step 3:</strong> Enter the login details we provided and click <strong>"ADD USER"</strong>.</p>
+          <p><strong>Step 4:</strong> Wait a few seconds.</p>
+          <p><strong>Step 5:</strong> Click the <strong>"Live TV"</strong> icon.</p>
+          <img src="https://iptvmapletv.com/wp-content/uploads/2024/12/Dashboard-1024x473-1.webp" alt="Dashboard" loading="lazy"/>
+
+          <p><strong>Step 6:</strong> Select the channel group you want to watch.</p>
+          <p><strong>Step 7:</strong> Click a channel name, then double-tap to go full screen.</p>
+        </div>
+      </div>
+
+      <!-- Samsung / LG Smart TV -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>📺 Smart TV (Samsung / LG)</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>For Samsung Smart TV:</strong></p>
+          <ol>
+            <li>Press the <strong>Smart Hub</strong> button on your remote.</li>
+            <li>Search for <strong>IPTV Smarters Pro</strong> and install it.</li>
+            <li>Choose <strong>Login With Xtream Codes</strong>.</li>
+            <li>Enter your Username, Password and Portal URL that we provide.</li>
+          </ol>
+
+          <p style="margin-top:1rem"><strong>For LG Smart TV:</strong></p>
+          <ol>
+            <li>Press the <strong>Home</strong> button and go to <strong>LG Content Store</strong>.</li>
+            <li>Search for <strong>IPTV Smarters Pro</strong> and install it.</li>
+            <li>Choose <strong>Login With Xtream Codes</strong>.</li>
+            <li>Enter your Username, Password and Portal URL that we provide.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Any other Smart TV -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>📺 Any Other Smart TV</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> Download one of these apps from your TV store:<br>
+          SetIPTV / NetIPTV / Smart IPTV / IBO PLAYER / FLIX IPTV / SMARTONE / SS IPTV / OTT Player / IPTV EXTREME</p>
+
+          <p><strong>Step 2:</strong> After installation, open the app — you'll see a <strong>MAC Address</strong> on screen.</p>
+          <img src="https://iptvmapletv.com/wp-content/uploads/2024/12/MAC-ADDRESS.webp" alt="MAC Address screen" loading="lazy"/>
+
+          <p><strong>Step 3:</strong> Send us the MAC address via WhatsApp, Email, or Live Chat.</p>
+          <p><strong>Step 4:</strong> After a few minutes, restart your TV and open the app. You're done!</p>
+        </div>
+      </div>
+
+      <!-- Fire TV Stick -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>🔥 Amazon FireTV Stick</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> From the Fire TV home screen, hover over <strong>Find</strong> and click <strong>Search</strong>.</p>
+          <p><strong>Step 2:</strong> Search for and select <strong>Downloader</strong>, then click <strong>Download</strong> and <strong>Open</strong>.</p>
+          <p><strong>Step 3:</strong> Go to <strong>Settings → My Fire TV → Developer Options → Install Unknown Apps</strong> and enable <strong>Downloader</strong>.</p>
+          <p><strong>Step 4:</strong> Launch Downloader and allow access. Type the following URL and click <strong>Go</strong>:</p>
+          <pre>https://www.iptvsmarters.com/smarters.apk</pre>
+          <p><strong>Step 5:</strong> Wait for the file to download, then click <strong>Install</strong> and <strong>Done</strong>.</p>
+          <p><strong>Step 6:</strong> Open IPTV Smarters, select <strong>Login with Xtream Codes API</strong>, and enter your subscription details (Username, Password, Portal URL) that we provide.</p>
+        </div>
+      </div>
+
+      <!-- Windows -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>💻 Windows PC</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> Download IPTV Smarters:<br>
+          <a href="https://www.iptvsmarters.com/download?download=windows" target="_blank" rel="noopener">https://www.iptvsmarters.com/download?download=windows</a></p>
+          <p><strong>Step 2:</strong> Choose <strong>Login With Xtream Codes</strong>.</p>
+          <p><strong>Step 3:</strong> Enter your Username, Password and Portal URL that we provide.</p>
+        </div>
+      </div>
+
+      <!-- Mac -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>🍎 Mac Computer</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> Download IPTV Smarters:<br>
+          <a href="https://www.iptvsmarters.com/download?download=mac" target="_blank" rel="noopener">https://www.iptvsmarters.com/download?download=mac</a></p>
+          <p><strong>Step 2:</strong> Choose <strong>Login With Xtream Codes</strong>.</p>
+          <p><strong>Step 3:</strong> Enter your Username, Password and Portal URL that we provide.</p>
+        </div>
+      </div>
+
+      <!-- MAG Device -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>📦 MAG Device</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Step 1:</strong> When the box loads, click <strong>Settings</strong> and press the <strong>SETUP/SET</strong> button on your remote.</p>
+          <p><strong>Step 2:</strong> Click <strong>System Settings</strong> → <strong>Servers</strong> → <strong>Portals</strong>.</p>
+          <p><strong>Step 3:</strong> In the <strong>Portal 1 Name</strong> field enter a name. In <strong>Portal 1 URL</strong> enter the portal URL we provide.</p>
+          <p><strong>Step 4:</strong> To activate, send us the <strong>MAC address</strong> from the label on the back of your box. We'll activate it remotely and send you the portal URL.</p>
+          <p><strong>Step 5:</strong> Click <strong>OK</strong> to save, then press <strong>EXIT</strong> on your remote.</p>
+          <p><strong>Step 6:</strong> Reboot your box and choose <strong>OK</strong> to apply changes.</p>
+        </div>
+      </div>
+
+      <!-- KODI -->
+      <div class="accord-item">
+        <button class="accord-btn" onclick="toggleAccord(this)">
+          <span>🎬 KODI</span>
+          <span class="accord-arrow">▼</span>
+        </button>
+        <div class="accord-body">
+          <p><strong>Using KODI Krypton 17:</strong></p>
+          <ol>
+            <li>Launch the Kodi app.</li>
+            <li>In the left menu, click <strong>TV</strong>.</li>
+            <li>Click <strong>Add-on browser</strong>.</li>
+            <li>Click <strong>PVR IPTV Simple Client</strong>.</li>
+            <li>Click <strong>Configure</strong>.</li>
+            <li>Select <strong>General</strong>.</li>
+            <li>Enter the IPTV subscription URL we provide.</li>
+            <li>Wait for the channels to load.</li>
+          </ol>
+        </div>
+      </div>
+
+    </div><!-- end accord-section -->
+
+    <!-- Bottom CTA -->
+    <div class="sg-cta">
+      <h3>Ready to Start Watching?</h3>
+      <p>Get instant access to 50,000+ live channels and 300,000+ movies &amp; series.</p>
+      <a href="/12-months-1-device.html" class="btn-red">Get Mojo 4K Now ›</a>
+    </div>
+
+  </div><!-- container -->
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      <a href="/">Home</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/refund-policy.html">Refund Policy</a>
+      <a href="/contact.html">Contact</a>
+    </p>
+    <p style="margin-top:.75rem">Copyright &copy; 2026 Mojo 4K IPTV. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleAccord(btn){
+  var item=btn.closest('.accord-item');
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.accord-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>

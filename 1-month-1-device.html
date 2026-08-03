@@ -80,8 +80,10 @@ ul{list-style:none}
 header{position:fixed;top:0;left:0;right:0;z-index:50}
 
 /* Banner */
-.banner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem 1rem;background:#000;padding:.75rem 1rem;text-align:center}
-.banner-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem .5rem;font-size:.875rem;line-height:1.4}
+.banner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.5rem .75rem;background:#000;padding:.75rem 1rem;text-align:center;min-height:auto}
+.banner-text-long{display:inline}
+.banner-text-short{display:none}
+.banner-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.35rem;font-size:.875rem;line-height:1.4;white-space:nowrap;overflow:hidden}
 .banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80}
 
 /* Nav */
@@ -379,8 +381,12 @@ footer h4{font-size:.875rem;font-weight:600}
 /* Responsive overrides */
 @media(max-width:639px){
   .hero{padding:12rem 0 5rem}
-  .banner{padding:.625rem .75rem}
-  .banner-inner{font-size:.8rem}
+  .banner{padding:.5rem .75rem;gap:.35rem}
+  .banner-inner{font-size:.72rem;gap:.25rem}
+  .banner-badge{display:none}
+  .banner-text-long{display:none}
+  .banner-text-short{display:inline;white-space:nowrap}
+  #btn-banner{padding:.35rem .75rem;font-size:.75rem !important}
 }
 
 /* ─── Discount badge & original price ─── */
@@ -440,7 +446,8 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
 .pp-page{padding-top:0}
 
 /* Hero — enough top space to clear sticky banner+nav */
-.pp-hero{padding:130px 24px 36px;text-align:center;position:relative;overflow:hidden}
+.pp-hero{padding:150px 24px 36px;text-align:center;position:relative;overflow:hidden}
+@media(max-width:639px){.pp-hero{padding:170px 20px 28px;}}
 .pp-hero::before{content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse 70% 50% at 50% -5%,rgba(231,79,81,.13) 0%,transparent 70%);
   pointer-events:none}
@@ -579,6 +586,8 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
 @keyframes sa-blink{0%,100%{opacity:1}50%{opacity:.3}}
 @media(max-width:480px){.sa-toast{bottom:78px;left:12px;max-width:260px}}
 @media(prefers-reduced-motion:reduce){.sa-toast{transition:none}}</style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("wVTX5iZON_Z94mQd9");</script>
 </head>
 <body>
 <div style="position:relative;min-height:100vh;background:#0a1a35;color:#fff;-webkit-font-smoothing:antialiased">
@@ -589,7 +598,8 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
 <div class="banner">
   <div class="banner-inner">
     <span class="banner-badge"><span class="live-dot" aria-hidden="true" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;margin-right:.125rem"></span>Limited Time</span>
-    <span style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> &mdash; from only <span style="font-weight:700;color:#FF7E80">$49</span> &mdash; <span style="color:#FF7E80">IBO Player Subscription for Free!</span></span>
+    <span class="banner-text-long" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> &mdash; from only <span style="font-weight:700;color:#FF7E80">$49</span> &mdash; <span style="color:#FF7E80">IBO Player Subscription for Free!</span></span>
+    <span class="banner-text-short" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> - <span style="font-weight:700;color:#FF7E80">$49</span> + <span style="color:#FF7E80">Free IBO Player</span></span>
   </div>
   <div style="display:flex;gap:.5rem">
     <a href="/12-months-1-device.html" id="btn-banner" style="display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;border-radius:9999px;background:#E74F51;padding:.5rem 1rem;font-size:.875rem;font-weight:600;white-space:nowrap;color:#fff;transition:background .2s" onmouseover="this.style.background='#D23E40'" onmouseout="this.style.background='#E74F51'">Claim Offer</a>
@@ -848,7 +858,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
             <option>Zimbabwe</option>
             <option>Other</option>
           </select></div>
-          <div class="pp-field"><label class="pp-label" for="pp-wa">WhatsApp (optional)</label>
+          <div class="pp-field"><label class="pp-label" for="pp-wa">WhatsApp</label>
             <input class="pp-input" id="pp-wa" type="tel" placeholder="+1 555 000 0000" autocomplete="tel"></div>
         </div>
         <div class="pp-field"><label class="pp-label" for="pp-device">Your Device</label>
@@ -862,7 +872,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
           <option>Windows PC / Mac</option>
           <option>MAG Box / Enigma2</option>
           <option>Other</option></select></div>
-        <div class="pp-field"><label class="pp-label" for="pp-notes">Notes (optional)</label>
+        <div class="pp-field"><label class="pp-label" for="pp-notes">Notes</label>
           <textarea class="pp-textarea" id="pp-notes" placeholder="Questions or special requests?"></textarea></div>
         <button class="pp-submit" id="pp-btn" type="submit">Submit</button>
         <div class="pp-err" id="pp-err"></div>
@@ -1083,14 +1093,33 @@ function ppSubmit(e){e.preventDefault();
       suc=document.getElementById('pp-suc'),area=document.getElementById('pp-form-area');
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
-  function showErr(m){err.style.display='block';err.textContent=m;btn.disabled=false;btn.textContent='Submit';}
-  if(!name){showErr('Please enter your full name.');return;}
-  if(!email||!email.includes('@')){showErr('Please enter a valid email address.');return;}
   btn.disabled=true;btn.textContent='Processing…';err.style.display='none';
-  var waMsg='📦 NEW ORDER%0A%0A📋 Plan: '+encodeURIComponent('1 Month · 1 Device · $9')+'%0A👤 Name: '+encodeURIComponent(name)+'%0A📧 Email: '+encodeURIComponent(email)+'%0A🌍 Country: '+encodeURIComponent(country||'N/A')+'%0A📱 Device: '+encodeURIComponent(device||'N/A')+(wa?'%0A💬 WhatsApp: '+encodeURIComponent(wa):'')+(notes?'%0A📝 Notes: '+encodeURIComponent(notes):'');
-  setTimeout(function(){area.style.display='none';var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';suc.style.display='block';
-    var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email;
-    window.open('https://wa.me/17828026280?text='+waMsg,'_blank','noopener,noreferrer');},900);
+  // Determine plan from page title
+  var planEl=document.querySelector('.pp-sum h3,.pp-sum-label h3');
+  var planName=planEl?planEl.textContent.trim():(document.title.replace('Mojo 4K IPTV — ','').replace(' | Mojo 4K',''));
+  var templateParams={
+    from_name:name||'Anonymous',
+    from_email:email||'(not provided)',
+    phone:wa||'(not provided)',
+    country:country||'(not provided)',
+    device:device||'(not provided)',
+    plan:planName,
+    message:notes||'(no notes)',
+    name:name||'Anonymous',
+    site_name:'mojo4ktv.com',
+    time:new Date().toLocaleString()
+  };
+  emailjs.send('service_u0y9azb','template_4mqukzm',templateParams)
+    .then(function(){},function(){});
+  // Show success + open WhatsApp regardless
+  setTimeout(function(){
+    area.style.display='none';
+    var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
+    suc.style.display='block';
+    var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your contact';
+    var waMsg='\ud83d\udce6 NEW ORDER\n\n\ud83d\udccb Plan: '+planName+'\n\ud83d\udc64 Name: '+(name||'N/A')+'\n\ud83d\udce7 Email: '+(email||'N/A')+'\n\ud83c\udf0d Country: '+(country||'N/A')+'\n\ud83d\udcf1 Device: '+(device||'N/A')+(wa?'\n\ud83d\udcac WhatsApp: '+wa:'')+(notes?'\n\ud83d\udcdd Notes: '+notes:'');
+    window.open('https://wa.me/17828026280?text='+encodeURIComponent(waMsg),'_blank','noopener,noreferrer');
+  },800);
 }
 </script>
 </div>
