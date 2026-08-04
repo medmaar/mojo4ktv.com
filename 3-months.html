@@ -844,6 +844,117 @@ document.querySelectorAll('#mobileMenu a').forEach(function(a){a.addEventListene
 // Smooth anchor scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href').slice(1);var el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}})});
 // Navbar scroll background
+(function(){var nav=document.querySelector('nav');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true})})();
+// Pricing: multi-connection selector
+var PRICES={1:[9,49,29,39],2:[18,89,50,69],3:[27,135,75,105],4:[36,180,99,140],5:[45,225,120,175]};
+var ORIG_PRICES={1:[18,98,58,78],2:[36,178,100,138],3:[54,270,150,210],4:[72,360,198,280],5:[90,450,240,350]};
+function setConnections(n){
+  var p=PRICES[n]; var o=ORIG_PRICES[n];
+  document.getElementById('p1m').textContent='$'+p[0];
+  document.getElementById('p12m').textContent='$'+p[1];
+  document.getElementById('p3m').textContent='$'+p[2];
+  document.getElementById('p6m').textContent='$'+p[3];
+  var op1m=document.getElementById('op1m'); if(op1m) op1m.textContent='$'+o[0];
+  var op12m=document.getElementById('op12m'); if(op12m) op12m.textContent='$'+o[1];
+  var op3m=document.getElementById('op3m'); if(op3m) op3m.textContent='$'+o[2];
+  var op6m=document.getElementById('op6m'); if(op6m) op6m.textContent='$'+o[3];
+  document.querySelectorAll('.dev-tab').forEach(function(t){t.classList.toggle('active',parseInt(t.dataset.connections)===n)});
+}
+</script>
+<script>
+/* ── MULTI-DEVICE PRICING ── */
+var OP_PRICES={1:"29",2:"50",3:"75",4:"99",5:"120"};var OP_ORIG={1:"58",2:"100",3:"150",4:"198",5:"240"};
+var currentConn = 1;
+function setConn(n) {
+  currentConn = n;
+  document.querySelectorAll('.op-conn-btn').forEach(function(b){
+    b.classList.toggle('active', parseInt(b.dataset.conn) === n);
+  });
+  var label = n === 1 ? '1 Connection' : n + ' Connections';
+  var planEl = document.getElementById('op-conn-label');
+  if(planEl) planEl.textContent = label;
+  var priceEl = document.getElementById('op-price');
+  if(priceEl) priceEl.textContent = OP_PRICES[n];
+  var wasEl = document.getElementById('op-was');
+  if(wasEl && OP_ORIG[n]) wasEl.textContent = OP_ORIG[n];
+}
+
+/* ── FORM SUBMIT ── */
+function opSubmit(e) {
+  e.preventDefault();
+  var btn = document.getElementById('op-btn');
+  var err = document.getElementById('op-err');
+  var suc = document.getElementById('op-suc');
+  var area = document.getElementById('op-form-area');
+  function gv(id) {
+    var el = document.getElementById(id);
+    if(!el) return '';
+    return el.tagName === 'SELECT' ? el.options[el.selectedIndex].value : el.value.trim();
+  }
+  var name = gv('op-name'), email = gv('op-email'), country = gv('op-country'),
+      wa = gv('op-whatsapp'), device = gv('op-device'), notes = gv('op-notes');
+  function showErr(msg) {
+    err.style.display = 'block'; err.textContent = msg;
+    btn.disabled = false; btn.textContent = 'Subscribe for $29 →';
+  }
+  if(!name) { showErr('Please enter your full name.'); return; }
+  if(!email || !email.includes('@')) { showErr('Please enter a valid email address.'); return; }
+  btn.disabled = true; btn.textContent = 'Processing order…';
+  err.style.display = 'none';
+
+  var connInfo = currentConn === 1 ? '1 Connection' : currentConn + ' Connections';
+  var priceInfo = OP_PRICES[currentConn] || '$29';
+  var planName = '3 Months - ' + connInfo + ' (' + priceInfo + ')';
+  var emoji = '📦';
+  var waMsg = emoji + ' NEW ORDER%0A%0A' +
+    '📋 Plan: ' + encodeURIComponent(planName) + '%0A' +
+    '👤 Name: ' + encodeURIComponent(name) + '%0A' +
+    '📧 Email: ' + encodeURIComponent(email) + '%0A' +
+    '🌍 Country: ' + encodeURIComponent(country || 'N/A') + '%0A' +
+    '📱 Device: ' + encodeURIComponent(device || 'N/A') + '%0A' +
+    (wa ? '💬 WhatsApp: ' + encodeURIComponent(wa) + '%0A' : '') +
+    (notes ? '📝 Notes: ' + encodeURIComponent(notes) : '');
+
+  var templateParams = {
+    from_name: name || '(not provided)',
+    from_email: email || '(not provided)',
+    phone: wa || '(not provided)',
+    country: country || '(not provided)',
+    device: device || '(not provided)',
+    plan: planName,
+    message: notes || '(no notes)',
+    name: name || '(not provided)',
+    site_name: 'mojo4ktv.com',
+    time: new Date().toLocaleString()
+  };
+  emailjs.send('service_u0y9azb','template_4mqukzm', templateParams)
+    .then(function(){
+      area.style.display = 'none';
+      suc.style.display = 'block';
+      var ec = document.getElementById('op-email-confirm') || document.getElementById('pp-email-confirm');
+      if(ec) ec.textContent = email || 'your contact';
+    }, function(error){
+      btn.disabled = false;
+      btn.textContent = 'Subscribe →';
+      if(err){ err.style.display='block'; err.textContent='Something went wrong. Please try again or contact us on WhatsApp.'; }
+      console.error('EmailJS error:', error);
+    });
+}
+</script>
+
+</div>
+
+<!-- SALES BANNER -->
+<style>@keyframes np-pulse{0%,100%{box-shadow:0 0 0 3px rgba(231,79,81,.25)}50%{box-shadow:0 0 0 6px rgba(231,79,81,.08)}}</style>
+<div id="np-banner" style="position:fixed;left:12px;bottom:12px;z-index:9998;max-width:calc(100vw - 80px);display:flex;align-items:center;gap:8px;padding:9px 24px 9px 10px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.09);box-shadow:0 8px 24px -8px rgba(0,0,0,.3),0 2px 6px rgba(0,0,0,.06);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;pointer-events:auto" aria-live="polite" aria-atomic="true">
+  <button onclick="npClose()" aria-label="Close" style="position:absolute;top:5px;right:6px;background:none;border:none;color:#C0C0C0;font-size:.82rem;cursor:pointer;padding:2px 3px;line-height:1;font-family:inherit">&times;</button>
+  <span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:#E74F51;display:inline-block;animation:np-pulse 1.4s ease-in-out infinite"></span>
+  <div style="min-width:0">
+    <div id="np-title" style="font-weight:700;font-size:12px;line-height:1.3;color:#1A1A1A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">New purchase</div>
+    <div style="font-size:10px;color:#9A9A9A;margin-top:1px;white-space:nowrap"><span id="np-time-text">just now</span></div>
+  </div>
+</div>
+<script>
 (function(){
   var MSGS=['Mike from the USA purchased 12 Months','Ryan from Canada purchased 12 Months','Liam from Australia purchased 6 Months','Thomas from France purchased 12 Months','Stefan from Germany purchased 12 Months','Oliver from the UK purchased 6 Months','James from New Zealand purchased 12 Months','Chris from the USA purchased 3 Months','Nathan from Canada purchased 12 Months','Ethan from Australia purchased 12 Months','Marc from France purchased 6 Months','Markus from Germany purchased 6 Months','Charlie from the UK purchased 12 Months','Carlos from Spain purchased 12 Months','Marco from Italy purchased 6 Months','Lars from the Netherlands purchased 12 Months','Kevin from the USA purchased 12 Months','Scott from Canada purchased 6 Months','Ben from Australia purchased 12 Months','Pierre from France purchased 12 Months','Klaus from Germany purchased 3 Months','Harry from the UK purchased 12 Months','Erik from Sweden purchased 6 Months','Diego from Spain purchased 12 Months','Luca from Italy purchased 12 Months','Louis from Belgium purchased 6 Months','Daan from the Netherlands purchased 12 Months','Tyler from the USA purchased 12 Months','Bjorn from Norway purchased 6 Months','Matt from Australia purchased 12 Months'];
   var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago','12 minutes ago'];
