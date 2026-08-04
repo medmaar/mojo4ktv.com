@@ -568,24 +568,7 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
 .pp-sw-btn:hover,.pp-sw-btn.cur{background:rgba(231,79,81,.12);border-color:rgba(231,79,81,.4);color:#fff}
 .pp-sw-btn.cur{pointer-events:none}
 
-/* Sales alert toasts */
-.sa-toast{position:fixed;bottom:90px;left:20px;z-index:9998;max-width:290px;
-  background:rgba(8,16,38,.97);border:1px solid rgba(255,255,255,.1);
-  border-left:3px solid #2ecc71;border-radius:12px;padding:11px 14px;
-  display:flex;align-items:center;gap:10px;box-shadow:0 12px 40px rgba(0,0,0,.6);
-  transform:translateX(-340px);opacity:0;
-  transition:transform .42s cubic-bezier(.22,1,.36,1),opacity .42s ease;
-  pointer-events:none;backdrop-filter:blur(12px)}
-.sa-toast.show{transform:translateX(0);opacity:1}
-.sa-flag{font-size:1.4rem;flex-shrink:0;line-height:1}
-.sa-text{min-width:0}
-.sa-name{font-weight:700;font-size:.83rem;color:#fff;overflow:hidden;text-overflow:ellipsis}
-.sa-action{font-size:.74rem;color:#2ecc71;margin-top:1px}
-.sa-dot{position:absolute;top:10px;right:10px;width:6px;height:6px;border-radius:50%;
-  background:#2ecc71;animation:sa-blink 1.2s ease-in-out infinite;flex-shrink:0}
-@keyframes sa-blink{0%,100%{opacity:1}50%{opacity:.3}}
-@media(max-width:480px){.sa-toast{bottom:78px;left:12px;max-width:260px}}
-@media(prefers-reduced-motion:reduce){.sa-toast{transition:none}}</style>
+</style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init("wVTX5iZON_Z94mQd9");</script>
 </head>
@@ -1003,31 +986,10 @@ nav{background:rgba(10,26,53,.98) !important;backdrop-filter:blur(20px) !importa
 
 
 
-<div class="sa-toast" id="saToast" aria-live="polite" aria-atomic="true">
-  <div class="sa-flag" id="saFlag"></div>
   <div class="sa-text"><div class="sa-name" id="saName"></div><div class="sa-action" id="saAction"></div></div>
   <span class="sa-dot"></span>
 </div>
-<script>
-(function(){
-  var alerts=[{"flag": "\ud83c\udde8\ud83c\udde6", "name": "David from Canada", "action": "just subscribed"}, {"flag": "\ud83c\uddec\ud83c\udde7", "name": "James from UK", "action": "subscribed 2 min ago"}, {"flag": "\ud83c\uddfa\ud83c\uddf8", "name": "Michael from USA", "action": "just activated"}, {"flag": "\ud83c\udde6\ud83c\uddfa", "name": "Chris from Australia", "action": "subscribed 4 min ago"}, {"flag": "\ud83c\udde9\ud83c\uddea", "name": "Stefan from Germany", "action": "just subscribed"}, {"flag": "\ud83c\uddeb\ud83c\uddf7", "name": "Antoine from France", "action": "activated 3 min ago"}, {"flag": "\ud83c\uddee\ud83c\uddea", "name": "Sean from Ireland", "action": "just subscribed"}, {"flag": "\ud83c\uddf8\ud83c\uddea", "name": "Lars from Sweden", "action": "subscribed 6 min ago"}, {"flag": "\ud83c\uddf3\ud83c\uddf1", "name": "Pieter from Netherlands", "action": "just activated"}, {"flag": "\ud83c\uddee\ud83c\uddf9", "name": "Marco from Italy", "action": "subscribed 1 min ago"}, {"flag": "\ud83c\udde7\ud83c\uddea", "name": "Thomas from Belgium", "action": "just subscribed"}, {"flag": "\ud83c\uddf3\ud83c\uddf4", "name": "Erik from Norway", "action": "activated 5 min ago"}];
-  var idx=Math.floor(Math.random()*alerts.length);
-  var toast=document.getElementById('saToast');
-  if(!toast)return;
-  function show(){
-    var a=alerts[idx%alerts.length];
-    document.getElementById('saFlag').textContent=a.flag;
-    document.getElementById('saName').textContent=a.name;
-    document.getElementById('saAction').textContent=a.action;
-    toast.classList.add('show');
-    setTimeout(function(){
-      toast.classList.remove('show');idx++;
-      setTimeout(show,(5+Math.random()*8)*1000);
-    },5000);
-  }
-  setTimeout(show,(3+Math.random()*4)*1000);
-})();
-</script>
+
 <script>
 function toggleMenu(){var m=document.getElementById('mobileMenu');m.classList.toggle('open')}
 function toggleFaq(btn){var item=btn.closest('.faq-item');item.classList.toggle('open')}
