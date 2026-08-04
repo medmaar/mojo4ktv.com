@@ -1004,86 +1004,15 @@ document.querySelectorAll('#mobileMenu a').forEach(function(a){a.addEventListene
 // Smooth anchor scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href').slice(1);var el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}})});
 // Navbar scroll background
-(function(){var nav=document.querySelector('nav');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true})})();
-// Pricing: multi-connection selector
-var PRICES={1:[9,49,29,39],2:[18,89,50,69],3:[27,135,75,105],4:[36,180,99,140],5:[45,225,120,175]};
-var ORIG_PRICES={1:[18,98,58,78],2:[36,178,100,138],3:[54,270,150,210],4:[72,360,198,280],5:[90,450,240,350]};
-function setConnections(n){
-  var p=PRICES[n]; var o=ORIG_PRICES[n];
-  document.getElementById('p1m').textContent='$'+p[0];
-  document.getElementById('p12m').textContent='$'+p[1];
-  document.getElementById('p3m').textContent='$'+p[2];
-  document.getElementById('p6m').textContent='$'+p[3];
-  var op1m=document.getElementById('op1m'); if(op1m) op1m.textContent='$'+o[0];
-  var op12m=document.getElementById('op12m'); if(op12m) op12m.textContent='$'+o[1];
-  var op3m=document.getElementById('op3m'); if(op3m) op3m.textContent='$'+o[2];
-  var op6m=document.getElementById('op6m'); if(op6m) op6m.textContent='$'+o[3];
-  document.querySelectorAll('.dev-tab').forEach(function(t){t.classList.toggle('active',parseInt(t.dataset.connections)===n)});
-  // Update subscribe button hrefs to match selected device count
-  var sfx=n===1?'1-device':n+'-devices';
-  var plans=['1-month','3-months','6-months','12-months'];
-  var ids=['btn-1m','btn-3m','btn-6m','btn-12m'];
-  [['btn-1m','1-month'],['btn-3m','3-months'],['btn-6m','6-months'],['btn-12m','12-months']].forEach(function(pair){
-    var el=document.getElementById(pair[0]);
-    if(el) el.href='/'+pair[1]+'-'+sfx+'.html';
-  });
-  var bb=document.getElementById('btn-banner');
-  if(bb) bb.href='/12-months-'+sfx+'.html';
-}
-</script>
-<script>
-async function ppSubmit(e){e.preventDefault();
-  var btn=document.getElementById('pp-btn'),err=document.getElementById('pp-err'),
-      suc=document.getElementById('pp-suc'),area=document.getElementById('pp-form-area');
-  function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
-  var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
-  btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';
-  if(!name.trim()||!email.trim()){btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Please enter your name and email.';}return;}
-  try{
-    var r=await fetch('https://iptv-trial-mojo4ktv.medmaar.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,whatsapp:wa,device:device,notes:notes})});
-    var d=await r.json();
-    if(r.ok&&d.success){
-      if(area)area.style.display='none';
-      var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
-      if(suc)suc.style.display='block';
-      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your email';
-    }else{btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Submission failed. Please try again or contact us on WhatsApp.';}}
-  }catch(ex){
-    btn.disabled=false;btn.textContent='Submit';
-    if(err){err.style.display='block';err.textContent='Network error. Please try again or contact us: help@mojo4ktv.com';}
-    console.error(ex);
-  }
-}
-</script>
-</div>
-
-<!-- SALES BANNER -->
-<div id="np-banner" style="position:fixed;left:18px;bottom:18px;z-index:9998;max-width:266px;display:flex;align-items:center;gap:11px;padding:11px 30px 11px 11px;border-radius:12px;background:#ffffff;border:1px solid rgba(0,0,0,.06);box-shadow:0 16px 34px -12px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.08);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;pointer-events:auto" aria-live="polite" aria-atomic="true">
-  <button onclick="npClose()" aria-label="Close" style="position:absolute;top:6px;right:8px;background:none;border:none;color:#B8B8B8;font-size:.95rem;cursor:pointer;padding:3px 4px;line-height:1;font-family:inherit">&times;</button>
-  <div style="flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#FFE9A8 0%,#DFAD05 100%);box-shadow:0 0 0 2px rgba(223,173,5,.15)">
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
-      <path d="M6 7h12l-1 12.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 7z" stroke="#1A1400" stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="#1A1400" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M9.5 12.5l1.8 1.8L14.8 11" stroke="#1A1400" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </div>
-  <div>
-    <div id="np-title" style="font-weight:700;font-size:12.5px;line-height:1.35;color:#1A1A1A">New purchase</div>
-    <div id="np-time" style="font-size:10.5px;color:#8A8A8A;margin-top:2px;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:#2ECC71;display:inline-block;flex-shrink:0"></span><span id="np-time-text">just now</span></div>
-  </div>
-</div>
-<script>
 (function(){
-  var NAMES=['Liam','Noah','Ethan','Jacob','Mason','Logan','Jack','Lucas','Owen','William','Emma','Olivia','Ava','Sophia','Charlotte','Mia','Amelia','Emily','Chloe','Ella'];
-  var CITIES=['Toronto','Montreal','Vancouver','Calgary','Edmonton','Ottawa','Winnipeg','Quebec City','Hamilton','Kitchener','London','Victoria','Halifax','Oshawa','Windsor','Saskatoon','Regina','Barrie','Kelowna','Sherbrooke'];
-  var PLANS=['1-Month Plan','3-Month Plan','3-Month Plan','6-Month Plan','6-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan'];
-  var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago'];
+  var MSGS=['Mike from the USA purchased 12 Months','Ryan from Canada purchased 12 Months','Liam from Australia purchased 6 Months','Thomas from France purchased 12 Months','Stefan from Germany purchased 12 Months','Oliver from the UK purchased 6 Months','James from New Zealand purchased 12 Months','Chris from the USA purchased 3 Months','Nathan from Canada purchased 12 Months','Ethan from Australia purchased 12 Months','Marc from France purchased 6 Months','Markus from Germany purchased 6 Months','Charlie from the UK purchased 12 Months','Carlos from Spain purchased 12 Months','Marco from Italy purchased 6 Months','Lars from the Netherlands purchased 12 Months','Kevin from the USA purchased 12 Months','Scott from Canada purchased 6 Months','Ben from Australia purchased 12 Months','Pierre from France purchased 12 Months','Klaus from Germany purchased 3 Months','Harry from the UK purchased 12 Months','Erik from Sweden purchased 6 Months','Diego from Spain purchased 12 Months','Luca from Italy purchased 12 Months','Louis from Belgium purchased 6 Months','Daan from the Netherlands purchased 12 Months','Tyler from the USA purchased 12 Months','Bjorn from Norway purchased 6 Months','Matt from Australia purchased 12 Months'];
+  var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago','12 minutes ago'];
   var SK='mojo4k_banner_dismissed';
   var el=document.getElementById('np-banner');
-  var lastName=null;
+  if(!el)return;
+  var idx=Math.floor(Math.random()*MSGS.length);
   var stopped=false;
   var timers=[];
-  function pick(a){return a[Math.floor(Math.random()*a.length)];}
   function setT(fn,ms){var id=setTimeout(fn,ms);timers.push(id);return id;}
   function npClose(){
     stopped=true;timers.forEach(clearTimeout);
@@ -1092,10 +1021,10 @@ async function ppSubmit(e){e.preventDefault();
   }
   window.npClose=npClose;
   function show(){
-    var n=pick(NAMES);while(n===lastName)n=pick(NAMES);lastName=n;
-    document.getElementById('np-title').textContent=n+' from '+pick(CITIES)+' just purchased a '+pick(PLANS);
-    document.getElementById('np-time-text').textContent=pick(TIMES);
+    document.getElementById('np-title').textContent=MSGS[idx%MSGS.length];
+    document.getElementById('np-time-text').textContent=TIMES[Math.floor(Math.random()*TIMES.length)];
     el.style.transform='translateY(0)';el.style.opacity='1';
+    idx++;
   }
   function cycle(){
     if(stopped)return;

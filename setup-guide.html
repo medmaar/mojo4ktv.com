@@ -428,5 +428,57 @@ function toggleAccord(btn){
   if(!wasOpen)item.classList.add('open');
 }
 </script>
+
+<!-- SALES BANNER -->
+<div id="np-banner" style="position:fixed;left:18px;bottom:18px;z-index:9998;max-width:266px;display:flex;align-items:center;gap:11px;padding:11px 30px 11px 11px;border-radius:12px;background:#ffffff;border:1px solid rgba(0,0,0,.06);box-shadow:0 16px 34px -12px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.08);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;pointer-events:auto" aria-live="polite" aria-atomic="true">
+  <button onclick="npClose()" aria-label="Close" style="position:absolute;top:6px;right:8px;background:none;border:none;color:#B8B8B8;font-size:.95rem;cursor:pointer;padding:3px 4px;line-height:1;font-family:inherit">&times;</button>
+  <div style="flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#FFE9A8 0%,#DFAD05 100%);box-shadow:0 0 0 2px rgba(223,173,5,.15)">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+      <path d="M6 7h12l-1 12.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 7z" stroke="#1A1400" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="#1A1400" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9.5 12.5l1.8 1.8L14.8 11" stroke="#1A1400" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div>
+    <div id="np-title" style="font-weight:700;font-size:12.5px;line-height:1.35;color:#1A1A1A">New purchase</div>
+    <div id="np-time" style="font-size:10.5px;color:#8A8A8A;margin-top:2px;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:#2ECC71;display:inline-block;flex-shrink:0"></span><span id="np-time-text">just now</span></div>
+  </div>
+</div>
+<script>
+(function(){
+  var MSGS=['Mike from the USA purchased 12 Months','Ryan from Canada purchased 12 Months','Liam from Australia purchased 6 Months','Thomas from France purchased 12 Months','Stefan from Germany purchased 12 Months','Oliver from the UK purchased 6 Months','James from New Zealand purchased 12 Months','Chris from the USA purchased 3 Months','Nathan from Canada purchased 12 Months','Ethan from Australia purchased 12 Months','Marc from France purchased 6 Months','Markus from Germany purchased 6 Months','Charlie from the UK purchased 12 Months','Carlos from Spain purchased 12 Months','Marco from Italy purchased 6 Months','Lars from the Netherlands purchased 12 Months','Kevin from the USA purchased 12 Months','Scott from Canada purchased 6 Months','Ben from Australia purchased 12 Months','Pierre from France purchased 12 Months','Klaus from Germany purchased 3 Months','Harry from the UK purchased 12 Months','Erik from Sweden purchased 6 Months','Diego from Spain purchased 12 Months','Luca from Italy purchased 12 Months','Louis from Belgium purchased 6 Months','Daan from the Netherlands purchased 12 Months','Tyler from the USA purchased 12 Months','Bjorn from Norway purchased 6 Months','Matt from Australia purchased 12 Months'];
+  var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago','12 minutes ago'];
+  var SK='mojo4k_banner_dismissed';
+  var el=document.getElementById('np-banner');
+  if(!el)return;
+  var idx=Math.floor(Math.random()*MSGS.length);
+  var stopped=false;
+  var timers=[];
+  function setT(fn,ms){var id=setTimeout(fn,ms);timers.push(id);return id;}
+  function npClose(){
+    stopped=true;timers.forEach(clearTimeout);
+    el.style.transform='translateY(140%)';el.style.opacity='0';
+    try{sessionStorage.setItem(SK,'1');}catch(e){}
+  }
+  window.npClose=npClose;
+  function show(){
+    document.getElementById('np-title').textContent=MSGS[idx%MSGS.length];
+    document.getElementById('np-time-text').textContent=TIMES[Math.floor(Math.random()*TIMES.length)];
+    el.style.transform='translateY(0)';el.style.opacity='1';
+    idx++;
+  }
+  function cycle(){
+    if(stopped)return;
+    show();
+    setT(function(){
+      if(stopped)return;
+      el.style.transform='translateY(140%)';el.style.opacity='0';
+      setT(cycle,3000);
+    },5000);
+  }
+  try{if(sessionStorage.getItem(SK)==='1')return;}catch(e){}
+  setT(cycle,2000+Math.floor(Math.random()*2000));
+})();
+</script>
 </body>
 </html>

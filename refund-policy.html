@@ -60,16 +60,14 @@ ul{padding-left:1.5rem;color:rgba(255,255,255,.75);margin-bottom:1rem}li{margin-
 </div>
 <script>
 (function(){
-  var NAMES=['Liam','Noah','Ethan','Jacob','Mason','Logan','Jack','Lucas','Owen','William','Emma','Olivia','Ava','Sophia','Charlotte','Mia','Amelia','Emily','Chloe','Ella'];
-  var CITIES=['Toronto','Montreal','Vancouver','Calgary','Edmonton','Ottawa','Winnipeg','Quebec City','Hamilton','Kitchener','London','Victoria','Halifax','Oshawa','Windsor','Saskatoon','Regina','Barrie','Kelowna','Sherbrooke'];
-  var PLANS=['1-Month Plan','3-Month Plan','3-Month Plan','6-Month Plan','6-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan','12-Month Plan'];
-  var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago'];
+  var MSGS=['Mike from the USA purchased 12 Months','Ryan from Canada purchased 12 Months','Liam from Australia purchased 6 Months','Thomas from France purchased 12 Months','Stefan from Germany purchased 12 Months','Oliver from the UK purchased 6 Months','James from New Zealand purchased 12 Months','Chris from the USA purchased 3 Months','Nathan from Canada purchased 12 Months','Ethan from Australia purchased 12 Months','Marc from France purchased 6 Months','Markus from Germany purchased 6 Months','Charlie from the UK purchased 12 Months','Carlos from Spain purchased 12 Months','Marco from Italy purchased 6 Months','Lars from the Netherlands purchased 12 Months','Kevin from the USA purchased 12 Months','Scott from Canada purchased 6 Months','Ben from Australia purchased 12 Months','Pierre from France purchased 12 Months','Klaus from Germany purchased 3 Months','Harry from the UK purchased 12 Months','Erik from Sweden purchased 6 Months','Diego from Spain purchased 12 Months','Luca from Italy purchased 12 Months','Louis from Belgium purchased 6 Months','Daan from the Netherlands purchased 12 Months','Tyler from the USA purchased 12 Months','Bjorn from Norway purchased 6 Months','Matt from Australia purchased 12 Months'];
+  var TIMES=['just now','2 minutes ago','5 minutes ago','9 minutes ago','12 minutes ago'];
   var SK='mojo4k_banner_dismissed';
   var el=document.getElementById('np-banner');
-  var lastName=null;
+  if(!el)return;
+  var idx=Math.floor(Math.random()*MSGS.length);
   var stopped=false;
   var timers=[];
-  function pick(a){return a[Math.floor(Math.random()*a.length)];}
   function setT(fn,ms){var id=setTimeout(fn,ms);timers.push(id);return id;}
   function npClose(){
     stopped=true;timers.forEach(clearTimeout);
@@ -78,10 +76,10 @@ ul{padding-left:1.5rem;color:rgba(255,255,255,.75);margin-bottom:1rem}li{margin-
   }
   window.npClose=npClose;
   function show(){
-    var n=pick(NAMES);while(n===lastName)n=pick(NAMES);lastName=n;
-    document.getElementById('np-title').textContent=n+' from '+pick(CITIES)+' just purchased a '+pick(PLANS);
-    document.getElementById('np-time-text').textContent=pick(TIMES);
+    document.getElementById('np-title').textContent=MSGS[idx%MSGS.length];
+    document.getElementById('np-time-text').textContent=TIMES[Math.floor(Math.random()*TIMES.length)];
     el.style.transform='translateY(0)';el.style.opacity='1';
+    idx++;
   }
   function cycle(){
     if(stopped)return;
