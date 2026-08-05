@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /checkout
 Disallow: /checkout/
+Disallow: /trial
+Disallow: /go/
+Disallow: /assets/
 Sitemap: https://mojo4ktv.com/sitemap.xml
+
+# Google Search Console verification
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
