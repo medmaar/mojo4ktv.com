@@ -26,6 +26,8 @@
 /6-months-3-devices.html /6-months-3-devices 301
 /6-months-4-devices.html /6-months-4-devices 301
 /6-months-5-devices.html /6-months-5-devices 301
+
+# Existing SEO pages
 /best-iptv-service.html /best-iptv-service 301
 /contact.html /contact 301
 /free-trial.html /free-trial 301
@@ -40,9 +42,7 @@
 /refund-policy.html /refund-policy 301
 /setup-guide.html /setup-guide 301
 /tivimate-iptv.html /tivimate-iptv 301
-/trial.html /trial 301
 /what-is-iptv.html /what-is-iptv 301
-
 /live-iptv.html /live-iptv 301
 /iptv-providers.html /iptv-providers 301
 /iptv-reddit.html /iptv-reddit 301
@@ -55,3 +55,34 @@
 /cheap-iptv.html /cheap-iptv 301
 /arabic-iptv.html /arabic-iptv 301
 /iptv-for-roku.html /iptv-for-roku 301
+
+# New SEO pages - clean URL redirects
+/german-iptv.html /german-iptv 301
+/iptv-iphone.html /iptv-iphone 301
+/iptv-smart-tv.html /iptv-smart-tv 301
+/buy-iptv.html /buy-iptv 301
+/premium-iptv.html /premium-iptv 301
+/iptv-vlc.html /iptv-vlc 301
+/iptv-premier-league.html /iptv-premier-league 301
+/plex-iptv.html /plex-iptv 301
+/stremio-iptv.html /stremio-iptv 301
+/iptv-near-me.html /iptv-near-me 301
+/iptv-google-tv.html /iptv-google-tv 301
+/iptv-bein-sport.html /iptv-bein-sport 301
+/tivimate-subscription.html /tivimate-subscription 301
+/iptv-lifetime.html /iptv-lifetime 301
+
+# Keyword variant aliases
+/buy-iptv-subscription /buy-iptv 301
+/iptv-chromecast /iptv-google-tv 301
+/iptv-chromecast.html /iptv-google-tv 301
+/german-tv-iptv /german-iptv 301
+/iptv-beinsport /iptv-bein-sport 301
+/bein-sport-iptv /iptv-bein-sport 301
+/tivimate-premium /tivimate-subscription 301
+/tivimate-premium.html /tivimate-subscription 301
+/iptv-for-iphone /iptv-iphone 301
+/iptv-for-iphone.html /iptv-iphone 301
+/lifetime-iptv /iptv-lifetime 301
+/lifetime-iptv.html /iptv-lifetime 301
+/premier-league-iptv /iptv-premier-league 301
