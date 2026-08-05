@@ -129,3 +129,81 @@
 /iptv-lg /iptv-for-lg-tv 301
 /iptv-lg-tv /iptv-for-lg-tv 301
 /iptv-roku /iptv-for-roku 301
+
+# ── Batch 3 — 20 new pages (Aug 2026) ────────────────────────────
+/siptv                  /smart-iptv            301
+/ssiptv                 /smart-iptv            301
+/smart-iptv-samsung     /smart-iptv            301
+/smart-iptv-m3u         /smart-iptv            301
+/set-iptv               /smart-iptv            301
+
+/xtream-iptv            /xtream-codes          301
+/xc-iptv                /xtream-codes          301
+/xtream-codes-api       /xtream-codes          301
+/xtream-player          /xtream-codes          301
+
+/iptv-streaming         /iptv-stream           301
+/live-stream-iptv       /iptv-stream           301
+/ip-tv-stream           /iptv-stream           301
+
+/stb-emu                /stbemu                301
+/stbemu-pro             /stbemu                301
+/stb-emulator           /stbemu                301
+
+/xiaomi-iptv            /iptv-xiaomi           301
+/mi-box-iptv            /iptv-xiaomi           301
+/xiaomi-mi-box-iptv     /iptv-xiaomi           301
+
+/iptv-m3u-list          /iptv-list             301
+/m3u-list               /iptv-list             301
+/iptv-line              /iptv-list             301
+/m3u-iptv-list          /iptv-list             301
+
+/gseiptv                /gse-iptv              301
+/gse-smart-iptv         /gse-iptv              301
+
+/iptv-price             /iptv-pricing          301
+/iptv-plans             /iptv-pricing          301
+/iptv-packages          /iptv-pricing          301
+/iptv-cost              /iptv-pricing          301
+/iptv-deals             /iptv-pricing          301
+
+/smart-iptv-downloader  /iptv-downloader       301
+/iptv-app-download      /iptv-downloader       301
+
+/tivimate-pro           /tivimate-pc           301
+/tivimate-windows       /tivimate-pc           301
+/tivimate-mac           /tivimate-pc           301
+
+/iptv-smarters-windows  /iptv-smarters-pc      301
+/iptv-smarters-pro-pc   /iptv-smarters-pc      301
+/iptv-smarters-pro-mac  /iptv-smarters-pc      301
+/iptv-smarters-mac      /iptv-smarters-pc      301
+
+/telegram-iptv          /iptv-telegram         301
+/iptv-telegram-m3u      /iptv-telegram         301
+
+/discord-iptv           /iptv-discord          301
+/iptv-discord-server    /iptv-discord          301
+
+/ott-navigator-premium  /ott-navigator         301
+
+/formuler-z10           /formuler-iptv         301
+/mytvonline             /formuler-iptv         301
+
+/iptv-tester            /iptv-checker          301
+/iptv-stream-checker    /iptv-checker          301
+/m3u-checker            /iptv-checker          301
+
+/webos-iptv-app         /webos-iptv            301
+/iptv-lg-webos          /webos-iptv            301
+
+/world-cup-iptv         /iptv-world-cup        301
+/iptv-fifa              /iptv-world-cup        301
+
+/iptv-sub               /iptv-account          301
+/iptv-login             /iptv-account          301
+/iptv-credentials       /iptv-account          301
+
+/nvidia-shield-iptv     /iptv-nvidia-shield    301
+/shield-tv-iptv         /iptv-nvidia-shield    301
