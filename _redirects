@@ -207,3 +207,5 @@
 
 /nvidia-shield-iptv     /iptv-nvidia-shield    301
 /shield-tv-iptv         /iptv-nvidia-shield    301
+/iptv-plans-pricing       /pricing               301
+/plans                    /pricing               301
