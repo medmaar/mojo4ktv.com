@@ -86,3 +86,46 @@
 /lifetime-iptv /iptv-lifetime 301
 /lifetime-iptv.html /iptv-lifetime 301
 /premier-league-iptv /iptv-premier-league 301
+
+# New pages from session 2
+/jellyfin-iptv.html /jellyfin-iptv 301
+/iptv-espn.html /iptv-espn 301
+/iptv-streaming-service.html /iptv-streaming-service 301
+/iptv-browser.html /iptv-browser 301
+/iptv-linux.html /iptv-linux 301
+
+# Keyword alias redirects
+/online-iptv /live-iptv 301
+/online-iptv.html /live-iptv 301
+/iptv-web /iptv-browser 301
+/iptv-web.html /iptv-browser 301
+/iptv-web-browser /iptv-browser 301
+/iptv-web-browser.html /iptv-browser 301
+/hd-iptv /iptv-4k 301
+/hd-iptv.html /iptv-4k 301
+/8k-iptv /iptv-4k 301
+/iptv-8k /iptv-4k 301
+/iptv-f1 /iptv-sports 301
+/iptv-nba /iptv-sports 301
+/iptv-nhl /iptv-sports 301
+/iptv-nfl /iptv-sports 301
+/iptv-ufc /iptv-sports 301
+/iptv-servers /what-is-iptv 301
+/iptv-receiver /iptv-box 301
+/iptv-set-top-box /iptv-box 301
+/iptv-stb /iptv-box 301
+/jellyfin-iptv.html /jellyfin-iptv 301
+/iptv-ubuntu /iptv-linux 301
+/iptv-raspberry-pi /iptv-linux 301
+/iptv-streaming /iptv-streaming-service 301
+/iptv-subscription-reddit /iptv-reddit 301
+/best-iptv-reddit /iptv-reddit 301
+/iptv-macbook /iptv-for-pc 301
+/iptv-pc /iptv-for-pc 301
+/kodi-iptv /iptv-kodi 301
+/iptv-android /iptv-for-android 301
+/iptv-android-tv /iptv-for-android 301
+/iptv-samsung /iptv-for-samsung-tv 301
+/iptv-lg /iptv-for-lg-tv 301
+/iptv-lg-tv /iptv-for-lg-tv 301
+/iptv-roku /iptv-for-roku 301
