@@ -46,32 +46,7 @@ ul{list-style:none}
 .btn-primary:hover{background:#D23E40;transform:translateY(-2px)}
 .card{border-radius:1rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);backdrop-filter:blur(8px);padding:1.5rem;transition:all .3s}
 .card:hover{border-color:rgba(231,79,81,.4);background:rgba(255,255,255,.06)}
-header{position:fixed;top:0;left:0;right:0;z-index:50}
-.banner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.5rem .75rem;background:#000;padding:.75rem 1rem;text-align:center}
-.banner-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.35rem;font-size:.875rem;line-height:1.4;white-space:nowrap;overflow:hidden}
-.banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80;flex-shrink:0}
-.banner-text-long{display:inline}
-.banner-text-short{display:none}
-@media(max-width:639px){.banner{padding:.5rem .75rem;gap:.35rem}.banner-inner{font-size:.72rem;gap:.25rem}.banner-badge{display:none}.banner-text-long{display:none}.banner-text-short{display:inline;white-space:nowrap}#btn-banner{padding:.35rem .75rem;font-size:.75rem !important}}
-nav{background:transparent;transition:background .3s,backdrop-filter .3s,box-shadow .3s}
-nav.scrolled{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-.nav-inner{max-width:88rem;margin:0 auto;padding:0 1rem;display:flex;height:4rem;align-items:center;gap:1.5rem}
-@media(min-width:640px){.nav-inner{padding:0 1.5rem}}
-@media(min-width:1024px){.nav-inner{padding:0 2rem}}
-.nav-links{display:none;flex:1;align-items:center;justify-content:center;gap:.25rem}
-@media(min-width:1024px){.nav-links{display:flex}}
-.nav-link{display:inline-flex;align-items:center;padding:.5rem .75rem;border-radius:.5rem;font-size:.985rem;font-weight:500;color:rgba(255,255,255,.9);transition:background .2s}
-.nav-link:hover{background:rgba(255,255,255,.1)}
-.nav-cta{display:none;align-items:center;gap:.5rem;flex-shrink:0}
-@media(min-width:1024px){.nav-cta{display:flex}}
-.nav-cta-btn{display:inline-flex;height:2.5rem;align-items:center;gap:.25rem;border-radius:9999px;border:1.5px solid #E74F51;background:#E74F51;padding:0 1rem;font-size:.9375rem;font-weight:500;color:#fff;transition:all .2s}
-.nav-cta-btn:hover{background:#D23E40;border-color:#D23E40}
-.menu-btn{margin-left:auto;padding:.5rem;color:#fff;background:none;border:none;cursor:pointer}
-@media(min-width:1024px){.menu-btn{display:none}}
-.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#0a1a35;border-bottom:1px solid rgba(255,255,255,.1);padding:1rem}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:.75rem 1rem;border-radius:.5rem;font-weight:500;color:rgba(255,255,255,.9)}
-.mobile-menu a:hover{background:rgba(255,255,255,.1)}
+
 .page-hero{position:relative;overflow:hidden;padding:9rem 0 5rem;background:linear-gradient(180deg,rgba(8,21,43,.95) 0%,rgba(10,26,53,.9) 100%)}
 .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(231,79,81,.15),transparent 70%);pointer-events:none}
 h1{font-size:1.75rem;font-weight:700;line-height:1.2;text-wrap:balance}
@@ -135,41 +110,77 @@ footer h4{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spac
 .step-num{width:2.5rem;height:2.5rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;margin:0 auto .875rem}
 .wa-btn{display:inline-flex;align-items:center;gap:.625rem;border-radius:9999px;background:#25D366;padding:.875rem 2rem;font-size:1rem;font-weight:600;color:#fff;box-shadow:0 8px 24px -6px rgba(37,211,102,.4);transition:all .2s;margin-top:1.25rem}
 .wa-btn:hover{background:#1EBE5A;transform:translateY(-2px)}
+/* Banner */
+.banner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.5rem .75rem;background:#000;padding:.75rem 1rem;text-align:center}
+.banner-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.35rem;font-size:.875rem;line-height:1.4;white-space:nowrap;overflow:hidden}
+.banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80;flex-shrink:0}
+.live-dot{display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;margin-right:.125rem}
+.banner-text-long{display:inline}.banner-text-short{display:none}
+@media(max-width:639px){.banner{padding:.5rem .75rem;gap:.35rem}.banner-inner{font-size:.72rem;gap:.25rem}.banner-badge{display:none}.banner-text-long{display:none}.banner-text-short{display:inline;white-space:nowrap}#btn-banner{padding:.35rem .75rem;font-size:.75rem !important}}
+/* Nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50}
+nav{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav-inner{max-width:88rem;margin:0 auto;padding:0 1rem;display:flex;height:4rem;align-items:center;gap:1.5rem}
+@media(min-width:640px){.nav-inner{padding:0 1.5rem}}
+@media(min-width:1024px){.nav-inner{padding:0 2rem}}
+.nav-logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+.nav-links{display:none;flex:1;align-items:center;justify-content:center;gap:.25rem}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-link{display:inline-flex;align-items:center;padding:.5rem .75rem;border-radius:.5rem;font-size:.985rem;font-weight:500;color:rgba(255,255,255,.9);transition:background .2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,.1)}
+.nav-cta{display:none;align-items:center;gap:.5rem;flex-shrink:0}
+@media(min-width:1024px){.nav-cta{display:flex}}
+.btn-nav{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:#E74F51;padding:.5rem 1.25rem;font-size:.875rem;font-weight:600;color:#fff;transition:background .2s}
+.btn-nav:hover{background:#c8383a}
+.menu-btn{display:flex;flex-direction:column;gap:.3rem;background:none;border:none;cursor:pointer;padding:.5rem;margin-left:auto}
+.menu-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(min-width:1024px){.menu-btn{display:none}}
+.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(8,21,43,.98);backdrop-filter:blur(14px);padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:.75rem 1rem;border-radius:.5rem;font-weight:500;color:rgba(255,255,255,.85)}
+.mobile-menu a:hover{background:rgba(255,255,255,.08)}
 </style>
 </head>
 <body>
 <div style="position:relative;min-height:100vh;background:#0a1a35;color:#fff;-webkit-font-smoothing:antialiased">
 <div aria-hidden="true" class="page-bg" style="position:fixed;inset:0;z-index:0;pointer-events:none"></div>
 <header>
+<!-- BANNER -->
 <div class="banner">
   <div class="banner-inner">
-    <span class="banner-badge"><span class="live-dot" aria-hidden="true" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;margin-right:.125rem"></span>Limited Time</span>
+    <span class="banner-badge"><span class="live-dot" aria-hidden="true"></span>Limited Time</span>
     <span class="banner-text-long" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> &mdash; from only <span style="font-weight:700;color:#FF7E80">$49</span> &mdash; <span style="color:#FF7E80">IBO Player Subscription for Free!</span></span>
     <span class="banner-text-short" style="font-weight:500;color:rgba(255,255,255,.9)"><strong style="font-weight:700;color:#fff">12 Months</strong> - <span style="font-weight:700;color:#FF7E80">$49</span> + <span style="color:#FF7E80">Free IBO Player</span></span>
   </div>
-  <a href="/12-months-1-device" id="btn-banner" style="display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;border-radius:9999px;background:#E74F51;padding:.5rem 1rem;font-size:.875rem;font-weight:600;white-space:nowrap;color:#fff;transition:background .2s" onmouseover="this.style.background='#D23E40'" onmouseout="this.style.background='#E74F51'">Claim Offer</a>
+  <div style="display:flex;gap:.5rem">
+    <a href="/12-months-1-device" id="btn-banner" style="display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;border-radius:9999px;background:#E74F51;padding:.5rem 1rem;font-size:.875rem;font-weight:600;white-space:nowrap;color:#fff;transition:background .2s" onmouseover="this.style.background='#D23E40'" onmouseout="this.style.background='#E74F51'">Claim Offer</a>
+  </div>
 </div>
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" style="display:flex;align-items:center;flex-shrink:0">
-      <img src="/assets/img/logo.png" alt="Mojo4K TV" height="36" style="height:2.1rem;width:auto;display:block" loading="eager"/>
+    <a href="/" class="nav-logo">
+      <img src="/assets/img/logo.png" alt="Mojo 4K" height="36" style="height:2rem;width:auto;display:block" loading="eager"/>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" style="list-style:none;display:flex;align-items:center;gap:.25rem;flex:1;justify-content:center">
       <li><a href="/" class="nav-link">Home</a></li>
-      <li><a href="/channels" class="nav-link">Channels</a></li>
+      <li><a href="/#pricing" class="nav-link">Plans</a></li>
       <li><a href="/setup-guide" class="nav-link">Setup Guide</a></li>
       <li><a href="/contact" class="nav-link">Contact</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="/free-trial" class="nav-cta-btn">Subscribe Now &rsaquo;</a>
+      <a href="/12-months-1-device" class="btn-nav">Subscribe Now &rsaquo;</a>
     </div>
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
-      <svg style="width:1.5rem;height:1.5rem" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <button class="menu-btn" onclick="document.getElementById('mob-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="/">Home</a><a href="/channels">Channels</a><a href="/setup-guide">Setup Guide</a><a href="/contact">Contact</a>
-    <a href="/free-trial" style="display:block;text-align:center;background:#E74F51;border-radius:.75rem;padding:.875rem;font-weight:600;margin-top:.75rem">Subscribe Now</a>
+  <div id="mob-nav" class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/#pricing">Plans</a>
+    <a href="/setup-guide">Setup Guide</a>
+    <a href="/contact">Contact</a>
+    <a href="/12-months-1-device" style="background:#E74F51;text-align:center;margin-top:.5rem;border-radius:.75rem;display:block;padding:.875rem;font-weight:600">Subscribe Now</a>
   </div>
 </nav>
 </header>
@@ -345,10 +356,8 @@ footer h4{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spac
 })();
 </script>
 <script>
-function toggleMenu(){var m=document.getElementById('mobileMenu');m.classList.toggle('open')}
 function toggleFaq(btn){var item=btn.closest('.faq-item');item.classList.toggle('open')}
 document.querySelectorAll('#mobileMenu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mobileMenu').classList.remove('open')})});
-(function(){var nav=document.querySelector('nav');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true})})();
 </script>
 </body>
 </html>
