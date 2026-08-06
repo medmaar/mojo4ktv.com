@@ -392,3 +392,129 @@
 
 # Pricing
 /iptv-pricing-plans /iptv-pricing 301
+
+
+# ── CITY PAGES (.html → clean URL) ──────────────────────────────
+# UK cities
+/iptv-london.html /iptv-london 301
+/iptv-manchester.html /iptv-manchester 301
+/iptv-birmingham.html /iptv-birmingham 301
+/iptv-leeds.html /iptv-leeds 301
+/iptv-glasgow.html /iptv-glasgow 301
+/iptv-edinburgh.html /iptv-edinburgh 301
+/iptv-liverpool.html /iptv-liverpool 301
+/iptv-bristol.html /iptv-bristol 301
+
+# Canadian cities
+/iptv-toronto.html /iptv-toronto 301
+/iptv-vancouver.html /iptv-vancouver 301
+/iptv-montreal.html /iptv-montreal 301
+/iptv-calgary.html /iptv-calgary 301
+/iptv-ottawa.html /iptv-ottawa 301
+/iptv-edmonton.html /iptv-edmonton 301
+/iptv-winnipeg.html /iptv-winnipeg 301
+
+# US cities
+/iptv-new-york.html /iptv-new-york 301
+/iptv-los-angeles.html /iptv-los-angeles 301
+/iptv-chicago.html /iptv-chicago 301
+/iptv-miami.html /iptv-miami 301
+/iptv-houston.html /iptv-houston 301
+/iptv-dallas.html /iptv-dallas 301
+/iptv-seattle.html /iptv-seattle 301
+/iptv-atlanta.html /iptv-atlanta 301
+/iptv-phoenix.html /iptv-phoenix 301
+
+# German cities
+/iptv-berlin.html /iptv-berlin 301
+/iptv-munich.html /iptv-munich 301
+/iptv-hamburg.html /iptv-hamburg 301
+/iptv-cologne.html /iptv-cologne 301
+/iptv-frankfurt.html /iptv-frankfurt 301
+/iptv-stuttgart.html /iptv-stuttgart 301
+
+# French cities
+/iptv-paris.html /iptv-paris 301
+/iptv-lyon.html /iptv-lyon 301
+/iptv-marseille.html /iptv-marseille 301
+
+# Norwegian cities
+/iptv-oslo.html /iptv-oslo 301
+/iptv-bergen.html /iptv-bergen 301
+
+# Australian cities
+/iptv-sydney.html /iptv-sydney 301
+/iptv-melbourne.html /iptv-melbourne 301
+
+# Middle East cities
+/iptv-dubai.html /iptv-dubai 301
+/iptv-abu-dhabi.html /iptv-abu-dhabi 301
+/iptv-riyadh.html /iptv-riyadh 301
+/iptv-doha.html /iptv-doha 301
+/iptv-casablanca.html /iptv-casablanca 301
+
+# ── COUNTRY PAGES ────────────────────────────────────────────────
+/iptv-pakistan.html /iptv-pakistan 301
+/iptv-denmark.html /iptv-denmark 301
+/iptv-poland.html /iptv-poland 301
+/iptv-finland.html /iptv-finland 301
+
+# ── DEVICE PAGES ─────────────────────────────────────────────────
+/iptv-firestick-4k.html /iptv-firestick-4k 301
+/iptv-firestick-4k-max.html /iptv-firestick-4k-max 301
+/iptv-fire-tv-cube.html /iptv-fire-tv-cube 301
+/mag-iptv.html /mag-iptv 301
+/iptv-mag254.html /iptv-mag254 301
+/iptv-mag322.html /iptv-mag322 301
+/iptv-android-box.html /iptv-android-box 301
+/iptv-apple-tv-4k.html /iptv-apple-tv-4k 301
+/iptv-ipad.html /iptv-ipad 301
+/iptv-philips.html /iptv-philips 301
+/iptv-sony.html /iptv-sony 301
+/iptv-tcl-tv.html /iptv-tcl-tv 301
+/iptv-mecool.html /iptv-mecool 301
+
+# ── KEYWORD ALIASES — new pages ──────────────────────────────────
+/london-iptv /iptv-london 301
+/iptv-uk-london /iptv-london 301
+/manchester-iptv /iptv-manchester 301
+/birmingham-iptv /iptv-birmingham 301
+/glasgow-iptv /iptv-glasgow 301
+/toronto-iptv /iptv-toronto 301
+/vancouver-iptv /iptv-vancouver 301
+/montreal-iptv /iptv-montreal 301
+/new-york-iptv /iptv-new-york 301
+/iptv-nyc /iptv-new-york 301
+/los-angeles-iptv /iptv-los-angeles 301
+/chicago-iptv /iptv-chicago 301
+/miami-iptv /iptv-miami 301
+/berlin-iptv /iptv-berlin 301
+/munich-iptv /iptv-munich 301
+/paris-iptv /iptv-paris 301
+/oslo-iptv /iptv-oslo 301
+/dubai-iptv /iptv-dubai 301
+
+/iptv-firestick-4k-ultra /iptv-firestick-4k 301
+/firestick-4k-iptv /iptv-firestick-4k 301
+/firestick-4k-max-iptv /iptv-firestick-4k-max 301
+/fire-tv-cube-iptv /iptv-fire-tv-cube 301
+/iptv-mag /mag-iptv 301
+/mag-box-iptv /mag-iptv 301
+/mag254-iptv /iptv-mag254 301
+/mag256-iptv /iptv-mag254 301
+/mag322-iptv /iptv-mag322 301
+/mag324-iptv /iptv-mag322 301
+/android-box-iptv /iptv-android-box 301
+/iptv-android-tv-box /iptv-android-box 301
+/apple-tv-4k-iptv /iptv-apple-tv-4k 301
+/iptv-for-apple-tv-4k /iptv-apple-tv-4k 301
+/ipad-iptv /iptv-ipad 301
+/iptv-for-ipad /iptv-ipad 301
+/philips-iptv /iptv-philips 301
+/iptv-philips-tv /iptv-philips 301
+/sony-iptv /iptv-sony 301
+/iptv-sony-bravia /iptv-sony 301
+/tcl-iptv /iptv-tcl-tv 301
+/iptv-tcl /iptv-tcl-tv 301
+/mecool-iptv /iptv-mecool 301
+/iptv-for-mecool /iptv-mecool 301
