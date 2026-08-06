@@ -1,7 +1,14 @@
+# ─────────────────────────────────────────────────────────────────────
+# Mojo4KTV.com — Cloudflare Pages _redirects
+# Last updated: 2026-08-06 (SEO audit fix)
+# ─────────────────────────────────────────────────────────────────────
+
+# ── Checkout & trial ─────────────────────────────────────────────────
 /checkout /checkout/ 301
 /trial /free-trial 301
 /trial.html /free-trial.html 301
 
+# ── Plan pages (.html → clean URL) ───────────────────────────────────
 /1-month.html /1-month 301
 /1-month-1-device.html /1-month-1-device 301
 /1-month-2-devices.html /1-month-2-devices 301
@@ -27,239 +34,361 @@
 /6-months-4-devices.html /6-months-4-devices 301
 /6-months-5-devices.html /6-months-5-devices 301
 
-# Existing SEO pages
+# ── SEO pages (.html → clean URL) ────────────────────────────────────
+/arabic-iptv.html /arabic-iptv 301
+/arabic-m3u.html /arabic-m3u 301
+/best-iptv-box.html /best-iptv-box 301
 /best-iptv-service.html /best-iptv-service 301
+/buy-iptv.html /buy-iptv 301
+/channels.html /channels 301
+/cheap-iptv.html /cheap-iptv 301
 /contact.html /contact 301
+/formuler-iptv.html /formuler-iptv 301
+/free-iptv.html /free-iptv 301
 /free-trial.html /free-trial 301
+/german-iptv.html /german-iptv 301
+/gse-iptv.html /gse-iptv 301
 /iptv-4k.html /iptv-4k 301
+/iptv-account.html /iptv-account 301
+/iptv-android-tv.html /iptv-android-tv 301
+/iptv-apple-tv.html /iptv-apple-tv 301
+/iptv-bein-sport.html /iptv-bein-sport 301
+/iptv-box.html /iptv-box 301
+/iptv-browser.html /iptv-browser 301
+/iptv-checker.html /iptv-checker 301
+/iptv-chromecast.html /iptv-chromecast 301
+/iptv-discord.html /iptv-discord 301
+/iptv-downloader.html /iptv-downloader 301
+/iptv-dvr.html /iptv-dvr 301
+/iptv-espn.html /iptv-espn 301
+/iptv-f1.html /iptv-f1 301
 /iptv-for-android.html /iptv-for-android 301
 /iptv-for-firestick.html /iptv-for-firestick 301
+/iptv-for-lg-tv.html /iptv-for-lg-tv 301
+/iptv-for-pc.html /iptv-for-pc 301
+/iptv-for-roku.html /iptv-for-roku 301
 /iptv-for-samsung-tv.html /iptv-for-samsung-tv 301
+/iptv-github.html /iptv-github 301
+/iptv-google-tv.html /iptv-google-tv 301
+/iptv-hisense.html /iptv-hisense 301
+/iptv-iphone.html /iptv-iphone 301
+/iptv-kodi.html /iptv-kodi 301
+/iptv-lifetime.html /iptv-lifetime 301
+/iptv-linux.html /iptv-linux 301
+/iptv-list.html /iptv-list 301
+/iptv-m3u.html /iptv-m3u 301
+/iptv-m3u8.html /iptv-m3u8 301
+/iptv-near-me.html /iptv-near-me 301
+/iptv-nba.html /iptv-nba 301
+/iptv-nvidia-shield.html /iptv-nvidia-shield 301
+/iptv-premier-league.html /iptv-premier-league 301
+/iptv-pricing.html /iptv-pricing 301
+/iptv-promotions.html /iptv-promotions 301
+/iptv-providers.html /iptv-providers 301
+/iptv-raspberry-pi.html /iptv-raspberry-pi 301
+/iptv-receiver.html /iptv-receiver 301
+/iptv-reddit.html /iptv-reddit 301
+/iptv-servers.html /iptv-servers 301
+/iptv-smart-tv.html /iptv-smart-tv 301
+/iptv-smarters-pc.html /iptv-smarters-pc 301
 /iptv-smarters-pro.html /iptv-smarters-pro 301
 /iptv-sports.html /iptv-sports 301
+/iptv-stream.html /iptv-stream 301
+/iptv-streaming-service.html /iptv-streaming-service 301
 /iptv-subscription.html /iptv-subscription 301
+/iptv-telegram.html /iptv-telegram 301
+/iptv-trustpilot.html /iptv-trustpilot 301
+/iptv-vlc.html /iptv-vlc 301
+/iptv-vod.html /iptv-vod 301
+/iptv-world-cup.html /iptv-world-cup 301
+/iptv-xiaomi.html /iptv-xiaomi 301
+/jellyfin-iptv.html /jellyfin-iptv 301
+/live-iptv.html /live-iptv 301
+/ott-navigator.html /ott-navigator 301
+/plex-iptv.html /plex-iptv 301
+/premium-iptv.html /premium-iptv 301
+/pricing.html /pricing 301
 /privacy-policy.html /privacy-policy 301
+/private-iptv.html /private-iptv 301
 /refund-policy.html /refund-policy 301
 /setup-guide.html /setup-guide 301
-/tivimate-iptv.html /tivimate-iptv 301
-/what-is-iptv.html /what-is-iptv 301
-/live-iptv.html /live-iptv 301
-/iptv-providers.html /iptv-providers 301
-/iptv-reddit.html /iptv-reddit 301
-/iptv-box.html /iptv-box 301
-/iptv-m3u.html /iptv-m3u 301
-/iptv-for-lg-tv.html /iptv-for-lg-tv 301
-/iptv-apple-tv.html /iptv-apple-tv 301
-/iptv-for-pc.html /iptv-for-pc 301
-/iptv-kodi.html /iptv-kodi 301
-/cheap-iptv.html /cheap-iptv 301
-/arabic-iptv.html /arabic-iptv 301
-/iptv-for-roku.html /iptv-for-roku 301
-
-# New SEO pages - clean URL redirects
-/german-iptv.html /german-iptv 301
-/iptv-iphone.html /iptv-iphone 301
-/iptv-smart-tv.html /iptv-smart-tv 301
-/buy-iptv.html /buy-iptv 301
-/premium-iptv.html /premium-iptv 301
-/iptv-vlc.html /iptv-vlc 301
-/iptv-premier-league.html /iptv-premier-league 301
-/plex-iptv.html /plex-iptv 301
+/smart-iptv.html /smart-iptv 301
+/sport-m3u.html /sport-m3u 301
+/stbemu.html /stbemu 301
 /stremio-iptv.html /stremio-iptv 301
-/iptv-near-me.html /iptv-near-me 301
-/iptv-google-tv.html /iptv-google-tv 301
-/iptv-bein-sport.html /iptv-bein-sport 301
+/tivimate-firestick.html /tivimate-firestick 301
+/tivimate-iptv.html /tivimate-iptv 301
+/tivimate-pc.html /tivimate-pc 301
 /tivimate-subscription.html /tivimate-subscription 301
-/iptv-lifetime.html /iptv-lifetime 301
+/top-iptv.html /top-iptv 301
+/webos-iptv.html /webos-iptv 301
+/what-is-iptv.html /what-is-iptv 301
+/xtream-codes.html /xtream-codes 301
 
-# Keyword variant aliases
+# ── Keyword variant aliases ───────────────────────────────────────────
+# Buy/subscribe
 /buy-iptv-subscription /buy-iptv 301
-/iptv-chromecast /iptv-google-tv 301
-/iptv-chromecast.html /iptv-google-tv 301
-/german-tv-iptv /german-iptv 301
-/iptv-beinsport /iptv-bein-sport 301
-/bein-sport-iptv /iptv-bein-sport 301
+/iptv-sub /iptv-account 301
+/iptv-login /iptv-account 301
+/iptv-credentials /iptv-account 301
+
+# Pricing/plans
+/iptv-price /iptv-pricing 301
+/iptv-plans /iptv-pricing 301
+/iptv-packages /iptv-pricing 301
+/iptv-cost /iptv-pricing 301
+/iptv-deals /iptv-pricing 301
+/iptv-plans-pricing /pricing 301
+/plans /pricing 301
+
+# Free IPTV
+/ip-tv-free /free-iptv 301
+/iptvgratis /free-iptv 301
+/iptv-gratis /free-iptv 301
+/free-iptv-m3u /free-iptv 301
+
+# TiviMate variants
 /tivimate-premium /tivimate-subscription 301
 /tivimate-premium.html /tivimate-subscription 301
+/tivimate-pro /tivimate-pc 301
+/tivimate-windows /tivimate-pc 301
+/tivimate-mac /tivimate-pc 301
+/tivimate-fire-stick /tivimate-firestick 301
+/tivimate-for-firestick /tivimate-firestick 301
+/tivimate-on-firestick /tivimate-firestick 301
+
+# Smarters variants
+/iptv-smarters-windows /iptv-smarters-pc 301
+/iptv-smarters-pro-pc /iptv-smarters-pc 301
+/iptv-smarters-pro-mac /iptv-smarters-pc 301
+/iptv-smarters-mac /iptv-smarters-pc 301
+/smarters-pro /iptv-smarters-pro 301
+/ip-tv-smarters-pro /iptv-smarters-pro 301
+/ip-tv-smarter-pro /iptv-smarters-pro 301
+/smarters-tv /iptv-smarters-pro 301
+/smarters-lite /iptv-smarters-pro 301
+/smarterspro /iptv-smarters-pro 301
+/ipguys /iptv-smarters-pro 301
+
+# Smart IPTV / SSIPTV / SetIPTV variants
+/siptv /smart-iptv 301
+/ssiptv /smart-iptv 301
+/smart-iptv-samsung /smart-iptv 301
+/smart-iptv-m3u /smart-iptv 301
+/set-iptv /smart-iptv 301
+/my-siptv /smart-iptv 301
+/ssiptv-list /smart-iptv 301
+
+# Xtream Codes / XCIPTV variants
+/xtream-iptv /xtream-codes 301
+/xc-iptv /xtream-codes 301
+/xtream-codes-api /xtream-codes 301
+/xtream-player /xtream-codes 301
+/xciptv-firestick /xtream-codes 301
+/xciptv-pro /xtream-codes 301
+
+# STBemu variants
+/stb-emu /stbemu 301
+/stbemu-pro /stbemu 301
+/stb-emulator /stbemu 301
+/stbemu-iptv /stbemu 301
+
+# Xiaomi variants
+/xiaomi-iptv /iptv-xiaomi 301
+/mi-box-iptv /iptv-xiaomi 301
+/xiaomi-mi-box-iptv /iptv-xiaomi 301
+
+# M3U / list variants
+/iptv-m3u-list /iptv-list 301
+/m3u-list /iptv-list 301
+/iptv-line /iptv-list 301
+/m3u-iptv-list /iptv-list 301
+/iptv-listas-m3u /iptv-list 301
+/m3u-online /iptv-list 301
+/m3u-vlc /iptv-vlc 301
+/m3u-github /iptv-github 301
+/m3u-iptv /iptv-m3u 301
+/m3u-ip-tv /iptv-m3u 301
+/ip-tv-m3u /iptv-m3u 301
+/m3u8-iptv /iptv-m3u8 301
+/extm3u /iptv-m3u8 301
+/free-m3u8 /iptv-m3u8 301
+
+# Device variants — Firestick
+/amazon-fire-stick-iptv /iptv-for-firestick 301
+/fire-tv-stick-iptv /iptv-for-firestick 301
+/fire-tv-iptv /iptv-for-firestick 301
+/iptv-amazon /iptv-for-firestick 301
+/iptv-firestick /iptv-for-firestick 301
 /iptv-for-iphone /iptv-iphone 301
 /iptv-for-iphone.html /iptv-iphone 301
-/lifetime-iptv /iptv-lifetime 301
-/lifetime-iptv.html /iptv-lifetime 301
-/premier-league-iptv /iptv-premier-league 301
 
-# New pages from session 2
-/jellyfin-iptv.html /jellyfin-iptv 301
-/iptv-espn.html /iptv-espn 301
-/iptv-streaming-service.html /iptv-streaming-service 301
-/iptv-browser.html /iptv-browser 301
-/iptv-linux.html /iptv-linux 301
+# Device variants — Android
+/iptv-android /iptv-for-android 301
+/kodi-iptv /iptv-kodi 301
+/kodi-ip-tv /iptv-kodi 301
+/iptv-macbook /iptv-for-pc 301
+/iptv-pc /iptv-for-pc 301
 
-# Keyword alias redirects
-/online-iptv /live-iptv 301
-/online-iptv.html /live-iptv 301
-/iptv-web /iptv-browser 301
-/iptv-web.html /iptv-browser 301
-/iptv-web-browser /iptv-browser 301
-/iptv-web-browser.html /iptv-browser 301
+# Device variants — Android TV
+/android-iptv /iptv-android-tv 301
+/best-android-tv-box-for-iptv /best-iptv-box 301
+/best-android-box-for-iptv /best-iptv-box 301
+/iptv-android-box /best-iptv-box 301
+/best-iptv-android-box /best-iptv-box 301
+
+# Device variants — Samsung/LG/other TVs
+/iptv-samsung /iptv-for-samsung-tv 301
+/iptv-samsung-smart-tv /iptv-for-samsung-tv 301
+/iptv-lg /iptv-for-lg-tv 301
+/iptv-lg-tv /iptv-for-lg-tv 301
+/iptv-lg-smart /iptv-for-lg-tv 301
+/iptv-lg-webos /webos-iptv 301
+/iptv-for-lg-webos /webos-iptv 301
+/webos-iptv-app /webos-iptv 301
+/iptv-hisense-tv /iptv-hisense 301
+/hisense-iptv /iptv-hisense 301
+/iptv-tizen /iptv-hisense 301
+/iptv-sony /iptv-smart-tv 301
+/iptv-philips /iptv-smart-tv 301
+
+# Device variants — Roku
+/iptv-roku /iptv-for-roku 301
+/iptv-roku-tv /iptv-for-roku 301
+/roku-tv-iptv /iptv-for-roku 301
+
+# Device variants — Chromecast/Google TV
+/iptv-google-chromecast /iptv-chromecast 301
+/chromecast-iptv /iptv-chromecast 301
+
+# Device variants — Nvidia Shield
+/nvidia-shield-iptv /iptv-nvidia-shield 301
+/shield-tv-iptv /iptv-nvidia-shield 301
+
+# Receiver / STB (iptv-receiver.html exists)
+/iptv-set-top-box /iptv-receiver 301
+/iptv-stb /iptv-receiver 301
+/iptv-mag-box /iptv-receiver 301
+
+# Formuler
+/formuler-z10 /formuler-iptv 301
+/mytvonline /formuler-iptv 301
+
+# GSE
+/gseiptv /gse-iptv 301
+/gse-smart-iptv /gse-iptv 301
+/nanomid /gse-iptv 301
+
+# OTT Navigator
+/ott-navigator-premium /ott-navigator 301
+
+# 4K / HD quality pages
 /hd-iptv /iptv-4k 301
-/hd-iptv.html /iptv-4k 301
-/8k-iptv /iptv-4k 301
 /iptv-8k /iptv-4k 301
-/iptv-f1 /iptv-sports 301
-/iptv-nba /iptv-sports 301
+/8k-iptv /iptv-4k 301
+
+# Sports variants
+/iptv-sport /iptv-sports 301
+/iptv-nba /iptv-f1 301
 /iptv-nhl /iptv-sports 301
 /iptv-nfl /iptv-sports 301
 /iptv-ufc /iptv-sports 301
-/iptv-servers /what-is-iptv 301
-/iptv-receiver /iptv-box 301
-/iptv-set-top-box /iptv-box 301
-/iptv-stb /iptv-box 301
-/jellyfin-iptv.html /jellyfin-iptv 301
+/iptv-formula1 /iptv-f1 301
+/best-iptv-for-sports /iptv-sports 301
+/world-cup-iptv /iptv-world-cup 301
+/iptv-fifa /iptv-world-cup 301
+/iptv-bein-sports /iptv-bein-sport 301
+/bein-sport-iptv /iptv-bein-sport 301
+/iptv-beinsport /iptv-bein-sport 301
+/premier-league-iptv /iptv-premier-league 301
+/sports-m3u /sport-m3u 301
+/bein-sports-m3u /sport-m3u 301
+/bein-sport-iptv-m3u /sport-m3u 301
+/sky-m3u /sport-m3u 301
+
+# Servers (iptv-servers.html exists — remove the redirect that was hiding it)
+/iptv-server /iptv-servers 301
+
+# Streaming
+/iptv-streaming /iptv-stream 301
+/live-stream-iptv /iptv-stream 301
+/ip-tv-stream /iptv-stream 301
+/online-iptv /live-iptv 301
+/ip-tv-live /live-iptv 301
+/live-ip-tv /live-iptv 301
+
+# Browser / web
+/iptv-web /iptv-browser 301
+/iptv-web-browser /iptv-browser 301
+
+# DVR / catch-up
+/iptv-recording /iptv-dvr 301
+/tivimate-dvr /iptv-dvr 301
+/iptv-catch-up /iptv-dvr 301
+
+# VOD
+/iptv-vod-movies /iptv-vod 301
+/iptv-on-demand /iptv-vod 301
+
+# GitHub
+/github-iptv /iptv-github 301
+/iptv-m3u-github /iptv-github 301
+/iptvgithub /iptv-github 301
+
+# Downloader
+/smart-iptv-downloader /iptv-downloader 301
+/iptv-app-download /iptv-downloader 301
+
+# Checker
+/iptv-tester /iptv-checker 301
+/iptv-stream-checker /iptv-checker 301
+/m3u-checker /iptv-checker 301
+
+# Telegram / Discord
+/telegram-iptv /iptv-telegram 301
+/iptv-telegram-m3u /iptv-telegram 301
+/discord-iptv /iptv-discord 301
+/iptv-discord-server /iptv-discord 301
+
+# Linux / Pi
 /iptv-ubuntu /iptv-linux 301
 /iptv-raspberry-pi /iptv-linux 301
+/raspberry-pi-iptv /iptv-linux 301
+/iptv-pi /iptv-linux 301
+
+# Streaming service
+/iptv-streaming-services /iptv-streaming-service 301
 /iptv-streaming /iptv-streaming-service 301
+
+# Reviews / Trustpilot
+/iptv-reviews /iptv-trustpilot 301
+/iptv-customer-service /iptv-trustpilot 301
+
+# Reddit variants
 /iptv-subscription-reddit /iptv-reddit 301
 /best-iptv-reddit /iptv-reddit 301
-/iptv-macbook /iptv-for-pc 301
-/iptv-pc /iptv-for-pc 301
-/kodi-iptv /iptv-kodi 301
-/iptv-android /iptv-for-android 301
-/iptv-android-tv /iptv-for-android 301
-/iptv-samsung /iptv-for-samsung-tv 301
-/iptv-lg /iptv-for-lg-tv 301
-/iptv-lg-tv /iptv-for-lg-tv 301
-/iptv-roku /iptv-for-roku 301
+/best-iptv-provider-reddit /iptv-reddit 301
 
-# ── Batch 3 — 20 new pages (Aug 2026) ────────────────────────────
-/siptv                  /smart-iptv            301
-/ssiptv                 /smart-iptv            301
-/smart-iptv-samsung     /smart-iptv            301
-/smart-iptv-m3u         /smart-iptv            301
-/set-iptv               /smart-iptv            301
+# Arabic M3U variants
+/arabic-iptv-m3u /arabic-m3u 301
+/m3u-arabic /arabic-m3u 301
+/iptv-m3u-arabic /arabic-m3u 301
 
-/xtream-iptv            /xtream-codes          301
-/xc-iptv                /xtream-codes          301
-/xtream-codes-api       /xtream-codes          301
-/xtream-player          /xtream-codes          301
+# German
+/german-tv-iptv /german-iptv 301
 
-/iptv-streaming         /iptv-stream           301
-/live-stream-iptv       /iptv-stream           301
-/ip-tv-stream           /iptv-stream           301
+# Promotions / deals
+/iptv-offers /iptv-promotions 301
+/iptv-discount /iptv-promotions 301
 
-/stb-emu                /stbemu                301
-/stbemu-pro             /stbemu                301
-/stb-emulator           /stbemu                301
+# Top IPTV
+/top-10-iptv /top-iptv 301
+/best-iptv-providers /top-iptv 301
+/top-iptv-providers /top-iptv 301
 
-/xiaomi-iptv            /iptv-xiaomi           301
-/mi-box-iptv            /iptv-xiaomi           301
-/xiaomi-mi-box-iptv     /iptv-xiaomi           301
+# Private / paid
+/paid-iptv /private-iptv 301
+/iptv-premium-subscription /private-iptv 301
 
-/iptv-m3u-list          /iptv-list             301
-/m3u-list               /iptv-list             301
-/iptv-line              /iptv-list             301
-/m3u-iptv-list          /iptv-list             301
-
-/gseiptv                /gse-iptv              301
-/gse-smart-iptv         /gse-iptv              301
-
-/iptv-price             /iptv-pricing          301
-/iptv-plans             /iptv-pricing          301
-/iptv-packages          /iptv-pricing          301
-/iptv-cost              /iptv-pricing          301
-/iptv-deals             /iptv-pricing          301
-
-/smart-iptv-downloader  /iptv-downloader       301
-/iptv-app-download      /iptv-downloader       301
-
-/tivimate-pro           /tivimate-pc           301
-/tivimate-windows       /tivimate-pc           301
-/tivimate-mac           /tivimate-pc           301
-
-/iptv-smarters-windows  /iptv-smarters-pc      301
-/iptv-smarters-pro-pc   /iptv-smarters-pc      301
-/iptv-smarters-pro-mac  /iptv-smarters-pc      301
-/iptv-smarters-mac      /iptv-smarters-pc      301
-
-/telegram-iptv          /iptv-telegram         301
-/iptv-telegram-m3u      /iptv-telegram         301
-
-/discord-iptv           /iptv-discord          301
-/iptv-discord-server    /iptv-discord          301
-
-/ott-navigator-premium  /ott-navigator         301
-
-/formuler-z10           /formuler-iptv         301
-/mytvonline             /formuler-iptv         301
-
-/iptv-tester            /iptv-checker          301
-/iptv-stream-checker    /iptv-checker          301
-/m3u-checker            /iptv-checker          301
-
-/webos-iptv-app         /webos-iptv            301
-/iptv-lg-webos          /webos-iptv            301
-
-/world-cup-iptv         /iptv-world-cup        301
-/iptv-fifa              /iptv-world-cup        301
-
-/iptv-sub               /iptv-account          301
-/iptv-login             /iptv-account          301
-/iptv-credentials       /iptv-account          301
-
-/nvidia-shield-iptv     /iptv-nvidia-shield    301
-/shield-tv-iptv         /iptv-nvidia-shield    301
-/iptv-plans-pricing       /pricing               301
-/plans                    /pricing               301
-
-# ── BATCH 4 KEYWORD ALIASES (Aug 2026) ──────────────────────────
-/ip-tv-free            /free-iptv                          301
-/iptvgratis            /free-iptv                          301
-/iptv-gratis           /free-iptv                          301
-/free-iptv-m3u         /free-iptv                          301
-/github-iptv           /iptv-github                        301
-/iptv-m3u-github       /iptv-github                        301
-/iptvgithub            /iptv-github                        301
-/m3u8-iptv             /iptv-m3u8                          301
-/extm3u                /iptv-m3u8                          301
-/free-m3u8             /iptv-m3u8                          301
-/best-iptv-android-box /best-iptv-box                      301
-/iptv-android-box      /best-iptv-box                      301
-/iptv-stb              /iptv-receiver                      301
-/iptv-set-top-box      /iptv-receiver                      301
-/iptv-mag-box          /iptv-receiver                      301
-/sports-m3u            /sport-m3u                          301
-/bein-sports-m3u       /sport-m3u                          301
-/bein-sport-iptv-m3u   /sport-m3u                          301
-/sky-m3u               /sport-m3u                          301
-/iptv-android          /iptv-android-tv                    301
-/android-iptv          /iptv-android-tv                    301
-/top-10-iptv           /top-iptv                           301
-/best-iptv-providers   /top-iptv                           301
-/arabic-iptv-m3u       /arabic-m3u                         301
-/m3u-arabic            /arabic-m3u                         301
-/tivimate-fire-stick   /tivimate-firestick                 301
-/tivimate-for-firestick /tivimate-firestick                301
-/tivimate-on-firestick /tivimate-firestick                 301
-/iptv-server           /iptv-servers                       301
-/iptv-vod-movies       /iptv-vod                           301
-/iptv-on-demand        /iptv-vod                           301
-/hd-iptv               /iptv-vod                           301
-/iptv-8k               /iptv-vod                           301
-/iptv-nba              /iptv-f1                            301
-/iptv-formula1         /iptv-f1                            301
-/iptv-recording        /iptv-dvr                           301
-/tivimate-dvr          /iptv-dvr                           301
-/iptv-catch-up         /iptv-dvr                           301
-/chromecast-iptv       /iptv-chromecast                    301
-/iptv-google-chromecast /iptv-chromecast                   301
-/hisense-iptv          /iptv-hisense                       301
-/iptv-tizen            /iptv-hisense                       301
-/iptv-reviews          /iptv-trustpilot                    301
-/iptv-customer-service /iptv-trustpilot                    301
-/paid-iptv             /private-iptv                       301
-/iptv-premium-subscription /private-iptv                   301
-/iptv-deals            /iptv-promotions                    301
-/iptv-offers           /iptv-promotions                    301
-/iptv-discount         /iptv-promotions                    301
-/iptv-ubuntu           /iptv-raspberry-pi                  301
-/iptv-pi               /iptv-raspberry-pi                  301
-/raspberry-pi-iptv     /iptv-raspberry-pi                  301
+# Pricing
+/iptv-pricing-plans /iptv-pricing 301
