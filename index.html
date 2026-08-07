@@ -884,7 +884,67 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 </section>
 
 <!-- STATS COUNTER (below Why Mojo 4K) -->
-
+<section style="padding:3rem 0;background:rgba(0,0,0,.3)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center">
+      <div>
+        <div id="stat-channels" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
+      </div>
+      <div>
+        <div id="stat-movies" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
+      </div>
+      <div>
+        <div id="stat-clients" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
+        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var targets=[
+    {el:document.getElementById('stat-channels'),end:50000,suffix:'+'   ,label:'50,000+'},
+    {el:document.getElementById('stat-movies')  ,end:300000,suffix:'+' ,label:'300,000+'},
+    {el:document.getElementById('stat-clients') ,end:1500000,suffix:'+'  ,label:'1.5M+'}
+  ];
+  var started=false;
+  function fmt(n,t){
+    if(t.end>=1000000) return (n/1000000).toFixed(n<1500000?1:1)+'M'+t.suffix;
+    if(t.end>=100000)  return Math.round(n/1000)*1000 < t.end ? (n/1000).toFixed(0)+'K+' : (t.end/1000).toFixed(0)+'K+';
+    return Math.round(n).toLocaleString()+t.suffix;
+  }
+  function run(){
+    if(started) return; started=true;
+    var dur=2000, step=16, start=Date.now();
+    var iv=setInterval(function(){
+      var p=Math.min((Date.now()-start)/dur,1);
+      var ease=1-Math.pow(1-p,3);
+      targets.forEach(function(t){
+        var v=ease*t.end;
+        if(t.end>=1000000){
+          t.el.textContent=(v>=1500000?'1.5':'')+(v<1500000?(v/1000000).toFixed(1):'')+'M+';
+        } else if(t.end>=100000){
+          t.el.textContent=Math.round(v/1000)+'K+';
+        } else {
+          t.el.textContent=Math.round(v).toLocaleString()+t.suffix;
+        }
+      });
+      if(p>=1){
+        clearInterval(iv);
+        targets[0].el.textContent='50,000+';
+        targets[1].el.textContent='300,000+';
+        targets[2].el.textContent='1.5M+';
+      }
+    },step);
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)run();});
+  },{threshold:.3});
+  targets.forEach(function(t){obs.observe(t.el);});
+})();
+</script>
 
 <!-- PRICING -->
 <section id="pricing" style="padding:2rem 0 5rem">
@@ -1033,67 +1093,7 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
       </div>
     </div>
   </div>
-</section><section style="padding:3rem 0;background:rgba(0,0,0,.3)">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center">
-      <div>
-        <div id="stat-channels" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Live Channels</div>
-      </div>
-      <div>
-        <div id="stat-movies" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Movies &amp; Series</div>
-      </div>
-      <div>
-        <div id="stat-clients" style="font-size:clamp(1.1rem,5vw,3rem);font-weight:900;color:#E74F51;line-height:1">0</div>
-        <div class="stat-label-text" style="margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.6);font-weight:500">Happy Clients</div>
-      </div>
-    </div>
-  </div>
 </section>
-<script>
-(function(){
-  var targets=[
-    {el:document.getElementById('stat-channels'),end:50000,suffix:'+'   ,label:'50,000+'},
-    {el:document.getElementById('stat-movies')  ,end:300000,suffix:'+' ,label:'300,000+'},
-    {el:document.getElementById('stat-clients') ,end:1500000,suffix:'+'  ,label:'1.5M+'}
-  ];
-  var started=false;
-  function fmt(n,t){
-    if(t.end>=1000000) return (n/1000000).toFixed(n<1500000?1:1)+'M'+t.suffix;
-    if(t.end>=100000)  return Math.round(n/1000)*1000 < t.end ? (n/1000).toFixed(0)+'K+' : (t.end/1000).toFixed(0)+'K+';
-    return Math.round(n).toLocaleString()+t.suffix;
-  }
-  function run(){
-    if(started) return; started=true;
-    var dur=2000, step=16, start=Date.now();
-    var iv=setInterval(function(){
-      var p=Math.min((Date.now()-start)/dur,1);
-      var ease=1-Math.pow(1-p,3);
-      targets.forEach(function(t){
-        var v=ease*t.end;
-        if(t.end>=1000000){
-          t.el.textContent=(v>=1500000?'1.5':'')+(v<1500000?(v/1000000).toFixed(1):'')+'M+';
-        } else if(t.end>=100000){
-          t.el.textContent=Math.round(v/1000)+'K+';
-        } else {
-          t.el.textContent=Math.round(v).toLocaleString()+t.suffix;
-        }
-      });
-      if(p>=1){
-        clearInterval(iv);
-        targets[0].el.textContent='50,000+';
-        targets[1].el.textContent='300,000+';
-        targets[2].el.textContent='1.5M+';
-      }
-    },step);
-  }
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)run();});
-  },{threshold:.3});
-  targets.forEach(function(t){obs.observe(t.el);});
-})();
-</script>
 
 
 <!-- FINAL CTA -->
