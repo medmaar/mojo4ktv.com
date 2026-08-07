@@ -884,7 +884,156 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 </section>
 
 <!-- STATS COUNTER (below Why Mojo 4K) -->
-<section style="padding:3rem 0;background:rgba(0,0,0,.3)">
+
+
+<!-- PRICING -->
+<section id="pricing" style="padding:2rem 0 5rem">
+  <div class="container" style="max-width:1380px">
+    <div class="section-header">
+      <span class="badge"><span class="badge-dot"></span>Plans &amp; Pricing</span>
+      <h2>Simple, Transparent <span class="underline-accent">Pricing</span></h2>
+      <p style="margin-top:1.25rem;font-size:1rem;line-height:1.6;color:rgba(255,255,255,.6)">Choose the best IPTV subscription plan for you &mdash; one-time payment, no contracts, no hidden fees. Every plan includes all channels and 24/7 support.</p>
+    </div>
+
+    <!-- Device connection selector -->
+    <div id="deviceSelector" style="display:flex;justify-content:center;margin-bottom:2rem">
+      <div style="display:inline-flex;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9999px;padding:.25rem;gap:.25rem">
+        <button class="dev-tab active" data-connections="1" onclick="setConnections(1)">1 Device</button>
+        <button class="dev-tab" data-connections="2" onclick="setConnections(2)">2 Devices</button>
+        <button class="dev-tab" data-connections="3" onclick="setConnections(3)">3 Devices</button>
+        <button class="dev-tab" data-connections="4" onclick="setConnections(4)">4 Devices</button>
+        <button class="dev-tab" data-connections="5" onclick="setConnections(5)">5 Devices</button>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- 1 Month -->
+      <div class="price-card">
+        <h3>1 Month</h3>
+        <div class="price-was">Original price: <s id="op1m">$18</s></div>
+        <div class="price-amount" style="align-items:center"><span class="price-num" id="p1m">$9</span><span class="discount-badge-50">-50%</span></div>
+        <ul class="price-features">
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
+        </ul>
+        <div class="price-action">
+          <a href="/1-month-1-device" class="price-btn price-btn-outline" id="btn-1m">Subscribe Now</a>
+          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
+        </div>
+      </div>
+
+      <!-- 12 Month FEATURED -->
+      <div class="price-card featured">
+        <h3>12 Months</h3>
+        <div class="price-was">Original price: <s id="op12m">$98</s></div>
+        <div class="price-amount" style="align-items:center"><span class="price-num" id="p12m">$49</span><span class="discount-badge-50">-50%</span></div>
+                <div style="margin:1rem 0;background:#fbbf24;border:1px solid #d97706;border-radius:.75rem;padding:.75rem 1rem;display:flex;align-items:center;gap:.625rem">
+          <span style="font-size:1.1rem">&#11088;</span>
+          <span style="font-weight:800;font-size:.875rem;color:#1a0800">IBO Player Subscription for Free</span>
+        </div>
+<ul class="price-features">
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
+        </ul>
+        <div class="price-action">
+          <div class="price-badge-row">
+            <span class="price-dots" style="display:flex;gap:0">
+              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:rgba(255,255,255,.4);margin-right:-.375rem"></span>
+              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:rgba(255,255,255,.6);margin-right:-.375rem"></span>
+              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:rgba(255,255,255,.8);margin-right:-.375rem"></span>
+              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:#fff"></span>
+            </span>
+            <span style="font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.025em;color:#fff">Best Value ⭐</span>
+          </div>
+          <a href="/12-months-1-device" class="price-btn price-btn-solid" id="btn-12m">Subscribe Now</a>
+          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
+        </div>
+      </div>
+
+      <!-- 3 Month -->
+      <div class="price-card">
+        <h3>3 Months</h3>
+        <div class="price-was">Original price: <s id="op3m">$58</s></div>
+        <div class="price-amount" style="align-items:center"><span class="price-num" id="p3m">$29</span><span class="discount-badge-50">-50%</span></div>
+        <ul class="price-features">
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
+        </ul>
+        <div class="price-action">
+          
+          <a href="/3-months-1-device" class="price-btn price-btn-outline" id="btn-3m">Subscribe Now</a>
+          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
+        </div>
+      </div>
+
+      <!-- 6 Month -->
+      <div class="price-card">
+        <h3>6 Months</h3>
+        <div class="price-was">Original price: <s id="op6m">$78</s></div>
+        <div class="price-amount" style="align-items:center"><span class="price-num" id="p6m">$39</span><span class="discount-badge-50">-50%</span></div>
+        <ul class="price-features">
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
+          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
+        </ul>
+        <div class="price-action">
+          
+          <a href="/6-months-1-device" class="price-btn price-btn-outline" id="btn-6m">Subscribe Now</a>
+          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
+        </div>
+      </div>
+    </div>
+    <!-- Guarantee -->
+    <div class="guarantee-bar">
+      <div class="guarantee-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.25rem;width:1.25rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M12 2.25l7.5 3v6c0 4.5-3.6 8.25-7.5 9.75C8.1 19.5 4.5 15.75 4.5 11.25v-6l7.5-3z"/></svg>
+      </div>
+      <div class="guarantee-text">
+        <h4>14-Day Money-Back Guarantee</h4>
+        <p>Try Mojo 4K completely risk-free &mdash; not satisfied within 14 days, get a full refund.</p>
+      </div>
+    </div>
+  </div>
+</section><section style="padding:3rem 0;background:rgba(0,0,0,.3)">
   <div class="container">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center">
       <div>
@@ -947,35 +1096,22 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 </script>
 
 
-
-<!-- KEYWORD CONTENT BLOCK -->
-<section style="padding:3.5rem 0;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
-  <div class="container" style="max-width:860px">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem">
-      <div>
-        <h2 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.875rem">The Best IPTV Subscription — What Sets Us Apart</h2>
-        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6)">Mojo 4K is a premium <strong style="color:rgba(255,255,255,.85)">IPTV service</strong> trusted by thousands of subscribers across the USA, Canada, UK, Europe, Australia and the Middle East. Unlike budget <strong style="color:rgba(255,255,255,.85)">IPTV providers</strong> that overload shared servers and disappear after payment, we invest in dedicated infrastructure and real human support.</p>
-        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6);margin-top:.75rem">Our <strong style="color:rgba(255,255,255,.85)">IPTV subscription</strong> starts at just $9/month — making us the <strong style="color:rgba(255,255,255,.85)">cheapest IPTV</strong> option that doesn't compromise on quality. Every plan includes all 50,000+ <strong style="color:rgba(255,255,255,.85)">live IPTV</strong> channels and 300,000+ on-demand titles at the same price.</p>
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="cta-inner">
+        <span class="cta-pill"><span class="live-dot" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;animation:live-glow 1.6s ease-in-out infinite" aria-hidden="true"></span>⚡ Free 24-Hour Trial — No Card</span>
+        <h2>🔥 Watch FREE for <span class="text-accent">24 Hours — Zero Risk</span></h2>
+        <p style="font-size:1.1rem;font-weight:600;letter-spacing:-.01em">50,000+ channels &nbsp;·&nbsp; 300,000+ movies &amp; series &nbsp;·&nbsp; Full 4K &nbsp;·&nbsp; Every sport &amp; PPV<br><span style="color:rgba(255,255,255,.6);font-weight:400;font-size:1rem">No credit card. No commitment. Just press play.</span></p>
+        <div class="cta-btns">
+          <a class="btn-primary" style="width:100%;max-width:18rem" href="/free-trial">Claim Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <p class="cta-fine">No credit card &middot; 24-hour free trial &middot; Instant access</p>
       </div>
-      <div>
-        <h2 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.875rem">IPTV That Works with TiviMate, Smarters Pro &amp; All Apps</h2>
-        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6)">Every Mojo 4K <strong style="color:rgba(255,255,255,.85)">IPTV subscription</strong> includes both an <strong style="color:rgba(255,255,255,.85)">M3U playlist</strong> URL and Xtream Codes credentials. This means it works natively with <strong style="color:rgba(255,255,255,.85)">TiviMate Premium</strong>, <strong style="color:rgba(255,255,255,.85)">IPTV Smarters Pro</strong>, Smart IPTV, SS IPTV, VLC, Kodi, GSE Smart IPTV and every other player app.</p>
-        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6);margin-top:.75rem">Reddit's IPTV communities (<strong style="color:rgba(255,255,255,.85)">r/IPTV</strong>, r/cordcutters) consistently recommend testing any <strong style="color:rgba(255,255,255,.85)">IPTV service</strong> with a free trial before <strong style="color:rgba(255,255,255,.85)">buying an IPTV subscription</strong>. Our 24-hour free trial lets you verify quality on your exact device and app before you pay a penny.</p>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.875rem;margin-top:2rem">
-      <a href="/live-iptv" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
-        <div style="font-size:.85rem;font-weight:700;color:#fff">Live IPTV</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">50,000+ channels now</div>
-      </a>
-      <a href="/iptv-subscription" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
-        <div style="font-size:.85rem;font-weight:700;color:#fff">IPTV Plans</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">From $9/month</div>
-      </a>
-      <a href="/iptv-reddit" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
-        <div style="font-size:.85rem;font-weight:700;color:#fff">IPTV Reddit Picks</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">Community verified</div>
-      </a>
-      <a href="/cheap-iptv" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
-        <div style="font-size:.85rem;font-weight:700;color:#fff">Cheap IPTV</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">Under $5/mo yearly</div>
-      </a>
     </div>
   </div>
 </section>
@@ -1032,7 +1168,7 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
   </div>
   <div class="rv-stats">
     <div class="rv-stat"><div class="rv-stat-num" style="color:#00b67a;">5.0</div><div class="rv-stat-label">Trustpilot</div></div>
-    <div class="rv-stat"><div class="rv-stat-num" style="color:#00e5ff;">50,000+</div><div class="rv-stat-label">Customers</div></div>
+    <div class="rv-stat"><div class="rv-stat-num" style="color:#00e5ff;">1.5M+</div><div class="rv-stat-label">Customers</div></div>
     <div class="rv-stat"><div class="rv-stat-num" style="color:#FBBC04;">4.9&#9733;</div><div class="rv-stat-label">Google</div></div>
     <div class="rv-stat"><div class="rv-stat-num" style="color:#fd0322;">24/7</div><div class="rv-stat-label">Support</div></div>
   </div>
@@ -1492,172 +1628,36 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 </script>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" style="padding:2rem 0 5rem">
-  <div class="container" style="max-width:1380px">
-    <div class="section-header">
-      <span class="badge"><span class="badge-dot"></span>Plans &amp; Pricing</span>
-      <h2>Simple, Transparent <span class="underline-accent">Pricing</span></h2>
-      <p style="margin-top:1.25rem;font-size:1rem;line-height:1.6;color:rgba(255,255,255,.6)">Choose the best IPTV subscription plan for you &mdash; one-time payment, no contracts, no hidden fees. Every plan includes all channels and 24/7 support.</p>
-    </div>
 
-    <!-- Device connection selector -->
-    <div id="deviceSelector" style="display:flex;justify-content:center;margin-bottom:2rem">
-      <div style="display:inline-flex;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9999px;padding:.25rem;gap:.25rem">
-        <button class="dev-tab active" data-connections="1" onclick="setConnections(1)">1 Device</button>
-        <button class="dev-tab" data-connections="2" onclick="setConnections(2)">2 Devices</button>
-        <button class="dev-tab" data-connections="3" onclick="setConnections(3)">3 Devices</button>
-        <button class="dev-tab" data-connections="4" onclick="setConnections(4)">4 Devices</button>
-        <button class="dev-tab" data-connections="5" onclick="setConnections(5)">5 Devices</button>
+
+<!-- KEYWORD CONTENT BLOCK -->
+<section style="padding:3.5rem 0;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div class="container" style="max-width:860px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem">
+      <div>
+        <h2 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.875rem">The Best IPTV Subscription — What Sets Us Apart</h2>
+        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6)">Mojo 4K is a premium <strong style="color:rgba(255,255,255,.85)">IPTV service</strong> trusted by thousands of subscribers across the USA, Canada, UK, Europe, Australia and the Middle East. Unlike budget <strong style="color:rgba(255,255,255,.85)">IPTV providers</strong> that overload shared servers and disappear after payment, we invest in dedicated infrastructure and real human support.</p>
+        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6);margin-top:.75rem">Our <strong style="color:rgba(255,255,255,.85)">IPTV subscription</strong> starts at just $9/month — making us the <strong style="color:rgba(255,255,255,.85)">cheapest IPTV</strong> option that doesn't compromise on quality. Every plan includes all 50,000+ <strong style="color:rgba(255,255,255,.85)">live IPTV</strong> channels and 300,000+ on-demand titles at the same price.</p>
+      </div>
+      <div>
+        <h2 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.875rem">IPTV That Works with TiviMate, Smarters Pro &amp; All Apps</h2>
+        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6)">Every Mojo 4K <strong style="color:rgba(255,255,255,.85)">IPTV subscription</strong> includes both an <strong style="color:rgba(255,255,255,.85)">M3U playlist</strong> URL and Xtream Codes credentials. This means it works natively with <strong style="color:rgba(255,255,255,.85)">TiviMate Premium</strong>, <strong style="color:rgba(255,255,255,.85)">IPTV Smarters Pro</strong>, Smart IPTV, SS IPTV, VLC, Kodi, GSE Smart IPTV and every other player app.</p>
+        <p style="font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6);margin-top:.75rem">Reddit's IPTV communities (<strong style="color:rgba(255,255,255,.85)">r/IPTV</strong>, r/cordcutters) consistently recommend testing any <strong style="color:rgba(255,255,255,.85)">IPTV service</strong> with a free trial before <strong style="color:rgba(255,255,255,.85)">buying an IPTV subscription</strong>. Our 24-hour free trial lets you verify quality on your exact device and app before you pay a penny.</p>
       </div>
     </div>
-
-    <div class="pricing-grid">
-      <!-- 1 Month -->
-      <div class="price-card">
-        <h3>1 Month</h3>
-        <div class="price-was">Original price: <s id="op1m">$18</s></div>
-        <div class="price-amount" style="align-items:center"><span class="price-num" id="p1m">$9</span><span class="discount-badge-50">-50%</span></div>
-        <ul class="price-features">
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
-        </ul>
-        <div class="price-action">
-          <a href="/1-month-1-device" class="price-btn price-btn-outline" id="btn-1m">Subscribe Now</a>
-          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
-        </div>
-      </div>
-
-      <!-- 12 Month FEATURED -->
-      <div class="price-card featured">
-        <h3>12 Months</h3>
-        <div class="price-was">Original price: <s id="op12m">$98</s></div>
-        <div class="price-amount" style="align-items:center"><span class="price-num" id="p12m">$49</span><span class="discount-badge-50">-50%</span></div>
-                <div style="margin:1rem 0;background:#fbbf24;border:1px solid #d97706;border-radius:.75rem;padding:.75rem 1rem;display:flex;align-items:center;gap:.625rem">
-          <span style="font-size:1.1rem">&#11088;</span>
-          <span style="font-weight:800;font-size:.875rem;color:#1a0800">IBO Player Subscription for Free</span>
-        </div>
-<ul class="price-features">
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
-        </ul>
-        <div class="price-action">
-          <div class="price-badge-row">
-            <span class="price-dots" style="display:flex;gap:0">
-              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:rgba(255,255,255,.4);margin-right:-.375rem"></span>
-              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:rgba(255,255,255,.6);margin-right:-.375rem"></span>
-              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:rgba(255,255,255,.8);margin-right:-.375rem"></span>
-              <span style="height:.75rem;width:.75rem;border-radius:9999px;background:#fff"></span>
-            </span>
-            <span style="font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.025em;color:#fff">Best Value ⭐</span>
-          </div>
-          <a href="/12-months-1-device" class="price-btn price-btn-solid" id="btn-12m">Subscribe Now</a>
-          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
-        </div>
-      </div>
-
-      <!-- 3 Month -->
-      <div class="price-card">
-        <h3>3 Months</h3>
-        <div class="price-was">Original price: <s id="op3m">$58</s></div>
-        <div class="price-amount" style="align-items:center"><span class="price-num" id="p3m">$29</span><span class="discount-badge-50">-50%</span></div>
-        <ul class="price-features">
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
-        </ul>
-        <div class="price-action">
-          
-          <a href="/3-months-1-device" class="price-btn price-btn-outline" id="btn-3m">Subscribe Now</a>
-          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
-        </div>
-      </div>
-
-      <!-- 6 Month -->
-      <div class="price-card">
-        <h3>6 Months</h3>
-        <div class="price-was">Original price: <s id="op6m">$78</s></div>
-        <div class="price-amount" style="align-items:center"><span class="price-num" id="p6m">$39</span><span class="discount-badge-50">-50%</span></div>
-        <ul class="price-features">
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>4K &amp; Full HD Quality</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>PPV, UFC, Boxing, F1 &amp; Super Bowl</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>NBA, NHL, NFL Packages</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>50,000+ Live Channels + Netflix</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>300,000+ Movies &amp; Series (VOD)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Updated Series &amp; Movies (2026)</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Full EPG Guide &amp; Catch-Up TV</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Works on All Devices</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>Instant Activation</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>24/7 WhatsApp Support</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>No Freezing &amp; No Buffering</span></li>
-          <li class="price-feat"><span class="price-feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="height:.75rem;width:.75rem"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span><span>100% Secure &amp; Private</span></li>
-        </ul>
-        <div class="price-action">
-          
-          <a href="/6-months-1-device" class="price-btn price-btn-outline" id="btn-6m">Subscribe Now</a>
-          <p class="price-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.875rem;width:.875rem;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>One-time payment &middot; not recurring</p>
-        </div>
-      </div>
-    </div>
-    <!-- Guarantee -->
-    <div class="guarantee-bar">
-      <div class="guarantee-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.25rem;width:1.25rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M12 2.25l7.5 3v6c0 4.5-3.6 8.25-7.5 9.75C8.1 19.5 4.5 15.75 4.5 11.25v-6l7.5-3z"/></svg>
-      </div>
-      <div class="guarantee-text">
-        <h4>14-Day Money-Back Guarantee</h4>
-        <p>Try Mojo 4K completely risk-free &mdash; not satisfied within 14 days, get a full refund.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- FINAL CTA -->
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-glow" aria-hidden="true"></div>
-      <div class="cta-inner">
-        <span class="cta-pill"><span class="live-dot" style="display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;animation:live-glow 1.6s ease-in-out infinite" aria-hidden="true"></span>⚡ Free 24-Hour Trial — No Card</span>
-        <h2>🔥 Watch FREE for <span class="text-accent">24 Hours — Zero Risk</span></h2>
-        <p style="font-size:1.1rem;font-weight:600;letter-spacing:-.01em">50,000+ channels &nbsp;·&nbsp; 300,000+ movies &amp; series &nbsp;·&nbsp; Full 4K &nbsp;·&nbsp; Every sport &amp; PPV<br><span style="color:rgba(255,255,255,.6);font-weight:400;font-size:1rem">No credit card. No commitment. Just press play.</span></p>
-        <div class="cta-btns">
-          <a class="btn-primary" style="width:100%;max-width:18rem" href="/free-trial">Claim Now
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-        <p class="cta-fine">No credit card &middot; 24-hour free trial &middot; Instant access</p>
-      </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.875rem;margin-top:2rem">
+      <a href="/live-iptv" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+        <div style="font-size:.85rem;font-weight:700;color:#fff">Live IPTV</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">50,000+ channels now</div>
+      </a>
+      <a href="/iptv-subscription" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+        <div style="font-size:.85rem;font-weight:700;color:#fff">IPTV Plans</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">From $9/month</div>
+      </a>
+      <a href="/iptv-reddit" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+        <div style="font-size:.85rem;font-weight:700;color:#fff">IPTV Reddit Picks</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">Community verified</div>
+      </a>
+      <a href="/cheap-iptv" style="display:block;text-decoration:none;border-radius:.75rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:.875rem;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,79,81,.35)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+        <div style="font-size:.85rem;font-weight:700;color:#fff">Cheap IPTV</div><div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">Under $5/mo yearly</div>
+      </a>
     </div>
   </div>
 </section>
