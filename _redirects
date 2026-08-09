@@ -596,3 +596,36 @@
 /iptv-greece.html /iptv-greece 301
 /iptv-argentina.html /iptv-argentina 301
 /iptv-austria.html /iptv-austria 301
+
+# ── Broken link fixes 2026-08-09 ──────────────────────────────────
+/apple-tv-iptv /iptv-apple-tv 301
+/free-iptv-trial /free-trial 301
+/iptv-android /iptv-android-box 301
+/iptv-android-tv /iptv-android-box 301
+/iptv-for-android /iptv-android-box 301
+/iptv-lg /iptv-lg-tv 301
+/iptv-pc /iptv-smarters-pc 301
+/iptv-macos /iptv-macbook 301
+/iptv-austin /iptv-houston 301
+/iptv-baltimore /iptv-washington-dc-area 301
+/iptv-bucharest /iptv-romania 301
+/iptv-budapest /iptv-romania 301
+/iptv-charlotte /iptv-atlanta 301
+/iptv-columbus /iptv-chicago 301
+/iptv-cost /iptv-packages 301
+/iptv-detroit /iptv-chicago 301
+/iptv-helsinki /iptv-finland 301
+/iptv-indianapolis /iptv-chicago 301
+/iptv-jacksonville /iptv-miami 301
+/iptv-lisbon /iptv-portugal 301
+/iptv-memphis /iptv-nashville 301
+/iptv-pittsburgh /iptv-philadelphia 301
+/iptv-porto /iptv-portugal 301
+/iptv-prague /iptv-czech-republic 301
+/iptv-raleigh /iptv-charlotte-area 301
+/iptv-warsaw /iptv-poland 301
+/iptv-washington-dc /iptv-philadelphia 301
+
+/iptv-ppv /iptv-sports 301
+/iptv-reseller /iptv-subscription 301
+/faq /iptv-for-beginners 301
