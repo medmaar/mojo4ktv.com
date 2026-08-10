@@ -6,7 +6,7 @@
 # ── Checkout & trial ─────────────────────────────────────────────────
 /checkout /checkout/ 301
 /trial /free-trial 301
-/trial.html /free-trial.html 301
+/trial.html /free-trial 301
 
 # ── Plan pages (.html → clean URL) ───────────────────────────────────
 /1-month.html /1-month 301
@@ -50,7 +50,7 @@
 /gse-iptv.html /gse-iptv 301
 /iptv-4k.html /iptv-4k 301
 /iptv-account.html /iptv-account 301
-/iptv-android-tv.html /iptv-android-tv 301
+/iptv-android-tv.html /best-iptv-box 301
 /iptv-apple-tv.html /iptv-apple-tv 301
 /iptv-bein-sport.html /iptv-bein-sport 301
 /iptv-box.html /iptv-box 301
@@ -62,7 +62,7 @@
 /iptv-dvr.html /iptv-dvr 301
 /iptv-espn.html /iptv-espn 301
 /iptv-f1.html /iptv-f1 301
-/iptv-for-android.html /iptv-for-android 301
+/iptv-for-android.html /best-iptv-box 301
 /iptv-for-firestick.html /iptv-for-firestick 301
 /iptv-for-lg-tv.html /iptv-for-lg-tv 301
 /iptv-for-pc.html /iptv-for-pc 301
@@ -79,13 +79,13 @@
 /iptv-m3u.html /iptv-m3u 301
 /iptv-m3u8.html /iptv-m3u8 301
 /iptv-near-me.html /iptv-near-me 301
-/iptv-nba.html /iptv-nba 301
+/iptv-nba.html /iptv-f1 301
 /iptv-nvidia-shield.html /iptv-nvidia-shield 301
 /iptv-premier-league.html /iptv-premier-league 301
 /iptv-pricing.html /iptv-pricing 301
 /iptv-promotions.html /iptv-promotions 301
 /iptv-providers.html /iptv-providers 301
-/iptv-raspberry-pi.html /iptv-raspberry-pi 301
+/iptv-raspberry-pi.html /iptv-linux 301
 /iptv-receiver.html /iptv-receiver 301
 /iptv-reddit.html /iptv-reddit 301
 /iptv-servers.html /iptv-servers 301
@@ -224,14 +224,14 @@
 /iptv-for-iphone.html /iptv-iphone 301
 
 # Device variants — Android
-/iptv-android /iptv-for-android 301
+/iptv-android /best-iptv-box 301
 /kodi-iptv /iptv-kodi 301
 /kodi-ip-tv /iptv-kodi 301
 /iptv-macbook /iptv-for-pc 301
 /iptv-pc /iptv-for-pc 301
 
 # Device variants — Android TV
-/android-iptv /iptv-android-tv 301
+/android-iptv /best-iptv-box 301
 /best-android-tv-box-for-iptv /best-iptv-box 301
 /best-android-box-for-iptv /best-iptv-box 301
 /iptv-android-box /best-iptv-box 301
@@ -358,7 +358,6 @@
 
 # Streaming service
 /iptv-streaming-services /iptv-streaming-service 301
-/iptv-streaming /iptv-streaming-service 301
 
 # Reviews / Trustpilot
 /iptv-reviews /iptv-trustpilot 301
@@ -466,11 +465,11 @@
 /mag-iptv.html /mag-iptv 301
 /iptv-mag254.html /iptv-mag254 301
 /iptv-mag322.html /iptv-mag322 301
-/iptv-android-box.html /iptv-android-box 301
+/iptv-android-box.html /best-iptv-box 301
 /iptv-apple-tv-4k.html /iptv-apple-tv-4k 301
 /iptv-ipad.html /iptv-ipad 301
-/iptv-philips.html /iptv-philips 301
-/iptv-sony.html /iptv-sony 301
+/iptv-philips.html /iptv-smart-tv 301
+/iptv-sony.html /iptv-smart-tv 301
 /iptv-tcl-tv.html /iptv-tcl-tv 301
 /iptv-mecool.html /iptv-mecool 301
 
@@ -504,16 +503,16 @@
 /mag256-iptv /iptv-mag254 301
 /mag322-iptv /iptv-mag322 301
 /mag324-iptv /iptv-mag322 301
-/android-box-iptv /iptv-android-box 301
-/iptv-android-tv-box /iptv-android-box 301
+/android-box-iptv /best-iptv-box 301
+/iptv-android-tv-box /best-iptv-box 301
 /apple-tv-4k-iptv /iptv-apple-tv-4k 301
 /iptv-for-apple-tv-4k /iptv-apple-tv-4k 301
 /ipad-iptv /iptv-ipad 301
 /iptv-for-ipad /iptv-ipad 301
-/philips-iptv /iptv-philips 301
-/iptv-philips-tv /iptv-philips 301
-/sony-iptv /iptv-sony 301
-/iptv-sony-bravia /iptv-sony 301
+/philips-iptv /iptv-smart-tv 301
+/iptv-philips-tv /iptv-smart-tv 301
+/sony-iptv /iptv-smart-tv 301
+/iptv-sony-bravia /iptv-smart-tv 301
 /tcl-iptv /iptv-tcl-tv 301
 /iptv-tcl /iptv-tcl-tv 301
 /mecool-iptv /iptv-mecool 301
@@ -521,37 +520,36 @@
 
 # ── New SEO pages 2026-08-08 ─────────────────────────────────────────────────
 /xciptv.html /xciptv 301
-/siptv.html /siptv 301
-/tivimate-premium.html /tivimate-premium 301
+/siptv.html /smart-iptv 301
 /tivimate-account.html /tivimate-account 301
-/tivimate-pro.html /tivimate-pro 301
+/tivimate-pro.html /tivimate-pc 301
 /tivimate-reddit.html /tivimate-reddit 301
 /iptvx.html /iptvx 301
 /myiptv4k.html /myiptv4k 301
-/smarters-lite.html /smarters-lite 301
+/smarters-lite.html /iptv-smarters-pro 301
 /iptv-smarters-firestick.html /iptv-smarters-firestick 301
-/iptv-smarters-mac.html /iptv-smarters-mac 301
-/iptv-macbook.html /iptv-macbook 301
-/iptv-tizen.html /iptv-tizen 301
+/iptv-smarters-mac.html /iptv-smarters-pc 301
+/iptv-macbook.html /iptv-for-pc 301
+/iptv-tizen.html /iptv-hisense 301
 /iptv-fire-tv.html /iptv-fire-tv 301
-/mi-box-iptv.html /mi-box-iptv 301
-/iptv-set-top-box.html /iptv-set-top-box 301
+/mi-box-iptv.html /iptv-xiaomi 301
+/iptv-set-top-box.html /iptv-receiver 301
 /best-iptv-provider.html /best-iptv-provider 301
-/iptv-packages.html /iptv-packages 301
-/iptv-deals.html /iptv-deals 301
-/paid-iptv.html /paid-iptv 301
+/iptv-packages.html /iptv-pricing 301
+/iptv-deals.html /iptv-pricing 301
+/paid-iptv.html /private-iptv 301
 /best-paid-iptv.html /best-paid-iptv 301
 /best-iptv-for-tivimate.html /best-iptv-for-tivimate 301
 /best-iptv-for-kodi.html /best-iptv-for-kodi 301
-/iptv-8k.html /iptv-8k 301
+/iptv-8k.html /iptv-4k 301
 /iptv-hd.html /iptv-hd 301
 /iptv-forum.html /iptv-forum 301
-/iptv-ubuntu.html /iptv-ubuntu 301
+/iptv-ubuntu.html /iptv-linux 301
 /iptv-shop.html /iptv-shop 301
-/iptv-sub.html /iptv-sub 301
+/iptv-sub.html /iptv-account 301
 /lifetime-iptv.html /lifetime-iptv 301
-/m3u-list.html /m3u-list 301
-/iptv-customer-service.html /iptv-customer-service 301
+/m3u-list.html /iptv-list 301
+/iptv-customer-service.html /iptv-trustpilot 301
 /iptv-solutions.html /iptv-solutions 301
 /iptv-boston.html /iptv-boston 301
 /iptv-san-francisco.html /iptv-san-francisco 301
@@ -600,19 +598,15 @@
 # ── Broken link fixes 2026-08-09 ──────────────────────────────────
 /apple-tv-iptv /iptv-apple-tv 301
 /free-iptv-trial /free-trial 301
-/iptv-android /iptv-android-box 301
-/iptv-android-tv /iptv-android-box 301
-/iptv-for-android /iptv-android-box 301
-/iptv-lg /iptv-lg-tv 301
-/iptv-pc /iptv-smarters-pc 301
-/iptv-macos /iptv-macbook 301
+/iptv-android-tv /best-iptv-box 301
+/iptv-for-android /best-iptv-box 301
+/iptv-macos /iptv-for-pc 301
 /iptv-austin /iptv-houston 301
 /iptv-baltimore /iptv-washington-dc-area 301
 /iptv-bucharest /iptv-romania 301
 /iptv-budapest /iptv-romania 301
 /iptv-charlotte /iptv-atlanta 301
 /iptv-columbus /iptv-chicago 301
-/iptv-cost /iptv-packages 301
 /iptv-detroit /iptv-chicago 301
 /iptv-helsinki /iptv-finland 301
 /iptv-indianapolis /iptv-chicago 301
@@ -637,3 +631,5 @@
 /how-to-get-iptv.html /how-to-get-iptv 301
 /iptv-no-buffering.html /iptv-no-buffering 301
 /iptv-with-epg.html /iptv-with-epg 301
+
+/about.html /about 301
