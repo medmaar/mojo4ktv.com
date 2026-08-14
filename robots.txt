@@ -5,6 +5,8 @@ Disallow: /checkout/
 Disallow: /trial
 Disallow: /go/
 Disallow: /cdn-cgi/
+Disallow: /functions/
+Disallow: /worker/
 Disallow: /*?*
 Sitemap: https://mojo4ktv.com/sitemap.xml
 
