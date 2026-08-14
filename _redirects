@@ -79,7 +79,7 @@
 /iptv-m3u.html /iptv-m3u 301
 /iptv-m3u8.html /iptv-m3u8 301
 /iptv-near-me.html /iptv-near-me 301
-/iptv-nba.html /iptv-f1 301
+/iptv-nba.html /iptv-nba 301
 /iptv-nvidia-shield.html /iptv-nvidia-shield 301
 /iptv-premier-league.html /iptv-premier-league 301
 /iptv-pricing.html /iptv-pricing 301
@@ -289,7 +289,6 @@
 
 # Sports variants
 /iptv-sport /iptv-sports 301
-/iptv-nba /iptv-f1 301
 /iptv-nhl /iptv-sports 301
 /iptv-nfl /iptv-sports 301
 /iptv-ufc /iptv-sports 301
@@ -602,7 +601,7 @@
 /iptv-for-android /best-iptv-box 301
 /iptv-macos /iptv-for-pc 301
 /iptv-austin /iptv-houston 301
-/iptv-baltimore /iptv-washington-dc-area 301
+/iptv-baltimore /iptv-philadelphia 301
 /iptv-bucharest /iptv-romania 301
 /iptv-budapest /iptv-romania 301
 /iptv-charlotte /iptv-atlanta 301
@@ -615,14 +614,14 @@
 /iptv-memphis /iptv-nashville 301
 /iptv-pittsburgh /iptv-philadelphia 301
 /iptv-porto /iptv-portugal 301
-/iptv-prague /iptv-czech-republic 301
-/iptv-raleigh /iptv-charlotte-area 301
+/iptv-prague /iptv-austria 301
+/iptv-raleigh /iptv-atlanta 301
 /iptv-warsaw /iptv-poland 301
 /iptv-washington-dc /iptv-philadelphia 301
 
 /iptv-ppv /iptv-sports 301
 /iptv-reseller /iptv-subscription 301
-/faq /iptv-for-beginners 301
+/faq /what-is-iptv 301
 
 # ── New high-value pages 2026-08-09 ──
 /iptv-2026.html /iptv-2026 301
