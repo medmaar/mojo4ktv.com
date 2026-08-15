@@ -220,7 +220,6 @@
 /fire-tv-iptv /iptv-for-firestick 301
 /iptv-amazon /iptv-for-firestick 301
 /iptv-firestick /iptv-for-firestick 301
-/iptv-for-iphone /iptv-iphone 301
 /iptv-for-iphone.html /iptv-iphone 301
 
 # Device variants — Android
@@ -289,9 +288,6 @@
 
 # Sports variants
 /iptv-sport /iptv-sports 301
-/iptv-nhl /iptv-sports 301
-/iptv-nfl /iptv-sports 301
-/iptv-ufc /iptv-sports 301
 /iptv-formula1 /iptv-f1 301
 /best-iptv-for-sports /iptv-sports 301
 /world-cup-iptv /iptv-world-cup 301
@@ -619,7 +615,6 @@
 /iptv-warsaw /iptv-poland 301
 /iptv-washington-dc /iptv-philadelphia 301
 
-/iptv-ppv /iptv-sports 301
 /iptv-reseller /iptv-subscription 301
 /faq /what-is-iptv 301
 

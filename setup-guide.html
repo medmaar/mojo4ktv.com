@@ -11,115 +11,6 @@
 <link rel="icon" href="/assets/img/favicon-mojo.png" type="image/png"/>
 <link rel="shortcut icon" href="/assets/img/favicon-mojo.png"/>
 <link rel="apple-touch-icon" href="/assets/img/favicon-mojo.png"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a1a35;color:#fff;font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-
-
-
-/* Page layout */
-.sg-page{padding-top:120px}
-.container{max-width:900px;margin:0 auto;padding:0 1.25rem}
-
-/* Hero */
-.sg-hero{padding:3rem 0 2.5rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
-.sg-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#E74F51;font-weight:700;margin-bottom:.75rem}
-.sg-hero h1{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
-.sg-hero h1 em{font-style:normal;color:#E74F51}
-.sg-hero p{color:rgba(255,255,255,.6);font-size:1rem;max-width:560px;margin:0 auto}
-
-/* 3 Steps */
-.steps-section{padding:3rem 0 2rem}
-.steps-section h2{font-size:1.5rem;font-weight:800;margin-bottom:2rem;text-align:center}
-.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-@media(max-width:640px){.steps-row{grid-template-columns:1fr}}
-.step-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1.5rem;text-align:center}
-.step-num{width:3rem;height:3rem;border-radius:50%;background:#E74F51;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;color:#fff;margin:0 auto 1rem}
-.step-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:#fff}
-.step-card p{font-size:.875rem;color:rgba(255,255,255,.6);line-height:1.65}
-
-/* Player section */
-.player-section{padding:2rem 0}
-.player-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:2rem}
-.player-card h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:1rem}
-.player-card p,.player-card li{color:rgba(255,255,255,.72);line-height:1.7;font-size:.95rem}
-.player-card ul{padding-left:1.25rem;margin:.75rem 0}
-.player-card li{margin-bottom:.3rem}
-.player-card strong{color:rgba(255,255,255,.9)}
-.player-card em{color:rgba(255,255,255,.55)}
-.rec-box{background:rgba(231,79,81,.1);border:1px solid rgba(231,79,81,.25);border-radius:.75rem;padding:1rem 1.25rem;margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,.8)}
-.rec-box strong{color:#FF7E80}
-
-/* Accordion */
-.accord-section{padding:1rem 0 4rem}
-.accord-section h2{font-size:1.4rem;font-weight:800;margin-bottom:1.5rem}
-.accord-item{border:1px solid rgba(255,255,255,.1);border-radius:.75rem;margin-bottom:.75rem;overflow:hidden;background:rgba(255,255,255,.03)}
-.accord-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;text-align:left;transition:background .2s;font-family:inherit}
-.accord-btn:hover{background:rgba(255,255,255,.06)}
-.accord-arrow{transition:transform .3s;font-size:1rem;color:rgba(255,255,255,.4)}
-.accord-item.open .accord-arrow{transform:rotate(180deg)}
-.accord-body{display:none;padding:1rem 1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
-.accord-item.open .accord-body{display:block}
-.accord-body p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75;margin-bottom:.75rem}
-.accord-body a{color:#FF7E80;text-decoration:underline;word-break:break-all}
-.accord-body strong{color:#fff}
-.accord-body img{max-width:100%;border-radius:.5rem;margin:.5rem 0;border:1px solid rgba(255,255,255,.1)}
-.accord-body pre{background:rgba(0,0,0,.3);border-radius:.5rem;padding:.75rem;font-size:.8rem;overflow-x:auto;color:rgba(255,255,255,.7);margin:.5rem 0}
-.accord-body ol,.accord-body ul{padding-left:1.25rem;color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75}
-.accord-body li{margin-bottom:.4rem}
-
-/* CTA bottom */
-.sg-cta{background:rgba(231,79,81,.1);border:1px solid rgba(231,79,81,.2);border-radius:1rem;padding:2rem;text-align:center;margin:0 0 4rem}
-.sg-cta h3{font-size:1.2rem;font-weight:800;margin-bottom:.5rem}
-.sg-cta p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:1.25rem}
-.btn-red{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:#E74F51;padding:.75rem 1.75rem;font-size:.95rem;font-weight:600;color:#fff;transition:background .2s}
-.btn-red:hover{background:#c8383a}
-
-/* Footer */
-footer{background:rgba(8,18,38,.9);border-top:1px solid rgba(255,255,255,.1);padding:2rem 0;text-align:center}
-footer p{color:rgba(255,255,255,.35);font-size:.8rem}
-footer a{color:rgba(255,255,255,.55);margin:0 .5rem}
-footer a:hover{color:#fff}
-/* Banner */
-.banner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.5rem .75rem;background:#000;padding:.75rem 1rem;text-align:center}
-.banner-inner{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:.35rem;font-size:.875rem;line-height:1.4;white-space:nowrap;overflow:hidden}
-.banner-badge{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(231,79,81,.15);padding:.25rem .625rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80;flex-shrink:0}
-.live-dot{display:inline-block;height:.5rem;width:.5rem;border-radius:9999px;background:#E74F51;margin-right:.125rem}
-.banner-text-long{display:inline}.banner-text-short{display:none}
-@media(max-width:639px){.banner{padding:.5rem .75rem;gap:.35rem}.banner-inner{font-size:.72rem;gap:.25rem}.banner-badge{display:none}.banner-text-long{display:none}.banner-text-short{display:inline;white-space:nowrap}#btn-banner{padding:.35rem .75rem;font-size:.75rem !important}}
-/* Nav */
-header{position:fixed;top:0;left:0;right:0;z-index:50}
-nav{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-.nav-inner{max-width:88rem;margin:0 auto;padding:0 1rem;display:flex;height:4rem;align-items:center;gap:1.5rem}
-@media(min-width:640px){.nav-inner{padding:0 1.5rem}}
-@media(min-width:1024px){.nav-inner{padding:0 2rem}}
-.nav-logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
-.nav-links{display:none;flex:1;align-items:center;justify-content:center;gap:.25rem}
-@media(min-width:1024px){.nav-links{display:flex}}
-.nav-link{display:inline-flex;align-items:center;padding:.5rem .75rem;border-radius:.5rem;font-size:.985rem;font-weight:500;color:rgba(255,255,255,.9);transition:background .2s;white-space:nowrap}
-.nav-link:hover,.nav-link.active{background:rgba(255,255,255,.1)}
-.nav-cta{display:none;align-items:center;gap:.5rem;flex-shrink:0}
-@media(min-width:1024px){.nav-cta{display:flex}}
-.btn-nav{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:#E74F51;padding:.5rem 1.25rem;font-size:.875rem;font-weight:600;color:#fff;transition:background .2s}
-.btn-nav:hover{background:#c8383a}
-.menu-btn{display:flex;flex-direction:column;gap:.3rem;background:none;border:none;cursor:pointer;padding:.5rem;margin-left:auto}
-.menu-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
-@media(min-width:1024px){.menu-btn{display:none}}
-.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(8,21,43,.98);backdrop-filter:blur(14px);padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:.75rem 1rem;border-radius:.5rem;font-weight:500;color:rgba(255,255,255,.85)}
-.mobile-menu a:hover{background:rgba(255,255,255,.08)}
-
-.mj-hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
-@media(min-width:768px){.mj-hub-grid{grid-template-columns:repeat(4,1fr)}}
-.mj-hub-link{display:block;text-decoration:none;border-radius:.875rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);padding:1rem;transition:border-color .2s,background .2s;color:#fff}
-.mj-hub-link:hover{border-color:rgba(231,79,81,.5);background:rgba(231,79,81,.1)}
-.mj-hub-eyebrow{font-size:.7rem;font-weight:700;color:#FF7E80;margin-bottom:.25rem}
-.mj-hub-title{font-weight:700;font-size:.875rem;color:#fff}
-.mj-hub-sub{font-size:.73rem;color:rgba(255,255,255,.5);margin-top:.2rem}
-
-</style>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <link rel="canonical" href="https://mojo4ktv.com/setup-guide"/>
 <meta name="keywords" content="iptv setup guide, how to set up iptv, iptv setup 2026, iptv installation guide, iptv configure, iptv setup tutorial, iptv setup for beginners, how to install iptv, iptv configuration guide"/>
@@ -136,7 +27,8 @@ nav{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-backdrop-fil
 <meta name="twitter:image" content="https://mojo4ktv.com/assets/img/og-image.png"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Set Up Mojo 4K IPTV \u2014 Step by Step","description":"Get Mojo 4K IPTV up and running on any device in under 5 minutes.","step":[{"@type":"HowToStep","position":1,"name":"Choose Your Plan","text":"Visit mojo4ktv.com and choose any plan from $9/month (1 device) to $150/year (5 devices). A free 24-hour trial is also available \u2014 no credit card required."},{"@type":"HowToStep","position":2,"name":"Receive Your Credentials","text":"After payment, your Xtream Codes server URL, username and password are sent to your WhatsApp (or email) automatically within 60 seconds. No manual activation needed."},{"@type":"HowToStep","position":3,"name":"Install a Free IPTV App","text":"Download the right app for your device: TiviMate (Firestick/Android TV), IPTV Smarters Pro (Android/iOS/PC), GSE Smart IPTV (iPhone/Apple TV), or Smart IPTV (Samsung/LG TV)."},{"@type":"HowToStep","position":4,"name":"Add Your Credentials and Watch","text":"Open the app and add your subscription using Xtream Codes (preferred) or M3U URL. All 50,000+ channels and 300,000+ VOD titles load automatically. Start watching immediately."}],"totalTime":"PT5M","tool":[{"@type":"HowToTool","name":"Mojo 4K IPTV Subscription"},{"@type":"HowToTool","name":"IPTV Smarters Pro or TiviMate app"},{"@type":"HowToTool","name":"Firestick, Smart TV, or any streaming device"}],"estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"9"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Mojo 4K IPTV Subscription","description":"Premium IPTV subscription with 50,000+ live channels, 300,000+ movies in 4K Ultra HD. Plans from $9/month, instant activation.","brand":{"@type":"Brand","name":"Mojo4KTV.com"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":9,"highPrice":225,"offerCount":20},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":37,"bestRating":5,"worstRating":1}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Mojo 4K IPTV Subscription","description":"Premium IPTV subscription with 50,000+ live channels, 300,000+ movies in 4K Ultra HD. Plans from $9/month, instant activation.","brand":{"@type":"Brand","name":"Mojo4KTV.com"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":9,"highPrice":225,"offerCount":20},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":37,"bestRating":5,"worstRating":1},"review":[{"@type":"Review","author":{"@type":"Person","name":"James T."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Mojo 4K has completely replaced my Sky subscription. Crystal clear 4K on NHL, NFL and Premier League. Been a subscriber for 8 months with zero downtime."},{"@type":"Review","author":{"@type":"Person","name":"Sophie L."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Best IPTV service I've tried. TiviMate works perfectly with the EPG. 50,000 channels and I haven't found anything that doesn't work. Setup took 3 minutes."},{"@type":"Review","author":{"@type":"Person","name":"Mike R."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Switched from cable and saving $85 a month. Every PPV included, no extra fees. The UFC fights look better in 4K than they did on my cable box."},{"@type":"Review","author":{"@type":"Person","name":"Priya K."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Works perfectly on my Firestick and iPhone. Never had a buffer in 6 months. The WhatsApp support is instant \u2014 they helped me set up in under 5 minutes."},{"@type":"Review","author":{"@type":"Person","name":"David M."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Tried three IPTV services before Mojo 4K. This is the only one that never buffers during sports. NHL playoffs in 4K is incredible. Worth every penny."}]}</script>
+<link rel="preload" href="/assets/css/page-0717.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/assets/css/page-0717.css"/></noscript>
 </head>
 <body>
 
@@ -519,7 +411,6 @@ function toggleAccord(btn){
 </script>
 
 <!-- SALES BANNER -->
-<style>@keyframes np-pulse{0%,100%{box-shadow:0 0 0 3px rgba(231,79,81,.25)}50%{box-shadow:0 0 0 6px rgba(231,79,81,.08)}}</style>
 <div id="np-banner" style="position:fixed;left:12px;bottom:12px;z-index:9998;max-width:calc(100vw - 80px);display:flex;align-items:center;gap:8px;padding:9px 24px 9px 10px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.09);box-shadow:0 8px 24px -8px rgba(0,0,0,.3),0 2px 6px rgba(0,0,0,.06);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;pointer-events:auto" aria-live="polite" aria-atomic="true">
   <button onclick="npClose()" aria-label="Close" style="position:absolute;top:5px;right:6px;background:none;border:none;color:#C0C0C0;font-size:.82rem;cursor:pointer;padding:2px 3px;line-height:1;font-family:inherit">&times;</button>
   <span style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:#E74F51;display:inline-block;animation:np-pulse 1.4s ease-in-out infinite"></span>
@@ -566,7 +457,6 @@ function toggleAccord(btn){
 </script>
 <script>function toggleMenu(){var m=document.getElementById('mobileMenu');m.classList.toggle('open')}</script>
 
-<style>@keyframes wa-pulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 10px rgba(37,211,102,0)}}</style>
 <a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F" target="_blank" rel="noopener" aria-label="Chat with Mojo 4K on WhatsApp" style="position:fixed;right:22px;bottom:22px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.4);animation:wa-pulse 2.6s ease-in-out infinite;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform=''"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 004.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 01-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 012.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg></a>
 </body>
 </html>

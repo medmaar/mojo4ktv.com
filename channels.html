@@ -28,76 +28,11 @@
 <link rel="apple-touch-icon" href="/assets/img/favicon-mojo.png"/>
 <meta name="theme-color" content="#0a1a35"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mojo4ktv.com/"},{"@type":"ListItem","position":2,"name":"IPTV Channels","item":"https://mojo4ktv.com/channels"}]}</script>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#0a1a35;color:#fff;font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:#fff;text-decoration:none}
-img{max-width:100%;height:auto;vertical-align:middle}
-ul{list-style:none}
-.bg{background:radial-gradient(38% 30% at 12% 8%,rgba(59,110,220,.3),transparent 60%),radial-gradient(30% 26% at 88% 4%,rgba(231,79,81,.16),transparent 62%),radial-gradient(42% 34% at 80% 42%,rgba(41,86,180,.22),transparent 66%),radial-gradient(46% 42% at 16% 68%,rgba(59,110,220,.16),transparent 70%),#08152b;animation:drift 22s ease-in-out infinite alternate}
-@keyframes drift{from{transform:translate3d(-3%,-2%,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.1)}}
-.con{max-width:1200px;margin:0 auto;padding:0 1rem}
-@media(min-width:640px){.con{padding:0 1.5rem}}
-@media(min-width:1024px){.con{padding:0 2rem}}
-.badge{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(231,79,81,.3);background:rgba(231,79,81,.1);padding:.375rem 1rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#FF7E80}
-.dot{height:.375rem;width:.375rem;border-radius:9999px;background:#E74F51;display:inline-block;animation:glow 1.6s ease-in-out infinite}
-@keyframes glow{0%{box-shadow:0 0 0 0 rgba(231,79,81,.7);transform:scale(.9)}60%{box-shadow:0 0 0 7px rgba(231,79,81,0);transform:scale(1.15)}100%{box-shadow:0 0 0 0 rgba(231,79,81,0);transform:scale(.9)}}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;background:#E74F51;padding:.875rem 2rem;font-size:1rem;font-weight:600;color:#fff;box-shadow:0 8px 24px -6px rgba(231,79,81,.4);transition:all .2s}
-.btn:hover{background:#D23E40;transform:translateY(-2px)}
-.btn-o{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;border:1.5px solid rgba(255,255,255,.2);padding:.875rem 2rem;font-weight:600;transition:all .2s}
-.btn-o:hover{border-color:rgba(231,79,81,.5);background:rgba(231,79,81,.08)}
-.hero{position:relative;overflow:hidden;padding:9rem 0 4rem;text-align:center}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(231,79,81,.15),transparent 70%);pointer-events:none}
-h1{font-size:1.75rem;font-weight:700;line-height:1.2;text-wrap:balance}
-@media(min-width:768px){h1{font-size:2.5rem}}
-@media(min-width:1024px){h1{font-size:3rem}}
-h2{font-size:1.5rem;font-weight:700;line-height:1.2}
-@media(min-width:768px){h2{font-size:2rem}}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,21,43,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
-.ni{display:flex;align-items:center;justify-content:space-between;height:4rem;padding:0 1rem;max-width:1200px;margin:0 auto;gap:1rem}
-@media(min-width:640px){.ni{padding:0 1.5rem}}
-.nl{font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
-.nl span{color:#E74F51}
-/* Search */
-.search-wrap{margin:2rem auto 0;max-width:520px;position:relative}
-.search-wrap input{width:100%;padding:.875rem 1rem .875rem 3rem;border-radius:9999px;border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
-.search-wrap input:focus{border-color:rgba(231,79,81,.5)}
-.search-wrap input::placeholder{color:rgba(255,255,255,.4)}
-.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);pointer-events:none}
-/* Stats row */
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin:2.5rem auto;max-width:700px}
-.stat{text-align:center}
-.stat-n{font-size:2rem;font-weight:800;color:#E74F51}
-.stat-l{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em}
-/* Country blocks */
-.channels-section{padding:3rem 0 6rem}
-.country-block{border-radius:1rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);margin-bottom:.75rem;overflow:hidden;transition:border-color .2s}
-.country-block:hover{border-color:rgba(231,79,81,.3)}
-.country-head{display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;cursor:pointer;user-select:none}
-.country-flag{font-size:1.5rem;flex-shrink:0;width:2rem;text-align:center}
-.country-name{font-weight:700;font-size:1rem;flex:1}
-.country-count{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-.country-arrow{color:rgba(255,255,255,.4);font-size:.875rem;transition:transform .25s;flex-shrink:0}
-.country-block.open .country-arrow{transform:rotate(180deg)}
-.country-channels{display:none;padding:.25rem 1.25rem 1.25rem;flex-wrap:wrap;gap:.375rem}
-.country-block.open .country-channels{display:flex}
-.ch{display:inline-block;padding:.2rem .625rem;border-radius:9999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.75);white-space:nowrap;font-weight:500}
-/* search highlight */
-.ch.hidden{display:none}
-.country-block.hidden{display:none}
-/* faq */
-.faq-item{border-bottom:1px solid rgba(255,255,255,.08);padding:1.25rem 0}
-.faq-q{font-weight:700;font-size:1rem;margin-bottom:.5rem;color:#fff}
-.faq-a{color:rgba(255,255,255,.7);font-size:.9375rem;line-height:1.7}
-footer{background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.06);padding:3rem 0;text-align:center;color:rgba(255,255,255,.45);font-size:.875rem}
-footer a{color:rgba(255,255,255,.55);margin:0 .75rem}
-footer a:hover{color:#E74F51}
-</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","datePublished":"2026-01-01","dateModified":"2026-08-09","mainEntity":[{"@type":"Question","name":"How many channels does Mojo 4K IPTV include?","acceptedAnswer":{"@type":"Answer","text":"Mojo 4K IPTV includes 50,000+ live channels from 152 countries including Canada, USA, UK, France, Germany, Middle East, India and more. All channels stream in HD or 4K quality."}},{"@type":"Question","name":"Does the channel list update?","acceptedAnswer":{"@type":"Answer","text":"Yes — the Mojo 4K channel list is updated regularly. New channels are added and removed as licensing changes. The list shown here reflects the current lineup."}},{"@type":"Question","name":"Are sport and PPV channels included?","acceptedAnswer":{"@type":"Answer","text":"Yes — all sports packages are included: beIN Sports, Sky Sports, ESPN, TSN, Sportsnet, Canal+ Sport and all PPV events (UFC, boxing, WWE) at no extra charge."}},{"@type":"Question","name":"Can I get international channels?","acceptedAnswer":{"@type":"Answer","text":"Yes — Mojo 4K covers 152 countries with channels in Arabic, French, German, Spanish, Italian, Turkish, Hindi, Punjabi, and dozens more languages."}}]}</script>
 <meta name="twitter:image" content="https://mojo4ktv.com/assets/img/og-image.png"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Mojo 4K IPTV Subscription","description":"50,000+ live IPTV channels from 152 countries — sports, entertainment, news, movies in HD and 4K. Full EPG, catch-up, VOD library.","brand":{"@type":"Brand","name":"Mojo4KTV.com"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":9,"highPrice":225,"offerCount":20},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":37,"bestRating":5,"worstRating":1}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Mojo 4K IPTV Subscription","description":"50,000+ live IPTV channels from 152 countries \u2014 sports, entertainment, news, movies in HD and 4K. Full EPG, catch-up, VOD library.","brand":{"@type":"Brand","name":"Mojo4KTV.com"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":9,"highPrice":225,"offerCount":20},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":37,"bestRating":5,"worstRating":1},"review":[{"@type":"Review","author":{"@type":"Person","name":"James T."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Mojo 4K has completely replaced my Sky subscription. Crystal clear 4K on NHL, NFL and Premier League. Been a subscriber for 8 months with zero downtime."},{"@type":"Review","author":{"@type":"Person","name":"Sophie L."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Best IPTV service I've tried. TiviMate works perfectly with the EPG. 50,000 channels and I haven't found anything that doesn't work. Setup took 3 minutes."},{"@type":"Review","author":{"@type":"Person","name":"Mike R."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Switched from cable and saving $85 a month. Every PPV included, no extra fees. The UFC fights look better in 4K than they did on my cable box."},{"@type":"Review","author":{"@type":"Person","name":"Priya K."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Works perfectly on my Firestick and iPhone. Never had a buffer in 6 months. The WhatsApp support is instant \u2014 they helped me set up in under 5 minutes."},{"@type":"Review","author":{"@type":"Person","name":"David M."},"reviewRating":{"@type":"Rating","ratingValue":5,"bestRating":5},"reviewBody":"Tried three IPTV services before Mojo 4K. This is the only one that never buffers during sports. NHL playoffs in 4K is incredible. Worth every penny."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Complete IPTV Channel List 2026 \u2014 50,000+ Live Channels","description":"Full list of 50,000+ IPTV channels available with Mojo 4K, organized by country and category.","url":"https://mojo4ktv.com/channels","image":"https://mojo4ktv.com/assets/img/og-image.png","author":{"@type":"Organization","name":"Mojo4KTV.com","url":"https://mojo4ktv.com"},"publisher":{"@type":"Organization","name":"Mojo4KTV.com","logo":{"@type":"ImageObject","url":"https://mojo4ktv.com/assets/img/logo.png"}},"datePublished":"2026-01-01","dateModified":"2026-08-15","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Mojo4KTV.com","url":"https://mojo4ktv.com"}}</script>
+<link rel="preload" href="/assets/css/page-4067.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/assets/css/page-4067.css"/></noscript>
 </head>
 <body class="bg" style="position:relative;min-height:100vh">
 <nav>
@@ -703,7 +638,6 @@ input.addEventListener('input',()=>{
 </script>
 
 <!-- WhatsApp float -->
-<style>@keyframes wa-pulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 10px rgba(37,211,102,0)}}</style>
 <a href="/go/wa?msg=I%27m+interested+in+Mojo+4K+IPTV+%E2%80%94+I%27d+love+to+subscribe%21+Can+you+show+me+the+best+plan%3F"
    target="_blank" rel="noopener" aria-label="Chat with Mojo 4K on WhatsApp"
    style="position:fixed;right:22px;bottom:22px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.4);animation:wa-pulse 2.6s ease-in-out infinite;text-decoration:none;transition:transform .2s"

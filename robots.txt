@@ -9,6 +9,7 @@ Disallow: /functions/
 Disallow: /worker/
 Disallow: /*?*
 Sitemap: https://mojo4ktv.com/sitemap.xml
+Sitemap: https://mojo4ktv.com/sitemap-images.xml
 
 User-agent: Googlebot
 Allow: /

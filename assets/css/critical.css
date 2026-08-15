@@ -1,0 +1,8 @@
+h1{font-size:1.75rem;font-weight:700;line-height:1.2;text-wrap:balance}
+a{color:#fff;text-decoration:none}
+@keyframes drift{from{transform:translate3d(-3%,-2%,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.1)}}
+body{background:#0a1a35;color:#fff;font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+img{max-width:100%;height:auto;vertical-align:middle}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+h2{font-size:1.875rem;font-weight:700;line-height:1.2;text-wrap:balance;margin-top:1.5rem}
