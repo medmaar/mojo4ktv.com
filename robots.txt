@@ -32,3 +32,34 @@ Disallow: /
 
 User-agent: DotBot
 Disallow: /
+
+# AI / LLM training crawlers — allowed for discovery, limited frequency
+User-agent: GPTBot
+Crawl-delay: 10
+Disallow: /checkout
+Disallow: /go/
+
+User-agent: Claude-Web
+Crawl-delay: 10
+Disallow: /checkout
+
+User-agent: anthropic-ai
+Crawl-delay: 10
+Disallow: /checkout
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Crawl-delay: 5
+Allow: /
+
+User-agent: Googlebot-News
+Disallow: /
+
+# Block aggressive scrapers
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Crawl-delay: 10
