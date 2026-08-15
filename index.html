@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
 <link rel="preconnect" href="https://flagcdn.com" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript></noscript>
-<link rel="preload" href="/assets/img/hero-lebron.jpg" as="image" fetchpriority="high"/>
+<link rel="preload" href="/assets/img/hero-lebron.webp" as="image" type="image/webp" fetchpriority="high"/>
 <link rel="icon" href="/assets/img/favicon-mojo.png" type="image/png"/>
 <link rel="shortcut icon" href="/assets/img/favicon-mojo.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-mojo.png"/>
@@ -84,7 +84,7 @@ h2{font-size:1.875rem;font-weight:700;line-height:1.2;text-wrap:balance;margin-t
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="/assets/img/logo.png" alt="Mojo4KTV logo" height="36" style="height:2.1rem;width:auto;display:block" loading="eager" width="200" height="60">
+      <img src="/assets/img/logo.webp" onerror="this.src='/assets/img/logo.png'" alt="Mojo4KTV logo" height="36" style="height:2.1rem;width:auto;display:block" loading="eager" width="200" height="60">
     </a>
     <ul class="nav-links">
       <li><a href="/" class="nav-link">Home</a></li>
@@ -120,7 +120,10 @@ h2{font-size:1.875rem;font-weight:700;line-height:1.2;text-wrap:balance;margin-t
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="/assets/img/hero-lebron.jpg" alt="Live sports streaming in 4K on IPTV" width="1280" height="720" loading="eager" fetchpriority="high"/>
+    <picture>
+  <source srcset="/assets/img/hero-lebron.webp" type="image/webp"/>
+  <img src="/assets/img/hero-lebron.jpg" alt="Live sports streaming in 4K on IPTV" width="1280" height="720" fetchpriority="high" decoding="async" loading="eager"/>
+</picture>
   </div>
   <div class="container">
     <div class="hero-inner">
@@ -1490,7 +1493,7 @@ h2{font-size:1.875rem;font-weight:700;line-height:1.2;text-wrap:balance;margin-t
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" style="display:inline-block;text-decoration:none">
-          <img src="/assets/img/logo.png" alt="Mojo4KTV logo" height="44" style="height:2.75rem;width:auto;display:block" loading="lazy" width="200" height="60">
+          <img src="/assets/img/logo.webp" onerror="this.src='/assets/img/logo.png'" alt="Mojo4KTV logo" height="44" style="height:2.75rem;width:auto;display:block" loading="lazy" width="200" height="60">
         </a>
         <p>Premium IPTV subscription powered by high-performance server infrastructure &mdash; delivering the smoothest streaming experience for viewers across North America and worldwide.</p>
         <span class="footer-status"><span class="status-dot" aria-hidden="true"></span>Servers Active</span>
@@ -1525,7 +1528,7 @@ h2{font-size:1.875rem;font-weight:700;line-height:1.2;text-wrap:balance;margin-t
     <div class="footer-bottom" style="text-align:center">
       <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08);text-align:center">
         <p style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3);margin-bottom:.875rem">Secure Payments Accepted</p>
-        <img src="/assets/img/payment-methods.png" alt="Secure IPTV payment methods" style="max-width:520px;width:100%;height:auto;opacity:.9;filter:brightness(.95);display:block;margin:0 auto" loading="lazy"/>
+        <img src="/assets/img/payment-methods.webp" onerror="this.src='/assets/img/payment-methods.png'" alt="Secure IPTV payment methods" style="max-width:520px;width:100%;height:auto;opacity:.9;filter:brightness(.95);display:block;margin:0 auto" loading="lazy"/>
       </div>
       <p style="text-align:center">&copy; 2026 Mojo4KTV.com &mdash; All rights reserved.</p>
       <small style="display:block;text-align:center">Mojo 4K is intended for personal use only. Users are responsible for compliance with local laws.</small>
