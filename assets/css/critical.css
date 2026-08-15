@@ -6,3 +6,4 @@ html{scroll-behavior:smooth}
 img{max-width:100%;height:auto;vertical-align:middle}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 h2{font-size:1.875rem;font-weight:700;line-height:1.2;text-wrap:balance;margin-top:1.5rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.1)}.faq-btn{width:100%;background:none;border:none;color:#fff;padding:.875rem 0;text-align:left;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:inherit}.faq-btn:hover{color:#E74F51}.faq-icon{color:#E74F51;font-size:1.25rem;flex-shrink:0;transition:transform .2s}.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-answer p{padding-bottom:1rem;color:rgba(255,255,255,.7);line-height:1.7;font-size:.9rem}

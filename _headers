@@ -28,3 +28,11 @@
 
 /assets/css/*
   Cache-Control: public, max-age=31536000, immutable
+
+/rss.xml
+  Cache-Control: public, max-age=1800
+  Content-Type: application/rss+xml; charset=utf-8
+
+/manifest.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json

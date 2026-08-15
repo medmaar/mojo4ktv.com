@@ -64,3 +64,8 @@ Disallow: /
 
 User-agent: DataForSeoBot
 Crawl-delay: 10
+
+# Allow RSS and manifest
+User-agent: *
+Allow: /rss.xml
+Allow: /manifest.json
