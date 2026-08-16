@@ -8,6 +8,8 @@ Disallow: /cdn-cgi/
 Disallow: /functions/
 Disallow: /worker/
 Disallow: /*?*
+Allow: /rss.xml
+Allow: /manifest.json
 Sitemap: https://mojo4ktv.com/sitemap.xml
 Sitemap: https://mojo4ktv.com/sitemap-images.xml
 
@@ -65,7 +67,3 @@ Disallow: /
 User-agent: DataForSeoBot
 Crawl-delay: 10
 
-# Allow RSS and manifest
-User-agent: *
-Allow: /rss.xml
-Allow: /manifest.json
