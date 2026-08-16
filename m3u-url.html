@@ -51,6 +51,73 @@
 <a href="/pricing" class="btn-outline">Plans from $9/month</a>
 </div>
 </div></section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge"><span class="badge-dot"></span>Full Guide</span>
+      <h2>How to Use Your IPTV M3U URL — Every App</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;max-width:900px;margin:0 auto">
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem"><a href="/tivimate" style="color:#fff">TiviMate (Firestick / Android TV)</a></h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Settings &rarr; Playlists &rarr; Add Playlist &rarr; M3U URL. Paste your Mojo 4K M3U URL. For better EPG accuracy, use Xtream Codes instead of M3U in TiviMate — it auto-loads all programme data.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem">VLC Media Player (PC / Mac / Mobile)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Media &rarr; Open Network Stream &rarr; paste M3U URL &rarr; Play. VLC works as a basic M3U URL player on Windows, Mac, Linux and Android. No EPG, but zero setup cost for quick channel access.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem">Smart IPTV (Samsung &amp; LG TV)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Open Smart IPTV app on your TV &rarr; go to siptv.eu on your browser &rarr; enter your TV's MAC address and paste your M3U URL &rarr; click Send List. All channels load with logos and categories.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem"><a href="/iptv-smarters-pro" style="color:#fff">IPTV Smarters Pro (All Devices)</a></h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Add User &rarr; Load Your Playlist / Xtream Codes &rarr; M3U URL. Paste your M3U URL and tap Add User. Works on Android, iOS, Windows and Mac with full M3U_plus category and logo support.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem">Kodi PVR (IPTV Simple Client)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Add-ons &rarr; PVR IPTV Simple Client &rarr; Configure &rarr; Location: Remote Path &rarr; paste M3U URL. Set EPG URL separately. Kodi then shows all Mojo 4K channels in the TV section.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem">GSE Smart IPTV (iOS &amp; Android)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Remote Playlists &rarr; &plus; &rarr; Add M3U URL. Paste your M3U URL and name the playlist. Full M3U_plus support for channel logos, categories and EPG data from Mojo 4K.</p>
+      </div>
+    </div>
+    <div style="margin-top:1.25rem;text-align:center">
+      <a href="/setup-guide" style="color:var(--accent);font-weight:600">Full setup guides for every app and device &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>M3U URL Format — Explained</h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto">
+      <p style="color:rgba(255,255,255,.75)">Your Mojo 4K M3U URL follows this standard format:</p>
+      <div style="background:rgba(0,0,0,.4);border-radius:10px;padding:1.25rem;font-family:monospace;font-size:.85rem;margin:1.1rem 0;overflow-x:auto">
+        <div style="color:rgba(255,255,255,.4)"># Standard M3U URL</div>
+        <div style="color:#60a5fa;word-break:break-all">http://[server]:8080/get.php?username=[USER]&amp;password=[PASS]&amp;type=m3u</div>
+        <div style="color:rgba(255,255,255,.4);margin-top:1rem"># M3U_plus format (with channel logos + categories)</div>
+        <div style="color:#4ade80;word-break:break-all">http://[server]:8080/get.php?username=[USER]&amp;password=[PASS]&amp;type=m3u_plus</div>
+        <div style="color:rgba(255,255,255,.4);margin-top:1rem"># Always use m3u_plus — it includes tvg-logo, tvg-name, group-title metadata</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.875rem;margin-top:1rem">
+        <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:1rem">
+          <p style="font-weight:700;color:#fff;margin:0 0 .35rem;font-size:.9rem">type=m3u</p>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.5);margin:0">Basic channel list. No logos, no categories, no EPG IDs. Works in all M3U players.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:1rem">
+          <p style="font-weight:700;color:#4ade80;margin:0 0 .35rem;font-size:.9rem">type=m3u_plus ✅</p>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.5);margin:0">Extended format with tvg-logo, tvg-id (for EPG), group-title (categories). Use this always.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" style="padding:2rem 0"><div class="container" style="max-width:860px">
 <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:1.5rem">Frequently Asked Questions</h2>
 <div><div class="faq-item"><button class="faq-btn">How do I use my IPTV M3U URL in VLC?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Open VLC on your PC or Mac, go to Media → Open Network Stream (Ctrl+N), paste your Mojo 4K M3U URL and click Play. All channels load as a playlist in the sidebar. For better channel organization, use the Playlist view under View → Playlist.</p></div></div><div class="faq-item"><button class="faq-btn">Can I use the same M3U URL on multiple devices?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Your M3U URL works on any number of devices for playback — however, simultaneous streams are limited by your plan (1 to 5 devices). You can install the app on unlimited devices; the limit applies to how many streams run at the same time.</p></div></div><div class="faq-item"><button class="faq-btn">How often does the M3U URL change?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Your Mojo 4K M3U URL does not change unless you request a reset. The URL is permanently linked to your account credentials. When you renew your subscription, the same URL continues to work with no changes needed.</p></div></div><div class="faq-item"><button class="faq-btn">What is the difference between M3U and M3U8?<span class="faq-icon">+</span></button><div class="faq-answer"><p>M3U and M3U8 are the same format — M3U8 specifies UTF-8 encoding, while M3U can use various encodings. Most modern IPTV players accept both. Your Mojo 4K URL can be used as either by changing the extension in apps that require it; the content is identical.</p></div></div></div>
