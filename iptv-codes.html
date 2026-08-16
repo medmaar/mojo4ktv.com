@@ -44,6 +44,77 @@
 <a href="/pricing" class="btn-outline">Plans from $9/month</a>
 </div>
 </div></section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge"><span class="badge-dot"></span>Code Examples</span>
+      <h2>IPTV Code Formats — Full Reference 2026</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;max-width:900px;margin:0 auto">
+      <div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:700;margin-bottom:.75rem">Xtream Codes Format</h3>
+        <div style="background:rgba(0,0,0,.4);border-radius:10px;padding:1.1rem;font-family:monospace;font-size:.82rem;overflow-x:auto">
+          <div style="color:rgba(255,255,255,.4)"># Xtream Codes API</div>
+          <div style="color:#4ade80">Server: <span style="color:#fff">http://server.mojo4ktv.com:8080</span></div>
+          <div style="color:#4ade80">Username: <span style="color:#fff">your_username</span></div>
+          <div style="color:#4ade80">Password: <span style="color:#fff">your_password</span></div>
+          <div style="margin-top:.75rem;color:rgba(255,255,255,.4)"># EPG URL (auto-loaded in TiviMate)</div>
+          <div style="color:#60a5fa">http://server/xmltv.php?username=USER&amp;password=PASS</div>
+        </div>
+        <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:.75rem 0 0">Used by: TiviMate, IPTV Smarters Pro, MyTV Online, GSE Smart IPTV. Provides auto-loading EPG and full VOD access.</p>
+      </div>
+      <div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:700;margin-bottom:.75rem">M3U Playlist URL</h3>
+        <div style="background:rgba(0,0,0,.4);border-radius:10px;padding:1.1rem;font-family:monospace;font-size:.82rem;overflow-x:auto">
+          <div style="color:rgba(255,255,255,.4)"># M3U_plus format URL</div>
+          <div style="color:#60a5fa;word-break:break-all">http://server.mojo4ktv.com:8080/get.php?username=USER&amp;password=PASS&amp;type=m3u_plus</div>
+          <div style="margin-top:.75rem;color:rgba(255,255,255,.4)"># Standard M3U</div>
+          <div style="color:#60a5fa;word-break:break-all">http://server.mojo4ktv.com:8080/get.php?username=USER&amp;password=PASS&amp;type=m3u</div>
+        </div>
+        <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:.75rem 0 0">Used by: VLC, Kodi, Smart IPTV on Samsung/LG, MX Player. Works anywhere M3U is supported. Use m3u_plus for channel logos and categories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Where to Enter Your IPTV Codes — App by App</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;max-width:900px;margin:0 auto">
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem"><a href="/tivimate" style="color:#fff">TiviMate</a></h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Settings &rarr; Playlists &rarr; Add Playlist &rarr; Xtream Codes API. Enter Server URL (without http://), Username, Password. Tap Add. EPG and all channels load automatically.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem"><a href="/iptv-smarters-pro" style="color:#fff">IPTV Smarters Pro</a></h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Add User &rarr; Xtream Codes API. Enter Server URL, Username, Password. Tap Add User. Works on Android, iOS, Windows, Mac, Apple TV.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">VLC (M3U)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Media &rarr; Open Network Stream &rarr; paste your M3U_plus URL. Plays immediately. No EPG support in VLC, but all channels stream directly from the playlist URL.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem"><a href="/mytvonline" style="color:#fff">MyTV Online (Formuler)</a></h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">My Services &rarr; Add Service &rarr; Type: Xtream. Enter Server (hostname only, no http://), Username, Password. Tap Save.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">Kodi (IPTV Simple Client)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Add-ons &rarr; PVR IPTV Simple Client &rarr; Configure &rarr; Location: Remote Path &rarr; paste M3U_plus URL. Set EPG URL separately in the EPG settings tab.</p>
+      </div>
+      <div class="feat-card">
+        <h3 style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">Smart IPTV (Samsung/LG)</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin:0">Open Smart IPTV app &rarr; note your TV's MAC address &rarr; visit siptv.eu/mylist/ on a browser &rarr; enter MAC address and M3U URL &rarr; click Send List.</p>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem;text-align:center">
+      <a href="/setup-guide" style="color:var(--accent);font-weight:600">Full step-by-step setup guides for all apps and devices &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <section class="section" style="padding:2rem 0"><div class="container" style="max-width:860px">
 <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:1.5rem">Frequently Asked Questions</h2>
 <div><div class="faq-item"><button class="faq-btn">How do I get my IPTV codes?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Your Xtream Codes credentials (server URL, username, password) and M3U URL are sent to you via WhatsApp within 60 seconds of payment. They also appear in your account confirmation email. Contact support if you haven't received them within 2 minutes.</p></div></div><div class="faq-item"><button class="faq-btn">What is the difference between IPTV codes and an M3U URL?<span class="faq-icon">+</span></button><div class="faq-answer"><p>IPTV codes (Xtream Codes) use three credentials: server URL + username + password. This format enables advanced features like VOD browsing, catch-up TV, and EPG. An M3U URL is a single link that generates a playlist — simpler to use but has fewer features. Both are included with every Mojo 4K subscription.</p></div></div><div class="faq-item"><button class="faq-btn">Can I share my IPTV codes with others?<span class="faq-icon">+</span></button><div class="faq-answer"><p>IPTV codes are personal to your subscription and each active stream uses one of your device slots. Sharing codes with additional users means they'll consume device slots from your plan. To stream on more devices simultaneously, upgrade to a 2, 3, 4 or 5-device plan.</p></div></div><div class="faq-item"><button class="faq-btn">Do my IPTV codes change when I renew?<span class="faq-icon">+</span></button><div class="faq-answer"><p>No. Your server URL, username and password remain identical when you renew your subscription. No app reconfiguration is needed — all your devices continue working automatically.</p></div></div></div>
