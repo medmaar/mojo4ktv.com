@@ -271,7 +271,6 @@
 
 # Formuler
 /formuler-z10 /formuler-iptv 301
-/mytvonline /formuler-iptv 301
 
 # GSE
 /gseiptv /gse-iptv 301
@@ -355,13 +354,9 @@
 /iptv-streaming-services /iptv-streaming-service 301
 
 # Reviews / Trustpilot
-/iptv-reviews /iptv-trustpilot 301
 /iptv-customer-service /iptv-trustpilot 301
 
 # Reddit variants
-/iptv-subscription-reddit /iptv-reddit 301
-/best-iptv-reddit /iptv-reddit 301
-/best-iptv-provider-reddit /iptv-reddit 301
 
 # Arabic M3U variants
 /arabic-iptv-m3u /arabic-m3u 301
@@ -593,8 +588,6 @@
 # ── Broken link fixes 2026-08-09 ──────────────────────────────────
 /apple-tv-iptv /iptv-apple-tv 301
 /free-iptv-trial /free-trial 301
-/iptv-android-tv /best-iptv-box 301
-/iptv-for-android /best-iptv-box 301
 /iptv-macos /iptv-for-pc 301
 /iptv-austin /iptv-houston 301
 /iptv-baltimore /iptv-philadelphia 301
