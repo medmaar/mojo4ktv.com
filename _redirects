@@ -224,7 +224,6 @@
 
 # Device variants — Android
 /iptv-android /best-iptv-box 301
-/kodi-iptv /iptv-kodi 301
 /kodi-ip-tv /iptv-kodi 301
 /iptv-macbook /iptv-for-pc 301
 /iptv-pc /iptv-for-pc 301
@@ -301,7 +300,6 @@
 /sky-m3u /sport-m3u 301
 
 # Servers (iptv-servers.html exists — remove the redirect that was hiding it)
-/iptv-server /iptv-servers 301
 
 # Streaming
 /iptv-streaming /iptv-stream 301
