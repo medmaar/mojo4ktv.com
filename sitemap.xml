@@ -598,7 +598,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-bristol</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -664,7 +664,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-doha</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -688,7 +688,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-edinburgh</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -760,7 +760,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-glasgow</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -814,7 +814,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-ireland</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -832,7 +832,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-leeds</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -856,7 +856,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-liverpool</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -964,7 +964,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-netherlands</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -976,7 +976,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-new-zealand</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -988,7 +988,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-norway</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -1150,7 +1150,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-sweden</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -1192,7 +1192,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-turkey</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -1372,7 +1372,7 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-australia</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
@@ -2191,6 +2191,12 @@
   <url>
     <loc>https://mojo4ktv.com/iptv-legal</loc>
     <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mojo4ktv.com/iptv-smarters-web</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
