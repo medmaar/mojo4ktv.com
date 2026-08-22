@@ -67,3 +67,16 @@ Disallow: /
 User-agent: DataForSeoBot
 Crawl-delay: 10
 
+
+User-agent: OAI-SearchBot
+Crawl-delay: 10
+Allow: /
+
+User-agent: cohere-ai
+Crawl-delay: 10
+Allow: /
+Disallow: /checkout
+
+User-agent: YouBot
+Crawl-delay: 5
+Allow: /
