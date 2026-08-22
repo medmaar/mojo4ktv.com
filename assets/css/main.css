@@ -368,7 +368,7 @@ footer{position:relative;z-index:10;border-top:1px solid rgba(255,255,255,.1);ba
 .footer-status{margin-top:1.25rem;display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(52,211,153,.2);background:rgba(52,211,153,.1);padding:.375rem .75rem;font-size:.75rem;font-weight:500;color:rgb(110,231,183)}
 .status-dot{height:.375rem;width:.375rem;border-radius:9999px;background:rgb(52,211,153);animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-footer h4{font-size:.875rem;font-weight:600}
+footer h4{font-size:.875rem;font-weight:600}footer .footer-col-head{font-size:.875rem;font-weight:600;margin:0 0 .5rem}
 .footer-links{margin-top:1rem;display:flex;flex-direction:column;gap:.625rem}
 .footer-links a{font-size:.875rem;color:rgba(255,255,255,.55);transition:color .2s}
 .footer-links a:hover{color:#FF7E80}
