@@ -1,0 +1,55 @@
+name: Diagnose mojo4ktv worker
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test worker URL
+        run: |
+          echo "=== GET worker ==="
+          curl -s -o /tmp/get.txt -w "HTTP %{http_code}" https://iptv-trial-mojo4ktv.medmaar.workers.dev
+          echo ""
+          cat /tmp/get.txt
+
+      - name: Check CF worker exists
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          echo "=== Worker script info ==="
+          curl -s "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv" \
+            -H "Authorization: Bearer ${CF_TOKEN}" | python3 -c "import sys,json; d=json.load(sys.stdin); print('success:',d.get('success'), 'etag:',d.get('result',{}).get('etag','N/A')[:20] if d.get('result') else d.get('errors'))"
+
+      - name: Check workers.dev subdomain
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          echo "=== workers.dev subdomain status ==="
+          curl -s "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/subdomain" \
+            -H "Authorization: Bearer ${CF_TOKEN}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d, indent=2))"
+
+      - name: Check RESEND_KEY secret exists
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          echo "=== Worker secrets ==="
+          curl -s "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/secrets" \
+            -H "Authorization: Bearer ${CF_TOKEN}" | python3 -c "import sys,json; d=json.load(sys.stdin); [print(s['name']) for s in d.get('result',[])]; print('success:',d.get('success'))"
+
+      - name: Re-enable workers.dev subdomain
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          echo "=== Force-enable workers.dev ==="
+          RESP=$(curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/subdomain" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"enabled": true}')
+          echo "$RESP"
+          echo "$RESP" | python3 -c "import sys,json; d=json.load(sys.stdin); print('success:',d.get('success'))"
