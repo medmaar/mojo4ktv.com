@@ -1,14 +1,6 @@
 name: Deploy Worker
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'worker/worker.js'
-      - 'worker/wrangler.toml'
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   deploy:
@@ -24,50 +16,25 @@ jobs:
         run: |
           set -e
 
-          echo "Step 1: Upload worker script (with KV)"
           METADATA='{"main_module":"worker.js","compatibility_date":"2024-01-01","bindings":[{"type":"kv_namespace","name":"TRIALS","namespace_id":"aa82281c363b4843b928d35f96d152c2"}]}'
           DEPLOY=$(curl -s -X PUT \
             "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv" \
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -F "metadata=${METADATA};type=application/json" \
             -F "worker.js=@worker/worker.js;type=application/javascript+module")
-          echo "Deploy response: $DEPLOY"
-          SUCCESS=$(echo "$DEPLOY" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('success'))" 2>&1)
-          echo "Deploy success: $SUCCESS"
+          echo "$DEPLOY" | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0) if d.get('success') else (print('Deploy error:',d.get('errors')) or exit(1))"
 
-          if [ "$SUCCESS" != "True" ]; then
-            echo "Deploy failed with KV, trying without KV binding..."
-            METADATA2='{"main_module":"worker.js","compatibility_date":"2024-01-01"}'
-            DEPLOY2=$(curl -s -X PUT \
-              "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv" \
-              -H "Authorization: Bearer ${CF_TOKEN}" \
-              -F "metadata=${METADATA2};type=application/json" \
-              -F "worker.js=@worker/worker.js;type=application/javascript+module")
-            echo "Deploy2 response: $DEPLOY2"
-            echo "$DEPLOY2" | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0) if d.get('success') else (print('FAILED:',d.get('errors')) or exit(1))"
-          fi
-
-          echo ""
-          echo "Step 2: Set RESEND_KEY"
-          SECRET=$(curl -s -X PUT \
+          curl -s -X PUT \
             "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/secrets" \
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
-            -d "{\"name\":\"RESEND_KEY\",\"text\":\"${RESEND_API_KEY}\",\"type\":\"secret_text\"}")
-          echo "Secret response: $SECRET"
+            -d "{\"name\":\"RESEND_KEY\",\"text\":\"${RESEND_API_KEY}\",\"type\":\"secret_text\"}" \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0) if d.get('success') else (print('Secret error:',d.get('errors')) or exit(1))"
 
-          echo ""
-          echo "Step 3: Enable workers.dev subdomain"
-          SUB=$(curl -s -X POST \
+          curl -s -X POST \
             "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/subdomain" \
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
-            -d '{"enabled":true}')
-          echo "Subdomain response: $SUB"
+            -d '{"enabled":true}'
 
-          echo ""
-          echo "Step 4: Test worker POST"
-          sleep 3
-          curl -s -X POST "https://iptv-trial-mojo4ktv.medmaar.workers.dev" \
-            -H "Content-Type: application/json" \
-            -d '{"name":"Test","email":"test@test.com","country":"Canada","whatsapp":"","device":"","notes":""}'
+          echo "Deploy complete."
