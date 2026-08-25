@@ -1,10 +1,10 @@
 name: Deploy Worker
-
 on:
   push:
     branches: [main]
     paths:
       - 'worker/worker.js'
+      - 'worker/wrangler.toml'
   workflow_dispatch:
 
 jobs:
@@ -13,65 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy Worker via Cloudflare API
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          workingDirectory: worker
+          secrets: |
+            RESEND_KEY
         env:
-          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
-          WORKER_NAME: iptv-trial-mojo4ktv
-        run: |
-          METADATA=$(cat <<'METADATA'
-          {
-            "main_module": "worker.js",
-            "compatibility_date": "2024-01-01",
-            "bindings": [
-              {
-                "type": "kv_namespace",
-                "name": "TRIALS",
-                "namespace_id": "aa82281c363b4843b928d35f96d152c2"
-              }
-            ]
-          }
-          METADATA
-          )
-          curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -F "metadata=${METADATA};type=application/json" \
-            -F "worker.js=@worker/worker.js;type=application/javascript+module"
-
-      - name: Store Resend key as CF Worker Secret
-        env:
-          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
-          WORKER_NAME: iptv-trial-mojo4ktv
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-        run: |
-          curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/secrets" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d "{\"name\":\"RESEND_KEY\",\"text\":\"${RESEND_API_KEY}\",\"type\":\"secret_text\"}"
-
-      - name: Enable workers.dev subdomain
-        env:
-          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
-          WORKER_NAME: iptv-trial-mojo4ktv
-        run: |
-          curl -s -X POST \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/subdomain" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '{"enabled": true}'
-
-      - name: Set Cron Trigger
-        env:
-          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
-          WORKER_NAME: iptv-trial-mojo4ktv
-        run: |
-          curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/schedules" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '[{"cron": "0 * * * *"}]'
+          RESEND_KEY: ${{ secrets.RESEND_API_KEY }}
