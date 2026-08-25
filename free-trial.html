@@ -624,7 +624,7 @@ async function ppSubmit(e){e.preventDefault();
   btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';
   if(!name.trim()||!email.trim()){btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Please enter your name and email.';}return;}
   try{
-    var r=await fetch('https://iptv-trial-mojo4ktv.medmaar.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,whatsapp:wa,device:device,notes:notes})});
+    var r=await fetch('/api/trial',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,whatsapp:wa,device:device,notes:notes})});
     var d=await r.json();
     if(r.ok&&d.success){
       if(area)area.style.display='none';
