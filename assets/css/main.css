@@ -683,3 +683,71 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 .footer-bottom p,.footer-bottom small,.footer-bottom span{text-align:center !important}
 
 @keyframes np-pulse{0%,100%{box-shadow:0 0 0 3px rgba(231,79,81,.25)}50%{box-shadow:0 0 0 6px rgba(231,79,81,.08)}}
+/* ─── Free Trial Page (pp-*) ─── */
+.pp-page{padding-top:0}
+.pp-hero{padding:7rem 1.25rem 2.5rem;text-align:center;position:relative;z-index:1}
+@media(min-width:768px){.pp-hero{padding:8rem 1.25rem 3rem}}
+.pp-hero-inner{max-width:640px;margin:0 auto}
+.pp-badge{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(231,79,81,.4);background:rgba(231,79,81,.12);padding:.4rem 1rem;font-size:.8rem;font-weight:700;color:#FF7E80;margin-bottom:1.25rem}
+.pp-badge-dot{width:.5rem;height:.5rem;border-radius:9999px;background:#E74F51;flex-shrink:0;animation:live-glow 1.6s ease-in-out infinite}
+.pp-hero h1{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;line-height:1.2;text-wrap:balance;color:#fff;margin-bottom:.75rem}
+.pp-hero em{font-style:normal;color:#FF7E80}
+.pp-hero-sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.6;margin-top:.75rem}
+@media(min-width:768px){.pp-hero-sub{font-size:1.1rem}}
+
+.pp-wrap{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:1000px;margin:0 auto;padding:0 1.25rem 3rem;position:relative;z-index:1}
+@media(min-width:900px){.pp-wrap{grid-template-columns:1fr 360px;align-items:start}}
+
+.pp-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:1.25rem;padding:1.75rem;backdrop-filter:blur(12px)}
+@media(min-width:640px){.pp-card{padding:2rem}}
+
+.pp-sum{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.pp-sum-label h3{font-size:1rem;font-weight:700;color:#fff;margin:0 0 .25rem}
+.pp-sum-label p{font-size:.8rem;color:rgba(255,255,255,.5);margin:0}
+.pp-sum-val{font-size:1.9rem;font-weight:900;color:#2ecc71;flex-shrink:0}
+
+.pp-instruction{font-size:.875rem;color:rgba(255,255,255,.6);margin-bottom:1.25rem;line-height:1.5}
+
+.pp-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin-bottom:.75rem}
+@media(min-width:500px){.pp-grid{grid-template-columns:1fr 1fr}}
+
+.pp-field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.pp-label{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75)}
+
+.pp-input,.pp-select,.pp-textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:.625rem;padding:.65rem .875rem;color:#fff;font-size:.9rem;font-family:inherit;transition:border-color .2s,background .2s;outline:none}
+.pp-input::placeholder,.pp-textarea::placeholder{color:rgba(255,255,255,.3)}
+.pp-select option{background:#0d1f3c;color:#fff}
+.pp-input:focus,.pp-select:focus,.pp-textarea:focus{border-color:rgba(231,79,81,.6);background:rgba(255,255,255,.1)}
+.pp-textarea{min-height:80px;resize:vertical}
+
+.pp-submit{width:100%;margin-top:.5rem;padding:.85rem 1.5rem;border-radius:9999px;border:none;background:#E74F51;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s,transform .15s;box-shadow:0 6px 20px -4px rgba(231,79,81,.45)}
+.pp-submit:hover:not(:disabled){background:#D23E40;transform:translateY(-1px)}
+.pp-submit:disabled{opacity:.65;cursor:not-allowed}
+
+.pp-err{display:none;margin-top:.75rem;padding:.6rem .875rem;border-radius:.5rem;background:rgba(231,79,81,.15);border:1px solid rgba(231,79,81,.3);color:#FF7E80;font-size:.85rem}
+
+.pp-note{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.75rem}
+
+.pp-trust{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.07)}
+.pp-trust-item{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:rgba(255,255,255,.5)}
+
+/* Success state */
+.pp-success{display:none;text-align:center;padding:2rem 1.25rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:1.25rem}
+.pp-check{width:64px;height:64px;border-radius:50%;background:rgba(46,204,113,.15);border:2px solid rgba(46,204,113,.5);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.pp-check-svg{width:32px;height:32px;fill:none;stroke:#2ecc71;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.pp-suc-title{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.pp-suc-sub{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:1.25rem}
+.pp-suc-link{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.5rem;border-radius:9999px;background:#E74F51;color:#fff;font-weight:700;font-size:.9rem;text-decoration:none;transition:background .2s}
+.pp-suc-link:hover{background:#D23E40}
+
+/* Secondary column */
+.pp-secondary{position:relative;z-index:1}
+.pp-feats-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:1.25rem;padding:1.5rem;backdrop-filter:blur(12px)}
+.pp-feats-title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.pp-feats-grid{display:flex;flex-direction:column;gap:.6rem}
+.pp-feat-row{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:rgba(255,255,255,.75)}
+.pp-feat-chk{color:#2ecc71;font-weight:700;flex-shrink:0;font-size:.9rem}
+
+/* ─── FAQ chevron icon (pricing page) ─── */
+.faq-chevron{width:1.25rem;height:1.25rem;flex-shrink:0;color:#FF7E80;transition:transform .3s}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
