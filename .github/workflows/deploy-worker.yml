@@ -13,13 +13,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy with Wrangler
+      - name: Deploy Worker script with Wrangler
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: worker
-          secrets: |
-            RESEND_KEY
+
+      - name: Set RESEND_KEY secret
         env:
-          RESEND_KEY: ${{ secrets.RESEND_API_KEY }}
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          RESP=$(curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/secrets" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{\"name\":\"RESEND_KEY\",\"text\":\"${RESEND_API_KEY}\",\"type\":\"secret_text\"}")
+          echo "$RESP"
+          echo "$RESP" | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0) if d.get('success') else (print('CF error:',d) or exit(1))"
