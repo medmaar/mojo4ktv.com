@@ -17,7 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" async></script>
-<script>emailjs.init("wVTX5iZON_Z94mQd9");</script>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="en_US"/><meta property="og:title" content="Mojo 4K IPTV — 3 Months · 4 Devices · $99 | Mojo 4K"/><meta property="og:description" content="Subscribe to Mojo 4K IPTV — 3 Months, 4 Devices for $99. 50,000+ channels, all sports & PPV, instant activation."/><meta property="og:site_name" content="Mojo4KTV.com"/>
 <meta property="og:type" content="website"/>
@@ -527,6 +526,8 @@ function setConnections(n){
 function ppSubmit(e){e.preventDefault();
   var btn=document.getElementById('pp-btn'),err=document.getElementById('pp-err'),
       suc=document.getElementById('pp-suc'),area=document.getElementById('pp-form-area');
+  if(typeof emailjs==='undefined'){if(err){err.style.display='block';err.textContent='Something went wrong. Please try again or contact us on WhatsApp.';}return;}
+  emailjs.init({publicKey:"wVTX5iZON_Z94mQd9"});
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
   btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';

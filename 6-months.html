@@ -21,7 +21,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" async></script>
-<script>emailjs.init("wVTX5iZON_Z94mQd9");</script>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Mojo 4K IPTV — 6 Month Plan | Mojo4KTV.com"/>
 <meta property="og:description" content="Subscribe to Mojo 4K IPTV for 6 months from $39. 50,000+ channels, 300,000+ movies, all sports & PPV."/>
@@ -467,6 +466,8 @@ function opSubmit(e) {
   var err = document.getElementById('op-err');
   var suc = document.getElementById('op-suc');
   var area = document.getElementById('op-form-area');
+  if (typeof emailjs === 'undefined') { if (err) { err.style.display = 'block'; err.textContent = 'Something went wrong. Please try again or contact us on WhatsApp.'; } return; }
+  emailjs.init({publicKey: "wVTX5iZON_Z94mQd9"});
   function gv(id) {
     var el = document.getElementById(id);
     if(!el) return '';
