@@ -341,10 +341,12 @@
       </div>
     </div>
     <div class="pp-success" id="pp-suc">
+      <div class="pp-success-card">
       <div class="pp-check"><svg class="pp-check-svg" viewBox="0 0 52 52"><polyline points="14,27 22,36 38,17"/></svg></div>
       <div class="pp-suc-title">Order Received!</div>
       <p class="pp-suc-sub">Your <strong>3 Months · 1 Device</strong> plan is confirmed. We'll send credentials to <strong id="pp-email-confirm"></strong> within minutes.</p>
       <a class="pp-suc-link" href="/">← Back to Home</a>
+      </div>
     </div>
     <div class="pp-secondary" id="pp-secondary">
       <div class="pp-feats-card">
@@ -549,7 +551,7 @@ function ppSubmit(e){e.preventDefault();
     .then(function(){
       if(area)area.style.display='none';
       var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
-      if(suc)suc.style.display='block';
+      if(suc)suc.style.display='flex';document.body.style.overflow='hidden';
       var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your contact';
     },function(error){
       btn.disabled=false;btn.textContent='Submit';

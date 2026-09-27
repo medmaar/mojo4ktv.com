@@ -236,12 +236,14 @@
 
   <!-- SUCCESS -->
   <div class="op-success" id="op-suc">
+    <div class="op-success-card">
     <div class="op-check">
       <svg class="op-check-svg" viewBox="0 0 52 52"><polyline points="14,27 22,36 38,17"/></svg>
     </div>
     <div class="op-suc-title">Order Received!</div>
     <p class="op-suc-sub">Your order has been placed. We'll send your IPTV credentials to <strong id="op-email-confirm"></strong> within minutes. Get ready to stream!</p>
     <a class="op-suc-link" href="/">← Back to Home</a>
+    </div>
   </div>
 
   <!-- WHAT'S INCLUDED -->
@@ -519,7 +521,7 @@ function opSubmit(e) {
   emailjs.send('service_u0y9azb','template_4mqukzm', templateParams)
     .then(function(){
       area.style.display = 'none';
-      suc.style.display = 'block';
+      suc.style.display = 'flex'; document.body.style.overflow = 'hidden';
       var ec = document.getElementById('op-email-confirm') || document.getElementById('pp-email-confirm');
       if(ec) ec.textContent = email || 'your contact';
     }, function(error){

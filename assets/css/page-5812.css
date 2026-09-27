@@ -507,17 +507,21 @@ nav{background:rgba(8,21,43,.97);backdrop-filter:blur(14px);-webkit-backdrop-fil
 .op-err{display:none;margin-top:10px;padding:11px 14px;background:rgba(231,79,81,.1);border:1px solid rgba(231,79,81,.35);border-radius:10px;color:#FF7E80;font-size:.82rem}
 .op-note{font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:4px}
 
-/* Success */
-.op-success{display:none;text-align:center;padding:2.5rem 1.5rem;background:rgba(46,204,113,.07);border:1px solid rgba(46,204,113,.3);border-radius:20px}
-.op-check{width:80px;height:80px;border-radius:50%;background:rgba(46,204,113,.12);border:3px solid #2ecc71;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;animation:op-pop .5s cubic-bezier(.175,.885,.32,1.275) both}
+/* Success — full-screen modal */
+.op-success{display:none;position:fixed;inset:0;z-index:9999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;background:rgba(5,12,26,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:op-fade .25s ease}
+.op-success-card{max-width:460px;width:100%;background:rgba(15,32,60,.96);border:1px solid rgba(46,204,113,.3);border-radius:20px;padding:2.75rem 2rem;box-shadow:0 24px 70px -12px rgba(0,0,0,.6);animation:op-pop-card .4s cubic-bezier(.175,.885,.32,1.275) both}
+@keyframes op-fade{from{opacity:0}to{opacity:1}}
+@keyframes op-pop-card{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:scale(1)}}
+.op-check{width:80px;height:80px;border-radius:50%;background:rgba(46,204,113,.12);border:3px solid #2ecc71;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;animation:op-pop .5s .1s cubic-bezier(.175,.885,.32,1.275) both}
 @keyframes op-pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-.op-check-svg{width:38px;height:38px;stroke:#2ecc71;stroke-width:2.5;fill:none;stroke-dasharray:60;stroke-dashoffset:60;animation:op-draw .5s .4s ease forwards}
+.op-check-svg{width:38px;height:38px;stroke:#2ecc71;stroke-width:2.5;fill:none;stroke-dasharray:60;stroke-dashoffset:60;animation:op-draw .5s .5s ease forwards}
 @keyframes op-draw{to{stroke-dashoffset:0}}
-.op-suc-title{color:#2ecc71;font-size:1.6rem;font-weight:900;margin-bottom:.5rem}
-.op-suc-sub{color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.7}
+.op-suc-title{color:#2ecc71;font-size:1.75rem;font-weight:900;margin-bottom:.5rem}
+.op-suc-sub{color:rgba(255,255,255,.8);font-size:1rem;line-height:1.7}
 .op-suc-sub strong{color:#fff}
-.op-suc-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.25rem;padding:10px 22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;font-weight:700;font-size:.875rem;transition:all .2s}
+.op-suc-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;padding:12px 26px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;font-weight:700;font-size:.9rem;transition:all .2s}
 .op-suc-link:hover{background:rgba(255,255,255,.12)}
+@media(prefers-reduced-motion:reduce){.op-success,.op-success-card,.op-check,.op-check-svg{animation:none;stroke-dashoffset:0}}
 
 /* What's included section */
 .op-section{padding:44px 0 0}
