@@ -361,7 +361,7 @@ footer{position:relative;z-index:10;border-top:1px solid rgba(255,255,255,.1);ba
 @media(min-width:640px){.footer-inner{padding:0 1.5rem}}
 @media(min-width:1024px){.footer-inner{padding:0 2rem}}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:3.5rem 0}
-@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2rem}}
 .footer-brand{grid-column:span 2}
 @media(min-width:768px){.footer-brand{grid-column:span 1}}
 .footer-brand p{margin-top:1rem;max-width:20rem;font-size:.875rem;line-height:1.6;color:rgba(255,255,255,.55)}
