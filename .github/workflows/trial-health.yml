@@ -35,3 +35,8 @@ jobs:
             done
           done
 
+
+      - name: One end-to-end test trial to the site's own inbox (shows email error if any)
+        run: |
+          curl -sS -m 60 -w "\nHTTP %{http_code}\n" -X POST "https://mojo4ktv.com/api/trial" -H 'Content-Type: application/json' \
+            -d '{"name":"Test Check","email":"help@mojo4ktv.com","country":"Test","device":"Test","whatsapp":"","notes":"Automated check of trial emails"}' || true
