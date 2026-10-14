@@ -1,0 +1,37 @@
+name: Trial Worker Health Check
+
+# Read-only check of the live free-trial worker. It never creates a trial line
+# and never sends an email. Uses no secrets: public endpoints and DNS only.
+
+on:
+  push:
+    branches: [claude/project-thread-eert6b]
+    paths:
+      - '.github/workflows/trial-health.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      W: iptv-trial-mojo4ktv
+    steps:
+      - name: Worker responds
+        run: curl -sS -m 20 -w "\nHTTP %{http_code}\n" "https://$W.medmaar.workers.dev/" || true
+
+      - name: Site form proxy reaches the worker (invalid input, creates nothing)
+        run: |
+          curl -sS -m 20 -w "\nHTTP %{http_code}\n" -X POST "https://mojo4ktv.com/api/trial" -H 'Content-Type: application/json' -d 'not-json' || true
+          curl -sS -m 20 -w "\nHTTP %{http_code}\n" -X POST "https://mojo4ktv.com/api/trial" -H 'Content-Type: application/json' -d '{}' || true
+
+      - name: Panel + KV status (?debug)
+        run: curl -sS -m 30 "https://$W.medmaar.workers.dev/?debug=1" || true
+
+      - name: Email DNS for mojo4ktv.com vs mojo4k.de
+        run: |
+          for D in mojo4ktv.com mojo4k.de; do
+            echo "== $D"
+            for R in "resend._domainkey.$D TXT" "send.$D MX" "send.$D TXT" "_dmarc.$D TXT" "$D MX"; do
+              set -- $R; printf '  %-32s %-4s ' "$1" "$2"; dig +short "$1" "$2" | head -2 | cut -c1-90 | tr '\n' ' '; echo
+            done
+          done
+
