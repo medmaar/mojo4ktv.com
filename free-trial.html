@@ -105,13 +105,20 @@
 .pp-trust-item{display:flex;align-items:center;gap:.35rem;font-size:.75rem;color:rgba(255,255,255,.48)}
 
 /* Success state — spans both columns */
-.pp-success{display:none;grid-column:1/-1;text-align:center;padding:2.5rem 1.5rem;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);border-radius:1.25rem}
-.pp-check{width:60px;height:60px;border-radius:50%;background:rgba(46,204,113,.14);border:2px solid rgba(46,204,113,.45);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
-.pp-check-svg{width:30px;height:30px;fill:none;stroke:#2ecc71;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-.pp-suc-title{font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:.5rem}
-.pp-suc-sub{font-size:.875rem;color:rgba(255,255,255,.62);line-height:1.65;margin-bottom:1.25rem}
-.pp-suc-link{display:inline-flex;align-items:center;padding:.65rem 1.5rem;border-radius:9999px;background:#E74F51;color:#fff;font-weight:700;font-size:.875rem;text-decoration:none;transition:background .2s}
-.pp-suc-link:hover{background:#D23E40}
+.pp-success{display:none;position:relative;inset:auto;z-index:1;grid-column:1/-1;text-align:center;padding:3rem 1.5rem 2.75rem;background:rgba(10,14,24,.72);border:1px solid rgba(46,204,113,.22);border-radius:1.5rem;max-width:640px;width:100%;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);scroll-margin-top:140px}
+.pp-success.is-on{display:block;animation:pp-pop .45s ease-out}
+@keyframes pp-pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.pp-check{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(46,204,113,.28) 0%,rgba(46,204,113,.06) 70%);border:2px solid rgba(46,204,113,.5);box-shadow:0 0 40px rgba(46,204,113,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.pp-check-svg{width:58px;height:58px;fill:none;stroke:#4ade80;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.pp-suc-title{font-size:clamp(1.9rem,6vw,2.75rem);font-weight:900;color:#4ade80;line-height:1.15;margin-bottom:1rem;letter-spacing:-.01em}
+.pp-suc-sub{font-size:1rem;color:rgba(255,255,255,.78);line-height:1.7;margin:0 auto 2rem;max-width:30rem;overflow-wrap:anywhere}
+.pp-suc-sub strong{color:#fff}
+.pp-suc-btns{display:flex;flex-wrap:wrap;gap:.85rem;justify-content:center}
+.pp-suc-link{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-width:200px;padding:.9rem 1.75rem;border-radius:9999px;color:#fff;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .2s,filter .2s}
+.pp-suc-link:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.pp-suc-setup{background:linear-gradient(90deg,#ff2d55,#a33be0);box-shadow:0 10px 28px rgba(255,45,85,.3)}
+.pp-suc-wa{background:#25D366;color:#0b1a10;box-shadow:0 10px 28px rgba(37,211,102,.3)}
+@media(max-width:480px){.pp-success{padding:2.25rem 1.1rem 2rem}.pp-check{width:96px;height:96px}.pp-check-svg{width:46px;height:46px}.pp-suc-link{width:100%}}
 
 /* Secondary / features column */
 .pp-secondary{position:relative;z-index:1}
@@ -416,11 +423,14 @@
         <div class="pp-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:.9rem;width:.9rem"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>24/7 WhatsApp Support</div>
       </div>
     </div>
-    <div class="pp-success" id="pp-suc">
-      <div class="pp-check"><svg class="pp-check-svg" viewBox="0 0 52 52"><polyline points="14,27 22,36 38,17"/></svg></div>
-      <div class="pp-suc-title">Trial Request Sent!</div>
-      <p class="pp-suc-sub">Your credentials have been sent to <strong id="pp-email-confirm"></strong>. Check your <strong>inbox now</strong> — also check spam.</p>
-      <a class="pp-suc-link" href="/#pricing">📋 View Paid Plans</a>
+    <div class="pp-success" id="pp-suc" role="status" aria-live="polite" tabindex="-1">
+      <div class="pp-check" aria-hidden="true"><svg class="pp-check-svg" viewBox="0 0 52 52"><polyline points="14,27 22,36 38,17"/></svg></div>
+      <div class="pp-suc-title">Check your inbox!</div>
+      <p class="pp-suc-sub">Your free 24-hour trial is on its way. We just emailed your login details to <strong id="pp-email-confirm"></strong>. Not there in a couple of minutes? Check your spam folder or message us on WhatsApp.</p>
+      <div class="pp-suc-btns">
+        <a class="pp-suc-link pp-suc-setup" href="/setup-guide">Set up my device</a>
+        <a class="pp-suc-link pp-suc-wa" href="/go/wa?msg=Hi%2C+I+just+requested+my+free+trial+and+need+some+help." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 004.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 01-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 01-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 012.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>Help on WhatsApp</a>
+      </div>
     </div>
     <div class="pp-secondary" id="pp-secondary">
       <div class="pp-feats-card">
@@ -640,8 +650,13 @@ async function ppSubmit(e){e.preventDefault();
     if(r.ok&&d.success){
       if(area)area.style.display='none';
       var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
-      if(suc)suc.style.display='block';
       var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your email';
+      if(suc){suc.classList.add('is-on');
+        var hd=document.querySelector('header'),hh=hd?hd.getBoundingClientRect().height:0;
+        var rc=suc.getBoundingClientRect(),avail=window.innerHeight-hh;
+        var off=rc.height<avail?(avail-rc.height)/2:16;
+        window.scrollTo({top:Math.max(0,window.pageYOffset+rc.top-hh-off),behavior:'smooth'});
+        try{suc.focus({preventScroll:true})}catch(_){}}
     }else{btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Submission failed. Please try again or contact us on WhatsApp.';}}
   }catch(ex){
     btn.disabled=false;btn.textContent='Submit';
