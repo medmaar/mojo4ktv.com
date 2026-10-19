@@ -95,14 +95,14 @@ footer a:hover{color:rgba(255,255,255,.7)}
     <!-- FORM -->
     <div class="card">
       <h1>Your Details</h1>
-      <form id="checkoutForm" onsubmit="submitForm(event)">
+      <form id="checkoutForm" onsubmit="submitForm(event)" novalidate>
         <div class="form-group">
-          <label for="fname">Full Name *</label>
-          <input type="text" id="fname" name="name" placeholder="John Smith" required autocomplete="name"/>
+          <label for="fname">Full Name</label>
+          <input type="text" id="fname" name="name" placeholder="John Smith" autocomplete="name"/>
         </div>
         <div class="form-group">
-          <label for="femail">Email Address *</label>
-          <input type="email" id="femail" name="email" placeholder="john@example.com" required autocomplete="email"/>
+          <label for="femail">Email Address</label>
+          <input type="email" id="femail" name="email" placeholder="john@example.com" autocomplete="email"/>
           <p class="connections-note">Your login credentials will be sent here after payment.</p>
         </div>
         <div class="form-group">
@@ -180,7 +180,7 @@ function submitForm(e){
     device:document.getElementById('fdevice').value
   };
   // Submit to Cloudflare Worker / contact endpoint
-  fetch('/contact/msg?msg='+encodeURIComponent('New order: '+data.plan+' | '+data.connections+' conn | '+data.device+' | '+data.name+' | '+data.email))
+  fetch('/contact/msg?msg='+encodeURIComponent('New order: '+data.plan+' | '+data.connections+' conn | '+(data.device||'N/A')+' | '+(data.name||'N/A')+' | '+(data.email||'N/A')))
     .then(function(){
       f.innerHTML='<div style="text-align:center;padding:2rem 0"><svg viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" style="height:4rem;width:4rem;margin:0 auto 1rem;display:block"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:.75rem">Order Received!</h2><p style="color:rgba(255,255,255,.7)">Check your email for your secure payment link. Once paid, your subscription is activated within minutes.</p><p style="margin-top:1rem;font-size:.875rem;color:rgba(255,255,255,.5)">Need help? Contact us on WhatsApp or live chat.</p></div>';
     })

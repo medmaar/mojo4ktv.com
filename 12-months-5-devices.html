@@ -571,7 +571,7 @@ function ppSubmit(e){e.preventDefault();
       if(area)area.style.display='none';
       var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
       if(suc)suc.style.display='flex';document.body.style.overflow='hidden';
-      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your contact';
+      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||(wa.replace(/\D/g,'').length>5?wa:'')||'your contact';
     },function(error){
       btn.disabled=false;btn.textContent='Submit';
       if(err){err.style.display='block';err.textContent='Something went wrong. Please try again or contact us on WhatsApp.';}

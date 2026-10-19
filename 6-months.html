@@ -495,8 +495,6 @@ function opSubmit(e) {
     err.style.display = 'block'; err.textContent = msg;
     btn.disabled = false; btn.textContent = 'Subscribe for $39 →';
   }
-  if(!name) { showErr('Please enter your full name.'); return; }
-  if(!email || !email.includes('@')) { showErr('Please enter a valid email address.'); return; }
   btn.disabled = true; btn.textContent = 'Processing order…';
   err.style.display = 'none';
 
@@ -506,8 +504,8 @@ function opSubmit(e) {
   var emoji = '📦';
   var waMsg = emoji + ' NEW ORDER%0A%0A' +
     '📋 Plan: ' + encodeURIComponent(planName) + '%0A' +
-    '👤 Name: ' + encodeURIComponent(name) + '%0A' +
-    '📧 Email: ' + encodeURIComponent(email) + '%0A' +
+    '👤 Name: ' + encodeURIComponent(name || 'N/A') + '%0A' +
+    '📧 Email: ' + encodeURIComponent(email || 'N/A') + '%0A' +
     '🌍 Country: ' + encodeURIComponent(country || 'N/A') + '%0A' +
     '📱 Device: ' + encodeURIComponent(device || 'N/A') + '%0A' +
     (wa ? '💬 WhatsApp: ' + encodeURIComponent(wa) + '%0A' : '') +
@@ -530,7 +528,7 @@ function opSubmit(e) {
       area.style.display = 'none';
       suc.style.display = 'flex'; document.body.style.overflow = 'hidden';
       var ec = document.getElementById('op-email-confirm') || document.getElementById('pp-email-confirm');
-      if(ec) ec.textContent = email || 'your contact';
+      if(ec) ec.textContent = email || (wa.replace(/\D/g,'').length > 5 ? wa : '') || 'your contact';
     }, function(error){
       btn.disabled = false;
       btn.textContent = 'Subscribe →';

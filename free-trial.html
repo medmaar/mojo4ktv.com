@@ -646,14 +646,15 @@ async function ppSubmit(e){e.preventDefault();
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
   btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';
-  if(!name.trim()||!email.trim()){btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Please enter your name and email.';}return;}
   try{
     var r=await fetch('/api/trial',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,whatsapp:wa,device:device,notes:notes})});
     var d=await r.json();
     if(r.ok&&d.success){
       if(area)area.style.display='none';
       var sec=document.getElementById('pp-secondary');if(sec)sec.style.display='none';
-      var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email||'your email';
+      var ss=document.querySelector('#pp-suc .pp-suc-sub');
+      if(ss&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){var st=document.querySelector('#pp-suc .pp-suc-title');if(st)st.textContent='You\'re all set!';ss.textContent='Your free 24-hour trial is on its way. We\'ll send your login details'+(wa.replace(/\D/g,'').length>5?' on WhatsApp to '+wa:'')+' shortly. Need it sooner? Message us on WhatsApp.';}
+      else{var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email;}
       if(suc){suc.classList.add('is-on');
         var hd=document.querySelector('header'),hh=hd?hd.getBoundingClientRect().height:0;
         var rc=suc.getBoundingClientRect(),avail=window.innerHeight-hh;

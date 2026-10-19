@@ -217,8 +217,8 @@ function adminEmail(name, email, country, device, whatsapp, notes, username, pas
 <body style="font-family:Arial,sans-serif;font-size:14px;color:#333;padding:20px;">
   <h2 style="color:${RED};margin-top:0;">New Free Trial — Mojo 4K TV</h2>
   <table cellpadding="6" cellspacing="0" border="0">
-    <tr><td style="color:#888;width:120px;">Name</td><td><strong>${name}</strong></td></tr>
-    <tr><td style="color:#888;">Email</td><td>${email}</td></tr>
+    <tr><td style="color:#888;width:120px;">Name</td><td><strong>${name||"—"}</strong></td></tr>
+    <tr><td style="color:#888;">Email</td><td>${email||"—"}</td></tr>
     <tr><td style="color:#888;">Country</td><td>${country||"—"}</td></tr>
     <tr><td style="color:#888;">Device</td><td>${device||"—"}</td></tr>
     <tr><td style="color:#888;">WhatsApp</td><td>${whatsapp||"—"}</td></tr>
@@ -259,8 +259,10 @@ async function handleFetch(request, env) {
   try { body = await request.json(); }
   catch { return jsonRes({ success: false, error: "Invalid JSON" }, 400); }
 
-  const { name, email, country, device, whatsapp, notes } = body;
-  if (!email) return jsonRes({ success: false, error: "Email required" }, 400);
+  const str = v => (v == null ? "" : String(v).trim());
+  const name = str(body && body.name), email = str(body && body.email), country = str(body && body.country),
+        device = str(body && body.device), whatsapp = str(body && body.whatsapp), notes = str(body && body.notes);
+  const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   let step = "bouquet";
   try {
@@ -276,7 +278,7 @@ async function handleFetch(request, env) {
     step = "create_demo";
     const crRes = await apiGet({
       action: "new", type: "m3u", sub: "99", pack: packId,
-      notes: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
+      notes: `Trial / ${SITE_NAME} / ${email || "no email"} | ${whatsapp || ""}`,
     });
     if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
       throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
@@ -293,7 +295,15 @@ async function handleFetch(request, env) {
     try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
-    // ── Store in KV FIRST (so trial is always recorded even if email fails) ──
+    // ── Admin email first, so every trial reaches the team even without a usable client email ──
+    step = "email_admin";
+    try {
+      await sendEmail(ADMIN_EMAIL, `Automation / ${SITE_NAME} / trial / ${name || "—"} / ${email || whatsapp || "—"}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
+    } catch (e) { console.error("[step=email_admin]", e.message); }
+
+    if (!hasEmail) return jsonRes({ success: true });
+
+    // ── Store in KV (so reminder/follow-up cron can reach the client) ──
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
@@ -321,15 +331,12 @@ async function handleFetch(request, env) {
       } catch (_) {}
     }
 
-    step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / ${SITE_NAME} / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
-
     return jsonRes({ success: true });
 
   } catch (err) {
     console.error(`[step=${step}]`, err.message);
     // If only email failed (kv already saved), still return success with a warning
-    if (step === "email_client" || step === "email_admin") {
+    if (step === "email_client" || step === "kv_store") {
       return jsonRes({ success: true, warning: `email_failed: ${err.message}` });
     }
     return jsonRes({ success: false, error: `[${step}] ${err.message}` }, 500);
