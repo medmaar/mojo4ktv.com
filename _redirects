@@ -35,8 +35,8 @@
 /6-months-5-devices.html /6-months-5-devices 301
 
 # ── SEO pages (.html → clean URL) ────────────────────────────────────
-/arabic-iptv.html /arabic-iptv 301
-/arabic-m3u.html /arabic-m3u 301
+/arabic-iptv.html /channels 301
+/arabic-m3u.html /iptv-m3u 301
 /best-iptv-box.html /best-iptv-box 301
 /best-iptv-service.html /best-iptv-service 301
 /buy-iptv.html /buy-iptv 301
@@ -175,7 +175,6 @@
 /ssiptv /smart-iptv 301
 /smart-iptv-samsung /smart-iptv 301
 /smart-iptv-m3u /smart-iptv 301
-/set-iptv /smart-iptv 301
 /my-siptv /smart-iptv 301
 /ssiptv-list /smart-iptv 301
 
@@ -357,9 +356,9 @@
 # Reddit variants
 
 # Arabic M3U variants
-/arabic-iptv-m3u /arabic-m3u 301
-/m3u-arabic /arabic-m3u 301
-/iptv-m3u-arabic /arabic-m3u 301
+/arabic-iptv-m3u /iptv-m3u 301
+/m3u-arabic /iptv-m3u 301
+/iptv-m3u-arabic /iptv-m3u 301
 
 # German
 /german-tv-iptv /german-iptv 301
@@ -434,14 +433,14 @@
 /iptv-melbourne.html /iptv-melbourne 301
 
 # Middle East cities
-/iptv-dubai.html /iptv-dubai 301
-/iptv-abu-dhabi.html /iptv-abu-dhabi 301
-/iptv-riyadh.html /iptv-riyadh 301
-/iptv-doha.html /iptv-doha 301
-/iptv-casablanca.html /iptv-casablanca 301
+/iptv-dubai.html /channels 301
+/iptv-abu-dhabi.html /channels 301
+/iptv-riyadh.html /channels 301
+/iptv-doha.html /channels 301
+/iptv-casablanca.html /channels 301
 
 # ── COUNTRY PAGES ────────────────────────────────────────────────
-/iptv-pakistan.html /iptv-pakistan 301
+/iptv-pakistan.html /channels 301
 /iptv-denmark.html /iptv-denmark 301
 /iptv-poland.html /iptv-poland 301
 /iptv-finland.html /iptv-finland 301
@@ -479,7 +478,7 @@
 /munich-iptv /iptv-munich 301
 /paris-iptv /iptv-paris 301
 /oslo-iptv /iptv-oslo 301
-/dubai-iptv /iptv-dubai 301
+/dubai-iptv /channels 301
 
 /iptv-firestick-4k-ultra /iptv-firestick-4k 301
 /firestick-4k-iptv /iptv-firestick-4k 301
@@ -699,35 +698,35 @@
 /implayer-iptv.html /implayer-iptv 301
 /infinity-iptv.html /infinity-iptv 301
 /ipguys-iptv.html /ipguys-iptv 301
-/iptv-algeria.html /iptv-algeria 301
+/iptv-algeria.html /channels 301
 /iptv-australia.html /iptv-australia 301
 /iptv-belgium.html /iptv-belgium 301
 /iptv-canada.html /iptv-canada 301
-/iptv-egypt.html /iptv-egypt 301
+/iptv-egypt.html /channels 301
 /iptv-fox.html /iptv-fox 301
 /iptv-france.html /iptv-france 301
 /iptv-great.html /iptv-great 301
-/iptv-india.html /iptv-india 301
+/iptv-india.html /channels 301
 /iptv-ireland.html /iptv-ireland 301
 /iptv-italy.html /iptv-italy 301
-/iptv-kuwait.html /iptv-kuwait 301
+/iptv-kuwait.html /channels 301
 /iptv-monster.html /iptv-monster 301
-/iptv-morocco.html /iptv-morocco 301
+/iptv-morocco.html /channels 301
 /iptv-netherlands.html /iptv-netherlands 301
 /iptv-new-zealand.html /iptv-new-zealand 301
 /iptv-nigeria.html /iptv-nigeria 301
 /iptv-norway.html /iptv-norway 301
 /iptv-portugal.html /iptv-portugal 301
-/iptv-qatar.html /iptv-qatar 301
+/iptv-qatar.html /channels 301
 /iptv-rapid.html /iptv-rapid 301
-/iptv-saudi-arabia.html /iptv-saudi-arabia 301
+/iptv-saudi-arabia.html /channels 301
 /iptv-south-africa.html /iptv-south-africa 301
 /iptv-spain.html /iptv-spain 301
 /iptv-subscription-service.html /iptv-subscription-service 301
 /iptv-sweden.html /iptv-sweden 301
 /iptv-switzerland.html /iptv-switzerland 301
 /iptv-turkey.html /iptv-turkey 301
-/iptv-uae.html /iptv-uae 301
+/iptv-uae.html /channels 301
 /iptv-uk.html /iptv-uk 301
 /iptv-usa.html /iptv-usa 301
 /iptvone-service.html /iptvone-service 301
@@ -801,3 +800,52 @@
 /onn-4k-pro /onn-tv-box 301
 /onn-box /onn-tv-box 301
 /iptv-quebec-fr /iptv-quebec 301
+
+# ── Excluded markets (Tier 1: Arab world, Asia, North Africa) → approved hubs, 2026-11-06 ──
+/arabic-iptv /channels 301
+/arabic-m3u /iptv-m3u 301
+/iptv-abu-dhabi /channels 301
+/iptv-algeria /channels 301
+/iptv-casablanca /channels 301
+/iptv-doha /channels 301
+/iptv-dubai /channels 301
+/iptv-egypt /channels 301
+/iptv-india /channels 301
+/iptv-kuwait /channels 301
+/iptv-morocco /channels 301
+/iptv-pakistan /channels 301
+/iptv-qatar /channels 301
+/iptv-riyadh /channels 301
+/iptv-saudi-arabia /channels 301
+/iptv-uae /channels 301
+
+# ── Keyword-cluster pages added 2026-11-06 (.html → clean URL) ──
+/best-iptv-canada.html /best-iptv-canada 301
+/meilleur-iptv.html /meilleur-iptv 301
+/abonnement-iptv.html /abonnement-iptv 301
+/lecteur-iptv.html /lecteur-iptv 301
+/iptv-ne-fonctionne-plus.html /iptv-ne-fonctionne-plus 301
+/set-iptv.html /set-iptv 301
+/smart-stb.html /smart-stb 301
+/purple-iptv.html /purple-iptv 301
+/lazy-iptv.html /lazy-iptv 301
+/tivimate-apple-tv.html /tivimate-apple-tv 301
+/iptv-smarters-smart-tv.html /iptv-smarters-smart-tv 301
+/iptv-smarters-apple-tv.html /iptv-smarters-apple-tv 301
+/iptv-smarters-android.html /iptv-smarters-android 301
+/emby-iptv.html /emby-iptv 301
+/formuler-z8.html /formuler-z8 301
+/iptv-mag524.html /iptv-mag524 301
+/iptv-mag250.html /iptv-mag250 301
+/buzztv-iptv.html /buzztv-iptv 301
+/iptv-enigma2.html /iptv-enigma2 301
+/iptv-sky-sports.html /iptv-sky-sports 301
+/iptv-soccer.html /iptv-soccer 301
+/pluto-tv-iptv.html /pluto-tv-iptv 301
+/iptv-balkan.html /iptv-balkan 301
+/iptv-albania.html /iptv-albania 301
+/iptv-vs-satellite.html /iptv-vs-satellite 301
+/ott-tv.html /ott-tv 301
+/5g-iptv.html /5g-iptv 301
+/iptv-with-box.html /iptv-with-box 301
+/iptv-aliexpress.html /iptv-aliexpress 301

@@ -1,0 +1,27 @@
+/* Shared add-ons for long-form guide pages (used with page-1768.css) */
+.prose h3{color:#fff;margin:1.5rem 0 .5rem;font-size:1.1rem}
+.prose ul,.prose ol{margin:.75rem 0 1.25rem 1.4rem;color:rgba(255,255,255,.72)}
+.prose ul{list-style:disc}.prose ol{list-style:decimal}
+.prose li{margin-bottom:.45rem;padding-left:.2rem}
+.prose a{color:#FF7E80;text-decoration:underline;text-underline-offset:2px}
+.prose a:hover{color:#fff}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.25rem 0 1.5rem;border-radius:1rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03)}
+.tw table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+.tw th,.tw td{padding:.75rem .9rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+.tw th{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:#FF7E80;background:rgba(231,79,81,.08);font-weight:700}
+.tw td{color:rgba(255,255,255,.78)}
+.tw tr:last-child td{border-bottom:none}
+.tw td strong{color:#fff}
+.verdict{max-width:760px;margin:0 auto 1.5rem;border-radius:1rem;border:1px solid rgba(231,79,81,.35);background:rgba(231,79,81,.08);padding:1.25rem 1.4rem}
+.verdict p{margin:0;color:rgba(255,255,255,.85);line-height:1.7}
+.verdict .vl{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FF7E80;margin-bottom:.4rem}
+.steps{counter-reset:st;list-style:none!important;margin:1rem 0 1.5rem!important;padding:0}
+.steps li{counter-increment:st;position:relative;padding:.9rem 1rem .9rem 3.4rem!important;margin-bottom:.6rem;border-radius:.875rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.steps li::before{content:counter(st);position:absolute;left:1rem;top:.85rem;width:1.7rem;height:1.7rem;border-radius:9999px;background:#E74F51;color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.toc{max-width:760px;margin:0 auto;border-radius:1rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);padding:1rem 1.25rem}
+.toc p{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.5rem}
+.toc ol{margin:0 0 0 1.2rem;list-style:decimal;color:rgba(255,255,255,.6);font-size:.9rem}
+.toc li{margin:.2rem 0}
+.toc a{color:rgba(255,255,255,.8)}.toc a:hover{color:#FF7E80}
+.crumbs{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.crumbs a{color:rgba(255,255,255,.55)}.crumbs a:hover{color:#FF7E80}
