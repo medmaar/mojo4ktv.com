@@ -526,7 +526,7 @@ function opSubmit(e) {
   emailjs.send('service_u0y9azb','template_4mqukzm', templateParams)
     .then(function(){
       area.style.display = 'none';
-      suc.style.display = 'flex'; document.body.style.overflow = 'hidden';
+      suc.style.display = 'flex'; document.body.style.overflow = 'hidden'; if (window.mojoCelebrate) mojoCelebrate('order', email);
       var ec = document.getElementById('op-email-confirm') || document.getElementById('pp-email-confirm');
       if(ec) ec.textContent = email || (wa.replace(/\D/g,'').length > 5 ? wa : '') || 'your contact';
     }, function(error){
@@ -658,5 +658,6 @@ function onCountryChange() {
 document.addEventListener("DOMContentLoaded",function(){onCountryChange();});
 </script>
 <script src="https://iptv-trial-mojo4ktv.medmaar.workers.dev/invoice.js" defer></script>
+<script defer src="/assets/js/celebrate.js?v=20261107"></script>
 </body>
 </html>

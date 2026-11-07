@@ -655,6 +655,7 @@ async function ppSubmit(e){e.preventDefault();
       var ss=document.querySelector('#pp-suc .pp-suc-sub');
       if(ss&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){var st=document.querySelector('#pp-suc .pp-suc-title');if(st)st.textContent='You\'re all set!';ss.textContent='Your free 24-hour trial is on its way. We\'ll send your login details'+(wa.replace(/\D/g,'').length>5?' on WhatsApp to '+wa:'')+' shortly. Need it sooner? Message us on WhatsApp.';}
       else{var ec=document.getElementById('pp-email-confirm');if(ec)ec.textContent=email;}
+      if(window.mojoCelebrate&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))mojoCelebrate('trial',email);
       if(suc){suc.classList.add('is-on');
         var hd=document.querySelector('header'),hh=hd?hd.getBoundingClientRect().height:0;
         var rc=suc.getBoundingClientRect(),avail=window.innerHeight-hh;
@@ -788,6 +789,7 @@ function onCountryChange() {
 // Set initial dial code for Canada
 document.addEventListener("DOMContentLoaded",function(){onCountryChange();});
 </script>
+<script defer src="/assets/js/celebrate.js?v=20261107"></script>
 </body>
 </html>
 
