@@ -25,3 +25,9 @@
 .toc a{color:rgba(255,255,255,.8)}.toc a:hover{color:#FF7E80}
 .crumbs{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:1rem}
 .crumbs a{color:rgba(255,255,255,.55)}.crumbs a:hover{color:#FF7E80}
+/* Keyword-gap sections injected into older templates (2026-11-07) */
+.kx{color:rgba(255,255,255,.72);line-height:1.7}
+.kx p{margin:0 0 1rem;color:rgba(255,255,255,.72);line-height:1.7}
+.kx h3{color:#fff;margin:1.5rem 0 .5rem;font-size:1.1rem;font-weight:700}
+.kx code{background:rgba(255,255,255,.08);padding:.1rem .35rem;border-radius:.3rem;font-size:.85em;word-break:break-all}
+.prose code{background:rgba(255,255,255,.08);padding:.1rem .35rem;border-radius:.3rem;font-size:.85em;word-break:break-all}
