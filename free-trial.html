@@ -662,10 +662,10 @@ async function ppSubmit(e){e.preventDefault();
         var off=rc.height<avail?(avail-rc.height)/2:16;
         window.scrollTo({top:Math.max(0,window.pageYOffset+rc.top-hh-off),behavior:'smooth'});
         try{suc.focus({preventScroll:true})}catch(_){}}
-    }else{btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Submission failed. Please try again or contact us on WhatsApp.';}}
+    }else{btn.disabled=false;btn.textContent='Submit';if(err){err.style.display='block';err.textContent='Our free trials are currently paused.';}}
   }catch(ex){
     btn.disabled=false;btn.textContent='Submit';
-    if(err){err.style.display='block';err.textContent='Network error. Please try again or contact us: help@mojo4ktv.com';}
+    if(err){err.style.display='block';err.textContent='Our free trials are currently paused.';}
     console.error(ex);
   }
 }
