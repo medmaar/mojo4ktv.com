@@ -85,7 +85,6 @@
 /iptv-pricing.html /iptv-pricing 301
 /iptv-promotions.html /iptv-promotions 301
 /iptv-providers.html /iptv-providers 301
-/iptv-raspberry-pi.html /iptv-linux 301
 /iptv-receiver.html /iptv-receiver 301
 /iptv-reddit.html /iptv-reddit 301
 /iptv-servers.html /iptv-servers 301
@@ -128,16 +127,13 @@
 # ── Keyword variant aliases ───────────────────────────────────────────
 # Buy/subscribe
 /buy-iptv-subscription /buy-iptv 301
-/iptv-sub /iptv-account 301
 /iptv-login /iptv-account 301
 /iptv-credentials /iptv-account 301
 
 # Pricing/plans
 /iptv-price /iptv-pricing 301
 /iptv-plans /iptv-pricing 301
-/iptv-packages /iptv-pricing 301
 /iptv-cost /iptv-pricing 301
-/iptv-deals /iptv-pricing 301
 /iptv-plans-pricing /pricing 301
 /plans /pricing 301
 
@@ -148,9 +144,6 @@
 /free-iptv-m3u /free-iptv 301
 
 # TiviMate variants
-/tivimate-premium /tivimate-subscription 301
-/tivimate-premium.html /tivimate-subscription 301
-/tivimate-pro /tivimate-pc 301
 /tivimate-windows /tivimate-pc 301
 /tivimate-mac /tivimate-pc 301
 /tivimate-fire-stick /tivimate-firestick 301
@@ -161,22 +154,19 @@
 /iptv-smarters-windows /iptv-smarters-pc 301
 /iptv-smarters-pro-pc /iptv-smarters-pc 301
 /iptv-smarters-pro-mac /iptv-smarters-pc 301
-/iptv-smarters-mac /iptv-smarters-pc 301
 /smarters-pro /iptv-smarters-pro 301
 /ip-tv-smarters-pro /iptv-smarters-pro 301
 /ip-tv-smarter-pro /iptv-smarters-pro 301
 /smarters-tv /iptv-smarters-pro 301
-/smarters-lite /iptv-smarters-pro 301
 /smarterspro /iptv-smarters-pro 301
 /ipguys /iptv-smarters-pro 301
 
 # Smart IPTV / SSIPTV / SetIPTV variants
-/siptv /smart-iptv 301
-/ssiptv /smart-iptv 301
+/ssiptv /siptv 301
 /smart-iptv-samsung /smart-iptv 301
 /smart-iptv-m3u /smart-iptv 301
 /my-siptv /smart-iptv 301
-/ssiptv-list /smart-iptv 301
+/ssiptv-list /siptv 301
 
 # Xtream Codes / XCIPTV variants
 /xtream-iptv /xtream-codes 301
@@ -194,12 +184,10 @@
 
 # Xiaomi variants
 /xiaomi-iptv /iptv-xiaomi 301
-/mi-box-iptv /iptv-xiaomi 301
 /xiaomi-mi-box-iptv /iptv-xiaomi 301
 
 # M3U / list variants
 /iptv-m3u-list /iptv-list 301
-/m3u-list /iptv-list 301
 /iptv-line /iptv-list 301
 /m3u-iptv-list /iptv-list 301
 /iptv-listas-m3u /iptv-list 301
@@ -219,19 +207,16 @@
 /fire-tv-iptv /iptv-for-firestick 301
 /iptv-amazon /iptv-for-firestick 301
 /iptv-firestick /iptv-for-firestick 301
-/iptv-for-iphone.html /iptv-iphone 301
 
 # Device variants — Android
 /iptv-android /best-iptv-box 301
 /kodi-ip-tv /iptv-kodi 301
-/iptv-macbook /iptv-for-pc 301
 /iptv-pc /iptv-for-pc 301
 
 # Device variants — Android TV
 /android-iptv /best-iptv-box 301
 /best-android-tv-box-for-iptv /best-iptv-box 301
 /best-android-box-for-iptv /best-iptv-box 301
-/iptv-android-box /best-iptv-box 301
 /best-iptv-android-box /best-iptv-box 301
 
 # Device variants — Samsung/LG/other TVs
@@ -245,9 +230,6 @@
 /webos-iptv-app /webos-iptv 301
 /iptv-hisense-tv /iptv-hisense 301
 /hisense-iptv /iptv-hisense 301
-/iptv-tizen /iptv-hisense 301
-/iptv-sony /iptv-smart-tv 301
-/iptv-philips /iptv-smart-tv 301
 
 # Device variants — Roku
 /iptv-roku /iptv-for-roku 301
@@ -263,7 +245,6 @@
 /shield-tv-iptv /iptv-nvidia-shield 301
 
 # Receiver / STB (iptv-receiver.html exists)
-/iptv-set-top-box /iptv-receiver 301
 /iptv-stb /iptv-receiver 301
 /iptv-mag-box /iptv-receiver 301
 
@@ -280,7 +261,6 @@
 
 # 4K / HD quality pages
 /hd-iptv /iptv-4k 301
-/iptv-8k /iptv-4k 301
 /8k-iptv /iptv-4k 301
 
 # Sports variants
@@ -342,8 +322,6 @@
 /iptv-discord-server /iptv-discord 301
 
 # Linux / Pi
-/iptv-ubuntu /iptv-linux 301
-/iptv-raspberry-pi /iptv-linux 301
 /raspberry-pi-iptv /iptv-linux 301
 /iptv-pi /iptv-linux 301
 
@@ -351,7 +329,6 @@
 /iptv-streaming-services /iptv-streaming-service 301
 
 # Reviews / Trustpilot
-/iptv-customer-service /iptv-trustpilot 301
 
 # Reddit variants
 
@@ -373,7 +350,6 @@
 /top-iptv-providers /top-iptv 301
 
 # Private / paid
-/paid-iptv /private-iptv 301
 /iptv-premium-subscription /private-iptv 301
 
 # Pricing
@@ -452,11 +428,8 @@
 /mag-iptv.html /mag-iptv 301
 /iptv-mag254.html /iptv-mag254 301
 /iptv-mag322.html /iptv-mag322 301
-/iptv-android-box.html /best-iptv-box 301
 /iptv-apple-tv-4k.html /iptv-apple-tv-4k 301
 /iptv-ipad.html /iptv-ipad 301
-/iptv-philips.html /iptv-smart-tv 301
-/iptv-sony.html /iptv-smart-tv 301
 /iptv-tcl-tv.html /iptv-tcl-tv 301
 /iptv-mecool.html /iptv-mecool 301
 
@@ -507,36 +480,20 @@
 
 # ── New SEO pages 2026-08-08 ─────────────────────────────────────────────────
 /xciptv.html /xciptv 301
-/siptv.html /smart-iptv 301
 /tivimate-account.html /tivimate-account 301
-/tivimate-pro.html /tivimate-pc 301
 /tivimate-reddit.html /tivimate-reddit 301
 /iptvx.html /iptvx 301
 /myiptv4k.html /myiptv4k 301
-/smarters-lite.html /iptv-smarters-pro 301
 /iptv-smarters-firestick.html /iptv-smarters-firestick 301
-/iptv-smarters-mac.html /iptv-smarters-pc 301
-/iptv-macbook.html /iptv-for-pc 301
-/iptv-tizen.html /iptv-hisense 301
 /iptv-fire-tv.html /iptv-fire-tv 301
-/mi-box-iptv.html /iptv-xiaomi 301
-/iptv-set-top-box.html /iptv-receiver 301
 /best-iptv-provider.html /best-iptv-provider 301
-/iptv-packages.html /iptv-pricing 301
-/iptv-deals.html /iptv-pricing 301
-/paid-iptv.html /private-iptv 301
 /best-paid-iptv.html /best-paid-iptv 301
 /best-iptv-for-tivimate.html /best-iptv-for-tivimate 301
 /best-iptv-for-kodi.html /best-iptv-for-kodi 301
-/iptv-8k.html /iptv-4k 301
 /iptv-hd.html /iptv-hd 301
 /iptv-forum.html /iptv-forum 301
-/iptv-ubuntu.html /iptv-linux 301
 /iptv-shop.html /iptv-shop 301
-/iptv-sub.html /iptv-account 301
 /lifetime-iptv.html /lifetime-iptv 301
-/m3u-list.html /iptv-list 301
-/iptv-customer-service.html /iptv-trustpilot 301
 /iptv-solutions.html /iptv-solutions 301
 /iptv-boston.html /iptv-boston 301
 /iptv-san-francisco.html /iptv-san-francisco 301
@@ -849,3 +806,46 @@
 /5g-iptv.html /5g-iptv 301
 /iptv-with-box.html /iptv-with-box 301
 /iptv-aliexpress.html /iptv-aliexpress 301
+
+# ── Keyword-gap pages (2026-11-07) ──
+/iptv-smarters-subscription.html /iptv-smarters-subscription 301
+/iptv-smarters-iphone.html /iptv-smarters-iphone 301
+/m3u-player.html /m3u-player 301
+/iptv-for-beginners.html /iptv-for-beginners 301
+/iptv-ps5.html /iptv-ps5 301
+/iptv-stick.html /iptv-stick 301
+# Short aliases for common search spellings
+/smarters-player-lite /iptv-smarters-iphone 301
+/smarters-player-lite.html /iptv-smarters-iphone 301
+/ss-iptv /siptv 301
+/ss-iptv.html /siptv 301
+/ssiptv.html /siptv 301
+/xtream-iptv.html /xtream-codes 301
+/iptv-tester.html /iptv-checker 301
+/iptv-xbox /iptv-ps5 301
+/iptv-xbox.html /iptv-ps5 301
+/iptv-beginners /iptv-for-beginners 301
+/iptv-beginners.html /iptv-for-beginners 301
+
+# Pages that were hidden by old alias rules (restored 2026-11-07)
+/iptv-8k.html /iptv-8k 301
+/iptv-android-box.html /iptv-android-box 301
+/iptv-customer-service.html /iptv-customer-service 301
+/iptv-deals.html /iptv-deals 301
+/iptv-macbook.html /iptv-macbook 301
+/iptv-packages.html /iptv-packages 301
+/iptv-philips.html /iptv-philips 301
+/iptv-raspberry-pi.html /iptv-raspberry-pi 301
+/iptv-set-top-box.html /iptv-set-top-box 301
+/iptv-smarters-mac.html /iptv-smarters-mac 301
+/iptv-sony.html /iptv-sony 301
+/iptv-sub.html /iptv-sub 301
+/iptv-tizen.html /iptv-tizen 301
+/iptv-ubuntu.html /iptv-ubuntu 301
+/m3u-list.html /m3u-list 301
+/mi-box-iptv.html /mi-box-iptv 301
+/paid-iptv.html /paid-iptv 301
+/siptv.html /siptv 301
+/smarters-lite.html /smarters-lite 301
+/tivimate-premium.html /tivimate-premium 301
+/tivimate-pro.html /tivimate-pro 301
