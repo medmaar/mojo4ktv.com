@@ -1,5 +1,8 @@
 name: Deploy Worker
 on:
+  push:
+    branches: [main]
+    paths: ['worker/**', '.github/workflows/deploy-worker.yml']
   workflow_dispatch:
 
 jobs:
@@ -12,7 +15,6 @@ jobs:
         env:
           CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: |
           set -e
 
@@ -24,12 +26,7 @@ jobs:
             -F "worker.js=@worker/worker.js;type=application/javascript+module")
           echo "$DEPLOY" | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0) if d.get('success') else (print('Deploy error:',d.get('errors')) or exit(1))"
 
-          curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/secrets" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d "{\"name\":\"RESEND_KEY\",\"text\":\"${RESEND_API_KEY}\",\"type\":\"secret_text\"}" \
-            | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0) if d.get('success') else (print('Secret error:',d.get('errors')) or exit(1))"
+          # Secrets (RESEND_KEY, PANEL_API_KEY) are set on the Worker in Cloudflare and kept across deploys (keep_bindings).
 
           curl -s -X POST \
             "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/iptv-trial-mojo4ktv/subdomain" \
