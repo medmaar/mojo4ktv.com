@@ -755,3 +755,6 @@ img.emoji{height:1.1em;width:auto;vertical-align:middle;margin-left:4px;border-r
 /* ─── FAQ chevron icon (pricing page) ─── */
 .faq-chevron{width:1.25rem;height:1.25rem;flex-shrink:0;color:#FF7E80;transition:transform .3s}
 .faq-item.open .faq-chevron{transform:rotate(180deg)}
+
+/* Header: hide desktop links below 1024px even where markup sets display:flex inline (fixes mobile side-scroll, 2026-11-07) */
+@media(max-width:1023px){.nav-links{display:none!important}}
