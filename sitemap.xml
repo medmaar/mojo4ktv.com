@@ -269,17 +269,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://mojo4ktv.com/airtel-iptv</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   <url>
     <loc>https://mojo4ktv.com/apollo-group-tv</loc>
     <lastmod>2026-08-22</lastmod>
@@ -360,12 +349,6 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/euro-iptv</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mojo4ktv.com/evision-iptv</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -827,12 +810,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mojo4ktv.com/iptv-nigeria</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://mojo4ktv.com/iptv-norway</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -935,12 +912,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mojo4ktv.com/iptv-south-africa</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://mojo4ktv.com/iptv-spain</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -1008,12 +979,6 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-trustpilot</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mojo4ktv.com/iptv-turkey</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1727,18 +1692,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mojo4ktv.com/iptv-mexico</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mojo4ktv.com/iptv-brazil</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mojo4ktv.com/iptv-romania</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -1746,12 +1699,6 @@
   </url>
   <url>
     <loc>https://mojo4ktv.com/iptv-greece</loc>
-    <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mojo4ktv.com/iptv-argentina</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

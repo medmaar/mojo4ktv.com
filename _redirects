@@ -1,3 +1,29 @@
+# Excluded-market pages removed (SEO market filter, 2026-11-25)
+/airtel-iptv /best-iptv-service 301
+/airtel-iptv/ /best-iptv-service 301
+/airtel-iptv.html /best-iptv-service 301
+/evision-iptv /best-iptv-service 301
+/evision-iptv/ /best-iptv-service 301
+/evision-iptv.html /best-iptv-service 301
+/iptv-argentina /best-iptv-service 301
+/iptv-argentina/ /best-iptv-service 301
+/iptv-argentina.html /best-iptv-service 301
+/iptv-brazil /best-iptv-service 301
+/iptv-brazil/ /best-iptv-service 301
+/iptv-brazil.html /best-iptv-service 301
+/iptv-mexico /best-iptv-service 301
+/iptv-mexico/ /best-iptv-service 301
+/iptv-mexico.html /best-iptv-service 301
+/iptv-nigeria /best-iptv-service 301
+/iptv-nigeria/ /best-iptv-service 301
+/iptv-nigeria.html /best-iptv-service 301
+/iptv-south-africa /best-iptv-service 301
+/iptv-south-africa/ /best-iptv-service 301
+/iptv-south-africa.html /best-iptv-service 301
+/iptv-turkey /best-iptv-service 301
+/iptv-turkey/ /best-iptv-service 301
+/iptv-turkey.html /best-iptv-service 301
+
 # ─────────────────────────────────────────────────────────────────────
 # Mojo4KTV.com — Cloudflare Pages _redirects
 # Last updated: 2026-08-06 (SEO audit fix)
@@ -575,11 +601,8 @@
 /iptv-milan.html /iptv-milan 301
 /iptv-madrid.html /iptv-madrid 301
 /iptv-barcelona.html /iptv-barcelona 301
-/iptv-mexico.html /iptv-mexico 301
-/iptv-brazil.html /iptv-brazil 301
 /iptv-romania.html /iptv-romania 301
 /iptv-greece.html /iptv-greece 301
-/iptv-argentina.html /iptv-argentina 301
 /iptv-austria.html /iptv-austria 301
 
 # ── Broken link fixes 2026-08-09 ──────────────────────────────────
@@ -673,7 +696,6 @@
 /best-iptv-firestick.html /best-iptv-firestick 301
 
 # ── .html → clean URL (SEO audit batch) ─────────────────────────────
-/airtel-iptv.html /airtel-iptv 301
 /apollo-group-tv.html /apollo-group-tv 301
 /area51-iptv.html /area51-iptv 301
 /atlas-iptv.html /atlas-iptv 301
@@ -688,7 +710,6 @@
 /duplecast-iptv.html /duplecast-iptv 301
 /eternal-tv-iptv.html /eternal-tv-iptv 301
 /euro-iptv.html /euro-iptv 301
-/evision-iptv.html /evision-iptv 301
 /falcon-iptv.html /falcon-iptv 301
 /family-iptv.html /family-iptv 301
 /flix-iptv.html /flix-iptv 301
@@ -714,18 +735,15 @@
 /iptv-morocco.html /channels 301
 /iptv-netherlands.html /iptv-netherlands 301
 /iptv-new-zealand.html /iptv-new-zealand 301
-/iptv-nigeria.html /iptv-nigeria 301
 /iptv-norway.html /iptv-norway 301
 /iptv-portugal.html /iptv-portugal 301
 /iptv-qatar.html /channels 301
 /iptv-rapid.html /iptv-rapid 301
 /iptv-saudi-arabia.html /channels 301
-/iptv-south-africa.html /iptv-south-africa 301
 /iptv-spain.html /iptv-spain 301
 /iptv-subscription-service.html /iptv-subscription-service 301
 /iptv-sweden.html /iptv-sweden 301
 /iptv-switzerland.html /iptv-switzerland 301
-/iptv-turkey.html /iptv-turkey 301
 /iptv-uae.html /channels 301
 /iptv-uk.html /iptv-uk 301
 /iptv-usa.html /iptv-usa 301
